@@ -126,6 +126,15 @@
     }
 }
 
+@keyframes geser-masuk-kiri {
+    from {
+        translate: -100% 0;
+    }
+    to {
+        translate: 0 0;
+    }
+}
+
 @keyframes geser-masuk {
     from {
         translate: 100% 0;
@@ -145,6 +154,10 @@
 
 .sheet-konten[data-state='open'] {
     animation: geser-masuk 200ms ease-out;
+}
+
+.sheet-konten-kiri[data-state='open'] {
+    animation: geser-masuk-kiri 200ms ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {

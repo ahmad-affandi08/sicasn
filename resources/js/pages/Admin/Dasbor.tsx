@@ -1,0 +1,100 @@
+import { Head, Link } from '@inertiajs/react';
+import { LuCircleAlert, LuCircleCheck, LuUserPlus, LuUsers } from 'react-icons/lu';
+
+import { HeaderHalaman } from '@/components/HeaderHalaman';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { teksAdmin } from '@/lang/admin';
+import { LayoutAdmin } from '@/layouts/LayoutAdmin';
+import { rute } from '@/lib/rute';
+
+interface PropsHalaman {
+    ringkasan: { aktif: number; nonaktif: number };
+    kesiapan: { email: boolean; whatsapp: boolean; pembayaran: boolean };
+}
+
+export default function Dasbor({ ringkasan, kesiapan }: PropsHalaman) {
+    const teks = teksAdmin.dasbor;
+
+    const butir = [
+        { kunci: 'email', siap: kesiapan.email, tujuan: rute.admin.email, judul: teks.butir.email.judul, keterangan: teks.butir.email.siap, belum: teks.butir.email.belum },
+        { kunci: 'whatsapp', siap: kesiapan.whatsapp, tujuan: rute.admin.whatsapp, judul: teks.butir.whatsapp.judul, keterangan: teks.butir.whatsapp.siap, belum: teks.butir.whatsapp.belum },
+        { kunci: 'pembayaran', siap: kesiapan.pembayaran, tujuan: rute.admin.pembayaran, judul: teks.butir.pembayaran.judul, keterangan: teks.butir.pembayaran.siap, belum: teks.butir.pembayaran.belum },
+    ];
+
+    return (
+        <LayoutAdmin>
+            <Head title={teks.judul} />
+            <HeaderHalaman
+                judul={teks.judul}
+                sub={teks.sub}
+                aksi={
+                    <Button asChild>
+                        <Link href={rute.admin.buatPengguna}>
+                            <LuUserPlus aria-hidden className="h-4 w-4" />
+                            {teks.buatAkun}
+                        </Link>
+                    </Button>
+                }
+            />
+
+            <div className="grid gap-4 sm:grid-cols-2">
+                <Card>
+                    <CardContent className="flex items-center gap-4 pt-6">
+                        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sukses-lembut text-sukses">
+                            <LuUsers aria-hidden className="h-6 w-6" />
+                        </span>
+                        <div>
+                            <p className="text-3xl font-bold">{ringkasan.aktif}</p>
+                            <p className="text-sm text-redup">{teks.memberAktif}</p>
+                        </div>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardContent className="flex items-center gap-4 pt-6">
+                        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-peringatan-lembut text-peringatan">
+                            <LuUsers aria-hidden className="h-6 w-6" />
+                        </span>
+                        <div>
+                            <p className="text-3xl font-bold">{ringkasan.nonaktif}</p>
+                            <p className="text-sm text-redup">{teks.memberNonaktif}</p>
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
+
+            <Card className="mt-6">
+                <CardHeader>
+                    <CardTitle>{teks.kesiapan}</CardTitle>
+                    <CardDescription>{teks.kesiapanSub}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <ul className="flex flex-col divide-y divide-garis">
+                        {butir.map((item) => (
+                            <li key={item.kunci} className="flex flex-col gap-3 py-4 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:justify-between">
+                                <div className="flex items-start gap-3">
+                                    {item.siap ? (
+                                        <LuCircleCheck aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-sukses" />
+                                    ) : (
+                                        <LuCircleAlert aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-peringatan" />
+                                    )}
+                                    <div>
+                                        <p className="flex flex-wrap items-center gap-2 font-medium">
+                                            {item.judul}
+                                            <Badge variant={item.siap ? 'sukses' : 'peringatan'}>{item.siap ? teks.siap : teks.belum}</Badge>
+                                        </p>
+                                        <p className="text-sm text-redup">{item.siap ? item.keterangan : item.belum}</p>
+                                    </div>
+                                </div>
+                                <Button asChild variant={item.siap ? 'outline' : 'default'} size="sm" className="self-start sm:self-center">
+                                    <Link href={item.tujuan}>{teks.atur}</Link>
+                                </Button>
+                            </li>
+                        ))}
+                    </ul>
+                </CardContent>
+            </Card>
+        </LayoutAdmin>
+    );
+}

@@ -24,4 +24,4 @@ arch('controller tidak memakai eloquent langsung')
 
 arch('model eloquent hanya di infrastructure')
     ->expect('Illuminate\\Database\\Eloquent\\Model')
-    ->toOnlyBeUsedIn('Src\\Identity\\Infrastructure');
+    ->toOnlyBeUsedIn(['Src\\Identity\\Infrastructure', 'Src\\Pengaturan\\Infrastructure', 'Src\\Shared\\Infrastructure']);

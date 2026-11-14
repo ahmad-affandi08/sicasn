@@ -2,10 +2,16 @@ export type JenisDialog = 'sukses' | 'gagal' | 'galat' | 'peringatan' | 'info' |
 
 export type JenisDialogPesan = Exclude<JenisDialog, 'konfirmasi'>;
 
+export interface TautanDialog {
+    label: string;
+    url: string;
+}
+
 export interface OpsiPesan {
     judul: string;
     pesan: string;
     teksTombol?: string;
+    tautan?: TautanDialog;
 }
 
 export interface OpsiKonfirmasi extends OpsiPesan {
@@ -22,6 +28,7 @@ export interface TampilanDialog {
     judul: string;
     pesan: string;
     teksTombol?: string;
+    tautan?: TautanDialog;
     teksBatal?: string;
     berisiko?: boolean;
     kataKunci?: string;

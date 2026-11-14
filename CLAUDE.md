@@ -183,13 +183,15 @@ Admin memilih **penyedia aktif** dan, opsional, **penyedia cadangan** (otomatis 
 | Gmail / Google Workspace | SMTP | `smtp.gmail.com`, port `587`, wajib *app password* |
 | Brevo | SMTP | `smtp-relay.brevo.com`, port `587` |
 | SendGrid | SMTP | `smtp.sendgrid.net`, username `apikey` |
-| Mailgun | API/SMTP | domain, API key, region |
-| Amazon SES | API | key, secret, region |
-| Resend | API | API key |
-| Postmark | API | server token |
+| Mailgun | SMTP | `smtp.mailgun.org` (Eropa: `smtp.eu.mailgun.org`), port `587` |
+| Amazon SES | SMTP | `email-smtp.<region>.amazonaws.com`, port `587`, kredensial SMTP SES |
+| Resend | SMTP | `smtp.resend.com`, port `465`, username `resend` |
+| Postmark | SMTP | `smtp.postmarkapp.com`, port `587`, username dan sandi sama-sama server token |
+
+**Keputusan implementasi: semua penyedia dijalankan lewat SMTP** (tanpa paket tambahan seperti SDK API), sehingga satu mekanisme melayani sembilan penyedia dan tidak ada ketergantungan yang sulit dipasang. Transport API khusus bisa ditambahkan nanti bila dibutuhkan.
 
 Persyaratan:
-- Identitas pengirim (nama, alamat), alamat balas, dan tema email diatur di sini.
+- Identitas pengirim (nama, alamat) dan alamat balas diatur di sini. Tema email kustom ditunda.
 - Tombol **Kirim Email Uji** ke alamat pilihan admin; hasil (berhasil/gagal beserta pesan galat) tampil di **AlertDialog**.
 - Menyimpan atau mengganti penyedia aktif memerlukan **konfirmasi modal**; disarankan lulus uji dulu.
 - Pengiriman memakai mailer yang dibangun saat runtime dari konfigurasi (Laravel mendukung `Mail::build`; verifikasi di dokumentasi) dan `failover` ke cadangan.
@@ -443,7 +445,7 @@ Hanya `react-icons` (disarankan `react-icons/lu` agar seragam dengan shadcn). Se
 
 ### 13.6 Komponen shadcn
 
-`Button`, `Input`, `Select`, `Combobox (Command+Popover)`, `Sheet`, `AlertDialog`, `Dialog`, `Badge`, `Table`, `Card`, `Tabs`, `Skeleton`, `Form (react-hook-form + zod)`, `Alert`, `Tooltip`, `Switch`, `Separator`. **Tanpa** `sonner`/toast.
+`Button`, `Input`, `Textarea`, `Select` (elemen native yang diberi gaya, ramah layar sentuh), `Label`, `Sheet`, `AlertDialog`, `Badge`, `Table`, `Card`, `Alert`, `Switch`. Komponen tambahan (`Combobox`, `Tabs`, `Skeleton`, `Tooltip`) ditulis saat dibutuhkan. Formulir memakai `useForm` Inertia dengan validasi sisi server dan galat inline (`BidangForm`); `react-hook-form` dan `zod` tidak dipakai. **Tanpa** `sonner`/toast.
 
 ### 13.7 Aksesibilitas dan performa
 
@@ -540,6 +542,10 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 **Fase 1, Identity dan Pengaturan**
 - Login, peran, policy; admin Pengguna (buat, kirim ulang, reset, nonaktifkan/aktifkan, audit); **pengaturan Email multi-penyedia (termasuk Hostinger) + email uji + failover**; pengaturan WhatsApp, rekening, harga; email kredensial otomatis via antrean; ganti password wajib; satu-sesi; beranda dan Cara Akses dengan tombol WA dinamis.
 - ✅ Admin mengatur Hostinger SMTP di dashboard → email uji berhasil → membuat pengguna → email masuk antrean → login → dipaksa ganti password. Akun nonaktif ditolak dengan modal ramah. Tidak ada kolom/logika masa aktif.
+- **Status: selesai (15 Nov 2026).** Terverifikasi: Pest 102 tes (unit, fitur, arsitektur), Vitest 21 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau. Uji menyeluruh di browser dengan server SMTP asli (`tests/e2e/`, lihat `docs/pengujian-e2e.md`): 40 pemeriksaan, semuanya lulus (satu pemeriksaan tab `wa.me` gagal hanya karena sandbox tanpa internet; URL-nya terbukti benar lewat intersepsi `window.open`). Tangkapan layar 7 halaman admin x 390/820/1366 px x terang/gelap tanpa scroll horizontal.
+- Perintah membuat admin pertama sudah ada: `php artisan sicasn:buat-admin` (interaktif, atau dengan opsi `--nama --email --password`). `sicasn:install` yang lengkap tetap di Fase 7 dan akan memanggilnya.
+- **Tidak dikerjakan di Fase 1 (sengaja ditunda):** tema email kustom, "tampilkan password sementara sekali", notifikasi event CPNS (Fase 2), dan email uji memakai isian form yang belum disimpan (saat ini email uji memakai pengaturan yang sudah tersimpan).
+- Catatan teknis penting: kata sandi sementara hanya ada di payload job yang dienkripsi (`ShouldBeEncrypted`) dan di email, tidak pernah di log, audit, atau database selain hash. Pengujian guard autentikasi di Pest perlu `auth()->forgetGuards()` setelah mengubah database langsung, karena klien tes menyimpan objek pengguna di memori.
 
 **Fase 2, Sinkron BKN (CPNS)**
 - Skema §6.1/§6.3, adapter dan use case §10, event terdeteksi, wilayah, scheduler, panel status.

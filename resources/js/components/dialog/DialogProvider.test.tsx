@@ -39,6 +39,17 @@ function Uji() {
             >
                 antre
             </button>
+            <button
+                onClick={() =>
+                    void dialog.peringatan({
+                        judul: 'Akun nonaktif',
+                        pesan: 'Hubungi admin.',
+                        tautan: { label: 'Hubungi admin via WhatsApp', url: 'https://wa.me/6281234567890' },
+                    })
+                }
+            >
+                tautan
+            </button>
             <output>{hasil}</output>
         </div>
     );
@@ -115,5 +126,17 @@ describe('DialogProvider', () => {
         await pengguna.click(screen.getByRole('button', { name: 'Mengerti' }));
 
         await waitFor(() => expect(screen.getByRole('alertdialog')).toHaveTextContent('Kedua'));
+    });
+
+    it('menampilkan tombol tautan WhatsApp yang membuka tab baru dengan aman', async () => {
+        const pengguna = userEvent.setup();
+        tampilkan();
+
+        await pengguna.click(screen.getByRole('button', { name: 'tautan' }));
+
+        const tautan = await screen.findByRole('link', { name: 'Hubungi admin via WhatsApp' });
+        expect(tautan).toHaveAttribute('href', 'https://wa.me/6281234567890');
+        expect(tautan).toHaveAttribute('target', '_blank');
+        expect(tautan).toHaveAttribute('rel', 'noopener noreferrer');
     });
 });

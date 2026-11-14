@@ -48,6 +48,11 @@ export const teks = {
         ],
         ilustrasiLangkah: 'Ilustrasi langkah',
     },
+    pembayaran: {
+        judul: 'Info paket',
+        atasNama: (nama: string) => `a.n. ${nama}`,
+        catatanKonfirmasi: 'Kirim bukti transfer ke admin lewat WhatsApp agar akun Anda segera dibuat.',
+    },
     penutup: {
         judul: 'Siap melihat peluang Anda?',
         sub: 'Hubungi admin sekarang. Biasanya akun dibuat segera setelah bukti transfer diterima.',

@@ -1,0 +1,21 @@
+export const rute = {
+    beranda: '/',
+    masuk: '/masuk',
+    keluar: '/keluar',
+    akun: '/akun',
+    gantiPassword: '/ganti-password',
+    admin: {
+        dasbor: '/admin',
+        pengguna: '/admin/pengguna',
+        buatPengguna: '/admin/pengguna/buat',
+        detailPengguna: (id: number) => `/admin/pengguna/${id}`,
+        kirimUlang: (id: number) => `/admin/pengguna/${id}/kirim-ulang`,
+        nonaktifkan: (id: number) => `/admin/pengguna/${id}/nonaktifkan`,
+        aktifkan: (id: number) => `/admin/pengguna/${id}/aktifkan`,
+        email: '/admin/pengaturan/email',
+        ujiEmail: '/admin/pengaturan/email/uji',
+        whatsapp: '/admin/pengaturan/whatsapp',
+        pembayaran: '/admin/pengaturan/pembayaran',
+        situs: '/admin/pengaturan/situs',
+    },
+} as const;

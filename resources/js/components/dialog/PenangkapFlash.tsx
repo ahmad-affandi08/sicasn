@@ -11,7 +11,7 @@ export function PenangkapFlash() {
 
     useEffect(() => {
         if (dialog) {
-            void perintah[dialog.jenis]({ judul: dialog.judul, pesan: dialog.pesan });
+            void perintah[dialog.jenis]({ judul: dialog.judul, pesan: dialog.pesan, tautan: dialog.tautan });
         }
     }, [dialog, perintah]);
 

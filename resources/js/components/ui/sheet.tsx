@@ -8,13 +8,18 @@ export const Sheet = SheetPrimitive.Root;
 export const SheetTrigger = SheetPrimitive.Trigger;
 export const SheetClose = SheetPrimitive.Close;
 
-export function SheetContent({ className, children, ...props }: ComponentProps<typeof SheetPrimitive.Content>) {
+interface PropsSheetContent extends ComponentProps<typeof SheetPrimitive.Content> {
+    sisi?: 'kanan' | 'kiri';
+}
+
+export function SheetContent({ className, children, sisi = 'kanan', ...props }: PropsSheetContent) {
     return (
         <SheetPrimitive.Portal>
             <SheetPrimitive.Overlay className="dialog-overlay fixed inset-0 z-50 bg-black/50" />
             <SheetPrimitive.Content
                 className={cn(
-                    'sheet-konten fixed inset-y-0 right-0 z-50 flex h-dvh w-[85%] max-w-sm flex-col gap-4 border-l border-garis bg-kartu p-6 text-teks shadow-2xl',
+                    'fixed inset-y-0 z-50 flex h-dvh w-[85%] max-w-sm flex-col gap-4 border-garis bg-kartu p-6 text-teks shadow-2xl',
+                    sisi === 'kanan' ? 'sheet-konten right-0 border-l' : 'sheet-konten-kiri left-0 border-r',
                     className,
                 )}
                 {...props}

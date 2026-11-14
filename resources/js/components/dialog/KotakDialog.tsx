@@ -96,6 +96,16 @@ export function KotakDialog({ tampilan, onTutup }: PropsKotakDialog) {
 
                 <AlertDialogFooter>
                     {perluKonfirmasi && <AlertDialogCancel>{tampilan.teksBatal ?? teks.dialog.batal}</AlertDialogCancel>}
+                    {tampilan.tautan && (
+                        <a
+                            href={tampilan.tautan.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(buttonVariants({ variant: 'secondary' }), 'sm:min-w-32')}
+                        >
+                            {tampilan.tautan.label}
+                        </a>
+                    )}
                     <AlertDialogAction
                         disabled={!kataKunciCocok}
                         className={cn(tampilan.berisiko && buttonVariants({ variant: 'destructive' }))}

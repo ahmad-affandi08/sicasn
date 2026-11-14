@@ -1,3 +1,4 @@
+import { Link, usePage } from '@inertiajs/react';
 import { useState } from 'react';
 import { LuMenu, LuMessageCircle } from 'react-icons/lu';
 
@@ -6,7 +7,10 @@ import { TombolTema } from '@/components/TombolTema';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { useHubungiAdmin } from '@/hooks/useHubungiAdmin';
+import { teksAuth } from '@/lang/auth';
 import { teks } from '@/lang/id';
+import { rute } from '@/lib/rute';
+import type { PropsBersama } from '@/types';
 
 const tautan = [
     { href: '#manfaat', label: teks.nav.manfaat },
@@ -16,6 +20,8 @@ const tautan = [
 export function HeaderPublik() {
     const [menuTerbuka, setMenuTerbuka] = useState(false);
     const hubungiAdmin = useHubungiAdmin();
+    const { auth } = usePage<PropsBersama>().props;
+    const tujuanAkun = auth.pengguna?.peran === 'admin' ? rute.admin.dasbor : rute.akun;
 
     return (
         <header className="sticky top-0 z-40 border-b border-garis bg-latar/90 backdrop-blur">
@@ -32,6 +38,9 @@ export function HeaderPublik() {
 
                 <div className="flex items-center gap-1.5">
                     <TombolTema />
+                    <Button asChild variant="outline" className="hidden sm:inline-flex">
+                        <Link href={auth.pengguna ? tujuanAkun : rute.masuk}>{auth.pengguna ? teksAuth.nav.bukaAkun : teksAuth.nav.masuk}</Link>
+                    </Button>
                     <Button onClick={hubungiAdmin} className="hidden sm:inline-flex">
                         <LuMessageCircle aria-hidden className="h-4 w-4" />
                         {teks.hero.ctaWhatsapp}
@@ -58,12 +67,14 @@ export function HeaderPublik() {
                                     </a>
                                 ))}
                             </nav>
+                            <Button asChild variant="outline" className="mt-2">
+                                <Link href={auth.pengguna ? tujuanAkun : rute.masuk}>{auth.pengguna ? teksAuth.nav.bukaAkun : teksAuth.nav.masuk}</Link>
+                            </Button>
                             <Button
                                 onClick={() => {
                                     setMenuTerbuka(false);
                                     hubungiAdmin();
                                 }}
-                                className="mt-2"
                             >
                                 <LuMessageCircle aria-hidden className="h-4 w-4" />
                                 {teks.hero.ctaWhatsapp}

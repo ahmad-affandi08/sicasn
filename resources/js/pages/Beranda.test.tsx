@@ -6,7 +6,12 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { DialogProvider } from '@/components/dialog/DialogProvider';
 
 const halaman = vi.hoisted(() => ({
-    props: { whatsappUrl: null as string | null, dialog: null, aplikasi: { nama: 'SICASN' } },
+    props: {
+        whatsappUrl: null as string | null,
+        dialog: null,
+        aplikasi: { nama: 'SICASN' },
+        auth: { pengguna: null as { nama: string; email: string; peran: string; wajibGantiPassword: boolean } | null },
+    },
 }));
 
 vi.mock('@inertiajs/react', () => ({
@@ -21,16 +26,17 @@ vi.mock('@inertiajs/react', () => ({
 
 import Beranda from './Beranda';
 
-function tampilkan() {
+function tampilkan(pembayaran: Parameters<typeof Beranda>[0]['pembayaran'] = null) {
     return render(
         <DialogProvider>
-            <Beranda />
+            <Beranda pembayaran={pembayaran} />
         </DialogProvider>,
     );
 }
 
 afterEach(() => {
     halaman.props.whatsappUrl = null;
+    halaman.props.auth.pengguna = null;
     vi.restoreAllMocks();
 });
 
@@ -62,5 +68,34 @@ describe('Beranda', () => {
 
         expect(buka).toHaveBeenCalledWith('https://wa.me/6281234567890', '_blank', 'noopener,noreferrer');
         expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument();
+    });
+
+    it('menampilkan tombol Masuk untuk tamu dan Buka akun untuk pengguna yang sudah masuk', () => {
+        tampilkan();
+        expect(screen.getAllByRole('link', { name: 'Masuk' })[0]).toHaveAttribute('href', '/masuk');
+
+        halaman.props.auth.pengguna = { nama: 'Siti', email: 's@contoh.id', peran: 'member', wajibGantiPassword: false };
+        tampilkan();
+        expect(screen.getAllByRole('link', { name: 'Buka akun' })[0]).toHaveAttribute('href', '/akun');
+    });
+
+    it('mengarahkan admin ke dasbor admin', () => {
+        halaman.props.auth.pengguna = { nama: 'Admin', email: 'a@contoh.id', peran: 'admin', wajibGantiPassword: false };
+        tampilkan();
+
+        expect(screen.getAllByRole('link', { name: 'Buka akun' })[0]).toHaveAttribute('href', '/admin');
+    });
+
+    it('menampilkan info paket hanya bila admin sudah mengisinya', () => {
+        tampilkan();
+        expect(screen.queryByText('Info paket')).not.toBeInTheDocument();
+    });
+
+    it('menampilkan harga, catatan, dan rekening bila tersedia', () => {
+        tampilkan({ hargaTeks: 'Rp 99.000 / 3 bulan', catatan: 'Aktif setelah transfer.', rekening: [{ bank: 'BCA', nomor: '1234567890', atasNama: 'PT Contoh' }] });
+
+        expect(screen.getByText('Rp 99.000 / 3 bulan')).toBeInTheDocument();
+        expect(screen.getByText('1234567890')).toBeInTheDocument();
+        expect(screen.getByText('a.n. PT Contoh')).toBeInTheDocument();
     });
 });

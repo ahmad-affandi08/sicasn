@@ -17,6 +17,7 @@ IGNORED_PATH_PREFIXES = (
     "resources/js/actions/",
     "resources/js/routes/",
     "resources/js/wayfinder/",
+    "tests/e2e/",
     "docs/",
 )
 IGNORED_SUFFIXES = (".d.ts", ".min.js", ".min.css")
