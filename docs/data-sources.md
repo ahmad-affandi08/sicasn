@@ -92,5 +92,6 @@ Catatan penting untuk agent:
 
 ## 4. Yang belum bisa ditentukan sekarang
 
+- Fokus produk saat ini **CPNS saja**. Seluruh baris API saat riset adalah PPPK, sehingga katalog formasi CPNS kosong sampai BKN menayangkan event CPNS. Sistem tetap mencatat event PPPK sebagai "terdeteksi, diabaikan".
 - Bentuk data formasi **CPNS reguler** (nilai `jenis_pengadaan`, kelengkapan `nama_pendidikan`, kode jabatan) karena belum dipublikasikan di API. Parser harus toleran dan diuji ulang begitu event CPNS muncul.
 - Apakah BKN menambahkan jumlah pelamar ke API pada seleksi tahun ini. Bila ada, itu menjadi sumber tingkat resmi baru, dan adapter harus memetakannya.

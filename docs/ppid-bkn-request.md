@@ -39,8 +39,8 @@ Berdasarkan Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi
 Publik, saya mengajukan permohonan informasi publik berikut:
 
 1. Rincian informasi yang dibutuhkan
-   Data agregat (bukan data pribadi pelamar) seleksi CPNS dan PPPK Tahun 2024
-   per formasi, berisi:
+   Data agregat (bukan data pribadi pelamar) seleksi CPNS Tahun 2024
+   (serta PPPK Tahun 2024 apabila tersedia) per formasi, berisi:
    a. Tahun dan jenis pengadaan (CPNS / PPPK)
    b. Nama instansi
    c. Kode dan nama jabatan
@@ -78,7 +78,7 @@ Hormat saya,
 
 ## 2. Versi singkat (untuk kolom formulir elektronik)
 
-> Mohon data agregat seleksi CPNS dan PPPK 2024 per formasi (instansi, kode/nama jabatan, lokasi, jumlah formasi, jumlah pelamar mendaftar/submit, jumlah memenuhi syarat administrasi, tanggal data) dalam format CSV/Excel, tanpa data pribadi pelamar. Tujuan: layanan informasi bagi calon pelamar ASN dengan mencantumkan BKN sebagai sumber.
+> Mohon data agregat seleksi CPNS 2024 (PPPK 2024 bila tersedia) per formasi (instansi, kode/nama jabatan, lokasi, jumlah formasi, jumlah pelamar mendaftar/submit, jumlah memenuhi syarat administrasi, tanggal data) dalam format CSV/Excel, tanpa data pribadi pelamar. Tujuan: layanan informasi bagi calon pelamar ASN dengan mencantumkan BKN sebagai sumber.
 
 ## 3. Format impor yang disiapkan SICASN
 
