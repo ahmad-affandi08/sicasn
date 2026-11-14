@@ -1,0 +1,75 @@
+{
+  "status": 200,
+  "error": false,
+  "message": "success",
+  "data": [
+    {
+      "id": "64f5bb1d-c159-11f1-bd99-005056b4a4bf",
+      "event_id": "01a10b29-e7be-70f1-bf52-9abbb8d40000",
+      "nama_event": "Seleksi CASN Guru Agama Sekolah Rakyat 2026",
+      "rekrutmen_id": "01a10b2b-fb2d-70d7-ad72-b1736a4b86dd",
+      "instansi": "Kementerian Sosial",
+      "jenis_pengadaan": "PPPK Guru",
+      "jenis_formasi": "UMUM",
+      "periode": 1,
+      "jabatan_kode": "JF0000418-79",
+      "nama_jabatan": "Guru Ahli Pertama - GURU AGAMA BUDHA DAN BUDI PEKERTI",
+      "group_pendidikan": null,
+      "nama_pendidikan": null,
+      "lokasi_formasi": "Kab. Temanggung",
+      "is_disabilitas": null,
+      "jumlah": 1,
+      "usia_min": 20,
+      "usia_max": 50,
+      "jobdesc": null,
+      "penghasilan_min": null,
+      "penghasilan_max": null,
+      "persyaratan": [
+        {
+          "id": "06a7aafc-c159-11f1-bd99-005056b4a4bf",
+          "nama": "(1) Khusus bagi pelamar yang tidak aktif mengajar sebagai Guru Pendidikan Agama di Sekolah Rakyat wajib mengunggah Surat Keterangan Pengalaman Mengajar minimal 2 (dua) tahun secara kumulatif yang ditandatangani oleh Kepala Sekolah dan/atau Ketua Yayasan dan Surat Izin Mengikuti Seleksi Pegawai Pemerintah dengan Perjanjian Kerja Jabatan Fungsional Guru Pendidikan Agama dari Kepala Sekolah/Ketua Yayasan/Kepala Dinas Pendidikan/Kepala Kantor Wilayah, dibuat menjadi 1 (satu) dokumen digital (file) scan berwarna; atau (2) Khusus bagi Pelamar yang masih aktif mengajar sebagai Guru Pendidikan Agama di Sekolah Rakyat wajib mengunggah Surat Keterangan Aktif Mengajar sebagai Guru Pendidikan Agama di Sekolah Rakyat minimal 1 (satu) tahun yang ditandatangani oleh Kepala Sekolah Rakyat dan Surat Penugasan dari Kementerian Agama, dibuat menjadi 1 (satu) dokumen digital (file) scan berwarna.",
+          "mandatory": 1
+        },
+        {
+          "id": "06a7aacc-c159-11f1-bd99-005056b4a4bf",
+          "nama": "Ijazah asli (bukan legalisir) sesuai dengan kualifikasi pendidikan dan persyaratan pada formasi jabatan yang dilamar. Bagi lulusan perguruan tinggi luar negeri wajib melampirkan ijazah yang telah disetarakan oleh Kementerian yang membidangi Pendidikan Tinggi atau yang membidangi Pendidikan Tinggi Agama (Scan berwarna)",
+          "mandatory": 1
+        }
+      ]
+    },
+    {
+      "id": "7b4fc895-55c2-11f1-b523-005056b4c75c",
+      "event_id": "2a088b36-5cfe-40b5-ba85-331076b90411",
+      "nama_event": "Seleksi CASN Sekolah Rakyat 2026",
+      "rekrutmen_id": "e57274a4-626a-11f1-b523-005056b4c75c",
+      "instansi": "Kementerian Sosial",
+      "jenis_pengadaan": "PPPK Teknis",
+      "jenis_formasi": "UMUM",
+      "periode": 1,
+      "jabatan_kode": "JP4291224-1",
+      "nama_jabatan": "PENATA LAYANAN OPERASIONAL (Wali Asuh)",
+      "group_pendidikan": "Diploma IV / S-1/Sarjana",
+      "nama_pendidikan": "D-IV PSIKOLOGI / D-IV BIMBINGAN KONSELING / D-IV PENDIDIKAN LUAR BIASA / D-IV PEKERJAAN SOSIAL / D-IV KESEJAHTERAAN SOSIAL / S-1 BIMBINGAN KONSELING / S-1 KESEJAHTERAAN SOSIAL / S-1 PENDIDIKAN LUAR SEKOLAH / S-1 PENDIDIKAN LUAR BIASA / S-1 PSIKOLOGI",
+      "lokasi_formasi": "Pusat Pendidikan, Pelatihan dan Pengembangan Profesi Kesejahteraan Sosial | Wilayah I",
+      "is_disabilitas": null,
+      "jumlah": 654,
+      "usia_min": 20,
+      "usia_max": 45,
+      "jobdesc": null,
+      "penghasilan_min": null,
+      "penghasilan_max": null,
+      "persyaratan": [
+        {
+          "id": "0f9c83e2-58ac-11f1-b523-005056b4c75c",
+          "nama": "Ijazah asli (bukan legalisir) sesuai dengan kualifikasi pendidikan dan persyaratan pada formasi jabatan yang dilamar. Bagi lulusan perguruan tinggi luar negeri wajib melampirkan ijazah yang telah disetarakan oleh kementerian yang menyelenggarakan urusan pemerintahan di bidang pendidikan (Scan berwarna)",
+          "mandatory": 1
+        },
+        {
+          "id": "0f9aedec-58ac-11f1-b523-005056b4c75c",
+          "nama": "Pasfoto formal berwarna dan terbaru paling lama 6 (enam) bulan terakhir ukuran 4 x 6 dengan ketentuan berlatar belakang merah, berpakaian rapi menggunakan kemeja, wajah terlihat jelas, menghadap ke depan, seorang diri, dan bukan swafoto",
+          "mandatory": 1
+        }
+      ]
+    }
+  ]
+}
