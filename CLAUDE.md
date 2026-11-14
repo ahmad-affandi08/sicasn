@@ -483,7 +483,7 @@ composer check
 npm run check
 ```
 
-- `composer check`: Pint (cek), Larastan, Pest.
+- `composer check`: Pint (cek) dan Pest. **Larastan belum terpasang**: di sandbox Claude paket `phpstan/phpstan` tidak bisa diunduh (hanya tersedia sebagai dist dari GitHub API yang diblokir). Pasang di mesin pemilik dengan `composer require --dev larastan/larastan`, tambahkan konfigurasi `phpstan.neon` (level tertinggi yang realistis), lalu tambahkan `vendor/bin/phpstan analyse` ke skrip `check`.
 - `npm run check`: `tsc --noEmit`, ESLint, Vitest.
 - Aktifkan hook sekali: `git config core.hooksPath .githooks`. Hook `pre-commit` menjalankan `python3 CekKonvensi.py --staged` dan menggagalkan commit bila ada pelanggaran.
 - **Dilarang** menambahkan `.github/workflows` atau konfigurasi CI lain (diperiksa).
@@ -534,6 +534,8 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 - Terapkan konvensi pada scaffold: jalankan `python3 CekKonvensi.py --bersihkan`, ganti lucide/sonner/font bawaan (Roboto lokal, react-icons, AlertDialog), hapus `.github`, rapikan `config/*` agar hanya `APP_KEY` dan `DB_*` dari env, driver database untuk session/queue/cache, aktifkan hook.
 - Dasar desain: token CSS, Roboto, tata letak responsif, `DialogProvider`, beberapa ilustrasi awal.
 - ✅ Semua pemeriksaan hijau; beranda tampil benar di 360/768/1280 px.
+- **Status: selesai (14 Nov 2026)**, dengan satu pengecualian: Larastan (lihat §16). Terverifikasi: Pest 15 tes (termasuk arch), Vitest 8 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau; tangkapan layar 390/820/1366 px terang dan gelap tanpa scroll horizontal, font Roboto aktif, dialog modal tepat di tengah.
+- Catatan sandbox Claude (bukan masalah proyek): `composer install` perlu `--prefer-source` karena unduhan dist GitHub diblokir; registry shadcn tidak terjangkau sehingga `components/ui` ditulis manual mengikuti pola shadcn dengan paket Radix. Di mesin biasa, `composer install` dan `npx shadcn@latest add ...` bekerja normal.
 
 **Fase 1, Identity dan Pengaturan**
 - Login, peran, policy; admin Pengguna (buat, kirim ulang, reset, nonaktifkan/aktifkan, audit); **pengaturan Email multi-penyedia (termasuk Hostinger) + email uji + failover**; pengaturan WhatsApp, rekening, harga; email kredensial otomatis via antrean; ganti password wajib; satu-sesi; beranda dan Cara Akses dengan tombol WA dinamis.

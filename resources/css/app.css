@@ -1,0 +1,162 @@
+@import 'tailwindcss';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
+
+@source '../views';
+@source '../js';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --latar: #f6faf9;
+    --kartu: #ffffff;
+    --teks: #10201d;
+    --teks-redup: #566763;
+    --garis: #d8e4e1;
+    --primer: #0f766e;
+    --primer-teks: #ffffff;
+    --primer-lembut: #d6f1ec;
+    --sukses: #15803d;
+    --sukses-lembut: #dcfce7;
+    --peringatan: #b45309;
+    --peringatan-lembut: #fef3c7;
+    --bahaya: #b91c1c;
+    --bahaya-lembut: #fee2e2;
+    --info: #1d4ed8;
+    --info-lembut: #dbeafe;
+    --ilustrasi-primer: #0f766e;
+    --ilustrasi-primer-lembut: #cdeee8;
+    --ilustrasi-aksen: #f59e0b;
+    --ilustrasi-kartu: #ffffff;
+    --ilustrasi-garis: #c9dad6;
+    --ilustrasi-teks: #10201d;
+    --ilustrasi-glif: #ffffff;
+    --radius: 0.875rem;
+}
+
+.dark {
+    --latar: #0b1513;
+    --kartu: #12211e;
+    --teks: #e8f3f0;
+    --teks-redup: #9db3ae;
+    --garis: #243a35;
+    --primer: #2dd4bf;
+    --primer-teks: #04211d;
+    --primer-lembut: #123a34;
+    --sukses: #4ade80;
+    --sukses-lembut: #10321e;
+    --peringatan: #fbbf24;
+    --peringatan-lembut: #3b2a0a;
+    --bahaya: #f87171;
+    --bahaya-lembut: #3d1414;
+    --info: #60a5fa;
+    --info-lembut: #11264a;
+    --ilustrasi-primer: #2dd4bf;
+    --ilustrasi-primer-lembut: #17413a;
+    --ilustrasi-aksen: #fbbf24;
+    --ilustrasi-kartu: #16302b;
+    --ilustrasi-garis: #2c4b44;
+    --ilustrasi-teks: #e8f3f0;
+    --ilustrasi-glif: #0b1513;
+}
+
+@theme inline {
+    --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+    --color-latar: var(--latar);
+    --color-kartu: var(--kartu);
+    --color-teks: var(--teks);
+    --color-redup: var(--teks-redup);
+    --color-garis: var(--garis);
+    --color-primer: var(--primer);
+    --color-primer-teks: var(--primer-teks);
+    --color-primer-lembut: var(--primer-lembut);
+    --color-sukses: var(--sukses);
+    --color-sukses-lembut: var(--sukses-lembut);
+    --color-peringatan: var(--peringatan);
+    --color-peringatan-lembut: var(--peringatan-lembut);
+    --color-bahaya: var(--bahaya);
+    --color-bahaya-lembut: var(--bahaya-lembut);
+    --color-info: var(--info);
+    --color-info-lembut: var(--info-lembut);
+    --radius-kartu: var(--radius);
+}
+
+@layer base {
+    html {
+        font-family: var(--font-sans);
+        background-color: var(--latar);
+        color: var(--teks);
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        min-height: 100dvh;
+        background-color: var(--latar);
+        color: var(--teks);
+        font-size: 1rem;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--primer);
+        outline-offset: 2px;
+    }
+}
+
+@keyframes dialog-masuk {
+    from {
+        opacity: 0;
+        scale: 0.94;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes overlay-masuk {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes geser-masuk {
+    from {
+        translate: 100% 0;
+    }
+    to {
+        translate: 0 0;
+    }
+}
+
+.dialog-konten[data-state='open'] {
+    animation: dialog-masuk 170ms ease-out;
+}
+
+.dialog-overlay[data-state='open'] {
+    animation: overlay-masuk 170ms ease-out;
+}
+
+.sheet-konten[data-state='open'] {
+    animation: geser-masuk 200ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
