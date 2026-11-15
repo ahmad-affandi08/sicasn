@@ -17,5 +17,6 @@ final readonly class HasilPeluang
         public array $nasional,
         public AmbangPersaingan $ambang,
         public int $totalInstansi,
+        public array $formasiAktif = [],
     ) {}
 }

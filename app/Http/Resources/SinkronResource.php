@@ -17,6 +17,7 @@ final class SinkronResource
         return [
             'sedangBerjalan' => $status->sedangBerjalan,
             'formasiAktif' => $status->formasiAktif,
+            'lokasiTidakTerpetakan' => $status->lokasiTidakTerpetakan,
             'jenisAktif' => $status->jenisAktif,
             'terakhirBerhasil' => $status->terakhirBerhasil === null ? null : self::batch($status->terakhirBerhasil),
             'riwayat' => array_map(self::batch(...), $status->riwayat),

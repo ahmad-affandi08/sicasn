@@ -14,7 +14,7 @@ interface StatistikRepository
 
     public function hapusBatch(int $batchId): int;
 
-    public function snapshot(int $tahun, JenisPengadaan $jenis, Cakupan $cakupan): array;
+    public function snapshot(int $tahun, JenisPengadaan $jenis, Cakupan $cakupan, ?int $instansiId = null): array;
 
     public function jumlahBaris(): int;
 }

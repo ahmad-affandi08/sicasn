@@ -11,6 +11,7 @@ use Src\Formasi\Application\HasilSimpanFormasi;
 use Src\Formasi\Application\KatalogFormasi;
 use Src\Formasi\Domain\JenisPengadaan;
 use Src\Formasi\Domain\NamaNormal;
+use Src\Formasi\Domain\NamaWilayah;
 use Src\Formasi\Domain\TipeInstansi;
 
 final class EloquentKatalogFormasi implements KatalogFormasi
@@ -63,7 +64,7 @@ final class EloquentKatalogFormasi implements KatalogFormasi
     {
         $this->siapkanInstansi($formasi, $waktu);
         $this->siapkanJabatan($formasi, $waktu);
-        $this->siapkanWilayah($formasi, $waktu);
+        $this->siapkanWilayah();
         $this->siapkanKualifikasi($formasi, $waktu);
         $this->siapkanPersyaratan($formasi, $waktu);
 
@@ -101,10 +102,36 @@ final class EloquentKatalogFormasi implements KatalogFormasi
         return new HasilSimpanFormasi(count($baru), count($diubah), count($takBerubah));
     }
 
+    public function hitungLokasiTidakTerpetakan(array $jenisPengadaan): array
+    {
+        $dasar = fn () => DB::table('formasis')->where('status', 'aktif')->whereIn('jenis_pengadaan', $this->nilaiJenis($jenisPengadaan));
+
+        return [
+            'geografis' => $dasar()->whereNull('wilayah_id')->where('tipe_lokasi', '!=', 'satuan_kerja')->count(),
+            'satuanKerja' => $dasar()->where('tipe_lokasi', 'satuan_kerja')->count(),
+        ];
+    }
+
+    public function hitungAktifPerInstansi(array $jenisPengadaan, array $instansiIds): array
+    {
+        if ($instansiIds === []) {
+            return [];
+        }
+
+        return DB::table('formasis')
+            ->where('status', 'aktif')
+            ->whereIn('jenis_pengadaan', $this->nilaiJenis($jenisPengadaan))
+            ->whereIn('instansi_id', $instansiIds)
+            ->groupBy('instansi_id')
+            ->pluck(DB::raw('count(*)'), 'instansi_id')
+            ->map(fn ($jumlah) => (int) $jumlah)
+            ->all();
+    }
+
     private function baris(FormasiBaru $f, string $waktu, bool $baru): array
     {
         $lokasi = $f->lokasi;
-        $wilayahId = $lokasi->terpetakanKeWilayah() ? ($this->wilayah[$lokasi->tipe->value.'|'.NamaNormal::dari($lokasi->nama)] ?? null) : null;
+        $wilayah = $lokasi->terpetakanKeWilayah() ? ($this->wilayah[$lokasi->tipe->value.'|'.NamaWilayah::kunci($lokasi->nama)] ?? null) : null;
         $setId = $f->teksKualifikasi === null ? null : ($this->kualifikasiSet[sha1($f->teksKualifikasi)] ?? null);
 
         $data = [
@@ -118,7 +145,8 @@ final class EloquentKatalogFormasi implements KatalogFormasi
             'periode' => min(255, $f->periode),
             'lokasi_teks' => mb_substr($lokasi->teksAsli, 0, 255),
             'tipe_lokasi' => $lokasi->tipe->value,
-            'wilayah_id' => $wilayahId,
+            'wilayah_id' => $wilayah?->id,
+            'provinsi_id' => $wilayah?->provinsi_id,
             'kuota' => $f->kuota,
             'usia_min' => $f->usiaMin,
             'usia_max' => $f->usiaMax,
@@ -230,40 +258,14 @@ final class EloquentKatalogFormasi implements KatalogFormasi
         }
     }
 
-    private function siapkanWilayah(array $formasi, string $waktu): void
+    private function siapkanWilayah(): void
     {
-        $butuh = [];
-
-        foreach ($formasi as $f) {
-            if ($f->lokasi->terpetakanKeWilayah()) {
-                $kunci = $f->lokasi->tipe->value.'|'.NamaNormal::dari($f->lokasi->nama);
-
-                if (! isset($this->wilayah[$kunci])) {
-                    $butuh[$kunci] = [$f->lokasi->tipe->value, $f->lokasi->nama];
-                }
-            }
-        }
-
-        if ($butuh === []) {
+        if ($this->wilayah !== []) {
             return;
         }
 
-        $nama = array_unique(array_map(fn (array $b) => NamaNormal::dari($b[1]), $butuh));
-        $baca = fn () => DB::table('wilayahs')->whereIn('nama_normal', $nama)->get(['id', 'tingkat', 'nama_normal']);
-
-        $this->isiCache($this->wilayah, $baca(), fn ($w) => $w->tingkat.'|'.$w->nama_normal);
-
-        $baru = [];
-
-        foreach ($butuh as $kunci => [$tingkat, $namaAsli]) {
-            if (! isset($this->wilayah[$kunci])) {
-                $baru[] = ['nama' => mb_substr($namaAsli, 0, 255), 'nama_normal' => NamaNormal::dari($namaAsli), 'tingkat' => $tingkat, 'created_at' => $waktu, 'updated_at' => $waktu];
-            }
-        }
-
-        if ($baru !== []) {
-            DB::table('wilayahs')->insertOrIgnore($baru);
-            $this->isiCache($this->wilayah, $baca(), fn ($w) => $w->tingkat.'|'.$w->nama_normal);
+        foreach (DB::table('wilayahs')->whereNotNull('kode')->get(['id', 'tingkat', 'nama_normal', 'provinsi_id']) as $baris) {
+            $this->wilayah[$baris->tingkat.'|'.$baris->nama_normal] = $baris;
         }
     }
 

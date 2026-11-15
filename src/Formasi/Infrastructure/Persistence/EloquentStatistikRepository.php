@@ -58,13 +58,14 @@ final class EloquentStatistikRepository implements StatistikRepository
         return DB::table('statistik_pelamars')->where('import_batch_id', $batchId)->delete();
     }
 
-    public function snapshot(int $tahun, JenisPengadaan $jenis, Cakupan $cakupan): array
+    public function snapshot(int $tahun, JenisPengadaan $jenis, Cakupan $cakupan, ?int $instansiId = null): array
     {
         return DB::table('statistik_pelamars as s')
             ->leftJoin('instansis as i', 'i.id', '=', 's.instansi_id')
             ->where('s.tahun', $tahun)
             ->where('s.jenis_pengadaan', $jenis->value)
             ->where('s.cakupan', $cakupan->value)
+            ->when($instansiId !== null, fn ($q) => $q->where('s.instansi_id', $instansiId))
             ->orderByDesc('s.tanggal_snapshot')
             ->orderBy('s.id')
             ->get(['s.*', 'i.nama as nama_instansi', 'i.tipe as tipe_instansi'])

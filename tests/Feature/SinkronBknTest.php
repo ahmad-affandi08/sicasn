@@ -44,7 +44,7 @@ it('memproses baris CPNS ke katalog dengan referensi dan kualifikasi ternormalis
         ->and(jumlah('formasis', ['jenis_pengadaan' => 'cpns']))->toBe(5)
         ->and(jumlah('instansis'))->toBe(4)
         ->and(jumlah('jabatans'))->toBe(4)
-        ->and(jumlah('wilayahs'))->toBe(3)
+        ->and(jumlah('wilayahs'))->toBe(552)
         ->and(jumlah('kualifikasi_sets'))->toBe(3)
         ->and(jumlah('kualifikasi_set_items'))->toBe(6)
         ->and(jumlah('persyaratans'))->toBe(3)
@@ -56,14 +56,14 @@ it('mengklasifikasi instansi dan lokasi dengan benar', function (): void {
     sinkron();
 
     $tipe = DB::table('instansis')->pluck('tipe', 'nama')->all();
-    $wilayah = DB::table('wilayahs')->pluck('tingkat', 'nama')->all();
+    $wilayah = DB::table('formasis')->join('wilayahs', 'wilayahs.id', '=', 'formasis.wilayah_id')->pluck('wilayahs.tingkat', 'wilayahs.nama')->all();
 
     expect($tipe)->toMatchArray([
         'Kementerian Agama' => 'pusat',
         'Pemerintah Kabupaten Sleman' => 'daerah',
         'Pemerintah Provinsi Jawa Tengah' => 'daerah',
         'Badan Pusat Statistik' => 'unknown',
-    ])->and($wilayah)->toBe(['Sleman' => 'kabupaten', 'Malang' => 'kota', 'Jawa Tengah' => 'provinsi']);
+    ])->and($wilayah)->toEqual(['Kabupaten Sleman' => 'kabupaten', 'Kota Malang' => 'kota', 'Jawa Tengah' => 'provinsi']);
 
     $satuanKerja = DB::table('formasis')->where('tipe_lokasi', 'satuan_kerja')->first();
 
@@ -181,14 +181,14 @@ it('memperbarui formasi yang berubah dan mengganti persyaratannya', function ():
 
 it('memproses lebih dari satu potongan data', function (): void {
     $contoh = barisBkn()[0];
-    $banyak = array_map(fn (int $i) => [...$contoh, 'id' => sprintf('00000000-0000-4000-9000-%012d', $i), 'lokasi_formasi' => 'Kab. Contoh '.($i % 7)], range(1, 1250));
+    $banyak = array_map(fn (int $i) => [...$contoh, 'id' => sprintf('00000000-0000-4000-9000-%012d', $i), 'lokasi_formasi' => 'Kab. Sleman'], range(1, 1250));
     fakeBkn($banyak);
 
     $hasil = sinkron();
 
     expect($hasil->ringkasan['baru'])->toBe(1250)
         ->and(jumlah('formasis'))->toBe(1250)
-        ->and(jumlah('wilayahs'))->toBe(7)
+        ->and(jumlah('formasis', ['wilayah_id' => DB::table('wilayahs')->where('nama', 'Kabupaten Sleman')->value('id')]))->toBe(1250)
         ->and(jumlah('instansis'))->toBe(1);
 });
 

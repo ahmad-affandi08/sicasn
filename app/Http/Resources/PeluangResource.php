@@ -15,7 +15,7 @@ final class PeluangResource
     public static function dari(HasilPeluang $hasil): array
     {
         return [
-            'item' => array_map(self::instansi(...), $hasil->item),
+            'item' => array_map(fn (InstansiPeluang $i) => self::instansi($i) + ['formasiAktif' => $hasil->formasiAktif[$i->instansiId] ?? 0], $hasil->item),
             'paginasi' => ['total' => $hasil->total, 'halaman' => $hasil->halaman, 'terakhir' => $hasil->halamanTerakhir, 'perHalaman' => $hasil->perHalaman],
             'totalInstansi' => $hasil->totalInstansi,
             'nasional' => array_map(self::nasional(...), $hasil->nasional),

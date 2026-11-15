@@ -78,6 +78,11 @@ export const teksAdmin = {
         cakupanJudul: 'Cakupan sinkron',
         cakupan: (jenis: string) => `Saat ini hanya seleksi ${jenis} yang masuk katalog. Seleksi lain, misalnya PPPK, tetap tercatat sebagai event tetapi tidak diproses.`,
         formasiAktif: 'Formasi aktif di katalog',
+        lokasi: {
+            judul: 'Lokasi belum terpetakan',
+            geografis: (jumlah: number) => `${jumlah.toLocaleString('id-ID')} formasi memakai nama kabupaten, kota, atau provinsi yang belum dikenali referensi wilayah. Formasi ini tetap tampil tetapi tidak muncul pada filter provinsi. Jalankan perintah sicasn:muat-wilayah atau periksa penulisan nama di data BKN.`,
+            satuanKerja: (jumlah: number) => `${jumlah.toLocaleString('id-ID')} formasi berlokasi di satuan kerja (bukan nama wilayah) sehingga tidak muncul pada filter provinsi.`,
+        },
         statusTerakhir: 'Sinkron berhasil terakhir',
         belumPernah: 'Belum pernah ada sinkron yang berhasil.',
         dilewati: 'Tidak ada perubahan pada data BKN sejak sinkron sebelumnya.',

@@ -1,9 +1,11 @@
+import { Link } from '@inertiajs/react';
 import { LuChevronRight } from 'react-icons/lu';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { teksPeluang } from '@/lang/peluang';
 import { formatHari, formatRasio } from '@/lib/format';
+import { rute } from '@/lib/rute';
 import type { InstansiPeluangItem } from '@/types';
 
 import { catatanFormasi, tampilFormasi, tampilPelamar } from './AngkaInstansi';
@@ -43,6 +45,11 @@ export function KartuInstansi({ instansi, onBuka }: PropsKartuInstansi) {
                     </div>
                 </dl>
                 {catatan && <p className="text-xs text-redup">{catatan}</p>}
+                {instansi.formasiAktif > 0 && (
+                    <Link href={`${rute.formasi}?instansi=${instansi.id}`} className="inline-flex min-h-11 items-center self-start text-sm font-medium text-primer underline">
+                        {teks.formasiAktif(instansi.formasiAktif)}
+                    </Link>
+                )}
                 <div className="flex items-center justify-between gap-2 border-t border-garis pt-3">
                     <p className="text-xs text-redup">
                         {instansi.terbaru.sumberNama} · {formatHari(instansi.terbaru.tanggal)}

@@ -112,6 +112,7 @@ export interface InstansiPeluangItem {
     tingkatLabel: string;
     terbaru: SnapshotItem;
     riwayat: SnapshotItem[];
+    formasiAktif: number;
 }
 
 export interface AngkaNasionalItem {
@@ -149,4 +150,84 @@ export interface PratinjauStatistikItem {
     galat: { baris: number; kolom: string | null; pesan: string; nilai: string | null }[];
     ringkasanSumber: { sumber: string; tanggal: string; status: string; cakupan: string; jumlah: number }[];
     galatBerkas: string | null;
+}
+
+export interface OpsiPilihan {
+    nilai: string;
+    label: string;
+    jumlah: number;
+}
+
+export interface PeluangFormasiItem {
+    tingkat: TingkatPersainganKode;
+    tingkatLabel: string;
+    rasio: number | null;
+    batasBawah: boolean;
+    pelamar: number | null;
+    submit: number | null;
+    formasi: number | null;
+    formasiDariTanggal: string | null;
+    statusAngka: 'sementara' | 'akhir';
+    tingkatData: 'A' | 'B' | 'C';
+    keyakinan: 'resmi' | 'turunan';
+    tanggal: string;
+    sumberNama: string;
+    sumberUrl: string | null;
+    perJabatan: boolean;
+}
+
+export interface FormasiItem {
+    id: number;
+    instansiId: number;
+    instansi: string;
+    jabatan: string;
+    kodeJabatan: string;
+    lokasi: string;
+    lokasiTeks: string;
+    kuota: number;
+    jenisFormasi: string;
+    disabilitas: boolean | null;
+    usiaMin: number | null;
+    usiaMaks: number | null;
+    kualifikasiTersedia: boolean;
+    kualifikasi: string | null;
+    peluang: PeluangFormasiItem | null;
+}
+
+export interface FilterFormasiItem {
+    cari: string;
+    jenjang: string[];
+    jurusan: number[];
+    provinsi: number | null;
+    wilayah: number | null;
+    instansi: number | null;
+    jenis: string;
+    tingkat: string;
+    urut: string;
+    sertakan: boolean;
+}
+
+export interface OpsiFormasiItem {
+    jenjang: string[];
+    provinsi: OpsiPilihan[];
+    kabupatenKota: OpsiPilihan[];
+    jenisFormasi: OpsiPilihan[];
+    instansiTerpilih: OpsiPilihan | null;
+    jurusanTerpilih: OpsiPilihan[];
+}
+
+export interface DetailFormasiItem extends Omit<FormasiItem, 'peluang'> {
+    status: 'aktif' | 'ditarik';
+    namaEvent: string;
+    jenisPengadaan: string;
+    periode: number;
+    tipeLokasi: string;
+    provinsi: string | null;
+    penghasilanMin: number | null;
+    penghasilanMaks: number | null;
+    uraianTugas: string | null;
+    kualifikasiItem: { jenjang: string; jurusan: string | null; semuaJurusan: boolean }[];
+    persyaratan: { uraian: string; wajib: boolean }[];
+    pertamaKaliTerlihat: string;
+    terakhirTerlihat: string;
 }

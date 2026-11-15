@@ -15,4 +15,8 @@ interface KatalogFormasi
     public function tandaiDitarik(DateTimeImmutable $terakhirDilihatSebelum, array $jenisPengadaan): int;
 
     public function hitungAktif(array $jenisPengadaan): int;
+
+    public function hitungLokasiTidakTerpetakan(array $jenisPengadaan): array;
+
+    public function hitungAktifPerInstansi(array $jenisPengadaan, array $instansiIds): array;
 }

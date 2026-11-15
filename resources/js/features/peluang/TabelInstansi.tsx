@@ -1,8 +1,11 @@
+import { Link } from '@inertiajs/react';
+
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { teksPeluang } from '@/lang/peluang';
 import { formatHari, formatRasio } from '@/lib/format';
+import { rute } from '@/lib/rute';
 import type { InstansiPeluangItem } from '@/types';
 
 import { catatanFormasi, tampilFormasi, tampilPelamar } from './AngkaInstansi';
@@ -66,9 +69,16 @@ export function TabelInstansi({ instansi, urut, onUrut, onBuka }: PropsTabelInst
                                 <span className="block">{formatHari(butir.terbaru.tanggal)}</span>
                             </TableCell>
                             <TableCell>
-                                <Button variant="outline" size="sm" onClick={() => onBuka(butir)}>
-                                    {teksPeluang.kartu.rincian}
-                                </Button>
+                                <div className="flex flex-col items-start gap-1.5">
+                                    <Button variant="outline" size="sm" onClick={() => onBuka(butir)}>
+                                        {teksPeluang.kartu.rincian}
+                                    </Button>
+                                    {butir.formasiAktif > 0 && (
+                                        <Link href={`${rute.formasi}?instansi=${butir.id}`} className="text-xs font-medium text-primer underline">
+                                            {teksPeluang.kartu.formasiAktif(butir.formasiAktif)}
+                                        </Link>
+                                    )}
+                                </div>
                             </TableCell>
                         </TableRow>
                     ))}

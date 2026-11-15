@@ -7,6 +7,7 @@ namespace Src\DataImport\Application;
 use Src\DataImport\Domain\Exception\PratinjauTidakDitemukan;
 use Src\DataImport\Domain\StatusBatch;
 use Src\Formasi\Application\ReferensiInstansi;
+use Src\Formasi\Application\SegarkanPeluangInstansi;
 use Src\Formasi\Application\StatistikRepository;
 use Src\Formasi\Domain\Cakupan;
 use Src\Shared\Application\AuditLog;
@@ -21,6 +22,7 @@ final readonly class KonfirmasiImporStatistik
         private ImportBatchRepository $batch,
         private ReferensiInstansi $instansi,
         private StatistikRepository $statistik,
+        private SegarkanPeluangInstansi $peluang,
         private AuditLog $audit,
         private Clock $clock,
     ) {}
@@ -40,6 +42,7 @@ final readonly class KonfirmasiImporStatistik
         }
 
         $hasil = $this->statistik->simpanBanyak($data->baris, $this->instansi->pastikan(array_values($nama)), $batchId, $sekarang);
+        $this->peluang->handle();
         $jumlahGalat = count($data->galat);
 
         $this->batch->catatGalat($batchId, $data->galat);

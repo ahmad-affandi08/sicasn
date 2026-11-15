@@ -6,6 +6,7 @@ namespace Src\DataImport\Application;
 
 use Src\DataImport\Domain\Exception\BatchTidakBisaDibatalkan;
 use Src\DataImport\Domain\StatusBatch;
+use Src\Formasi\Application\SegarkanPeluangInstansi;
 use Src\Formasi\Application\StatistikRepository;
 use Src\Shared\Application\AuditLog;
 use Src\Shared\Application\Clock;
@@ -15,6 +16,7 @@ final readonly class RollbackBatchStatistik
     public function __construct(
         private ImportBatchRepository $batch,
         private StatistikRepository $statistik,
+        private SegarkanPeluangInstansi $peluang,
         private AuditLog $audit,
         private Clock $clock,
     ) {}
@@ -32,6 +34,7 @@ final readonly class RollbackBatchStatistik
         }
 
         $dihapus = $this->statistik->hapusBatch($batchId);
+        $this->peluang->handle();
         $sekarang = $this->clock->sekarang();
 
         $this->batch->selesai($batchId, StatusBatch::Dibatalkan, $ringkas->ringkasan + ['baris_dihapus' => $dihapus, 'dibatalkan_pada' => $sekarang->format('Y-m-d H:i:s')], $ringkas->hashRespons, $sekarang);

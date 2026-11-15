@@ -22,6 +22,7 @@ import type { BatchItem, EventItem } from '@/types';
 interface PropsHalaman {
     sedangBerjalan: boolean;
     formasiAktif: number;
+    lokasiTidakTerpetakan: { geografis: number; satuanKerja: number };
     jenisAktif: string[];
     terakhirBerhasil: BatchItem | null;
     riwayat: BatchItem[];
@@ -30,7 +31,7 @@ interface PropsHalaman {
     frekuensi: { kode: string; label: string }[];
 }
 
-export default function Sinkron({ sedangBerjalan, formasiAktif, jenisAktif, terakhirBerhasil, riwayat, event, pengaturan, frekuensi }: PropsHalaman) {
+export default function Sinkron({ sedangBerjalan, formasiAktif, lokasiTidakTerpetakan, jenisAktif, terakhirBerhasil, riwayat, event, pengaturan, frekuensi }: PropsHalaman) {
     const teks = teksAdmin.sinkron;
     const dialog = useDialog();
     const form = useForm({ url: pengaturan.url, frekuensi: pengaturan.frekuensi });
@@ -65,6 +66,15 @@ export default function Sinkron({ sedangBerjalan, formasiAktif, jenisAktif, tera
             <div className="flex flex-col gap-6">
                 {sedangBerjalan && <Alert variant="info">{teks.berjalan}</Alert>}
                 <Alert variant="info">{teks.cakupan(jenisAktif.join(', '))}</Alert>
+                {lokasiTidakTerpetakan.geografis > 0 && (
+                    <Alert variant="peringatan">
+                        <div>
+                            <p className="font-medium">{teks.lokasi.judul}</p>
+                            <p>{teks.lokasi.geografis(lokasiTidakTerpetakan.geografis)}</p>
+                        </div>
+                    </Alert>
+                )}
+                {lokasiTidakTerpetakan.satuanKerja > 0 && <Alert variant="info">{teks.lokasi.satuanKerja(lokasiTidakTerpetakan.satuanKerja)}</Alert>}
 
                 <div className="grid gap-6 lg:grid-cols-3">
                     <Card className="lg:col-span-2">

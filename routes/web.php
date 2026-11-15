@@ -13,9 +13,11 @@ use App\Http\Controllers\Admin\SinkronController;
 use App\Http\Controllers\Admin\StatistikController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\FormasiController;
 use App\Http\Controllers\GantiPasswordController;
 use App\Http\Controllers\KeluarController;
 use App\Http\Controllers\MasukController;
+use App\Http\Controllers\OpsiFormasiController;
 use App\Http\Controllers\PeluangInstansiController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +37,11 @@ Route::middleware(['auth', 'akun.aktif'])->group(function (): void {
 Route::middleware(['auth', 'akun.aktif', 'password.sudah-diganti', 'satu.sesi'])->group(function (): void {
     Route::get('/akun', AkunController::class)->name('akun');
     Route::get('/peluang-instansi', PeluangInstansiController::class)->name('peluang-instansi');
+    Route::get('/formasi', [FormasiController::class, 'index'])->name('formasi');
+    Route::get('/formasi/opsi/instansi', [OpsiFormasiController::class, 'instansi'])->middleware('throttle:120,1')->name('formasi.opsi.instansi');
+    Route::get('/formasi/opsi/jurusan', [OpsiFormasiController::class, 'jurusan'])->middleware('throttle:120,1')->name('formasi.opsi.jurusan');
+    Route::get('/formasi/opsi/provinsi/{id}/wilayah', [OpsiFormasiController::class, 'kabupatenKota'])->whereNumber('id')->middleware('throttle:120,1')->name('formasi.opsi.wilayah');
+    Route::get('/formasi/{id}', [FormasiController::class, 'tampil'])->whereNumber('id')->name('formasi.tampil');
 
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function (): void {
         Route::get('/', DasborController::class)->name('dasbor');

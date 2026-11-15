@@ -217,7 +217,7 @@ Semua tabel: `id` bigint unsigned, `created_at`, `updated_at`. Foreign key beser
 ### 6.1 Katalog formasi
 
 **`instansis`**: `nama` (unik ternormalisasi), `slug`, `tipe` enum(`pusat`,`daerah`,`unknown`), `provinsi_id` nullable.
-**`wilayahs`**: `kode` nullable, `nama`, `tingkat` enum(`provinsi`,`kabupaten`,`kota`), `provinsi_id` nullable. Sumber referensi dipilih agent (§18 butir 3).
+**`wilayahs`**: `kode` (unik, kode Kemendagri, mis. `34.04`), `nama` (nama lengkap, mis. "Kabupaten Sleman"), `nama_normal` (kunci pencocokan, lihat §10.4), `tingkat` enum(`provinsi`,`kabupaten`,`kota`), `provinsi_id` (provinsi menunjuk dirinya sendiri). Terisi dari `database/seeders/data/wilayah_kemendagri.csv` (38 provinsi, 514 kabupaten/kota; sumber dan lisensi di `docs/data-sources.md` §3). Sinkron **tidak** lagi membuat wilayah dari lokasi teramati.
 **`jabatans`**: `kode` (tidak unik global), `nama`, `nama_normal`.
 **`formasis`**: `external_id` char(36) **unik**, `event_id`, `nama_event`, `rekrutmen_id`, `instansi_id`, `jabatan_id`, `jenis_pengadaan` (`cpns`, `pppk_guru`, `pppk_teknis`, `pppk_nakes`, `lainnya`), `jenis_formasi`, `periode`, `lokasi_teks`, `tipe_lokasi` (`provinsi`, `kabupaten`, `kota`, `satuan_kerja`), `wilayah_id` nullable, `provinsi_id` nullable, `kuota`, `usia_min`, `usia_max`, `penghasilan_min/max` nullable, `jobdesc` nullable, `is_disabilitas` nullable, `kualifikasi_set_id` nullable, `kualifikasi_tersedia` boolean, `hash_baris` (sha1 isi baris, untuk mendeteksi perubahan), `first_seen_at`, `last_seen_at`, `status` (`aktif`, `ditarik`). Indeks gabungan untuk filter. **Payload mentah tidak disimpan** (hemat ruang pada ratusan ribu baris); `hash_baris` cukup untuk idempotensi.
 **`kualifikasi_sets`** (`hash` unik, `teks`) dan **`kualifikasi_set_items`** (`kualifikasi_set_id`, `jenjang`, `jurusan_id` nullable, `semua_jurusan`): satu set per teks `nama_pendidikan` yang unik, dipakai bersama oleh banyak formasi. Pada data nyata 14 butir kualifikasi hanya menghasilkan 4 set. Filter jenjang/jurusan memakai `EXISTS` pada set, bukan per formasi.
@@ -358,7 +358,11 @@ Aturan:
 
 ### 10.4 Normalisasi lokasi
 
-Awalan `Kab.`/`Kota`/`Prov.` dicocokkan ke `wilayahs`. Nama satuan kerja → `wilayah_id = null`, `lokasi_teks` ditampilkan apa adanya. Formasi yang tidak terpetakan tetap tampil tetapi tidak muncul pada filter provinsi; jumlahnya ditampilkan di panel admin.
+Awalan `Kab.`/`Kota`/`Prov.` dicocokkan ke `wilayahs` lewat **kunci**: huruf kecil, tanpa spasi dan tanda baca, kata "dan" dibuang, awalan "Administrasi" dibuang, "Daerah Khusus Ibukota" menjadi "dki" dan "Daerah Istimewa" menjadi "di" (`NamaWilayah`). Contoh: BKN menulis "Kab. Tojo Una-Una", referensi menulis "Kabupaten Tojo Una Una"; keduanya berkunci `tojounauna`. Pada API BKN nyata **153 dari 153** lokasi geografis cocok (diuji dengan `tests/Fixtures/lokasi-bkn-nyata.txt`). Hasil pencocokan mengisi `formasis.wilayah_id` dan `provinsi_id`.
+
+- Nama satuan kerja → tanpa wilayah, `lokasi_teks` ditampilkan apa adanya.
+- Nama geografis yang tidak dikenal referensi **tidak membuat wilayah baru**; formasinya tetap tampil tetapi tidak muncul pada filter provinsi. Jumlahnya tampil di halaman admin Sinkron BKN ("Lokasi belum terpetakan").
+- Sinkron memanggil `PastikanReferensiWilayah` (memuat CSV bila tabel kosong), jadi instalasi baru tidak perlu langkah tambahan. `php artisan sicasn:muat-wilayah` memuat ulang referensi dan memetakan ulang formasi lama; aman diulang.
 
 ---
 
@@ -555,7 +559,7 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 - ✅ Dari fixture dan API nyata: baris PPPK diabaikan dan terhitung, nol formasi CPNS ditangani mulus, event baru memicu notifikasi, idempoten, aman terhadap respons rusak.
 - **Status: selesai (15 Nov 2026).** Terverifikasi: Pest 219 tes (termasuk 34 tes pipeline sinkron dan 90 tes unit), Vitest 33 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau. **Terhadap API BKN sungguhan**: 2.012 baris PPPK diabaikan dengan kebijakan CPNS, dua event tercatat sebagai diabaikan, nol formasi CPNS ditangani mulus. **Uji beban pada data nyata yang sama dengan PPPK diaktifkan sementara**: 2.012 formasi diproses dalam ±10 dtk dengan memori puncak 36 MB, putaran ulang idempoten (0 baru, 2.012 tak berubah). Uji menyeluruh di browser (`tests/e2e/fase2.cjs`): 20 pemeriksaan lulus, termasuk "Sinkron sekarang" lewat antrean dan modal event CPNS baru yang hanya muncul sekali.
 - **Fixture CPNS bersifat sintetis** (`tests/Fixtures/bkn-cpns-sintetis.json`): BKN belum pernah menayangkan data CPNS, jadi bentuk baris CPNS meniru skema nyata dengan `jenis_pengadaan: "CPNS"`. **Parser CPNS harus diuji ulang begitu data nyata muncul.** Fixture ini hanya untuk tes dan tidak boleh masuk seeding production.
-- **Belum dikerjakan (diteruskan ke Fase 4)**: pemetaan kabupaten/kota ke **provinsi**. Tabel `wilayahs` terisi dari lokasi yang teramati (159 wilayah pada data nyata) dengan `provinsi_id` kosong. Filter provinsi memerlukan dataset referensi wilayah berlisensi jelas (lihat §19 butir 1); jangan menebak dari ingatan. Notifikasi event lewat email ke admin (opsional) juga belum dibuat; notifikasi modal di dasbor sudah ada.
+- Pemetaan kabupaten/kota ke provinsi dikerjakan di Fase 4 (§10.4). Notifikasi event lewat email ke admin (opsional) belum dibuat; notifikasi modal di dasbor sudah ada.
 - Catatan klasifikasi: `tipe` instansi diisi secara konservatif dari awalan nama (`Kementerian`, `Pemerintah Kabupaten`, dst.); nama yang tidak jelas (mis. "Badan Pusat Statistik") tetap `unknown` dan jangan dipaksa menjadi pusat atau daerah.
 - Catatan tes: `Http::fake` yang dipanggil dua kali **tidak** menggantikan yang pertama dan isi respons palsu hanya terbaca sekali; helper `fakeBkn()` membuat `Http` baru tiap panggilan.
 
@@ -570,6 +574,12 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 **Fase 4, Eksplorasi Formasi CPNS**
 - Query + read model, `/formasi` dan detail, semua filter, paginasi server, UI tiga ukuran layar, aturan kualifikasi kosong, keadaan kosong CPNS.
 - ✅ Filter gabungan benar; URL bisa dibagikan; p95 query < 300 ms pada 100 ribu baris uji. Diuji dengan data uji lokal yang **tidak** ikut seeding production.
+- **Status: selesai (16 Nov 2026).** Terverifikasi: Pest 373 tes, Vitest 114 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau. Uji menyeluruh di browser (`tests/e2e/fase4.cjs`): 38 pemeriksaan lulus, diulang 3 kali tanpa gagal (filter jenjang/jurusan/provinsi/kabupaten/instansi/tingkat/urutan/cari, URL yang bisa dimuat ulang, detail, laci filter di HP, tanpa scroll horizontal pada 4 halaman x 3 ukuran x 2 tema, tanpa galat konsol).
+- **Arsitektur baca (CQRS-lite):** `PencarianFormasi` (antarmuka) dengan `EloquentPencarianFormasi` (SQL). Peluang per instansi dihitung sekali ke read model `peluang_instansis` setiap impor atau rollback statistik (`SegarkanPeluangInstansi`), sehingga pengurutan rasio dan pelamar memakai SQL biasa. Tingkat persaingan **tidak** disimpan; dihitung saat baca dengan ambang admin lewat `NilaiPersaingan` (satu sumber kebenaran), lalu diterjemahkan menjadi daftar `instansi_id` untuk filter.
+- **Aturan penyaringan kualifikasi:** jenjang dan jurusan dicocokkan pada **butir kualifikasi yang sama** (jenjang S1 + jurusan Hukum tidak cocok dengan "D-IV Hukum / S-1 Statistika"); butir "SEMUA JURUSAN" cocok dengan jurusan apa pun; formasi tanpa rincian kualifikasi dikecualikan kecuali opsi "sertakan" menyala (default mati).
+- **Persaingan per formasi** memakai rata-rata instansi (tingkat A) dan selalu diberi label "Rata-rata instansi, bukan per jabatan" beserta sumber, tanggal, dan tingkat data; instansi tanpa statistik tampil "Belum ada data". Pencocokan per jabatan menunggu Fase 5.
+- **Performa (SQLite, 100.000 formasi, `tests/perf/formasi.php`):** p95 terburuk 255 ms (tanpa filter dengan urutan rasio); sebagian besar skenario 7–200 ms. Paginasi dibatasi sampai halaman 100 (2.000 hasil teratas; selebihnya diminta mempersempit filter) karena OFFSET dalam tidak realistis dipakai. **Belum diukur di MySQL**: ulangi `php tests/perf/formasi.php 100000 20` di mesin pemilik dan perhatikan rencana kueri bila ada yang melewati 300 ms. Jalankan `ANALYZE` (otomatis di skrip) agar perencana memakai statistik.
+- Tombol "pantau" pada kartu menunggu Fase 6. Opsi filter tidak di-cache karena kueri diindeks dan murah; tambahkan cache bila pengukuran di MySQL menunjukkan perlu.
 
 **Fase 5, Tingkat B**
 - Parser hasil seleksi administrasi instansi besar, `docs/data-coverage.md`.
@@ -589,7 +599,7 @@ Host yang sudah diizinkan di lingkungan: `sscasn.bkn.go.id`, `api-sscasn.bkn.go.
 
 ## 19. Keputusan yang masih terbuka (tidak menghalangi Fase 0–2; default sudah ditetapkan)
 
-1. **Sumber referensi wilayah**: agent memilih dataset resmi/terbuka berlisensi jelas dan mencatatnya. Default: cari yang mencantumkan kode Kemendagri.
+1. ~~Sumber referensi wilayah~~ **Diputuskan (Fase 4)**: dataset `cahyadsn/wilayah` (lisensi MIT, kode Kemendagri; rincian di `docs/data-sources.md` §3).
 2. **Satu sesi per akun**: default aktif, dapat dimatikan di pengaturan.
 3. **Tampilkan password sementara sekali**: default mati.
 4. **Domain dan hosting**: diputuskan saat Fase 7. Rancangan mendukung hosting biasa dan Docker.

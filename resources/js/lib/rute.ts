@@ -5,6 +5,11 @@ export const rute = {
     akun: '/akun',
     gantiPassword: '/ganti-password',
     peluangInstansi: '/peluang-instansi',
+    formasi: '/formasi',
+    detailFormasi: (id: number) => `/formasi/${id}`,
+    opsiInstansi: '/formasi/opsi/instansi',
+    opsiJurusan: '/formasi/opsi/jurusan',
+    opsiWilayah: (provinsiId: number) => `/formasi/opsi/provinsi/${provinsiId}/wilayah`,
     admin: {
         dasbor: '/admin',
         pengguna: '/admin/pengguna',

@@ -194,3 +194,14 @@ it('hanya mengaktifkan jadwal yang sesuai dengan frekuensi yang dipilih admin', 
 
     expect($lolos('sinkron-harian'))->toBeFalse()->and($lolos('sinkron-enam-jam'))->toBeTrue();
 });
+
+it('menampilkan jumlah formasi dengan lokasi yang belum terpetakan', function (): void {
+    $baris = barisCpns();
+    $baris[0]['lokasi_formasi'] = 'Kab. Atlantis';
+    fakeBkn($baris);
+    sinkronkan();
+
+    $this->actingAs($this->admin)->get('/admin/sinkron')->assertInertia(fn (Assert $h) => $h
+        ->where('lokasiTidakTerpetakan.geografis', 1)
+        ->where('lokasiTidakTerpetakan.satuanKerja', 1));
+});

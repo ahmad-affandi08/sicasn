@@ -16,5 +16,6 @@ final readonly class StatusSinkron
         public PengaturanSinkron $pengaturan,
         public array $jenisAktif,
         public int $formasiAktif,
+        public array $lokasiTidakTerpetakan = ['geografis' => 0, 'satuanKerja' => 0],
     ) {}
 }

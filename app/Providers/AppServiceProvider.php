@@ -19,12 +19,26 @@ use Src\DataImport\Infrastructure\Persistence\EloquentEventTerdeteksiRepository;
 use Src\DataImport\Infrastructure\Persistence\EloquentImportBatchRepository;
 use Src\DataImport\Infrastructure\Queue\AntreanPemicuSinkron;
 use Src\DataImport\Infrastructure\SettingsPengaturanSinkronStore;
+use Src\Formasi\Application\DetailFormasiRepository;
 use Src\Formasi\Application\KatalogFormasi;
+use Src\Formasi\Application\KebijakanFormasiAktif;
+use Src\Formasi\Application\OpsiFormasiRepository;
+use Src\Formasi\Application\PeluangInstansiRepository;
+use Src\Formasi\Application\PencarianFormasi;
 use Src\Formasi\Application\PenyediaAmbangPersaingan;
 use Src\Formasi\Application\ReferensiInstansi;
+use Src\Formasi\Application\ReferensiWilayahRepository;
 use Src\Formasi\Application\StatistikRepository;
+use Src\Formasi\Application\SumberReferensiWilayah;
+use Src\Formasi\Infrastructure\BerkasReferensiWilayah;
+use Src\Formasi\Infrastructure\ConfigKebijakanFormasiAktif;
+use Src\Formasi\Infrastructure\Persistence\EloquentDetailFormasi;
 use Src\Formasi\Infrastructure\Persistence\EloquentKatalogFormasi;
+use Src\Formasi\Infrastructure\Persistence\EloquentOpsiFormasi;
+use Src\Formasi\Infrastructure\Persistence\EloquentPeluangInstansiRepository;
+use Src\Formasi\Infrastructure\Persistence\EloquentPencarianFormasi;
 use Src\Formasi\Infrastructure\Persistence\EloquentReferensiInstansi;
+use Src\Formasi\Infrastructure\Persistence\EloquentReferensiWilayah;
 use Src\Formasi\Infrastructure\Persistence\EloquentStatistikRepository;
 use Src\Identity\Application\Authenticator;
 use Src\Identity\Application\PasswordGenerator;
@@ -84,6 +98,13 @@ final class AppServiceProvider extends ServiceProvider
         PemicuSinkron::class => AntreanPemicuSinkron::class,
         StatistikRepository::class => EloquentStatistikRepository::class,
         ReferensiInstansi::class => EloquentReferensiInstansi::class,
+        PeluangInstansiRepository::class => EloquentPeluangInstansiRepository::class,
+        PencarianFormasi::class => EloquentPencarianFormasi::class,
+        OpsiFormasiRepository::class => EloquentOpsiFormasi::class,
+        DetailFormasiRepository::class => EloquentDetailFormasi::class,
+        KebijakanFormasiAktif::class => ConfigKebijakanFormasiAktif::class,
+        SumberReferensiWilayah::class => BerkasReferensiWilayah::class,
+        ReferensiWilayahRepository::class => EloquentReferensiWilayah::class,
         PenyimpananPratinjau::class => BerkasPenyimpananPratinjau::class,
         PengaturanPersainganStore::class => SettingsPengaturanPersainganStore::class,
         PenyediaAmbangPersaingan::class => SettingsPengaturanPersainganStore::class,

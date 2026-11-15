@@ -9,6 +9,7 @@ use Src\DataImport\Domain\Exception\SumberBknGagal;
 use Src\DataImport\Domain\StatusBatch;
 use Src\Formasi\Application\FormasiBaru;
 use Src\Formasi\Application\KatalogFormasi;
+use Src\Formasi\Application\PastikanReferensiWilayah;
 use Src\Shared\Application\AuditLog;
 use Src\Shared\Application\Clock;
 use Throwable;
@@ -26,6 +27,7 @@ final class SyncFormasiFromBkn
     public function __construct(
         private readonly BknFormasiSource $sumber,
         private readonly KatalogFormasi $katalog,
+        private readonly PastikanReferensiWilayah $wilayah,
         private readonly ImportBatchRepository $batch,
         private readonly EventTerdeteksiRepository $event,
         private readonly PengaturanSinkronStore $pengaturan,
@@ -81,6 +83,7 @@ final class SyncFormasiFromBkn
 
         $aktif = $this->kebijakan->aktif();
         $aktifSebelum = $this->katalog->hitungAktif($aktif);
+        $this->wilayah->handle();
         $this->katalog->mulaiSesi();
 
         $hitung = ['total' => 0, 'aktif' => 0, 'diabaikan' => 0, 'gagal' => 0, 'baru' => 0, 'diubah' => 0, 'tak_berubah' => 0];

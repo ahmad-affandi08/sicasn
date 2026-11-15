@@ -42,6 +42,7 @@ export const teksPeluang = {
         pelamar: 'Pelamar',
         rasio: 'Rasio',
         rincian: 'Lihat rincian',
+        formasiAktif: (jumlah: number) => `Lihat ${jumlah.toLocaleString('id-ID')} formasi aktif`,
         submit: 'submit',
         formasiDari: (tanggal: string) => `Formasi per ${tanggal}`,
         tipe: { pusat: 'Pusat', daerah: 'Daerah', unknown: 'Belum terklasifikasi' },

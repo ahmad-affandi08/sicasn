@@ -26,6 +26,7 @@ export const instansiUji: InstansiPeluangItem = {
     batasBawah: false,
     tingkat: 'ketat',
     tingkatLabel: 'Ketat',
+    formasiAktif: 0,
     terbaru: snapshotUji,
     riwayat: [snapshotUji, { ...snapshotUji, tanggal: '2024-08-29', status: 'sementara', pelamar: null, submit: 183931, sumberNama: 'Media Awal', sumberUrl: null }],
 };

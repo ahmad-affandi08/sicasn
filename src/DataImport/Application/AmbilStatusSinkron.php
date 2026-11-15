@@ -29,6 +29,7 @@ final readonly class AmbilStatusSinkron
             $this->pengaturan->muat(),
             array_map(fn ($jenis) => $jenis->label(), $aktif),
             $this->katalog->hitungAktif($aktif),
+            $this->katalog->hitungLokasiTidakTerpetakan($aktif),
         );
     }
 }

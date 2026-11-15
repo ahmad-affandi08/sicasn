@@ -8,16 +8,22 @@ import { TombolTema } from '@/components/TombolTema';
 import { Button } from '@/components/ui/button';
 import { teksAuth } from '@/lang/auth';
 import { rute } from '@/lib/rute';
+import { cn } from '@/lib/utils';
 import { NavMember } from '@/layouts/NavMember';
 import type { PropsBersama } from '@/types';
 
-export function LayoutMember({ children }: { children: ReactNode }) {
+interface PropsLayoutMember {
+    children: ReactNode;
+    lebar?: boolean;
+}
+
+export function LayoutMember({ children, lebar = false }: PropsLayoutMember) {
     const { auth } = usePage<PropsBersama>().props;
 
     return (
         <div className="flex min-h-dvh flex-col">
             <header className="sticky top-0 z-40 border-b border-garis bg-latar/90 backdrop-blur">
-                <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between gap-3 px-4 sm:px-6">
+                <div className={cn('mx-auto flex h-16 w-full items-center justify-between gap-3 px-4 sm:px-6', lebar ? 'max-w-7xl' : 'max-w-5xl')}>
                     <Logo />
                     <NavMember posisi="atas" />
                     <div className="flex items-center gap-1.5">
@@ -31,7 +37,7 @@ export function LayoutMember({ children }: { children: ReactNode }) {
                     </div>
                 </div>
             </header>
-            <main className="mx-auto w-full max-w-5xl flex-1 px-4 pt-8 pb-24 sm:px-6 sm:pb-12 md:py-12">{children}</main>
+            <main className={cn('mx-auto w-full flex-1 px-4 pt-8 pb-24 sm:px-6 sm:pb-12 md:py-12', lebar ? 'max-w-7xl' : 'max-w-5xl')}>{children}</main>
             <NavMember posisi="bawah" />
             <PenangkapFlash />
         </div>

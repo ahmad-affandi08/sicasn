@@ -1,7 +1,8 @@
 import { Link, usePage } from '@inertiajs/react';
 import type { IconType } from 'react-icons';
-import { LuChartColumn, LuUser } from 'react-icons/lu';
+import { LuBriefcaseBusiness, LuChartColumn, LuUser } from 'react-icons/lu';
 
+import { teksFormasi } from '@/lang/formasi';
 import { teksPeluang } from '@/lang/peluang';
 import { rute } from '@/lib/rute';
 import { cn } from '@/lib/utils';
@@ -13,6 +14,7 @@ interface ItemNav {
 }
 
 const item: ItemNav[] = [
+    { href: rute.formasi, label: teksFormasi.nav, ikon: LuBriefcaseBusiness },
     { href: rute.peluangInstansi, label: teksPeluang.nav.peluang, ikon: LuChartColumn },
     { href: rute.akun, label: teksPeluang.nav.akun, ikon: LuUser },
 ];
@@ -23,7 +25,7 @@ export function NavMember({ posisi }: { posisi: 'atas' | 'bawah' }) {
     return (
         <nav
             aria-label={teksPeluang.nav.utama}
-            className={cn(posisi === 'atas' ? 'hidden items-center gap-1 sm:flex' : 'fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-garis bg-kartu sm:hidden')}
+            className={cn(posisi === 'atas' ? 'hidden items-center gap-1 sm:flex' : 'fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-garis bg-kartu sm:hidden')}
         >
             {item.map((butir) => {
                 const aktif = url.startsWith(butir.href);

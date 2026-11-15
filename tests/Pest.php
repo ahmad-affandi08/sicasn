@@ -138,3 +138,42 @@ function muatStatistik(array $baris): int
 
     return app(KonfirmasiImporStatistik::class)->handle((string) $pratinjau->token, null)->batchId;
 }
+
+function barisFormasi(string $kunci, array $ubah = []): array
+{
+    $dasar = barisBkn()[0];
+
+    return array_merge($dasar, [
+        'id' => sprintf('00000000-0000-4000-8100-%012d', crc32($kunci) % 1000000000000),
+        'jabatan_kode' => 'JF-'.strtoupper(substr(md5($kunci), 0, 6)),
+        'nama_jabatan' => $kunci,
+    ], $ubah);
+}
+
+function siapkanFormasi(): void
+{
+    $baris = [
+        barisFormasi('Penghulu Ahli Pertama', ['instansi' => 'Kementerian Agama', 'nama_pendidikan' => 'S-1 HUKUM / S-1 SYARIAH / D-IV HUKUM', 'lokasi_formasi' => 'Kab. Sleman', 'jumlah' => 3]),
+        barisFormasi('Guru Madya', ['instansi' => 'Kementerian Agama', 'nama_pendidikan' => 'S-1 PENDIDIKAN BAHASA INDONESIA', 'lokasi_formasi' => 'Kota Malang', 'jumlah' => 10]),
+        barisFormasi('Analis Kebijakan', ['instansi' => 'Kementerian Hukum dan HAM', 'nama_pendidikan' => 'D-IV SEMUA JURUSAN / S-1 SEMUA JURUSAN', 'lokasi_formasi' => 'Prov. Jawa Tengah', 'jumlah' => 20, 'jenis_formasi' => 'Disabilitas', 'is_disabilitas' => true]),
+        barisFormasi('Statistisi Ahli Pertama', ['instansi' => 'Badan Pusat Statistik', 'nama_pendidikan' => 'S-1 STATISTIKA', 'lokasi_formasi' => 'Kab. Temanggung', 'jumlah' => 5]),
+        barisFormasi('Pengelola Umum', ['instansi' => 'Kementerian Agama', 'nama_pendidikan' => null, 'lokasi_formasi' => 'Kab. Sleman', 'jumlah' => 2]),
+        barisFormasi('Perawat Terampil', ['instansi' => 'Pemerintah Kabupaten Sleman', 'nama_pendidikan' => 'D-III KEPERAWATAN', 'lokasi_formasi' => 'Kab. Sleman', 'jumlah' => 7]),
+    ];
+
+    fakeBkn($baris);
+    sinkron();
+}
+
+function siapkanStatistikFormasi(): void
+{
+    muatStatistik([
+        ['instansi' => 'Kementerian Agama', 'jumlah_formasi' => '100', 'jumlah_pelamar' => '2500'],
+        ['instansi' => 'Kementerian Hukum dan HAM', 'jumlah_formasi' => '100', 'jumlah_pelamar' => '100'],
+    ]);
+}
+
+function idFormasi(string $jabatan): int
+{
+    return (int) DB::table('formasis')->join('jabatans', 'jabatans.id', '=', 'formasis.jabatan_id')->where('jabatans.nama', $jabatan)->value('formasis.id');
+}

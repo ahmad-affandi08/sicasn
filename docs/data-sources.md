@@ -48,6 +48,7 @@ Field `Formasi`:
 - Usia: (20–40) 1.734, (20–50) 258, (20–45) 20.
 - 29 nilai `jabatan_kode` berbeda.
 - Contoh `nama_pendidikan`: `D-IV PSIKOLOGI / D-IV BIMBINGAN KONSELING / S-1 PSIKOLOGI`, dan `D-IV SEMUA JURUSAN / S-1 SEMUA JURUSAN`.
+- Lokasi: 163 teks lokasi unik pada data 16 Nov 2026; 153 geografis cocok seluruhnya dengan referensi Kemendagri setelah normalisasi (penulisan seperti "Tojo Una-Una", "Padang Sidimpuan", "Palangka Raya", "Prov. DKI Jakarta" berbeda dari nama resmi), 10 adalah nama satuan kerja.
 
 Fixture uji: [`samples/bkn-spf-sample.json`](samples/bkn-spf-sample.json) (2 baris, persyaratan dipotong).
 
@@ -89,7 +90,7 @@ Catatan penting untuk agent:
 - **PDF BKN 2024**: sebagian besar URL lama (`bkn.go.id/unggahan/2024/...`) kini **404**. Satu PDF yang masih ada (siaran pers 23 Apr 2025 soal optimalisasi) tidak memuat angka per instansi. Jangan mengandalkan URL lama; cari lewat halaman rilis BKN yang aktif.
 - **Portal SSCASN lama (2024)**: tidak lagi tersedia; portal baru hanya menampilkan event yang sedang berjalan. Archive.org belum diperiksa. Boleh dicoba agent untuk Fase 4–5 bila hostnya diizinkan.
 - **PPID BKN**: jalur permohonan resmi tersedia (permohonan tertulis langsung atau elektronik). Lihat [`ppid-bkn-request.md`](ppid-bkn-request.md). Alamat/surel PPID resmi harus diverifikasi di situs BKN sebelum dikirim.
-- **Referensi wilayah** (provinsi/kab/kota): belum dipilih. Agent harus memilih dataset resmi/terbuka dengan lisensi jelas dan mencatatnya.
+- **Referensi wilayah** (provinsi/kab/kota): dipilih di Fase 4. Sumber: repositori `cahyadsn/wilayah` (`db/wilayah.sql`), **lisensi MIT** (Copyright (c) 2017-2025 Cahya DSN), memuat kode dan nama wilayah administrasi sesuai Kepmendagri No 300.2.2-2138 Tahun 2025 (berkas diunduh 16 Nov 2026; terakhir diubah oleh sumbernya 13 Feb 2026). Hanya tingkat 1 dan 2 yang diambil (38 provinsi, 416 kabupaten, 98 kota) ke `database/seeders/data/wilayah_kemendagri.csv`; kecamatan dan desa tidak dipakai. Pembaruan wilayah di masa depan: unduh ulang berkas sumber, regenerasi CSV dengan skrip yang sama, jalankan `php artisan sicasn:muat-wilayah`.
 - **Katalog jurusan/jenjang**: tidak ada sumber master; dibangun dari data `nama_pendidikan` yang tersinkron.
 
 ## 4. Yang belum bisa ditentukan sekarang
