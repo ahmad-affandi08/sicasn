@@ -113,7 +113,7 @@ Situs tersedia di `127.0.0.1:8080`, sengaja **hanya dapat dijangkau dari server 
 
 Catatan:
 
-- `app` menjalankan `php artisan migrate --force` setiap mulai, jadi pembaruan versi otomatis memigrasikan database.
+- `app` menjalankan `php artisan migrate --force` dan `php artisan sicasn:muat-soal` setiap mulai, jadi pembaruan versi otomatis memigrasikan database dan memperbarui bank soal latihan.
 - Volume `penyimpanan` menyimpan `storage` (log, pratinjau impor, cache berkas) dan `data-mysql` menyimpan database. Jangan hapus keduanya.
 - `scheduler` menjalankan `schedule:work` dan `queue` memproses antrean terus-menerus. Scheduler juga menjalankan `queue:work --stop-when-empty` tiap menit; keduanya aman berjalan bersamaan karena setiap pekerjaan hanya diambil satu pekerja.
 - Log: `docker compose logs -f app queue scheduler`.
@@ -161,7 +161,8 @@ Hosting biasa:
 1. Bangun paket rilis baru (bagian 2.1).
 2. Unggah dan timpa kode. **Jangan menimpa** `.env` dan `storage/`.
 3. `php artisan migrate --force`
-4. `php artisan optimize:clear`
+4. `php artisan sicasn:muat-soal` (memperbarui bank soal latihan SKD bila berkasnya berubah; aman diulang)
+5. `php artisan optimize:clear`
 
 Docker:
 
@@ -171,7 +172,7 @@ docker compose build
 docker compose up -d
 ```
 
-Migrasi berjalan otomatis. Periksa dashboard admin sesudahnya.
+Migrasi dan pembaruan bank soal latihan berjalan otomatis. Periksa dashboard admin sesudahnya.
 
 ## 7. Pemecahan masalah
 

@@ -134,3 +134,21 @@ Catatan:
 ### Perintah instalasi
 
 `php artisan sicasn:install` diuji di Pest (`tests/Feature/InstalasiTest.php`) dan dijalankan manual dari salinan bersih tanpa `.env` (SQLite, API BKN sungguhan). Verifikasi di MySQL dan Docker menunggu pemilik; lihat `docs/deployment.md`.
+
+## Fase 8 (latihan SKD)
+
+`tests/e2e/fase8.cjs` memakai database yang sama dengan Fase 4, ditambah bank soal. Skrip membersihkan cache (agar pembatas laju mulai dari nol) dan tabel percobaan (`tests/e2e/latihan_bantu.php`, yang juga membaca kunci dari basis data untuk menjawab sebagian soal dengan benar).
+
+```
+php artisan migrate:fresh --force
+php artisan sicasn:buat-admin --nama="Admin Uji" --email="admin@uji.test" --password="AdminUji12345"
+php artisan db:seed --class=StatistikPelamarSeeder --force
+php artisan sicasn:muat-soal
+php tests/e2e/buat_member.php
+php tests/e2e/buat_member_baru.php
+npm run build
+php artisan serve --host=127.0.0.1 --port=8000 &
+node tests/e2e/fase8.cjs /tmp/tangkapan-layar
+```
+
+Yang diperiksa (35 pemeriksaan): menu dan beranda latihan, mulai latihan TIU (20 soal, timer 30 menit), tanpa pembahasan atau skor di halaman mengerjakan, tiap jawaban tersimpan (200), daftar soal dengan status berupa teks, jawaban bertahan setelah muat ulang, hasil tidak terbuka sebelum selesai, percobaan orang lain 404, konfirmasi menyebut jumlah kosong dan ragu, skor 50 dari 100 (10 benar, 5 salah, 5 kosong) dengan tabel, pembahasan, kunci, dan sumber, filter salah dan kosong, riwayat, simulasi 110 soal berurutan TWK lalu TIU dengan timer 100 menit, selesai otomatis saat waktu habis, HP (target sentuh, tanpa scroll horizontal), axe WCAG 2.1 A/AA pada beranda, mengerjakan, dan hasil di 3 ukuran x 2 tema, tanpa galat konsol.

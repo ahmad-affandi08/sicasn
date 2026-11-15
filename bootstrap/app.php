@@ -7,14 +7,12 @@ use App\Http\Middleware\PastikanAkunAktif;
 use App\Http\Middleware\PastikanPasswordSudahDiganti;
 use App\Http\Middleware\PastikanSatuSesi;
 use App\Http\Middleware\SesiAmanBilaHttps;
-use App\Support\DialogFlash;
+use App\Support\TanggapiGalat;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use Src\Identity\Domain\Peran;
-use Symfony\Component\HttpFoundation\Response;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -39,21 +37,5 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->shouldRenderJsonWhen(
             fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
         );
-        $exceptions->respond(function (Response $respons, Throwable $galat, Request $request) {
-            $kode = $respons->getStatusCode();
-
-            if ($request->expectsJson() || ! in_array($kode, [403, 404, 419, 429, 500, 503], true) || ($kode >= 500 && app()->hasDebugModeEnabled())) {
-                return $respons;
-            }
-
-            if ($kode === 419) {
-                return back()->with('dialog', DialogFlash::peringatan('Sesi halaman habis', 'Halaman terlalu lama terbuka. Muat ulang halaman lalu coba lagi.'));
-            }
-
-            if (! $request->hasSession() || ! $request->session()->isStarted()) {
-                Inertia::share(['aplikasi' => ['nama' => config('app.name')], 'whatsappUrl' => null, 'auth' => ['pengguna' => null], 'panduan' => false, 'dialog' => null]);
-            }
-
-            return Inertia::render('Galat', ['kode' => $kode])->toResponse($request)->setStatusCode($kode);
-        });
+        $exceptions->respond(new TanggapiGalat);
     })->create();

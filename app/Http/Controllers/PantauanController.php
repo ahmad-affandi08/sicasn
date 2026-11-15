@@ -79,9 +79,4 @@ final class PantauanController extends Controller
             'ambang' => ['longgarMaks' => $batas->longgarMaks, 'ketatMin' => $batas->ketatMin],
         ]);
     }
-
-    private function penggunaId(Request $request): int
-    {
-        return (int) $request->user()->getAuthIdentifier();
-    }
 }

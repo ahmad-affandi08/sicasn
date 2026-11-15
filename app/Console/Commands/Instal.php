@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Console\Commands;
 
+use Database\Seeders\BankSoalSeeder;
 use Database\Seeders\StatistikPelamarSeeder;
 use Illuminate\Console\Command;
 use InvalidArgumentException;
@@ -59,6 +60,8 @@ final class Instal extends Command
         $this->aturUrl($situs->handle()->url, $aturUrl);
 
         $this->components->task('Memuat statistik pelamar CPNS 2024', fn (): bool => $this->callSilently('db:seed', ['--class' => StatistikPelamarSeeder::class, '--force' => true]) === self::SUCCESS);
+
+        $this->components->task('Memuat bank soal latihan SKD', fn (): bool => $this->callSilently('db:seed', ['--class' => BankSoalSeeder::class, '--force' => true]) === self::SUCCESS);
 
         $this->jalankanSinkron($sinkron);
         $this->cetakDaftarPeriksa($kesiapan);

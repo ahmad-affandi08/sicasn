@@ -1,8 +1,9 @@
 import { Link, usePage } from '@inertiajs/react';
 import type { IconType } from 'react-icons';
-import { LuBookmark, LuBriefcaseBusiness, LuChartColumn, LuUser } from 'react-icons/lu';
+import { LuBookmark, LuBriefcaseBusiness, LuChartColumn, LuGraduationCap, LuUser } from 'react-icons/lu';
 
 import { teksFormasi } from '@/lang/formasi';
+import { teksLatihan } from '@/lang/latihan';
 import { teksPantauan } from '@/lang/pantauan';
 import { teksPeluang } from '@/lang/peluang';
 import { rute } from '@/lib/rute';
@@ -18,6 +19,7 @@ const item: ItemNav[] = [
     { href: rute.formasi, label: teksFormasi.nav, ikon: LuBriefcaseBusiness },
     { href: rute.pantauan, label: teksPantauan.nav, ikon: LuBookmark },
     { href: rute.peluangInstansi, label: teksPeluang.nav.peluang, ikon: LuChartColumn },
+    { href: rute.latihan, label: teksLatihan.nav, ikon: LuGraduationCap },
     { href: rute.akun, label: teksPeluang.nav.akun, ikon: LuUser },
 ];
 
@@ -28,7 +30,7 @@ export function NavMember({ posisi }: { posisi: 'atas' | 'bawah' }) {
     return (
         <nav
             aria-label={teksPeluang.nav.utama}
-            className={cn(atas ? 'hidden h-full items-stretch gap-1 sm:flex' : 'fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-garis bg-kartu pb-[env(safe-area-inset-bottom)] sm:hidden')}
+            className={cn(atas ? 'hidden h-full items-stretch gap-1 sm:flex' : 'fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-garis bg-kartu pb-[env(safe-area-inset-bottom)] sm:hidden')}
         >
             {item.map((butir) => {
                 const aktif = url.startsWith(butir.href);

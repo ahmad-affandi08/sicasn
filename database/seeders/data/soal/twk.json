@@ -1,0 +1,2774 @@
+[
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Presiden dan Wakil Presiden memegang jabatan selama lima tahun dan sesudahnya dapat dipilih kembali dalam jabatan yang sama hanya untuk ...",
+  "pembahasan": "Pasal 7 UUD 1945 membatasi jabatan Presiden dan Wakil Presiden sehingga hanya dapat dipilih kembali untuk satu kali masa jabatan. Jawaban yang benar: C.",
+  "sumber_nama": "UUD 1945 Pasal 7",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Tiga kali masa jabatan",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Satu kali masa jabatan dengan syarat persetujuan DPR",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Satu kali masa jabatan",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Masa jabatan tanpa batas",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Dua kali masa jabatan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Kalimat efektif di bawah ini adalah ...",
+  "pembahasan": "Kalimat efektif hemat kata dan tidak mengandung pleonasme seperti \"agar supaya\" atau jamak ganda \"para pegawai-pegawai\". Jawaban yang benar: B.",
+  "sumber_nama": "Kaidah kalimat efektif",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Adapun pegawai itu mengikuti pelatihan dengan tujuan agar supaya kompeten.",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Pegawai itu mengikuti pelatihan untuk meningkatkan kompetensinya.",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Para pegawai-pegawai mengikuti pelatihan itu.",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Pelatihan itu diikuti oleh pegawai untuk dapat supaya meningkatkan kompetensi.",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Pegawai itu mengikuti pelatihan agar supaya kompetensinya meningkat.",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pasal 28D ayat (3) UUD 1945 menjamin bahwa setiap warga negara berhak memperoleh ...",
+  "pembahasan": "Pasal 28D ayat (3): setiap warga negara berhak memperoleh kesempatan yang sama dalam pemerintahan. Dasar prinsip seleksi terbuka dan tanpa diskriminasi. Jawaban yang benar: B.",
+  "sumber_nama": "UUD 1945 Pasal 28D ayat (3)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Hak istimewa dalam pelayanan publik",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Kesempatan yang sama dalam pemerintahan",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Pendidikan gratis di perguruan tinggi",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Jabatan sesuai pilihan sendiri",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Pekerjaan di instansi pemerintah",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Tiga ikrar Sumpah Pemuda adalah bertumpah darah satu, berbangsa satu, dan ...",
+  "pembahasan": "Ikrar ketiga Sumpah Pemuda: menjunjung bahasa persatuan, bahasa Indonesia. Jawaban yang benar: B.",
+  "sumber_nama": "Sejarah nasional: Kongres Pemuda II",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Berbahasa daerah masing-masing",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Menjunjung bahasa persatuan, bahasa Indonesia",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Bersatu dalam keberagaman agama",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Berdaulat atas laut dan udara",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Berjuang bersama merebut kemerdekaan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Pilih kata baku untuk melengkapi kalimat berikut: Pegawai itu mengajukan ... cuti kepada atasannya.",
+  "pembahasan": "Bentuk baku menurut KBBI adalah izin. Jawaban yang benar: A.",
+  "sumber_nama": "Kamus Besar Bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Izin",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Ijin",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Idzin",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Isin",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Ijzin",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Pilih kata baku untuk melengkapi kalimat berikut: ... pelayanan publik adalah memenuhi kebutuhan masyarakat.",
+  "pembahasan": "Bentuk baku menurut KBBI adalah hakikat. Jawaban yang benar: A.",
+  "sumber_nama": "Kamus Besar Bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Hakikat",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Hakekat",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Hakeket",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Hakikad",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Hakikt",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Lambang padi dan kapas pada perisai Garuda Pancasila melambangkan sila ...",
+  "pembahasan": "Padi dan kapas melambangkan kesejahteraan dan keadilan, yaitu sila kelima. Jawaban yang benar: D.",
+  "sumber_nama": "UU 24/2009 tentang Bendera, Bahasa, dan Lambang Negara, serta Lagu Kebangsaan",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Kemanusiaan yang adil dan beradab",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Ketuhanan Yang Maha Esa",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Keadilan sosial bagi seluruh rakyat Indonesia",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Persatuan Indonesia",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Kata \"sangat\" pada kalimat \"Kinerja tim itu sangat memuaskan\" termasuk kelas kata ...",
+  "pembahasan": "\"Sangat\" menerangkan adjektiva \"memuaskan\" sehingga termasuk adverbia (kata keterangan). Jawaban yang benar: B.",
+  "sumber_nama": "Tata bahasa baku bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Adjektiva",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Adverbia",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Verba",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Konjungsi",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Nomina",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Pilih kata baku untuk melengkapi kalimat berikut: Tim menyusun ... data penjualan tahun lalu.",
+  "pembahasan": "Bentuk baku menurut KBBI adalah analisis. Jawaban yang benar: D.",
+  "sumber_nama": "Kamus Besar Bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Analysis",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Analisa",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Analisi",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Analisis",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Analise",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pasal 31 ayat (4) UUD 1945 mewajibkan negara memprioritaskan anggaran pendidikan sekurang-kurangnya ... dari APBN dan APBD.",
+  "pembahasan": "Pasal 31 ayat (4): negara memprioritaskan anggaran pendidikan sekurang-kurangnya dua puluh persen dari APBN serta APBD. Jawaban yang benar: E.",
+  "sumber_nama": "UUD 1945 Pasal 31 ayat (4)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "10 persen",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "15 persen",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "30 persen",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "25 persen",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "20 persen",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pasal 33 ayat (3) UUD 1945 mengatur bahwa bumi, air, dan kekayaan alam yang terkandung di dalamnya dikuasai oleh negara dan dipergunakan untuk ...",
+  "pembahasan": "Pasal 33 ayat (3): dipergunakan untuk sebesar-besar kemakmuran rakyat. Jawaban yang benar: B.",
+  "sumber_nama": "UUD 1945 Pasal 33 ayat (3)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Pertumbuhan ekonomi nasional",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Sebesar-besar kemakmuran rakyat",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menambah pendapatan daerah",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Kepentingan investor dalam negeri",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Kepentingan pemerintah",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Bagian UUD 1945 yang tidak dapat diubah menurut Pasal 37 ayat (5) adalah ...",
+  "pembahasan": "Pasal 37 ayat (5): khusus mengenai bentuk Negara Kesatuan Republik Indonesia tidak dapat dilakukan perubahan. Jawaban yang benar: E.",
+  "sumber_nama": "UUD 1945 Pasal 37 ayat (5)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Jumlah anggota DPR",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Wewenang Mahkamah Konstitusi",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Masa jabatan Presiden",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Bendera dan lagu kebangsaan",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Bentuk Negara Kesatuan Republik Indonesia",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Konferensi Asia-Afrika yang diselenggarakan di Bandung pada tahun 1955 menghasilkan ...",
+  "pembahasan": "KAA 1955 menghasilkan Dasasila Bandung, sepuluh prinsip yang menjadi landasan kerja sama dan perdamaian negara-negara Asia-Afrika. Jawaban yang benar: C.",
+  "sumber_nama": "Sejarah nasional: Konferensi Asia-Afrika 1955",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Deklarasi Bangkok",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Proklamasi Asia-Afrika",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Dasasila Bandung",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Dasasila Pancasila",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Piagam ASEAN",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Menurut UUD 1945, Lambang Negara adalah ...",
+  "pembahasan": "Pasal 36A UUD 1945 menyatakan Lambang Negara ialah Garuda Pancasila dengan semboyan Bhinneka Tunggal Ika. Jawaban yang benar: B.",
+  "sumber_nama": "UUD 1945 Pasal 36A",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Sang Saka Merah Putih",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Garuda Pancasila dengan semboyan Bhinneka Tunggal Ika",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Burung Garuda dengan lima sila",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Garuda Pancasila dengan semboyan Tut Wuri Handayani",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Perisai Pancasila dengan Indonesia Raya",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Hari Kebangkitan Nasional diperingati setiap tanggal 20 Mei untuk mengenang berdirinya organisasi ...",
+  "pembahasan": "Budi Utomo didirikan pada 20 Mei 1908 dan menjadi awal pergerakan nasional yang terorganisasi. Jawaban yang benar: A.",
+  "sumber_nama": "Sejarah nasional: Budi Utomo 1908",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Budi Utomo",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Perhimpunan Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Taman Siswa",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Sarekat Islam",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Indische Partij",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Politik luar negeri Indonesia menganut prinsip ...",
+  "pembahasan": "Politik luar negeri bebas aktif: bebas menentukan sikap tanpa terikat blok dan aktif memperjuangkan perdamaian dunia, sesuai alinea keempat Pembukaan UUD 1945. Jawaban yang benar: C.",
+  "sumber_nama": "Pembukaan UUD 1945 alinea keempat",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Isolasi",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Netral",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Bebas aktif",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Berpihak pada blok Barat",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Berpihak pada blok Timur",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Integritas bagi seorang pegawai negeri berarti ...",
+  "pembahasan": "Integritas adalah keselarasan antara nilai, ucapan, dan perbuatan, termasuk kejujuran dan kepatuhan pada aturan. Jawaban yang benar: D.",
+  "sumber_nama": "Nilai dasar ASN dan nilai antikorupsi",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengutamakan hubungan baik di atas aturan",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Menyembunyikan kesalahan rekan agar suasana kerja tetap baik",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Menyelesaikan pekerjaan secepat mungkin walaupun tidak sesuai prosedur",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Konsisten antara ucapan dan tindakan serta berpegang pada nilai kejujuran",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Selalu menuruti perintah atasan tanpa pertimbangan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Badan yang pertama kali membahas dasar negara pada masa menjelang kemerdekaan, dengan sidang pertama pada 29 Mei sampai 1 Juni 1945, adalah ...",
+  "pembahasan": "BPUPKI bersidang pertama pada 29 Mei sampai 1 Juni 1945 untuk membahas dasar negara. Tanggal 1 Juni 1945 diperingati sebagai Hari Lahir Pancasila. Jawaban yang benar: A.",
+  "sumber_nama": "Sejarah nasional: sidang BPUPKI",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "BPUPKI",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "KNIP",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Cuo Sangi In",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Panitia Sembilan",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "PPKI",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Pilih kata baku untuk melengkapi kalimat berikut: Obat itu dapat dibeli di ... terdekat.",
+  "pembahasan": "Bentuk baku menurut KBBI adalah apotek. Jawaban yang benar: D.",
+  "sumber_nama": "Kamus Besar Bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Apotèk",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Apoteek",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Apotik",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Apotek",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Apothek",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Kalimat yang menggunakan kata depan \"di\" dengan tepat adalah ...",
+  "pembahasan": "Kata \"di\" sebagai awalan ditulis serangkai (disimpan), sedangkan \"di\" sebagai kata depan ditulis terpisah (di dalam). Jawaban yang benar: E.",
+  "sumber_nama": "Pedoman ejaan bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Surat itu disimpan didalam laci meja kerja.",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Surat itu di simpan di dalam laci meja kerja.",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Surat itu di simpan didalam laci meja kerja.",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Surat itu di simpankan di dalam laci meja kerja.",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Surat itu disimpan di dalam laci meja kerja.",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Undang-undang yang mengatur penyelenggaraan pelayanan publik di Indonesia adalah ...",
+  "pembahasan": "UU Nomor 25 Tahun 2009 tentang Pelayanan Publik mengatur asas, tujuan, dan standar pelayanan publik. Jawaban yang benar: C.",
+  "sumber_nama": "UU 25/2009 tentang Pelayanan Publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "UU Nomor 3 Tahun 2002",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "UU Nomor 23 Tahun 2014",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "UU Nomor 25 Tahun 2009",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "UU Nomor 31 Tahun 1999",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "UU Nomor 24 Tahun 2009",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Hari Lahir Pancasila diperingati setiap tanggal ...",
+  "pembahasan": "Tanggal 1 Juni 1945 adalah hari pidato Soekarno tentang dasar negara dan ditetapkan sebagai Hari Lahir Pancasila. Jawaban yang benar: D.",
+  "sumber_nama": "Keputusan Presiden Nomor 24 Tahun 2016",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "18 Agustus",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "1 Oktober",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "17 Agustus",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "1 Juni",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "28 Oktober",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "ASEAN didirikan pada tanggal 8 Agustus 1967 melalui ...",
+  "pembahasan": "ASEAN didirikan melalui Deklarasi Bangkok pada 8 Agustus 1967 oleh Indonesia, Malaysia, Filipina, Singapura, dan Thailand. Jawaban yang benar: C.",
+  "sumber_nama": "Sejarah: pendirian ASEAN",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Persetujuan Manila",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Piagam ASEAN",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Deklarasi Bangkok",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Deklarasi Bandung",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Deklarasi Jakarta",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Lambang pohon beringin pada perisai Garuda Pancasila melambangkan sila ...",
+  "pembahasan": "Pohon beringin melambangkan sila ketiga, Persatuan Indonesia. Bintang melambangkan sila pertama, rantai sila kedua, kepala banteng sila keempat, dan padi serta kapas sila kelima. Jawaban yang benar: B.",
+  "sumber_nama": "UU 24/2009 tentang Bendera, Bahasa, dan Lambang Negara, serta Lagu Kebangsaan",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Kemanusiaan yang adil dan beradab",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Persatuan Indonesia",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Keadilan sosial bagi seluruh rakyat Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Ketuhanan Yang Maha Esa",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bela negara",
+  "pertanyaan": "Contoh sikap bela negara dalam kehidupan sehari-hari seorang pegawai negeri adalah ...",
+  "pembahasan": "Bela negara tidak selalu berupa tindakan militer. Disiplin, kejujuran, dan menjaga rahasia jabatan adalah wujud bela negara nonfisik dalam tugas sehari-hari. Jawaban yang benar: B.",
+  "sumber_nama": "UU 3/2002 tentang Pertahanan Negara",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Bekerja hanya bila diawasi atasan",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Melaksanakan tugas dengan disiplin dan menjaga rahasia jabatan",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menolak perubahan aturan demi kenyamanan kerja",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Menerima gratifikasi sebagai tanda terima kasih",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Memprioritaskan kepentingan golongan sendiri",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Pilih kata baku untuk melengkapi kalimat berikut: Dokter itu membuka ... mandiri di rumahnya.",
+  "pembahasan": "Bentuk baku menurut KBBI adalah praktik. Jawaban yang benar: D.",
+  "sumber_nama": "Kamus Besar Bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Prakték",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Praktikk",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Practik",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Praktik",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Praktek",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Pertempuran 10 November 1945 di Surabaya diperingati sebagai ...",
+  "pembahasan": "Peristiwa 10 November 1945 diperingati sebagai Hari Pahlawan untuk menghormati perjuangan mempertahankan kemerdekaan. Jawaban yang benar: A.",
+  "sumber_nama": "Sejarah nasional: Pertempuran Surabaya",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Hari Pahlawan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Hari Kebangkitan Nasional",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Hari Kesaktian Pancasila",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Hari Sumpah Pemuda",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Hari Bela Negara",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Penulisan kalimat yang tepat adalah ...",
+  "pembahasan": "Kalimat dimulai huruf kapital, waktu ditulis dengan titik (09.00), nama ruang berhuruf kapital, dan ditutup tanda titik. Jawaban yang benar: D.",
+  "sumber_nama": "Pedoman ejaan bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "rapat Dimulai pukul 09.00 wib di Ruang Garuda",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Rapat dimulai pukul 09,00 WIB di ruang garuda.",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "rapat dimulai pukul 09.00 WIB di ruang Garuda.",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Rapat dimulai pukul 09.00 WIB di ruang Garuda.",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Rapat dimulai pukul 09:00 WIB di ruang garuda",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bela negara",
+  "pertanyaan": "Ancaman nonmiliter terhadap negara yang bersifat ideologi dapat berupa ...",
+  "pembahasan": "Ancaman ideologi termasuk ancaman nonmiliter, misalnya penyebaran paham yang bertentangan dengan Pancasila. Jawaban yang benar: C.",
+  "sumber_nama": "UU 3/2002 tentang Pertahanan Negara",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Gangguan kapal asing di perairan",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Serangan senjata dari negara lain",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Masuknya paham yang bertentangan dengan Pancasila",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Pelanggaran batas wilayah udara",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Bencana alam di wilayah perbatasan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pemegang kekuasaan membentuk undang-undang menurut Pasal 20 ayat (1) UUD 1945 adalah ...",
+  "pembahasan": "Pasal 20 ayat (1): DPR memegang kekuasaan membentuk undang-undang. Rancangan undang-undang dibahas bersama Presiden. Jawaban yang benar: E.",
+  "sumber_nama": "UUD 1945 Pasal 20 ayat (1)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Majelis Permusyawaratan Rakyat",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Mahkamah Konstitusi",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Dewan Perwakilan Daerah",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Presiden",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Dewan Perwakilan Rakyat",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pemilihan umum di Indonesia dilaksanakan dengan asas ...",
+  "pembahasan": "Pasal 22E ayat (1) UUD 1945: pemilu dilaksanakan secara langsung, umum, bebas, rahasia, jujur, dan adil setiap lima tahun sekali. Jawaban yang benar: C.",
+  "sumber_nama": "UUD 1945 Pasal 22E ayat (1)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Umum, bebas, rahasia, tertib, dan aman",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Perwakilan, umum, rahasia, jujur, dan adil",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Langsung, umum, bebas, rahasia, jujur, dan adil",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Langsung, umum, bebas, terbuka, jujur, dan adil",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Langsung, terbatas, bebas, rahasia, dan adil",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Seorang pegawai mengetahui rekan kerjanya memalsukan laporan perjalanan dinas. Sikap yang sesuai dengan integritas adalah ...",
+  "pembahasan": "Pelaporan lewat saluran resmi, seperti sistem pelaporan pelanggaran, menjaga akuntabilitas dan melindungi pelapor. Jawaban yang benar: A.",
+  "sumber_nama": "Nilai dasar ASN dan kode etik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Melaporkan melalui saluran pengaduan resmi yang tersedia",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Meminta bagian dari hasil pemalsuan",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Menyebarkan kejadian itu ke media sosial",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Membiarkan karena bukan urusannya",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Mengancam rekan agar memberi imbalan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Sumpah Pemuda diikrarkan pada tanggal ...",
+  "pembahasan": "Sumpah Pemuda diikrarkan dalam Kongres Pemuda II pada 28 Oktober 1928. Jawaban yang benar: C.",
+  "sumber_nama": "Sejarah nasional: Kongres Pemuda II",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "10 November 1945",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "20 Mei 1908",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "28 Oktober 1928",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "1 Juni 1945",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "17 Agustus 1945",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pasal 25A UUD 1945 menyatakan bahwa Negara Kesatuan Republik Indonesia adalah negara ...",
+  "pembahasan": "Pasal 25A: NKRI adalah sebuah negara kepulauan yang berciri nusantara dengan wilayah yang batas-batas dan hak-haknya ditetapkan dengan undang-undang. Jawaban yang benar: A.",
+  "sumber_nama": "UUD 1945 Pasal 25A",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Kepulauan yang berciri nusantara",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Kesatuan yang berciri kepulauan",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Agraris yang berciri nusantara",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Kepulauan yang berciri khatulistiwa",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Maritim yang berciri bahari",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Konflik kepentingan dalam pelaksanaan tugas terjadi ketika ...",
+  "pembahasan": "Konflik kepentingan muncul saat kepentingan pribadi memengaruhi atau tampak memengaruhi objektivitas dalam menjalankan jabatan. Jawaban yang benar: B.",
+  "sumber_nama": "Konsep integritas ASN",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Dua unit kerja berbeda pendapat tentang prosedur",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Kepentingan pribadi dapat memengaruhi keputusan atau tindakan dalam jabatan",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Atasan dan bawahan berbeda gagasan",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Pegawai mengikuti pelatihan di luar kantor",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Pegawai bekerja di bawah tekanan target",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Gatra alam dalam konsep ketahanan nasional (Trigatra) meliputi ...",
+  "pembahasan": "Ketahanan nasional memiliki delapan gatra: Trigatra (geografi, demografi, sumber kekayaan alam) dan Pancagatra (ideologi, politik, ekonomi, sosial budaya, pertahanan keamanan). Jawaban yang benar: B.",
+  "sumber_nama": "Konsep ketahanan nasional",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Ideologi, politik, dan ekonomi",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Geografi, demografi, dan sumber kekayaan alam",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Demografi, politik, dan sosial budaya",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Sosial budaya dan pertahanan keamanan",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Geografi, ideologi, dan ekonomi",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pasal 1 ayat (3) UUD 1945 menyatakan bahwa Negara Indonesia adalah negara ...",
+  "pembahasan": "Pasal 1 ayat (3): Negara Indonesia adalah negara hukum. Jawaban yang benar: D.",
+  "sumber_nama": "UUD 1945 Pasal 1 ayat (3)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Agama",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Kepulauan",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Kesatuan federal",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Hukum",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Kekuasaan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Perbuatan berikut yang termasuk korupsi adalah ...",
+  "pembahasan": "Penggunaan fasilitas negara untuk kepentingan pribadi yang merugikan keuangan negara merupakan bentuk penyalahgunaan wewenang yang dapat dikategorikan korupsi. Jawaban yang benar: A.",
+  "sumber_nama": "UU 31/1999 jo. UU 20/2001 tentang Pemberantasan Tindak Pidana Korupsi",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menggunakan kendaraan dinas untuk kepentingan pribadi yang merugikan keuangan negara",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Mengikuti pendidikan dan pelatihan yang dibiayai kantor",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Menerima honor resmi sebagai narasumber sesuai ketentuan",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Mengajukan cuti sesuai aturan kepegawaian",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Meminta penjelasan tertulis atas suatu kebijakan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Bendera Negara Indonesia menurut UUD 1945 adalah ...",
+  "pembahasan": "Pasal 35 UUD 1945: Bendera Negara Indonesia ialah Sang Merah Putih. Jawaban yang benar: D.",
+  "sumber_nama": "UUD 1945 Pasal 35",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Dwiwarna Merah Putih Raya",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Merah Putih Nusantara",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Sang Saka Pusaka",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Sang Merah Putih",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Bendera Pusaka",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Proklamasi kemerdekaan Indonesia dibacakan pada tanggal ...",
+  "pembahasan": "Proklamasi kemerdekaan dibacakan Soekarno atas nama bangsa Indonesia pada 17 Agustus 1945 di Jakarta. Jawaban yang benar: E.",
+  "sumber_nama": "Sejarah nasional: Proklamasi Kemerdekaan",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "1 Juni 1945",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "18 Agustus 1945",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "28 Oktober 1928",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "22 Juni 1945",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "17 Agustus 1945",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Wawasan Nusantara adalah cara pandang bangsa Indonesia terhadap ...",
+  "pembahasan": "Wawasan Nusantara adalah cara pandang bangsa tentang diri dan lingkungannya yang menjunjung persatuan dan kesatuan bangsa serta kesatuan wilayah. Jawaban yang benar: D.",
+  "sumber_nama": "Konsep wawasan nusantara",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Keunggulan geografis Indonesia sebagai negara maritim",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Wilayah laut dan udara yang berbatasan dengan negara tetangga",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Kekuatan militer yang harus dimiliki negara",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Diri dan lingkungannya berdasarkan Pancasila dan UUD 1945 dengan menjunjung persatuan dan kesatuan",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Perbedaan suku bangsa sebagai sumber konflik",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Undang-undang yang mengatur Aparatur Sipil Negara yang berlaku saat ini adalah ...",
+  "pembahasan": "UU Nomor 20 Tahun 2023 tentang Aparatur Sipil Negara menggantikan UU Nomor 5 Tahun 2014. Jawaban yang benar: E.",
+  "sumber_nama": "UU 20/2023 tentang Aparatur Sipil Negara",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "UU Nomor 8 Tahun 1974",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "UU Nomor 43 Tahun 1999",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "UU Nomor 5 Tahun 2014",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "UU Nomor 25 Tahun 2009",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "UU Nomor 20 Tahun 2023",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Pasal 32 ayat (1) UUD 1945 menyatakan negara memajukan kebudayaan nasional Indonesia di tengah peradaban dunia dengan menjamin ...",
+  "pembahasan": "Pasal 32 ayat (1): negara memajukan kebudayaan nasional Indonesia di tengah peradaban dunia dengan menjamin kebebasan masyarakat dalam memelihara dan mengembangkan nilai-nilai budayanya. Jawaban yang benar: D.",
+  "sumber_nama": "UUD 1945 Pasal 32 ayat (1)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Kewajiban seluruh daerah memakai satu budaya nasional",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Kewenangan penuh pemerintah menentukan bentuk kebudayaan",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Hak istimewa budaya suku tertentu",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Kebebasan masyarakat memelihara dan mengembangkan nilai-nilai budayanya",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Pembatasan pengaruh budaya asing",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pasal 30 ayat (1) UUD 1945 menyatakan bahwa tiap-tiap warga negara berhak dan wajib ikut serta dalam ...",
+  "pembahasan": "Pasal 30 ayat (1): tiap-tiap warga negara berhak dan wajib ikut serta dalam usaha pertahanan dan keamanan negara. Hak dan kewajiban inilah dasar konsep bela negara. Jawaban yang benar: D.",
+  "sumber_nama": "UUD 1945 Pasal 30 ayat (1)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Pengawasan keuangan negara",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Pendidikan karakter bangsa",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Pemilihan umum",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Usaha pertahanan dan keamanan negara",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Pembangunan ekonomi nasional",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pasal 29 ayat (2) UUD 1945 menyatakan bahwa negara menjamin kemerdekaan tiap-tiap penduduk untuk ...",
+  "pembahasan": "Pasal 29 ayat (2): negara menjamin kemerdekaan tiap-tiap penduduk untuk memeluk agamanya masing-masing dan untuk beribadat menurut agamanya dan kepercayaannya itu. Jawaban yang benar: A.",
+  "sumber_nama": "UUD 1945 Pasal 29 ayat (2)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Memeluk agamanya masing-masing dan beribadat menurut agamanya dan kepercayaannya itu",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menyebarkan agama kepada pemeluk agama lain",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Memilih agama resmi negara",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Mendirikan partai berdasarkan agama",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Menentukan kurikulum keagamaan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Seorang pegawai menerima bingkisan dari pihak yang sedang mengurus izin di kantornya. Tindakan yang tepat adalah ...",
+  "pembahasan": "Pemberian yang berhubungan dengan jabatan berpotensi gratifikasi dan harus ditolak atau dilaporkan ke KPK dalam batas waktu yang ditentukan peraturan. Jawaban yang benar: A.",
+  "sumber_nama": "UU 31/1999 jo. UU 20/2001 Pasal 12B",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menolak, atau melaporkannya sebagai gratifikasi bila sudah terlanjur diterima",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menerimanya selama nilainya kecil",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Menyimpannya diam-diam hingga urusan selesai",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Menerimanya dan memprioritaskan urusan pemberi",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Membagikannya kepada rekan satu ruangan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Pemerintahan daerah di Indonesia terutama diatur dalam ...",
+  "pembahasan": "UU Nomor 23 Tahun 2014 tentang Pemerintahan Daerah mengatur pembagian urusan dan otonomi daerah. Jawaban yang benar: C.",
+  "sumber_nama": "UU 23/2014 tentang Pemerintahan Daerah",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "UU Nomor 25 Tahun 2009",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "UU Nomor 30 Tahun 2002",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "UU Nomor 23 Tahun 2014",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "UU Nomor 3 Tahun 2002",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "UU Nomor 24 Tahun 2009",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Deklarasi Djuanda 13 Desember 1957 menegaskan bahwa ...",
+  "pembahasan": "Deklarasi Djuanda menyatakan perairan di antara pulau-pulau Indonesia sebagai bagian dari wilayah NKRI, dasar konsep negara kepulauan dan wawasan nusantara. Jawaban yang benar: B.",
+  "sumber_nama": "Sejarah nasional: Deklarasi Djuanda",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Selat Malaka dikuasai penuh oleh Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Laut di antara pulau-pulau Indonesia merupakan satu kesatuan wilayah",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Indonesia memiliki zona ekonomi eksklusif 200 mil",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Wilayah laut Indonesia hanya sejauh 3 mil dari pantai",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Indonesia menolak hukum laut internasional",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Semboyan Bhinneka Tunggal Ika pada lambang negara bermakna ...",
+  "pembahasan": "Bhinneka Tunggal Ika berarti berbeda-beda tetapi tetap satu, yaitu pengakuan atas keragaman suku, agama, dan budaya dalam satu kesatuan bangsa. Jawaban yang benar: D.",
+  "sumber_nama": "UUD 1945 Pasal 36A",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Gotong royong membangun bangsa",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Bersatu kita teguh",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Satu bangsa, satu bahasa, satu tanah air",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Berbeda-beda tetapi tetap satu",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Persatuan di atas segalanya",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Bahasa negara menurut UUD 1945 adalah bahasa Indonesia. Hal ini diatur dalam ...",
+  "pembahasan": "Pasal 36 UUD 1945: Bahasa Negara ialah Bahasa Indonesia. Jawaban yang benar: E.",
+  "sumber_nama": "UUD 1945 Pasal 36",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Pasal 36A",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Pasal 36B",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Pasal 37",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Pasal 35",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Pasal 36",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Sembilan nilai antikorupsi yang dikembangkan KPK mencakup ...",
+  "pembahasan": "Sembilan nilai antikorupsi: jujur, peduli, mandiri, disiplin, tanggung jawab, kerja keras, sederhana, berani, dan adil. Jawaban yang benar: E.",
+  "sumber_nama": "Nilai antikorupsi KPK",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Jujur, cepat, tepat, hemat, ramah, rapi, patuh, loyal, dan sabar",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Adil, bijak, tegas, cerdas, hemat, jujur, rajin, sopan, dan disiplin",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Jujur, mandiri, kompetitif, adil, akuntabel, cerdas, sopan, bijak, dan loyal",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Jujur, taat, patuh, ramah, kreatif, inovatif, loyal, adil, dan sabar",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Jujur, peduli, mandiri, disiplin, tanggung jawab, kerja keras, sederhana, berani, dan adil",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Lembaga yang dibentuk berdasarkan UU 30/2002 untuk menangani pemberantasan korupsi adalah ...",
+  "pembahasan": "KPK dibentuk berdasarkan UU Nomor 30 Tahun 2002 tentang Komisi Pemberantasan Tindak Pidana Korupsi. Jawaban yang benar: C.",
+  "sumber_nama": "UU 30/2002 tentang KPK",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Komisi Yudisial",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Badan Pemeriksa Keuangan",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Komisi Pemberantasan Korupsi",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Ombudsman Republik Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Pusat Pelaporan dan Analisis Transaksi Keuangan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Pilih kata baku untuk melengkapi kalimat berikut: Peserta ... mengisi daftar hadir.",
+  "pembahasan": "Bentuk baku menurut KBBI adalah silakan. Jawaban yang benar: A.",
+  "sumber_nama": "Kamus Besar Bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Silakan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Sylakan",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Silahken",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Silaken",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Silahkan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bela negara",
+  "pertanyaan": "Sistem pertahanan negara Indonesia bersifat semesta. Artinya ...",
+  "pembahasan": "Sistem pertahanan dan keamanan rakyat semesta melibatkan seluruh warga negara, wilayah, dan sumber daya nasional, dengan TNI sebagai komponen utama. Jawaban yang benar: E.",
+  "sumber_nama": "UU 3/2002 tentang Pertahanan Negara",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Hanya dipakai saat terjadi perang",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Dilaksanakan terutama oleh negara sahabat",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Hanya mengandalkan teknologi persenjataan",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Hanya dilakukan oleh TNI",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Melibatkan seluruh warga negara, wilayah, dan sumber daya nasional",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bela negara",
+  "pertanyaan": "Pasal 27 ayat (3) UUD 1945 menyatakan bahwa setiap warga negara berhak dan wajib ikut serta dalam upaya ...",
+  "pembahasan": "Pasal 27 ayat (3): setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara. Jawaban yang benar: C.",
+  "sumber_nama": "UUD 1945 Pasal 27 ayat (3)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Pembangunan nasional",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Penegakan hukum",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Pembelaan negara",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Pemberantasan korupsi",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Pelestarian budaya",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Gratifikasi yang diterima pegawai negeri dan berhubungan dengan jabatannya wajib dilaporkan kepada KPK paling lambat ... sejak diterima.",
+  "pembahasan": "Penerima gratifikasi wajib melaporkannya kepada KPK paling lambat 30 hari kerja sejak diterima. Jawaban yang benar: C.",
+  "sumber_nama": "UU 31/1999 jo. UU 20/2001 Pasal 12C ayat (2)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "7 hari kerja",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "90 hari kerja",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "30 hari kerja",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "60 hari kerja",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "14 hari kerja",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Lembaga negara yang memeriksa pengelolaan dan tanggung jawab keuangan negara adalah ...",
+  "pembahasan": "Pasal 23E UUD 1945: untuk memeriksa pengelolaan dan tanggung jawab tentang keuangan negara diadakan satu Badan Pemeriksa Keuangan yang bebas dan mandiri. Jawaban yang benar: D.",
+  "sumber_nama": "UUD 1945 Pasal 23E",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Otoritas Jasa Keuangan",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Bank Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Badan Pengawasan Keuangan dan Pembangunan",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Badan Pemeriksa Keuangan",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Kementerian Keuangan",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Sila keempat Pancasila berbunyi ...",
+  "pembahasan": "Sila keempat adalah kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan. Jawaban yang benar: B.",
+  "sumber_nama": "Pembukaan UUD 1945 alinea keempat",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Keadilan sosial bagi seluruh rakyat Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Persatuan Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Ketuhanan Yang Maha Esa",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Kemanusiaan yang adil dan beradab",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Nilai dasar ASN yang disingkat BerAKHLAK terdiri atas ...",
+  "pembahasan": "BerAKHLAK adalah akronim nilai dasar ASN: Berorientasi pelayanan, Akuntabel, Kompeten, Harmonis, Loyal, Adaptif, dan Kolaboratif. Jawaban yang benar: B.",
+  "sumber_nama": "Nilai dasar ASN BerAKHLAK (SE Menteri PANRB 20/2021)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Berorientasi pelayanan, andal, kreatif, harmonis, loyal, aktif, dan komunikatif",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Berorientasi pelayanan, akuntabel, kompeten, harmonis, loyal, adaptif, dan kolaboratif",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Berorientasi hasil, akuntabel, kompeten, handal, loyal, aktif, dan kolaboratif",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Bersih, akuntabel, kompeten, harmonis, lugas, adaptif, dan kooperatif",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Bersih, adil, kreatif, hemat, loyal, andal, dan kompak",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Bentuk negara Indonesia menurut Pasal 1 ayat (1) UUD 1945 adalah ...",
+  "pembahasan": "Pasal 1 ayat (1): Negara Indonesia ialah Negara Kesatuan yang berbentuk Republik. Jawaban yang benar: A.",
+  "sumber_nama": "UUD 1945 Pasal 1 ayat (1)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Negara kesatuan yang berbentuk republik",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Negara persemakmuran",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Negara serikat yang berbentuk republik",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Negara kesatuan yang berbentuk kerajaan",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Negara federasi yang berbentuk republik",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Lembaga yang berwenang menguji peraturan perundang-undangan di bawah undang-undang terhadap undang-undang adalah ...",
+  "pembahasan": "Pasal 24A ayat (1): Mahkamah Agung berwenang menguji peraturan perundang-undangan di bawah undang-undang terhadap undang-undang. Jawaban yang benar: A.",
+  "sumber_nama": "UUD 1945 Pasal 24A ayat (1)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mahkamah Agung",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Dewan Perwakilan Daerah",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Dewan Perwakilan Rakyat",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Mahkamah Konstitusi",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Presiden",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Rumusan Pancasila yang sah dan final sebagai dasar negara tercantum dalam ...",
+  "pembahasan": "Rumusan Pancasila yang dipakai secara sah dan final adalah yang tercantum dalam Pembukaan UUD 1945 alinea keempat, bukan rumusan pidato 1 Juni 1945 ataupun Piagam Jakarta. Jawaban yang benar: C.",
+  "sumber_nama": "Pembukaan UUD 1945 alinea keempat",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Pidato Soekarno 1 Juni 1945",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Pembukaan UUD 1945 alinea pertama",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Pembukaan UUD 1945 alinea keempat",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Batang tubuh UUD 1945 Pasal 1",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Piagam Jakarta 22 Juni 1945",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Pernyataan \"kemerdekaan itu ialah hak segala bangsa, dan oleh sebab itu, maka penjajahan di atas dunia harus dihapuskan\" terdapat pada Pembukaan UUD 1945 alinea ...",
+  "pembahasan": "Kalimat itu merupakan alinea pertama Pembukaan UUD 1945 dan menjadi dasar penolakan terhadap penjajahan. Jawaban yang benar: C.",
+  "sumber_nama": "Pembukaan UUD 1945 alinea pertama",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Ketiga",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Kedua",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Pertama",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Keempat",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Kelima",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Menurut Pasal 1 ayat (2) UUD 1945, kedaulatan berada di tangan rakyat dan dilaksanakan menurut ...",
+  "pembahasan": "Pasal 1 ayat (2): Kedaulatan berada di tangan rakyat dan dilaksanakan menurut Undang-Undang Dasar. Jawaban yang benar: C.",
+  "sumber_nama": "UUD 1945 Pasal 1 ayat (2)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Ketetapan MPR",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Undang-undang",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Undang-Undang Dasar",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Keputusan Presiden",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Peraturan Pemerintah",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Lembaga negara yang mengawasi penyelenggaraan pelayanan publik dan menerima laporan maladministrasi adalah ...",
+  "pembahasan": "Ombudsman Republik Indonesia mengawasi penyelenggaraan pelayanan publik dan menerima laporan dugaan maladministrasi. Jawaban yang benar: D.",
+  "sumber_nama": "UU 37/2008 tentang Ombudsman Republik Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Badan Pemeriksa Keuangan",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Komisi Pemberantasan Korupsi",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Komisi Yudisial",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Ombudsman Republik Indonesia",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Komisi Nasional Hak Asasi Manusia",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bela negara",
+  "pertanyaan": "Alat negara yang bertugas di bidang pertahanan menurut UUD 1945 adalah ...",
+  "pembahasan": "Pasal 30 ayat (3): TNI terdiri atas AD, AL, dan AU sebagai alat negara bertugas mempertahankan, melindungi, dan memelihara keutuhan dan kedaulatan negara. Jawaban yang benar: B.",
+  "sumber_nama": "UUD 1945 Pasal 30 ayat (3)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Badan Siber dan Sandi Negara",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Tentara Nasional Indonesia",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Kepolisian Negara Republik Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Badan Intelijen Negara",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Satuan Polisi Pamong Praja",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Tujuan negara yang tercantum dalam Pembukaan UUD 1945 alinea keempat adalah sebagai berikut, KECUALI ...",
+  "pembahasan": "Empat tujuan negara pada alinea keempat Pembukaan: melindungi segenap bangsa dan tumpah darah, memajukan kesejahteraan umum, mencerdaskan kehidupan bangsa, dan ikut melaksanakan ketertiban dunia. Ekonomi pasar bebas tidak disebut. Jawaban yang benar: D.",
+  "sumber_nama": "Pembukaan UUD 1945 alinea keempat",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Memajukan kesejahteraan umum",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Ikut melaksanakan ketertiban dunia berdasarkan kemerdekaan, perdamaian abadi, dan keadilan sosial",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Mencerdaskan kehidupan bangsa",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Mewujudkan ekonomi berbasis pasar bebas",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Melindungi segenap bangsa Indonesia dan seluruh tumpah darah Indonesia",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Integritas",
+  "pertanyaan": "Sikap pegawai negeri yang melayani masyarakat dengan ramah, cepat, dan tidak membeda-bedakan sejalan dengan nilai ...",
+  "pembahasan": "Berorientasi pelayanan berarti ramah, cekatan, solutif, dan dapat diandalkan dalam melayani masyarakat tanpa diskriminasi. Jawaban yang benar: A.",
+  "sumber_nama": "Nilai dasar ASN BerAKHLAK",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Berorientasi pelayanan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Harmonis",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Akuntabel",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Loyal",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Adaptif",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Bangsa Indonesia terdiri dari ratusan suku bangsa. Sikap yang paling tepat dalam menghadapi keragaman tersebut adalah ...",
+  "pembahasan": "Bhinneka Tunggal Ika menuntut sikap menghargai perbedaan dan bekerja sama, bukan menyeragamkan atau mengucilkan. Jawaban yang benar: C.",
+  "sumber_nama": "UUD 1945 Pasal 36A dan Pasal 32 ayat (1)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengutamakan suku sendiri dalam pergaulan",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Membiarkan perbedaan tanpa saling peduli",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Menghargai perbedaan dan bekerja sama demi persatuan",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Menghindari pergaulan dengan suku lain",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Menyeragamkan semua adat dan budaya",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Pilih kata baku untuk melengkapi kalimat berikut: Bendahara menyimpan ... pembayaran sebagai bukti.",
+  "pembahasan": "Bentuk baku menurut KBBI adalah kuitansi. Jawaban yang benar: D.",
+  "sumber_nama": "Kamus Besar Bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Quitansi",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Kuitansy",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Kwitansi",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Kuitansi",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Kuitanzi",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Lembaga yang berwenang menguji undang-undang terhadap UUD 1945 adalah ...",
+  "pembahasan": "Pasal 24C ayat (1): Mahkamah Konstitusi berwenang menguji undang-undang terhadap UUD. Pengujian peraturan di bawah undang-undang terhadap undang-undang menjadi wewenang Mahkamah Agung. Jawaban yang benar: C.",
+  "sumber_nama": "UUD 1945 Pasal 24C ayat (1)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Badan Pemeriksa Keuangan",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Mahkamah Agung",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Mahkamah Konstitusi",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Dewan Perwakilan Rakyat",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Komisi Yudisial",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "Majelis Permusyawaratan Rakyat terdiri atas ...",
+  "pembahasan": "Pasal 2 ayat (1) UUD 1945: MPR terdiri atas anggota DPR dan anggota DPD yang dipilih melalui pemilihan umum. Jawaban yang benar: A.",
+  "sumber_nama": "UUD 1945 Pasal 2 ayat (1)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Anggota DPR dan anggota DPD yang dipilih melalui pemilihan umum",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Presiden, DPR, dan DPD",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Anggota DPR dan wakil golongan",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Anggota DPR dan Mahkamah Agung",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Anggota DPR, DPD, dan utusan daerah",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Pilar negara",
+  "pertanyaan": "UUD 1945 telah mengalami perubahan (amandemen) sebanyak ... kali, yaitu pada tahun 1999 sampai 2002.",
+  "pembahasan": "Perubahan UUD 1945 dilakukan empat kali: 1999, 2000, 2001, dan 2002. Jawaban yang benar: D.",
+  "sumber_nama": "Perubahan Pertama sampai Keempat UUD 1945",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Lima",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Enam",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Dua",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Empat",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Tiga",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Pilih kata baku untuk melengkapi kalimat berikut: Ia selalu mendengarkan ... dari orang tuanya.",
+  "pembahasan": "Bentuk baku menurut KBBI adalah nasihat. Jawaban yang benar: C.",
+  "sumber_nama": "Kamus Besar Bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Nasehad",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Nasehat",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Nasihat",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Nasihad",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Nasiat",
+    "skor": 0
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bahasa Indonesia",
+  "pertanyaan": "Pilih kata baku untuk melengkapi kalimat berikut: Setiap kebijakan memiliki ... yang harus dikelola.",
+  "pembahasan": "Bentuk baku menurut KBBI adalah risiko. Jawaban yang benar: E.",
+  "sumber_nama": "Kamus Besar Bahasa Indonesia",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Risico",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Resico",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Riziko",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Resiko",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Risiko",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Bela negara",
+  "pertanyaan": "Alat negara yang bertugas menjaga keamanan dan ketertiban masyarakat menurut UUD 1945 adalah ...",
+  "pembahasan": "Pasal 30 ayat (4): Kepolisian Negara Republik Indonesia sebagai alat negara yang menjaga keamanan dan ketertiban masyarakat. Jawaban yang benar: E.",
+  "sumber_nama": "UUD 1945 Pasal 30 ayat (4)",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Kejaksaan Republik Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Satuan Polisi Pamong Praja",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Badan Narkotika Nasional",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Tentara Nasional Indonesia",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Kepolisian Negara Republik Indonesia",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "twk",
+  "subkategori": "Nasionalisme",
+  "pertanyaan": "Badan yang mengesahkan UUD 1945 dan memilih Presiden serta Wakil Presiden pertama pada 18 Agustus 1945 adalah ...",
+  "pembahasan": "PPKI pada 18 Agustus 1945 mengesahkan UUD 1945 dan memilih Soekarno sebagai Presiden dan Mohammad Hatta sebagai Wakil Presiden. Jawaban yang benar: E.",
+  "sumber_nama": "Sejarah nasional: sidang PPKI 18 Agustus 1945",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Dewan Perwakilan Rakyat Sementara",
+    "skor": 0
+   },
+   {
+    "label": "B",
+    "teks": "Badan Penyelidik Usaha-usaha Persiapan Kemerdekaan Indonesia (BPUPKI)",
+    "skor": 0
+   },
+   {
+    "label": "C",
+    "teks": "Panitia Sembilan",
+    "skor": 0
+   },
+   {
+    "label": "D",
+    "teks": "Komite Nasional Indonesia Pusat (KNIP)",
+    "skor": 0
+   },
+   {
+    "label": "E",
+    "teks": "Panitia Persiapan Kemerdekaan Indonesia (PPKI)",
+    "skor": 5
+   }
+  ]
+ }
+]

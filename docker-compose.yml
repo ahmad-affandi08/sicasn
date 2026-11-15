@@ -19,7 +19,7 @@ x-aplikasi: &aplikasi
 services:
   app:
     <<: *aplikasi
-    command: ["sh", "-c", "php artisan migrate --force && exec php-fpm"]
+    command: ["sh", "-c", "php artisan migrate --force && php artisan sicasn:muat-soal && exec php-fpm"]
     healthcheck:
       test: ["CMD-SHELL", "php -r 'exit(@fsockopen(\"127.0.0.1\", 9000) ? 0 : 1);'"]
       interval: 15s

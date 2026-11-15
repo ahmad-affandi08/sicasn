@@ -22,7 +22,8 @@ it('menyiapkan instalasi baru: admin pertama, alamat situs, dan statistik awal',
 
     expect(DB::table('users')->where('email', 'admin@contoh.id')->value('peran'))->toBe('admin')
         ->and(app(AmbilPengaturanSitus::class)->handle()->url)->toBe('https://sicasn.contoh.id')
-        ->and(DB::table('statistik_pelamars')->count())->toBeGreaterThan(90);
+        ->and(DB::table('statistik_pelamars')->count())->toBeGreaterThan(90)
+        ->and(DB::table('soals')->where('aktif', true)->count())->toBeGreaterThan(400);
 });
 
 it('aman diulang: tidak membuat admin kedua dan tidak menggandakan statistik', function (): void {

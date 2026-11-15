@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$konteks = ['Formasi', 'DataImport', 'Pantauan', 'Identity', 'Pengaturan'];
+$konteks = ['Formasi', 'DataImport', 'Pantauan', 'Latihan', 'Identity', 'Pengaturan'];
 
 foreach ($konteks as $nama) {
     arch("domain {$nama} tidak bergantung pada framework")

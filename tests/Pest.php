@@ -8,11 +8,13 @@ use Illuminate\Http\Client\Factory as HttpFactory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Sleep;
+use Illuminate\Testing\TestResponse;
 use Src\DataImport\Application\HasilSinkron;
 use Src\DataImport\Application\KonfirmasiImporStatistik;
 use Src\DataImport\Application\PratinjauImporStatistik;
 use Src\DataImport\Application\SyncFormasiFromBkn;
 use Src\Identity\Infrastructure\Persistence\UserModel;
+use Src\Latihan\Application\MuatBankSoal;
 use Src\Pengaturan\Application\InputKonfigurasiSmtp;
 use Src\Pengaturan\Application\InputPengaturanEmail;
 use Src\Pengaturan\Application\SimpanPengaturanEmail;
@@ -185,4 +187,65 @@ function siapkanStatistikJabatan(): void
         ['cakupan' => 'jabatan', 'instansi' => 'Kementerian Agama', 'nama_jabatan' => 'Guru Madya', 'lokasi' => 'Kota Surabaya', 'jumlah_formasi' => '10', 'jumlah_lolos_administrasi' => '90', 'tanggal_snapshot' => '2024-09-19', 'tingkat_data' => 'B', 'sumber_nama' => 'Pengumuman Uji B'],
         ['cakupan' => 'jabatan', 'instansi' => 'Kementerian Hukum dan HAM', 'nama_jabatan' => 'Analis Kebijakan', 'lokasi' => 'Prov. Jawa Tengah', 'jumlah_lolos_administrasi' => '50', 'tanggal_snapshot' => '2024-09-19', 'tingkat_data' => 'B', 'sumber_nama' => 'Pengumuman Uji B'],
     ]);
+}
+
+function barisSoal(string $kategori, int $nomor, int $posisiBenar = 0): array
+{
+    $label = ['A', 'B', 'C', 'D', 'E'];
+    $skorTkp = [5, 4, 3, 2, 1];
+
+    return [
+        'kategori' => $kategori,
+        'subkategori' => 'uji',
+        'pertanyaan' => "Pertanyaan {$kategori} nomor {$nomor}",
+        'pembahasan' => "Pembahasan {$kategori} nomor {$nomor}",
+        'sumber_nama' => 'Buatan SICASN untuk uji',
+        'sumber_url' => null,
+        'lisensi' => 'Asli SICASN',
+        'opsi' => array_map(fn (int $i) => [
+            'label' => $label[$i],
+            'teks' => "Opsi {$label[$i]} soal {$kategori} {$nomor}",
+            'skor' => $kategori === 'tkp' ? $skorTkp[($i - $posisiBenar + 5) % 5] : ($i === $posisiBenar ? 5 : 0),
+        ], range(0, 4)),
+    ];
+}
+
+function muatSoalUji(int $twk = 40, int $tiu = 40, int $tkp = 50): void
+{
+    $baris = [];
+
+    foreach (['twk' => $twk, 'tiu' => $tiu, 'tkp' => $tkp] as $kategori => $jumlah) {
+        foreach (range(1, $jumlah) as $nomor) {
+            $baris[] = barisSoal($kategori, $nomor, $nomor % 5);
+        }
+    }
+
+    app(MuatBankSoal::class)->handle($baris);
+}
+
+function mulaiSebagai(string $mode = 'simulasi'): int
+{
+    test()->post('/latihan', ['mode' => $mode])->assertRedirect();
+
+    return (int) DB::table('percobaans')->orderByDesc('id')->value('id');
+}
+
+function jawabJson(object $uji, string $url, array $data): TestResponse
+{
+    return $uji->put($url, $data, ['Accept' => 'application/json']);
+}
+
+function jawabSemua(int $percobaanId, string $strategi): void
+{
+    $soal = DB::table('percobaan_soals')->where('percobaan_id', $percobaanId)->pluck('soal_id');
+
+    foreach ($soal as $soalId) {
+        $urut = DB::table('soal_opsis')->where('soal_id', $soalId);
+        $opsi = match ($strategi) {
+            'terbaik' => $urut->orderByDesc('skor')->first(),
+            'terburuk' => $urut->orderBy('skor')->first(),
+        };
+
+        DB::table('percobaan_soals')->where('percobaan_id', $percobaanId)->where('soal_id', $soalId)->update(['opsi_id' => $opsi->id]);
+    }
 }

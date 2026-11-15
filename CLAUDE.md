@@ -129,6 +129,7 @@ Domain                 →  Shared dan PHP saja
 | `Formasi` | Katalog formasi CPNS, filter, statistik pelamar, penanda persaingan, peluang instansi | `Formasi`, `Instansi`, `Jabatan`, `KualifikasiPendidikan`, `StatistikPelamar`, `TingkatPersaingan` |
 | `DataImport` | Sinkron API BKN, impor CSV statistik, jejak batch | `ImportBatch`, `SnapshotDate` |
 | `Pantauan` | Daftar pantauan dan perbandingan | `Pantauan` |
+| `Latihan` | Bank soal SKD, percobaan latihan bergaya CAT, skoring dan ambang | `Soal`, `Percobaan`, `PassingGrade`, `ModeLatihan` |
 | `Identity` | Akun dibuat admin, peran, kredensial sementara, aktif/nonaktif, audit | `Pengguna`, `Peran`, `KredensialSementara` |
 | `Pengaturan` | Pengaturan operasional di database: email, WhatsApp, rekening, situs, ambang persaingan | `PengaturanEmail`, `PenyediaEmail`, `PengaturanWhatsApp`, `PengaturanSitus` |
 
@@ -280,6 +281,7 @@ Semua tabel: `id` bigint unsigned, `created_at`, `updated_at`. Foreign key beser
 
 **Detail Formasi** (`/formasi/{id}`): data lengkap, persyaratan, riwayat statistik pelamar (semua snapshot beserta sumber), tautan sumber resmi, disclaimer.
 **Daftar Pantauan** (`/pantauan`): simpan, catatan pribadi, bandingkan 2 sampai 4 formasi (`/pantauan/bandingkan`). Memantau tidak memakai modal (tombol berubah menjadi "Dipantau"); **menghentikan pantauan meminta konfirmasi modal** karena menghapus catatan.
+**Latihan SKD** (`/latihan`): simulasi lengkap dan latihan per tes (TWK, TIU, TKP) dengan timer, daftar soal, tanda ragu, hasil, pembahasan, dan riwayat. Bank soal dibundel di repo dan dibuat asli (lihat [`docs/latihan-skd.md`](docs/latihan-skd.md)); **dilarang menyalin soal dari situs lain**.
 **Akun** (`/akun`): ubah password (wajib saat login pertama), hubungi admin.
 **Panduan Singkat**: modal 3 langkah bergambar saat login pertama (bisa dilewati, bisa dibuka lagi dari menu).
 
@@ -617,8 +619,16 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 - **Hasil tinjauan keamanan (manual, karena skill `/security-review` tidak bisa berjalan tanpa `origin/HEAD` di sandbox):** pembatas login per email+IP dapat dilewati bila IP bisa dipalsukan (diperbaiki); cookie sesi belum `Secure` di HTTPS (diperbaiki); port Docker `web` dipublikasikan ke semua antarmuka (kini `127.0.0.1` saja); berkas cadangan dibuat dengan umask longgar sesaat (`umask 077`). Diterima dengan sadar: `style-src 'unsafe-inline'` karena Radix/React memakai atribut `style`; kunci pada `APP_KEY` (kehilangan `.env` berarti rahasia SMTP harus diisi ulang).
 - **Belum dikerjakan:** Larastan; halaman admin "Data Referensi" (§7.3); email notifikasi event CPNS ke admin; tema email kustom; "tampilkan password sementara sekali".
 
+**Fase 8, Latihan SKD (di luar rencana awal; diminta pemilik)**
+- Simulasi SKD lengkap dan latihan per tes dengan bank soal bawaan, tanpa input data oleh pemilik setelah produksi.
+- **Status: selesai dengan batasan (15 Nov 2026).** Terverifikasi: Pest 553 tes, Vitest 203 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau; uji browser `tests/e2e/fase8.cjs` 35 pemeriksaan lulus (alur lengkap, selesai otomatis saat waktu habis, HP, axe WCAG 2.1 A/AA 3 halaman x 3 ukuran x 2 tema).
+- **Bank soal:** 491 soal asli (TIU 357, TWK 77, TKP 57), dimuat oleh `BankSoalSeeder` (otomatis di `sicasn:install`; perbarui dengan `sicasn:muat-soal`). Kunci TIU dibangkitkan dan **diaudit independen** (255 soal numerik dihitung ulang dari teks soal). TWK ditulis dari fakta baku tetapi **belum dicocokkan mesin dengan teks UUD** (Wikisource menjawab 429 dan tidak ditembus); TKP bersifat subjektif. Rincian dan batasan di `docs/latihan-skd.md`.
+- **Arsitektur:** konteks `Latihan` (Domain: `KategoriSoal`, `ModeLatihan`, `SoalBaru` yang menegakkan aturan soal, `PassingGrade`; Application: `MulaiPercobaan`, `AmbilPercobaan`, `SimpanJawaban`, `SelesaikanPercobaan`, `AmbilHasilPercobaan`, `AmbilBerandaLatihan`, `MuatBankSoal`; Infrastructure: repositori basis data dan penyedia ambang dari pengaturan). Waktu dikendalikan server; kunci dan pembahasan tidak dikirim ke browser sebelum selesai; percobaan bersifat pribadi.
+- **Ambang awal** TWK 65, TIU 80, TKP 166 menurut pemberitaan tentang Kepmenpan RB 321/2024 (**belum dicocokkan dengan teks keputusan**); dapat diubah lewat pengaturan grup `latihan`. Admin belum punya halaman untuk mengubahnya.
+- **Perbaikan yang ditemukan saat uji:** pembatas `throttle:N,1` bawaan Laravel memakai satu keranjang yang sama untuk semua rute per pengguna sehingga menjawab banyak soal bisa memblokir tombol Mulai; kini semua pembatas memakai **pembatas bernama** terpisah (`AppServiceProvider`). Galat 429/500/403/404 pada aksi dari halaman kini tampil sebagai dialog ramah (`TanggapiGalat`), bukan berpindah ke halaman galat.
+
 ### Izin jaringan agent
-Host yang sudah diizinkan di lingkungan: `sscasn.bkn.go.id`, `api-sscasn.bkn.go.id`, `api-rekrutmen.bkn.go.id`, `bkn.go.id`, `www.bkn.go.id`, `data.go.id`. Untuk Fase 3 dan 5, agent perlu menambah host sumber lewat `update_environment` dengan host eksak per kebutuhan nyata dan alasan jelas.
+Host yang sudah diizinkan di lingkungan: `id.wikisource.org` (ditambah di Fase 8, kena batas laju), `sscasn.bkn.go.id`, `api-sscasn.bkn.go.id`, `api-rekrutmen.bkn.go.id`, `bkn.go.id`, `www.bkn.go.id`, `data.go.id`. Untuk Fase 3 dan 5, agent perlu menambah host sumber lewat `update_environment` dengan host eksak per kebutuhan nyata dan alasan jelas.
 
 ---
 
@@ -628,7 +638,7 @@ Host yang sudah diizinkan di lingkungan: `sscasn.bkn.go.id`, `api-sscasn.bkn.go.
 2. **Satu sesi per akun**: default aktif, dapat dimatikan di pengaturan.
 3. **Tampilkan password sementara sekali**: default mati.
 4. **Domain dan hosting**: diputuskan saat Fase 7. Rancangan mendukung hosting biasa dan Docker.
-5. **Fitur tahap berikutnya** (belum dikerjakan): PPPK, checklist berkas, pengingat jadwal, latihan SKD.
+5. **Fitur tahap berikutnya** (belum dikerjakan): PPPK, checklist berkas, pengingat jadwal, SKB.
 
 Harga, rekening, nomor WhatsApp, dan kredensial email **bukan keputusan pengembangan**; semuanya diisi admin di dashboard setelah deploy.
 

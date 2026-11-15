@@ -16,6 +16,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\FormasiController;
 use App\Http\Controllers\GantiPasswordController;
 use App\Http\Controllers\KeluarController;
+use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\MasukController;
 use App\Http\Controllers\OpsiFormasiController;
 use App\Http\Controllers\PanduanController;
@@ -35,7 +36,7 @@ Route::middleware('guest')->group(function (): void {
 
 Route::middleware(['auth', 'akun.aktif'])->group(function (): void {
     Route::post('/keluar', KeluarController::class)->name('keluar');
-    Route::post('/akun/panduan-selesai', PanduanController::class)->middleware('throttle:30,1')->name('panduan.selesai');
+    Route::post('/akun/panduan-selesai', PanduanController::class)->middleware('throttle:panduan')->name('panduan.selesai');
     Route::get('/ganti-password', [GantiPasswordController::class, 'tampil'])->name('ganti-password');
     Route::post('/ganti-password', [GantiPasswordController::class, 'proses'])->name('ganti-password.proses');
 });
@@ -44,16 +45,23 @@ Route::middleware(['auth', 'akun.aktif', 'password.sudah-diganti', 'satu.sesi'])
     Route::get('/akun', AkunController::class)->name('akun');
     Route::get('/peluang-instansi', PeluangInstansiController::class)->name('peluang-instansi');
     Route::get('/formasi', [FormasiController::class, 'index'])->name('formasi');
-    Route::get('/formasi/opsi/instansi', [OpsiFormasiController::class, 'instansi'])->middleware('throttle:120,1')->name('formasi.opsi.instansi');
-    Route::get('/formasi/opsi/jurusan', [OpsiFormasiController::class, 'jurusan'])->middleware('throttle:120,1')->name('formasi.opsi.jurusan');
-    Route::get('/formasi/opsi/provinsi/{id}/wilayah', [OpsiFormasiController::class, 'kabupatenKota'])->whereNumber('id')->middleware('throttle:120,1')->name('formasi.opsi.wilayah');
+    Route::get('/formasi/opsi/instansi', [OpsiFormasiController::class, 'instansi'])->middleware('throttle:opsi-formasi')->name('formasi.opsi.instansi');
+    Route::get('/formasi/opsi/jurusan', [OpsiFormasiController::class, 'jurusan'])->middleware('throttle:opsi-formasi')->name('formasi.opsi.jurusan');
+    Route::get('/formasi/opsi/provinsi/{id}/wilayah', [OpsiFormasiController::class, 'kabupatenKota'])->whereNumber('id')->middleware('throttle:opsi-formasi')->name('formasi.opsi.wilayah');
     Route::get('/formasi/{id}', [FormasiController::class, 'tampil'])->whereNumber('id')->name('formasi.tampil');
+
+    Route::get('/latihan', [LatihanController::class, 'index'])->name('latihan');
+    Route::post('/latihan', [LatihanController::class, 'mulai'])->middleware('throttle:latihan-mulai')->name('latihan.mulai');
+    Route::get('/latihan/{id}', [LatihanController::class, 'kerjakan'])->whereNumber('id')->name('latihan.kerjakan');
+    Route::put('/latihan/{id}/jawaban', [LatihanController::class, 'jawab'])->whereNumber('id')->middleware('throttle:latihan-jawab')->name('latihan.jawab');
+    Route::post('/latihan/{id}/selesai', [LatihanController::class, 'selesai'])->whereNumber('id')->middleware('throttle:latihan-selesai')->name('latihan.selesai');
+    Route::get('/latihan/{id}/hasil', [LatihanController::class, 'hasil'])->whereNumber('id')->name('latihan.hasil');
 
     Route::get('/pantauan', [PantauanController::class, 'index'])->name('pantauan');
     Route::get('/pantauan/bandingkan', [PantauanController::class, 'bandingkan'])->name('pantauan.bandingkan');
-    Route::post('/pantauan', [PantauanController::class, 'simpan'])->middleware('throttle:60,1')->name('pantauan.simpan');
+    Route::post('/pantauan', [PantauanController::class, 'simpan'])->middleware('throttle:pantauan')->name('pantauan.simpan');
     Route::delete('/pantauan/{id}', [PantauanController::class, 'hapus'])->whereNumber('id')->name('pantauan.hapus');
-    Route::put('/pantauan/{id}/catatan', [PantauanController::class, 'catatan'])->whereNumber('id')->middleware('throttle:60,1')->name('pantauan.catatan');
+    Route::put('/pantauan/{id}/catatan', [PantauanController::class, 'catatan'])->whereNumber('id')->middleware('throttle:pantauan')->name('pantauan.catatan');
 
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function (): void {
         Route::get('/', DasborController::class)->name('dasbor');
@@ -73,9 +81,9 @@ Route::middleware(['auth', 'akun.aktif', 'password.sudah-diganti', 'satu.sesi'])
 
         Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik.index');
         Route::get('/statistik/template', [StatistikController::class, 'templateCsv'])->name('statistik.template');
-        Route::post('/statistik/pratinjau', [StatistikController::class, 'pratinjau'])->middleware('throttle:10,1')->name('statistik.pratinjau');
+        Route::post('/statistik/pratinjau', [StatistikController::class, 'pratinjau'])->middleware('throttle:impor-statistik')->name('statistik.pratinjau');
         Route::get('/statistik/pratinjau/{token}', [StatistikController::class, 'tampilPratinjau'])->where('token', '[A-Za-z0-9]{20,64}')->name('statistik.pratinjau.tampil');
-        Route::post('/statistik/pratinjau/{token}/konfirmasi', [StatistikController::class, 'konfirmasi'])->where('token', '[A-Za-z0-9]{20,64}')->middleware('throttle:10,1')->name('statistik.konfirmasi');
+        Route::post('/statistik/pratinjau/{token}/konfirmasi', [StatistikController::class, 'konfirmasi'])->where('token', '[A-Za-z0-9]{20,64}')->middleware('throttle:impor-statistik')->name('statistik.konfirmasi');
         Route::post('/statistik/{id}/rollback', [StatistikController::class, 'rollback'])->whereNumber('id')->name('statistik.rollback');
         Route::get('/statistik/{id}/galat', [StatistikController::class, 'galat'])->whereNumber('id')->name('statistik.galat');
 

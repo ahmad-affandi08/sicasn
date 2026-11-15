@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Src\DataImport\Application\BknFormasiSource;
 use Src\DataImport\Application\EventTerdeteksiRepository;
@@ -50,6 +53,12 @@ use Src\Identity\Infrastructure\Persistence\EloquentPenggunaRepository;
 use Src\Identity\Infrastructure\Queue\AntreanPengirimKredensial;
 use Src\Identity\Infrastructure\SecurePasswordGenerator;
 use Src\Identity\Infrastructure\SessionAuthenticator;
+use Src\Latihan\Application\BankSoalRepository;
+use Src\Latihan\Application\PenyediaPassingGrade;
+use Src\Latihan\Application\PercobaanRepository;
+use Src\Latihan\Infrastructure\DatabaseBankSoalRepository;
+use Src\Latihan\Infrastructure\DatabasePercobaanRepository;
+use Src\Latihan\Infrastructure\SettingsPenyediaPassingGrade;
 use Src\Pantauan\Application\PantauanRepository;
 use Src\Pantauan\Application\SumberFormasi;
 use Src\Pantauan\Infrastructure\EloquentPantauanRepository;
@@ -85,8 +94,21 @@ use Src\Shared\Infrastructure\SystemClock;
 
 final class AppServiceProvider extends ServiceProvider
 {
+    private const BATAS_PER_MENIT = [
+        'panduan' => 30,
+        'opsi-formasi' => 120,
+        'pantauan' => 60,
+        'latihan-mulai' => 20,
+        'latihan-jawab' => 300,
+        'latihan-selesai' => 30,
+        'impor-statistik' => 10,
+    ];
+
     public array $bindings = [
         Clock::class => SystemClock::class,
+        BankSoalRepository::class => DatabaseBankSoalRepository::class,
+        PercobaanRepository::class => DatabasePercobaanRepository::class,
+        PenyediaPassingGrade::class => SettingsPenyediaPassingGrade::class,
         PembacaKesehatanSistem::class => DatabasePembacaKesehatanSistem::class,
         PemeriksaLingkungan::class => PemeriksaLingkunganLaravel::class,
         AuditLog::class => EloquentAuditLog::class,
@@ -126,4 +148,11 @@ final class AppServiceProvider extends ServiceProvider
         PengaturanPembayaranStore::class => SettingsPengaturanPembayaranStore::class,
         PengaturanSitusStore::class => SettingsPengaturanSitusStore::class,
     ];
+
+    public function boot(): void
+    {
+        foreach (self::BATAS_PER_MENIT as $nama => $maks) {
+            RateLimiter::for($nama, fn (Request $request) => Limit::perMinute($maks)->by($request->user()?->getAuthIdentifier() ?? $request->ip()));
+        }
+    }
 }

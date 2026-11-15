@@ -130,3 +130,31 @@ it('menandai cookie sesi Secure hanya pada koneksi HTTPS', function (): void {
         ->and($cookieHttps->isHttpOnly())->toBeTrue()
         ->and($cookieHttp->isSecure())->toBeFalse();
 });
+
+it('mengubah galat 429 pada aksi dari halaman menjadi dialog ramah, bukan berpindah halaman', function (): void {
+    app('router')->middleware(['web', 'throttle:1,1'])->post('/uji-throttle', fn () => 'ok');
+
+    $this->post('/uji-throttle', [], ['X-Inertia' => 'true'])->assertOk();
+
+    $this->post('/uji-throttle', [], ['X-Inertia' => 'true'])
+        ->assertRedirect()
+        ->assertSessionHas('dialog.judul', 'Terlalu banyak permintaan');
+});
+
+it('tetap menampilkan halaman galat 429 untuk navigasi biasa', function (): void {
+    app('router')->middleware(['web', 'throttle:1,1'])->get('/uji-throttle-halaman', fn () => 'ok');
+
+    $this->get('/uji-throttle-halaman')->assertOk();
+
+    $this->get('/uji-throttle-halaman')->assertStatus(429)->assertInertia(fn (Assert $halaman) => $halaman->component('Galat')->where('kode', 429));
+});
+
+it('mengubah galat server pada aksi dari halaman menjadi dialog tanpa membocorkan detail', function (): void {
+    config(['app.debug' => false]);
+    app('router')->middleware('web')->post('/uji-galat-aksi', fn () => throw new RuntimeException('rahasia internal'));
+
+    $respons = $this->post('/uji-galat-aksi', [], ['X-Inertia' => 'true']);
+
+    $respons->assertRedirect()->assertSessionHas('dialog.judul', 'Terjadi gangguan di server');
+    expect(json_encode(session('dialog')))->not->toContain('rahasia internal');
+});
