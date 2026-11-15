@@ -106,10 +106,10 @@ it('menolak nilai yang tidak valid', function (string $baris, string $kolom): vo
     'tanpa satu pun angka' => ['2024,instansi,A,,,,2024-09-17,,,,S,', 'jumlah_pelamar'],
 ]);
 
-it('menolak cakupan jabatan dan aturan instansi untuk cakupan nasional', function (): void {
+it('menolak jabatan tanpa nama jabatan dan aturan instansi untuk cakupan nasional', function (): void {
     $kolom = kolomGalat("tahun,cakupan,instansi,jumlah_pelamar,tanggal_snapshot,sumber_nama\n2024,jabatan,A,10,2024-09-17,S\n2024,nasional,Kementerian,10,2024-09-17,S\n2024,instansi,,10,2024-09-17,S\n");
 
-    expect($kolom)->toBe(['cakupan', 'instansi', 'instansi']);
+    expect($kolom)->toBe(['nama_jabatan', 'instansi', 'instansi']);
 });
 
 it('menolak baris ganda pada kombinasi kunci yang sama tanpa membedakan huruf besar kecil', function (): void {
@@ -128,4 +128,34 @@ it('membuat template CSV yang kolomnya sama dengan yang dibaca parser', function
 it('melindungi sel CSV dari injeksi rumus dan mengutip karakter khusus', function (): void {
     expect(TemplateCsvStatistik::keCsv(['=SUM(A1)', '+1', '-1', '@cmd', 'a,b', 'ia berkata "ya"']))
         ->toBe("'=SUM(A1),'+1,'-1,'@cmd,\"a,b\",\"ia berkata \"\"ya\"\"\"");
+});
+
+it('mengurai baris cakupan jabatan lengkap dengan kode dan lokasi', function (): void {
+    $hasil = urai("tahun,cakupan,instansi,kode_jabatan,nama_jabatan,lokasi,jumlah_lolos_administrasi,tanggal_snapshot,sumber_nama,tingkat_data\n2024,jabatan,Kementerian Agama,JF-1,  Penghulu   Ahli Pertama ,Kab. Sleman,600,2024-09-19,Pengumuman,B\n");
+
+    expect($hasil->galat)->toBe([])->and($hasil->baris)->toHaveCount(1);
+
+    $baris = $hasil->baris[0];
+
+    expect($baris->namaJabatan)->toBe('Penghulu Ahli Pertama')
+        ->and($baris->kodeJabatan)->toBe('JF-1')
+        ->and($baris->lokasi)->toBe('Kab. Sleman')
+        ->and($baris->namaInstansi)->toBe('Kementerian Agama')
+        ->and($baris->jumlahLolosAdministrasi)->toBe(600);
+});
+
+it('membolehkan jabatan yang sama di lokasi berbeda tetapi menolak duplikatnya', function (): void {
+    $isi = "tahun,cakupan,instansi,nama_jabatan,lokasi,jumlah_lolos_administrasi,tanggal_snapshot,sumber_nama\n2024,jabatan,A,Perawat,Kab. Sleman,5,2024-09-19,S\n2024,jabatan,A,Perawat,Kota Malang,6,2024-09-19,S\n2024,jabatan,A,PERAWAT,kab. sleman,7,2024-09-19,S\n";
+
+    $hasil = urai($isi);
+
+    expect($hasil->baris)->toHaveCount(2)->and($hasil->galat[0]->kolom)->toBe('baris_ganda');
+});
+
+it('menolak kolom jabatan pada cakupan selain jabatan', function (): void {
+    expect(kolomGalat("tahun,cakupan,instansi,nama_jabatan,jumlah_pelamar,tanggal_snapshot,sumber_nama\n2024,instansi,A,Perawat,5,2024-09-19,S\n"))->toBe(['nama_jabatan']);
+});
+
+it('menolak jabatan tanpa instansi', function (): void {
+    expect(kolomGalat("tahun,cakupan,instansi,nama_jabatan,jumlah_pelamar,tanggal_snapshot,sumber_nama\n2024,jabatan,,Perawat,5,2024-09-19,S\n"))->toBe(['instansi']);
 });

@@ -9,5 +9,6 @@ final readonly class ItemFormasi
     public function __construct(
         public RingkasFormasi $formasi,
         public ?PeluangFormasi $peluang,
+        public ?PeluangJabatan $peluangJabatan = null,
     ) {}
 }

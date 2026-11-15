@@ -1,17 +1,30 @@
 import { LencanaPersaingan } from '@/features/peluang/LencanaPersaingan';
 import { MeterRasio } from '@/features/peluang/MeterRasio';
+import { BarisInstansi } from './BarisInstansi';
+import { BlokJabatan } from './BlokJabatan';
 import { teksFormasi } from '@/lang/formasi';
 import { formatAngka, formatHari, formatRasio } from '@/lib/format';
-import type { PeluangFormasiItem } from '@/types';
+import type { PeluangFormasiItem, PeluangJabatanItem } from '@/types';
 
 interface PropsRingkasPeluang {
     peluang: PeluangFormasiItem | null;
+    jabatan?: PeluangJabatanItem | null;
     ambang?: { longgarMaks: number; ketatMin: number };
     lengkap?: boolean;
 }
 
-export function RingkasPeluang({ peluang, ambang, lengkap = true }: PropsRingkasPeluang) {
+export function RingkasPeluang({ peluang, jabatan = null, ambang, lengkap = true }: PropsRingkasPeluang) {
     const teks = teksFormasi.peluang;
+
+    if (jabatan !== null) {
+        return (
+            <div className="flex flex-col gap-3">
+                <BlokJabatan jabatan={jabatan} ambang={ambang} />
+                <BarisInstansi peluang={peluang} />
+                {lengkap && <p className="text-xs text-redup">{teks.bukanJaminan}</p>}
+            </div>
+        );
+    }
 
     if (peluang === null) {
         return (

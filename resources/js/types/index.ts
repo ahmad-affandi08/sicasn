@@ -96,6 +96,7 @@ export interface SnapshotItem {
     sumberNama: string;
     sumberUrl: string | null;
     catatan: string | null;
+    lokasi?: string | null;
 }
 
 export interface InstansiPeluangItem {
@@ -176,6 +177,25 @@ export interface PeluangFormasiItem {
     perJabatan: boolean;
 }
 
+export interface PeluangJabatanItem {
+    tingkat: TingkatPersainganKode;
+    tingkatLabel: string;
+    rasio: number | null;
+    batasBawah: boolean;
+    formasi: number | null;
+    pelamar: number | null;
+    submit: number | null;
+    lolosAdministrasi: number | null;
+    lokasi: string | null;
+    statusAngka: 'sementara' | 'akhir';
+    tingkatData: 'A' | 'B' | 'C';
+    keyakinan: 'resmi' | 'turunan';
+    tanggal: string;
+    sumberNama: string;
+    sumberUrl: string | null;
+    catatan: string | null;
+}
+
 export interface FormasiItem {
     id: number;
     instansiId: number;
@@ -192,6 +212,7 @@ export interface FormasiItem {
     kualifikasiTersedia: boolean;
     kualifikasi: string | null;
     peluang: PeluangFormasiItem | null;
+    peluangJabatan: PeluangJabatanItem | null;
 }
 
 export interface FilterFormasiItem {
@@ -216,7 +237,7 @@ export interface OpsiFormasiItem {
     jurusanTerpilih: OpsiPilihan[];
 }
 
-export interface DetailFormasiItem extends Omit<FormasiItem, 'peluang'> {
+export interface DetailFormasiItem extends Omit<FormasiItem, 'peluang' | 'peluangJabatan'> {
     status: 'aktif' | 'ditarik';
     namaEvent: string;
     jenisPengadaan: string;

@@ -14,5 +14,7 @@ final readonly class DetailFormasi
         public array $riwayat,
         public string $tautanResmi,
         public AmbangPersaingan $ambang,
+        public ?PeluangJabatan $peluangJabatan = null,
+        public array $riwayatJabatan = [],
     ) {}
 }

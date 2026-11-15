@@ -21,7 +21,7 @@ final class EloquentDetailFormasi implements DetailFormasiRepository
             ->leftJoin('wilayahs as pv', 'pv.id', '=', 'f.provinsi_id')
             ->leftJoin('kualifikasi_sets as ks', 'ks.id', '=', 'f.kualifikasi_set_id')
             ->where('f.id', $id)
-            ->first(['f.*', 'i.nama as instansi', 'j.nama as jabatan', 'j.kode as kode_jabatan', 'w.nama as wilayah', 'pv.nama as provinsi', 'ks.teks as kualifikasi']);
+            ->first(['f.*', 'i.nama as instansi', 'j.nama as jabatan', 'j.kode as kode_jabatan', 'j.nama_normal as jabatan_normal', 'w.nama as wilayah', 'pv.nama as provinsi', 'ks.teks as kualifikasi']);
 
         if ($f === null) {
             return null;
@@ -34,8 +34,10 @@ final class EloquentDetailFormasi implements DetailFormasiRepository
                 $f->instansi,
                 $f->jabatan,
                 (string) $f->kode_jabatan,
+                $f->jabatan_normal,
                 $f->lokasi_teks,
                 $f->wilayah,
+                $f->wilayah_id === null ? null : (int) $f->wilayah_id,
                 (int) $f->kuota,
                 $f->jenis_formasi,
                 $f->is_disabilitas === null ? null : (bool) $f->is_disabilitas,

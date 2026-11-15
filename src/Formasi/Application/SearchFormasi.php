@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Src\Formasi\Application;
 
+use Src\Formasi\Domain\AmbangPersaingan;
+use Src\Formasi\Domain\JenisPengadaan;
 use Src\Formasi\Domain\NilaiPersaingan;
 use Src\Formasi\Domain\PenilaianPersaingan;
 use Src\Formasi\Domain\TingkatPersaingan;
@@ -16,6 +18,7 @@ final readonly class SearchFormasi
         private PenyediaAmbangPersaingan $ambang,
         private KebijakanFormasiAktif $kebijakan,
         private KatalogFormasi $katalog,
+        private StatistikRepository $statistik,
     ) {}
 
     public function handle(FilterFormasi $filter): HasilPencarianFormasi
@@ -31,12 +34,29 @@ final readonly class SearchFormasi
         $terakhir = min($terakhirSebenarnya, FilterFormasi::HALAMAN_MAKS);
         $halamanIni = min(max(1, $filter->halaman), $terakhir);
 
-        $item = array_map(fn (RingkasFormasi $f) => new ItemFormasi($f, isset($peta[$f->instansiId]) ? new PeluangFormasi($penilaian[$f->instansiId], $peta[$f->instansiId]) : null), $halaman->item);
+        $perJabatan = $this->statistik->jabatan(HitungPeluangInstansi::TAHUN_ACUAN, JenisPengadaan::Cpns, array_map(fn (RingkasFormasi $f) => [$f->instansiId, $f->jabatanNormal], $halaman->item));
+
+        $item = array_map(fn (RingkasFormasi $f) => new ItemFormasi(
+            $f,
+            isset($peta[$f->instansiId]) ? new PeluangFormasi($penilaian[$f->instansiId], $peta[$f->instansiId]) : null,
+            $this->peluangJabatan($f, $perJabatan, $ambang),
+        ), $halaman->item);
 
         return new HasilPencarianFormasi($item, $halaman->total, $halamanIni, $perHalaman, $terakhir, $this->katalog->hitungAktif($this->kebijakan->aktif()), $ambang, $terakhirSebenarnya > $terakhir);
     }
 
-    private function nilai(PeluangMentah $p, $ambang): PenilaianPersaingan
+    private function peluangJabatan(RingkasFormasi $formasi, array $perJabatan, AmbangPersaingan $ambang): ?PeluangJabatan
+    {
+        $snapshot = PencocokPeluangJabatan::pilih($formasi, $perJabatan[$formasi->instansiId.'|'.$formasi->jabatanNormal] ?? []);
+
+        if ($snapshot === null) {
+            return null;
+        }
+
+        return new PeluangJabatan(NilaiPersaingan::nilai($snapshot->pelamar, $snapshot->submit, $snapshot->formasi, $snapshot->statusAngka, $ambang, $snapshot->lolosAdministrasi), $snapshot);
+    }
+
+    private function nilai(PeluangMentah $p, AmbangPersaingan $ambang): PenilaianPersaingan
     {
         return NilaiPersaingan::nilai($p->pelamar, $p->submit, $p->formasi, $p->statusAngka, $ambang);
     }

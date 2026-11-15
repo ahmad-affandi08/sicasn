@@ -68,7 +68,7 @@ export function KartuFormasi({ formasi, ambang }: PropsKartuFormasi) {
                 </div>
             </div>
             <div className="border-t border-garis pt-4 md:border-t-0 md:border-l md:pt-0 md:pl-6">
-                <RingkasPeluang peluang={formasi.peluang} ambang={ambang} lengkap={false} />
+                <RingkasPeluang peluang={formasi.peluang} jabatan={formasi.peluangJabatan} ambang={ambang} lengkap={false} />
             </div>
         </article>
     );

@@ -15,7 +15,7 @@ use Src\Formasi\Domain\TingkatData;
 
 final class PenguraiCsvStatistik
 {
-    public const KOLOM = ['tahun', 'jenis_pengadaan', 'cakupan', 'instansi', 'jumlah_formasi', 'jumlah_pelamar', 'jumlah_submit', 'jumlah_lolos_administrasi', 'tanggal_snapshot', 'status_angka', 'tingkat_data', 'keyakinan', 'sumber_nama', 'sumber_url', 'catatan'];
+    public const KOLOM = ['tahun', 'jenis_pengadaan', 'cakupan', 'instansi', 'kode_jabatan', 'nama_jabatan', 'lokasi', 'jumlah_formasi', 'jumlah_pelamar', 'jumlah_submit', 'jumlah_lolos_administrasi', 'tanggal_snapshot', 'status_angka', 'tingkat_data', 'keyakinan', 'sumber_nama', 'sumber_url', 'catatan'];
 
     public const KOLOM_WAJIB = ['tahun', 'cakupan', 'tanggal_snapshot', 'sumber_nama'];
 
@@ -76,7 +76,7 @@ final class PenguraiCsvStatistik
             $hasil = self::petakan($nilai, $hariIni, $masalah);
 
             if ($hasil !== null) {
-                $kunci = implode('|', [$hasil->tahun, $hasil->jenisPengadaan->value, $hasil->cakupan->value, mb_strtoupper((string) $hasil->namaInstansi), $hasil->tanggalSnapshot, mb_strtolower($hasil->sumberNama)]);
+                $kunci = implode('|', [$hasil->tahun, $hasil->jenisPengadaan->value, $hasil->cakupan->value, mb_strtoupper((string) $hasil->namaInstansi), mb_strtoupper((string) $hasil->namaJabatan), mb_strtoupper((string) $hasil->lokasi), $hasil->tanggalSnapshot, mb_strtolower($hasil->sumberNama)]);
 
                 if (isset($dikenal[$kunci])) {
                     $masalah[] = ['baris_ganda', 'Baris ini sama dengan baris '.$dikenal[$kunci].' (instansi, tanggal, dan sumber yang sama).'];
@@ -120,23 +120,34 @@ final class PenguraiCsvStatistik
         $cakupan = Cakupan::tryFrom(mb_strtolower($nilai['cakupan'] ?? ''));
 
         if ($cakupan === null) {
-            $masalah[] = ['cakupan', 'Cakupan harus nasional atau instansi.'];
-        } elseif ($cakupan === Cakupan::Jabatan) {
-            $masalah[] = ['cakupan', 'Cakupan jabatan belum didukung. Gunakan nasional atau instansi.'];
+            $masalah[] = ['cakupan', 'Cakupan harus nasional, instansi, atau jabatan.'];
         }
 
         $instansi = NamaNormal::rapikan($nilai['instansi'] ?? '');
+        $kodeJabatan = NamaNormal::rapikan($nilai['kode_jabatan'] ?? '');
+        $namaJabatan = NamaNormal::rapikan($nilai['nama_jabatan'] ?? '');
+        $lokasi = NamaNormal::rapikan($nilai['lokasi'] ?? '');
 
-        if ($cakupan === Cakupan::Instansi && $instansi === '') {
-            $masalah[] = ['instansi', 'Nama instansi wajib diisi untuk cakupan instansi.'];
+        if ($cakupan !== null && $cakupan !== Cakupan::Nasional && $instansi === '') {
+            $masalah[] = ['instansi', 'Nama instansi wajib diisi untuk cakupan instansi atau jabatan.'];
         }
 
         if ($cakupan === Cakupan::Nasional && $instansi !== '') {
             $masalah[] = ['instansi', 'Kolom instansi harus kosong untuk cakupan nasional.'];
         }
 
-        if (mb_strlen($instansi) > 255) {
-            $masalah[] = ['instansi', 'Nama instansi terlalu panjang (maksimal 255 karakter).'];
+        if ($cakupan === Cakupan::Jabatan && $namaJabatan === '') {
+            $masalah[] = ['nama_jabatan', 'Nama jabatan wajib diisi untuk cakupan jabatan.'];
+        }
+
+        if ($cakupan !== null && $cakupan !== Cakupan::Jabatan && ($namaJabatan !== '' || $kodeJabatan !== '' || $lokasi !== '')) {
+            $masalah[] = ['nama_jabatan', 'Kolom kode_jabatan, nama_jabatan, dan lokasi hanya untuk cakupan jabatan.'];
+        }
+
+        foreach ([['instansi', $instansi, 255, 'Nama instansi'], ['nama_jabatan', $namaJabatan, 255, 'Nama jabatan'], ['lokasi', $lokasi, 255, 'Lokasi'], ['kode_jabatan', $kodeJabatan, 40, 'Kode jabatan']] as [$kolomNama, $isi, $batas, $label]) {
+            if (mb_strlen($isi) > $batas) {
+                $masalah[] = [$kolomNama, "{$label} terlalu panjang (maksimal {$batas} karakter)."];
+            }
         }
 
         $formasi = self::bilangan($nilai['jumlah_formasi'] ?? '', 'jumlah_formasi', $masalah);
@@ -210,7 +221,10 @@ final class PenguraiCsvStatistik
             (int) $tahun,
             $jenis,
             $cakupan,
-            $cakupan === Cakupan::Instansi ? $instansi : null,
+            $cakupan === Cakupan::Nasional ? null : $instansi,
+            $cakupan === Cakupan::Jabatan && $kodeJabatan !== '' ? $kodeJabatan : null,
+            $cakupan === Cakupan::Jabatan ? $namaJabatan : null,
+            $cakupan === Cakupan::Jabatan && $lokasi !== '' ? $lokasi : null,
             $formasi,
             $pelamar,
             $submit,

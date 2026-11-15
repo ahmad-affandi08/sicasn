@@ -36,7 +36,7 @@ final readonly class KonfirmasiImporStatistik
         $nama = [];
 
         foreach ($data->baris as $baris) {
-            if ($baris->cakupan === Cakupan::Instansi) {
+            if ($baris->cakupan !== Cakupan::Nasional) {
                 $nama[$baris->namaInstansi] = $baris->namaInstansi;
             }
         }

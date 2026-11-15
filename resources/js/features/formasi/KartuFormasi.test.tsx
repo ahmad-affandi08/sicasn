@@ -10,7 +10,7 @@ vi.mock('@inertiajs/react', () => ({
     ),
 }));
 
-import { formasiUji } from './data-uji';
+import { formasiUji, peluangJabatanUji } from './data-uji';
 import { KartuFormasi } from './KartuFormasi';
 
 describe('KartuFormasi', () => {
@@ -51,5 +51,13 @@ describe('KartuFormasi', () => {
 
         expect(screen.getByText('Disabilitas')).toBeInTheDocument();
         expect(screen.getByText('Belum ada data')).toBeInTheDocument();
+    });
+
+    it('mengutamakan data per jabatan bila tersedia', () => {
+        render(<KartuFormasi formasi={{ ...formasiUji, peluangJabatan: peluangJabatanUji }} ambang={{ longgarMaks: 5, ketatMin: 20 }} />);
+
+        expect(screen.getByText('Per jabatan 2024')).toBeInTheDocument();
+        expect(screen.getByText('Lolos administrasi')).toBeInTheDocument();
+        expect(screen.queryByText('Rata-rata instansi, bukan per jabatan')).not.toBeInTheDocument();
     });
 });

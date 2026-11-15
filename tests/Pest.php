@@ -116,7 +116,7 @@ function berkasSementara(): int
 
 function csvStatistik(array $baris): string
 {
-    $kolom = ['tahun', 'jenis_pengadaan', 'cakupan', 'instansi', 'jumlah_formasi', 'jumlah_pelamar', 'jumlah_submit', 'jumlah_lolos_administrasi', 'tanggal_snapshot', 'status_angka', 'tingkat_data', 'keyakinan', 'sumber_nama', 'sumber_url', 'catatan'];
+    $kolom = ['tahun', 'jenis_pengadaan', 'cakupan', 'instansi', 'kode_jabatan', 'nama_jabatan', 'lokasi', 'jumlah_formasi', 'jumlah_pelamar', 'jumlah_submit', 'jumlah_lolos_administrasi', 'tanggal_snapshot', 'status_angka', 'tingkat_data', 'keyakinan', 'sumber_nama', 'sumber_url', 'catatan'];
     $dasar = array_fill_keys($kolom, '') + [];
     $baku = ['tahun' => '2024', 'jenis_pengadaan' => 'cpns', 'cakupan' => 'instansi', 'tanggal_snapshot' => '2024-09-17', 'status_angka' => 'akhir', 'tingkat_data' => 'A', 'keyakinan' => 'turunan', 'sumber_nama' => 'Sumber Uji'];
     $aliran = fopen('php://temp', 'r+');
@@ -176,4 +176,13 @@ function siapkanStatistikFormasi(): void
 function idFormasi(string $jabatan): int
 {
     return (int) DB::table('formasis')->join('jabatans', 'jabatans.id', '=', 'formasis.jabatan_id')->where('jabatans.nama', $jabatan)->value('formasis.id');
+}
+
+function siapkanStatistikJabatan(): void
+{
+    muatStatistik([
+        ['cakupan' => 'jabatan', 'instansi' => 'Kementerian Agama', 'nama_jabatan' => 'penghulu  ahli pertama', 'jumlah_formasi' => '30', 'jumlah_lolos_administrasi' => '600', 'tanggal_snapshot' => '2024-09-19', 'tingkat_data' => 'B', 'sumber_nama' => 'Pengumuman Uji B'],
+        ['cakupan' => 'jabatan', 'instansi' => 'Kementerian Agama', 'nama_jabatan' => 'Guru Madya', 'lokasi' => 'Kota Surabaya', 'jumlah_formasi' => '10', 'jumlah_lolos_administrasi' => '90', 'tanggal_snapshot' => '2024-09-19', 'tingkat_data' => 'B', 'sumber_nama' => 'Pengumuman Uji B'],
+        ['cakupan' => 'jabatan', 'instansi' => 'Kementerian Hukum dan HAM', 'nama_jabatan' => 'Analis Kebijakan', 'lokasi' => 'Prov. Jawa Tengah', 'jumlah_lolos_administrasi' => '50', 'tanggal_snapshot' => '2024-09-19', 'tingkat_data' => 'B', 'sumber_nama' => 'Pengumuman Uji B'],
+    ]);
 }

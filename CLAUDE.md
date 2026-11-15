@@ -225,7 +225,9 @@ Semua tabel: `id` bigint unsigned, `created_at`, `updated_at`. Foreign key beser
 **`persyaratans`** (`hash` unik, `uraian`) dan pivot **`formasi_persyaratans`** (`formasi_id`, `persyaratan_id`, `wajib`, `urutan`): teks persyaratan disimpan sekali per isi unik. Pada data nyata 10.378 butir persyaratan hanya menunjuk 16 teks.
 ### 6.2 Statistik pelamar
 
-**`statistik_pelamars`**: `kunci` char(40) **unik** (sha1 dari tahun, jenis, cakupan, instansi, tanggal snapshot, sumber; membuat impor idempoten), `tahun`, `jenis_pengadaan`, `cakupan` enum(`nasional`,`instansi`,`jabatan`; `jabatan` belum didukung impor), `instansi_id` nullable, `jumlah_formasi`, `jumlah_pelamar`, `jumlah_submit`, `jumlah_lolos_administrasi` (semua nullable, minimal satu terisi), `tanggal_snapshot`, `status_angka` enum(`sementara`,`akhir`), `tingkat_data` enum(`A`,`B`,`C`), `keyakinan` enum(`resmi`,`turunan`), `sumber_nama`, `sumber_url`, `catatan`, `import_batch_id`. Tampilan memakai snapshot terbaru per instansi (angka akhir menang bila tanggal sama); semua snapshot lama tetap ditampilkan sebagai riwayat.
+**`statistik_pelamars`**: `kunci` char(40) **unik** (sha1 dari tahun, jenis, cakupan, instansi, tanggal snapshot, sumber; membuat impor idempoten), `tahun`, `jenis_pengadaan`, `cakupan` enum(`nasional`,`instansi`,`jabatan`), `instansi_id` nullable, `kode_jabatan`, `nama_jabatan`, `jabatan_normal`, `lokasi_teks`, `wilayah_id` (hanya terisi pada cakupan `jabatan`), `jumlah_formasi`, `jumlah_pelamar`, `jumlah_submit`, `jumlah_lolos_administrasi` (semua nullable, minimal satu terisi), `tanggal_snapshot`, `status_angka` enum(`sementara`,`akhir`), `tingkat_data` enum(`A`,`B`,`C`), `keyakinan` enum(`resmi`,`turunan`), `sumber_nama`, `sumber_url`, `catatan`, `import_batch_id`. Tampilan memakai snapshot terbaru per instansi (angka akhir menang bila tanggal sama); semua snapshot lama tetap ditampilkan sebagai riwayat.
+
+**Cakupan `jabatan` (Fase 5):** satu baris per instansi + jabatan (+ lokasi opsional) + tanggal + sumber. `jumlah_lolos_administrasi` adalah **peserta yang lulus seleksi administrasi, bukan total pendaftar**. Bila jumlah formasi jabatan itu pada 2024 tidak tersedia, rasio tidak dihitung (tampil angka lolos tanpa lencana). Rasio dari angka lolos administrasi diperlakukan sebagai **batas bawah** (tidak pernah Longgar) dan basisnya berurutan: pelamar, lalu submit, lalu lolos administrasi.
 
 **Semantik angka sementara (penting):** angka `sementara` adalah **batas bawah** (pelamar akhir hanya bisa lebih banyak). Rasio dari angka sementara atau dari `jumlah_submit` saja ditandai `≥` dan **tidak pernah diberi lencana Longgar**; lencananya "Belum final". Urutan "rasio terendah" dan "pelamar tersedikit" menaruh angka sementara **setelah** angka akhir supaya instansi yang tampak sepi hanya karena datanya awal tidak berada di puncak. Bila snapshot terbaru tidak memuat formasi, jumlah formasi dipinjam dari snapshot instansi yang sama yang terdekat dan tanggalnya ditampilkan.
 
@@ -385,10 +387,10 @@ Tidak ada sumber resmi terbuka untuk pelamar 2024 per jabatan. Sistem menyimpan 
 
 ### 11.2 Tingkat B (Fase 5)
 
-- Prioritas: instansi dengan volume terbesar, lalu pemda besar.
-- Alur: temukan PDF/halaman hasil seleksi administrasi resmi → `pdftotext -layout` → **hitung baris peserta per jabatan** → simpan hanya agregat (jabatan, jumlah, sumber, tanggal). Label **"lolos administrasi"**, bukan total pendaftar; `keyakinan = turunan`.
-- Dilarang menyimpan nama/NIK. Berkas mentah di luar repo dan dihapus setelah diagregasi.
-- Parser per format dengan uji; hentikan bila format tidak konsisten. Catat progres di `docs/data-coverage.md`.
+- **Status: alur selesai, data nyata belum ada.** Lihat [`docs/data-coverage.md`](docs/data-coverage.md): instansi terbesar tidak terjangkau (Kemenkumham: gateway 502), diblokir perlindungan situs (BPS, MPR: 403, tidak ditembus), atau berkasnya sudah hilang (Kemenkes: 404); PDF yang terjangkau tidak memuat daftar lengkap per jabatan.
+- Alur: temukan PDF/halaman hasil seleksi administrasi resmi → `pdftotext -layout` → `php artisan sicasn:agregat-lampiran` (hitung baris peserta per jabatan dan lokasi dengan pola regex per instansi, wajib dicocokkan dengan `--total-resmi` dari pengumuman, tulis **hanya agregat** ke CSV) → impor CSV lewat menu admin. Label **"lolos administrasi"**, bukan total pendaftar; `tingkat_data = B`, `keyakinan = turunan`.
+- Dilarang menyimpan nama/NIK. Berkas mentah di luar repo dan dihapus setelah diagregasi. Perintah agregat tidak pernah mencetak atau menyimpan isi baris.
+- Parser per format dengan uji; hentikan bila format tidak konsisten atau total tidak cocok. Catat progres dan kegagalan di `docs/data-coverage.md`.
 
 ### 11.3 Tingkat C dan notifikasi event
 
@@ -398,7 +400,9 @@ Tidak ada sumber resmi terbuka untuk pelamar 2024 per jabatan. Sistem menyimpan 
 
 ### 11.4 Aturan tampilan
 
-Pencocokan formasi ↔ statistik 2024: (1) instansi + kode/nama jabatan ternormalisasi (+ lokasi) → **per jabatan** (B/C); (2) instansi saja → **rata-rata instansi** (A) dengan label "bukan per jabatan"; (3) tidak ada → "Belum ada data". Selalu tampilkan sumber, tanggal snapshot, tingkat data. Pencocokan nama jabatan antar-tahun konservatif; bila ragu, jangan cocokkan.
+Pencocokan formasi ↔ statistik 2024 (`PencocokPeluangJabatan`): (1) instansi sama + **nama jabatan ternormalisasi sama persis** (+ lokasi sama bila data jabatan punya lokasi) → **per jabatan** (B/C); (2) instansi saja → **rata-rata instansi** (A) dengan label "bukan per jabatan"; (3) tidak ada → "Belum ada data". Bila ada beberapa kandidat: data spesifik lokasi lebih dulu, lalu tanggal terbaru, lalu tingkat C di atas B di atas A, lalu angka akhir dan sumber resmi. Selalu tampilkan sumber, tanggal snapshot, tingkat data. Kode jabatan tidak dipakai untuk mencocokkan (belum terbukti stabil antar-tahun); nama yang mirip tidak dicocokkan.
+
+Saat data per jabatan ada, kartu dan detail menampilkan blok **Per jabatan 2024** lebih dulu dan rata-rata instansi sebagai konteks. **Filter dan urutan tingkat persaingan tetap memakai rata-rata instansi** (label filter menyebutnya), supaya hasil dan urutan konsisten dan murah dihitung.
 
 ---
 
@@ -409,7 +413,7 @@ Pencocokan formasi ↔ statistik 2024: (1) instansi + kode/nama jabatan ternorma
 - Nilai bawaan bila kolom kosong, sengaja konservatif: `jenis_pengadaan=cpns`, `status_angka=sementara`, `tingkat_data=A`, `keyakinan=turunan`.
 - Hasil: dialog ringkasan, unduh CSV baris gagal (sel diawali `'` bila berisi karakter rumus, untuk mencegah injeksi CSV), `ImportBatch` tercatat, **rollback** per batch (konfirmasi modal berisiko; hanya batch `csv_statistik` yang berhasil dan belum dibatalkan). Unggahan dan konfirmasi dibatasi 10 permintaan per menit.
 - Tangani BOM, pemisah `,` `;` tab, encoding Windows-1252. Berkas maks 2 MB, ekstensi csv/txt. Template CSV (dengan BOM) tersedia di halaman admin.
-- Format kolom: lihat `docs/ppid-bkn-request.md` §3.
+- Format kolom: lihat `docs/ppid-bkn-request.md` §3. Cakupan `jabatan` memerlukan `instansi` dan `nama_jabatan` (kolom `kode_jabatan` dan `lokasi` opsional); kolom jabatan harus kosong pada cakupan lain.
 
 ---
 
@@ -591,6 +595,10 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 **Fase 5, Tingkat B**
 - Parser hasil seleksi administrasi instansi besar, `docs/data-coverage.md`.
 - ✅ Beberapa instansi besar tercakup per jabatan dengan sumber; tanpa data pribadi tersimpan.
+- **Status: sebagian (16 Nov 2026). Alur selesai; data nyata instansi besar belum bisa dikumpulkan.** Terverifikasi: Pest 405 tes, Vitest 121 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau; uji browser `tests/e2e/fase5.cjs` 16 pemeriksaan lulus (impor CSV jabatan, blok per jabatan di daftar dan detail, riwayat, rollback, HP tanpa scroll horizontal).
+- **Yang dibangun:** cakupan `jabatan` pada impor CSV, skema, dan rollback; `PencocokPeluangJabatan` (konservatif); tampilan per jabatan di daftar dan detail dengan label "lolos administrasi"; perintah `sicasn:agregat-lampiran` yang hanya mengeluarkan agregat dan menolak hasil bila total tidak sama dengan angka resmi.
+- **Yang tidak tercapai (kriteria "beberapa instansi besar tercakup"):** lihat `docs/data-coverage.md`. Kemenkumham tidak terjangkau (502), BPS dan MPR memblokir (403, tidak ditembus), Kemenkes 404, dan PDF Bawaslu, Kemhan, Setneg yang terjangkau hanya memuat pengumuman atau sanggahan tanpa daftar lengkap. Jalur yang realistis adalah **tingkat C lewat PPID** atau mengunduh lampiran sendiri lalu memakai perintah agregat.
+- Belum ada formasi CPNS 2026 nyata, jadi pencocokan per jabatan belum pernah diuji pada nama jabatan nyata lintas tahun; uji ulang begitu data muncul.
 
 **Fase 6, Pantauan dan perbandingan**
 - ✅ Simpan, catatan, bandingkan hingga 4 formasi.

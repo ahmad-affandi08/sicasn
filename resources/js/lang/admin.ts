@@ -115,7 +115,7 @@ export const teksAdmin = {
         totalBaris: 'Baris statistik tersimpan',
         unggah: {
             judul: 'Unggah CSV',
-            petunjuk: 'Format .csv, maksimal 2 MB dan 5.000 baris. Pemisah koma, titik koma, atau tab. Hasil impor tingkat C dari PPID BKN memakai format yang sama.',
+            petunjuk: 'Format .csv, maksimal 2 MB dan 5.000 baris. Pemisah koma, titik koma, atau tab. Cakupan bisa nasional, instansi, atau jabatan (isi nama_jabatan dan, bila ada, lokasi). Data PPID BKN tingkat C memakai format yang sama.',
             berkas: 'Berkas CSV',
             tombol: 'Lihat pratinjau',
             memproses: 'Membaca berkas...',

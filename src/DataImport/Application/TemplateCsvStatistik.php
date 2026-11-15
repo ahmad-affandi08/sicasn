@@ -8,7 +8,7 @@ final class TemplateCsvStatistik
 {
     public static function isi(): string
     {
-        $contoh = ['2024', 'cpns', 'instansi', 'Nama Instansi', '100', '5000', '', '', '2024-09-17', 'akhir', 'A', 'turunan', 'Nama sumber', 'https://contoh.id/sumber', 'Catatan opsional'];
+        $contoh = ['2024', 'cpns', 'instansi', 'Nama Instansi', '', '', '', '100', '5000', '', '', '2024-09-17', 'akhir', 'A', 'turunan', 'Nama sumber', 'https://contoh.id/sumber', 'Catatan opsional'];
 
         return self::keCsv(PenguraiCsvStatistik::KOLOM)."\n".self::keCsv($contoh)."\n";
     }

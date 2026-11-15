@@ -10,7 +10,9 @@ use Src\Formasi\Application\ItemFormasi;
 use Src\Formasi\Application\OpsiFormasi;
 use Src\Formasi\Application\OpsiPilihan;
 use Src\Formasi\Application\PeluangFormasi;
+use Src\Formasi\Application\PeluangJabatan;
 use Src\Formasi\Application\RingkasFormasi;
+use Src\Formasi\Application\SnapshotJabatan;
 use Src\Formasi\Domain\TingkatPersaingan;
 
 final class FormasiResource
@@ -55,6 +57,8 @@ final class FormasiResource
                 'terakhirTerlihat' => $r->terakhirTerlihat,
             ],
             'peluang' => self::peluang($detail->peluang),
+            'peluangJabatan' => self::peluangJabatan($detail->peluangJabatan),
+            'riwayatJabatan' => array_map(self::snapshotJabatan(...), $detail->riwayatJabatan),
             'riwayat' => array_map(PeluangResource::snapshot(...), $detail->riwayat),
             'tautanResmi' => $detail->tautanResmi,
             'ambang' => ['longgarMaks' => $detail->ambang->longgarMaks, 'ketatMin' => $detail->ambang->ketatMin],
@@ -63,7 +67,7 @@ final class FormasiResource
 
     public static function item(ItemFormasi $item): array
     {
-        return self::ringkas($item->formasi) + ['peluang' => self::peluang($item->peluang)];
+        return self::ringkas($item->formasi) + ['peluang' => self::peluang($item->peluang), 'peluangJabatan' => self::peluangJabatan($item->peluangJabatan)];
     }
 
     private static function ringkas(RingkasFormasi $f): array
@@ -108,6 +112,52 @@ final class FormasiResource
             'sumberNama' => $peluang->dasar->sumberNama,
             'sumberUrl' => $peluang->dasar->sumberUrl,
             'perJabatan' => false,
+        ];
+    }
+
+    private static function peluangJabatan(?PeluangJabatan $peluang): ?array
+    {
+        if ($peluang === null) {
+            return null;
+        }
+
+        $d = $peluang->dasar;
+
+        return [
+            'tingkat' => $peluang->penilaian->tingkat->value,
+            'tingkatLabel' => $peluang->penilaian->tingkat->label(),
+            'rasio' => $peluang->penilaian->rasio === null ? null : round($peluang->penilaian->rasio, 1),
+            'batasBawah' => $peluang->penilaian->batasBawah,
+            'formasi' => $d->formasi,
+            'pelamar' => $d->pelamar,
+            'submit' => $d->submit,
+            'lolosAdministrasi' => $d->lolosAdministrasi,
+            'lokasi' => $d->lokasi,
+            'statusAngka' => $d->statusAngka->value,
+            'tingkatData' => $d->tingkatData->value,
+            'keyakinan' => $d->keyakinan->value,
+            'tanggal' => $d->tanggal,
+            'sumberNama' => $d->sumberNama,
+            'sumberUrl' => $d->sumberUrl,
+            'catatan' => $d->catatan,
+        ];
+    }
+
+    private static function snapshotJabatan(SnapshotJabatan $s): array
+    {
+        return [
+            'tanggal' => $s->tanggal,
+            'status' => $s->statusAngka->value,
+            'formasi' => $s->formasi,
+            'pelamar' => $s->pelamar,
+            'submit' => $s->submit,
+            'lolosAdministrasi' => $s->lolosAdministrasi,
+            'tingkatData' => $s->tingkatData->value,
+            'keyakinan' => $s->keyakinan->value,
+            'sumberNama' => $s->sumberNama,
+            'sumberUrl' => $s->sumberUrl,
+            'catatan' => $s->catatan,
+            'lokasi' => $s->lokasi,
         ];
     }
 

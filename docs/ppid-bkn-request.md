@@ -88,8 +88,11 @@ CSV UTF-8 (BOM, titik koma, tab, dan Windows-1252 juga diterima), baris pertama 
 |---|---|---|
 | `tahun` | ya | `2024` |
 | `jenis_pengadaan` | tidak (bawaan `cpns`) | `cpns` / `pppk_guru` / `pppk_teknis` / `pppk_nakes` |
-| `cakupan` | ya | `nasional` atau `instansi` (`jabatan` belum didukung, menyusul Fase 5) |
-| `instansi` | ya bila cakupan instansi; kosong bila nasional | `Kementerian Agama` |
+| `cakupan` | ya | `nasional`, `instansi`, atau `jabatan` |
+| `instansi` | ya bila cakupan instansi atau jabatan; kosong bila nasional | `Kementerian Agama` |
+| `kode_jabatan` | tidak, hanya cakupan jabatan | `JF0000418-79` |
+| `nama_jabatan` | ya bila cakupan jabatan | `Penata Layanan Operasional` |
+| `lokasi` | tidak, hanya cakupan jabatan | `Kota Malang` |
 | `jumlah_formasi` | salah satu kolom jumlah wajib terisi | `20772` |
 | `jumlah_pelamar` | | `411194` |
 | `jumlah_submit` | | `3572414` (tidak boleh melebihi pelamar) |

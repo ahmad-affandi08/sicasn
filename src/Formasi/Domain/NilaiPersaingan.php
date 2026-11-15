@@ -6,9 +6,9 @@ namespace Src\Formasi\Domain;
 
 final class NilaiPersaingan
 {
-    public static function nilai(?int $pelamar, ?int $submit, ?int $formasi, StatusAngka $status, AmbangPersaingan $ambang): PenilaianPersaingan
+    public static function nilai(?int $pelamar, ?int $submit, ?int $formasi, StatusAngka $status, AmbangPersaingan $ambang, ?int $lolosAdministrasi = null): PenilaianPersaingan
     {
-        $dasar = $pelamar ?? $submit;
+        $dasar = $pelamar ?? $submit ?? $lolosAdministrasi;
 
         if ($formasi === null || $formasi <= 0 || $dasar === null) {
             return new PenilaianPersaingan(TingkatPersaingan::BelumAdaData, null, false);

@@ -85,6 +85,10 @@ Catatan penting untuk agent:
 - "Submit/pelamar" ≠ "lolos administrasi". Beri label yang tepat (kolom `keyakinan` dan teks UI).
 - Nama jabatan antar-tahun tidak selalu sama persis. Pencocokan harus konservatif.
 
+## 2b. Hasil seleksi administrasi per instansi (Fase 5)
+
+Tiap instansi menerbitkan sendiri pengumuman dan lampiran hasil seleksi administrasi (PDF) di situsnya. Per 16 Nov 2026 tidak ada satu pun yang berhasil dikumpulkan sebagai data per jabatan; rinciannya per instansi ada di [`data-coverage.md`](data-coverage.md). Lampiran memuat nama dan nomor registrasi peserta, sehingga hanya boleh diproses sementara dan diagregasi (perintah `sicasn:agregat-lampiran`), tidak pernah disimpan.
+
 ## 3. Sumber lain yang diperiksa
 
 - **PDF BKN 2024**: sebagian besar URL lama (`bkn.go.id/unggahan/2024/...`) kini **404**. Satu PDF yang masih ada (siaran pers 23 Apr 2025 soal optimalisasi) tidak memuat angka per instansi. Jangan mengandalkan URL lama; cari lewat halaman rilis BKN yang aktif.

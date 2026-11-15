@@ -85,3 +85,14 @@ Membuat ulang database (`migrate:fresh`!), mengisi 100.000 formasi sintetis, lal
 ## Catatan setelah penyegaran desain
 
 Skrip E2E memilih elemen lewat peran dan nama aksesibel, bukan kelas CSS, kecuali daftar formasi (`ul[aria-label="Daftar formasi"]`) dan daftar Peluang Instansi di HP (`main ul.divide-y`). Jangan mengganti `aria-label` daftar tanpa memperbarui skrip.
+
+## Fase 5 (statistik per jabatan)
+
+`tests/e2e/fase5.cjs` memakai database yang sama dengan Fase 4 (sudah memuat formasi sintetis dan statistik 2024) dan menjalankan `php artisan migrate` terlebih dulu.
+
+```
+node tests/e2e/fase5.cjs /tmp/tangkapan-layar
+```
+
+Alurnya: admin mengunggah CSV `cakupan=jabatan` (dua baris valid dan satu tanpa nama jabatan), pratinjau, konfirmasi; member melihat blok "Per jabatan 2024" di daftar dan detail beserta riwayatnya; tampilan HP tanpa scroll horizontal; rollback mengembalikan tampilan ke rata-rata instansi. Data memakai instansi dan jabatan yang dibaca dari kartu pertama hasil pencarian, jadi tidak bergantung pada nama tertentu.
+

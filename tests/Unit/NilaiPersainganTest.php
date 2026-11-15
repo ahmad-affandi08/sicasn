@@ -76,3 +76,16 @@ it('menolak ambang yang tidak masuk akal', function (float $longgar, float $keta
     'ketat di bawah longgar' => [8.0, 5.0],
     'ketat terlalu besar' => [5.0, 10001.0],
 ]);
+
+it('memakai peserta lolos administrasi sebagai batas bawah dan tidak pernah longgar', function (): void {
+    $sedang = NilaiPersaingan::nilai(null, null, 30, StatusAngka::Akhir, AmbangPersaingan::awal(), 600);
+    $kecil = NilaiPersaingan::nilai(null, null, 30, StatusAngka::Akhir, AmbangPersaingan::awal(), 60);
+
+    expect($sedang->tingkat)->toBe(TingkatPersaingan::Sedang)->and($sedang->rasio)->toBe(20.0)->and($sedang->batasBawah)->toBeTrue()
+        ->and($kecil->tingkat)->toBe(TingkatPersaingan::BelumFinal);
+});
+
+it('mengutamakan pelamar lalu submit sebelum lolos administrasi', function (): void {
+    expect(NilaiPersaingan::nilai(1000, 500, 10, StatusAngka::Akhir, AmbangPersaingan::awal(), 300)->rasio)->toBe(100.0)
+        ->and(NilaiPersaingan::nilai(null, 500, 10, StatusAngka::Akhir, AmbangPersaingan::awal(), 300)->rasio)->toBe(50.0);
+});

@@ -71,7 +71,7 @@ describe('PanelFilterFormasi', () => {
         const terapkan = vi.fn();
         render(<PanelFilterFormasi filter={FILTER_KOSONG} opsi={opsiUji} tingkat={tingkat} onTerapkan={terapkan} />);
 
-        await userEvent.selectOptions(screen.getByLabelText('Tingkat persaingan'), 'ketat');
+        await userEvent.selectOptions(screen.getByLabelText('Tingkat persaingan instansi'), 'ketat');
         await userEvent.click(screen.getByRole('switch', { name: /Sertakan formasi tanpa rincian kualifikasi/ }));
         await userEvent.click(screen.getByRole('button', { name: /Terapkan filter/ }));
 

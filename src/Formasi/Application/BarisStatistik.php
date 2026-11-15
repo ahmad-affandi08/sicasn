@@ -7,6 +7,7 @@ namespace Src\Formasi\Application;
 use Src\Formasi\Domain\Cakupan;
 use Src\Formasi\Domain\JenisPengadaan;
 use Src\Formasi\Domain\Keyakinan;
+use Src\Formasi\Domain\NamaNormal;
 use Src\Formasi\Domain\StatusAngka;
 use Src\Formasi\Domain\TingkatData;
 
@@ -17,6 +18,9 @@ final readonly class BarisStatistik
         public JenisPengadaan $jenisPengadaan,
         public Cakupan $cakupan,
         public ?string $namaInstansi,
+        public ?string $kodeJabatan,
+        public ?string $namaJabatan,
+        public ?string $lokasi,
         public ?int $jumlahFormasi,
         public ?int $jumlahPelamar,
         public ?int $jumlahSubmit,
@@ -32,7 +36,14 @@ final readonly class BarisStatistik
 
     public function kunci(?int $instansiId): string
     {
-        return sha1(implode('|', [$this->tahun, $this->jenisPengadaan->value, $this->cakupan->value, $instansiId ?? '-', $this->tanggalSnapshot, mb_strtolower($this->sumberNama)]));
+        $bagian = [$this->tahun, $this->jenisPengadaan->value, $this->cakupan->value, $instansiId ?? '-', $this->tanggalSnapshot, mb_strtolower($this->sumberNama)];
+
+        if ($this->namaJabatan !== null) {
+            $bagian[] = NamaNormal::dari($this->namaJabatan);
+            $bagian[] = NamaNormal::dari($this->lokasi);
+        }
+
+        return sha1(implode('|', $bagian));
     }
 
     public function keArray(): array
@@ -42,6 +53,9 @@ final readonly class BarisStatistik
             'jenis_pengadaan' => $this->jenisPengadaan->value,
             'cakupan' => $this->cakupan->value,
             'instansi' => $this->namaInstansi,
+            'kode_jabatan' => $this->kodeJabatan,
+            'nama_jabatan' => $this->namaJabatan,
+            'lokasi' => $this->lokasi,
             'jumlah_formasi' => $this->jumlahFormasi,
             'jumlah_pelamar' => $this->jumlahPelamar,
             'jumlah_submit' => $this->jumlahSubmit,
@@ -63,6 +77,9 @@ final readonly class BarisStatistik
             JenisPengadaan::from($data['jenis_pengadaan']),
             Cakupan::from($data['cakupan']),
             $data['instansi'],
+            $data['kode_jabatan'] ?? null,
+            $data['nama_jabatan'] ?? null,
+            $data['lokasi'] ?? null,
             $data['jumlah_formasi'],
             $data['jumlah_pelamar'],
             $data['jumlah_submit'],

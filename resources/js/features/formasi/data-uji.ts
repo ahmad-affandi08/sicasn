@@ -1,4 +1,4 @@
-import type { DetailFormasiItem, FormasiItem, OpsiFormasiItem, PeluangFormasiItem } from '@/types';
+import type { DetailFormasiItem, FormasiItem, OpsiFormasiItem, PeluangFormasiItem, PeluangJabatanItem } from '@/types';
 
 export const peluangUji: PeluangFormasiItem = {
     tingkat: 'ketat',
@@ -18,6 +18,25 @@ export const peluangUji: PeluangFormasiItem = {
     perJabatan: false,
 };
 
+export const peluangJabatanUji: PeluangJabatanItem = {
+    tingkat: 'sedang',
+    tingkatLabel: 'Sedang',
+    rasio: 12.5,
+    batasBawah: false,
+    formasi: 8,
+    pelamar: null,
+    submit: null,
+    lolosAdministrasi: 100,
+    lokasi: null,
+    statusAngka: 'akhir',
+    tingkatData: 'B',
+    keyakinan: 'turunan',
+    tanggal: '2024-09-19',
+    sumberNama: 'Pengumuman seleksi administrasi instansi',
+    sumberUrl: null,
+    catatan: null,
+};
+
 export const formasiUji: FormasiItem = {
     id: 11,
     instansiId: 3,
@@ -34,6 +53,7 @@ export const formasiUji: FormasiItem = {
     kualifikasiTersedia: true,
     kualifikasi: 'S-1 HUKUM / S-1 SYARIAH / D-IV HUKUM',
     peluang: peluangUji,
+    peluangJabatan: null,
 };
 
 export const opsiUji: OpsiFormasiItem = {

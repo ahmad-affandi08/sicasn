@@ -16,5 +16,7 @@ interface StatistikRepository
 
     public function snapshot(int $tahun, JenisPengadaan $jenis, Cakupan $cakupan, ?int $instansiId = null): array;
 
+    public function jabatan(int $tahun, JenisPengadaan $jenis, array $pasangan): array;
+
     public function jumlahBaris(): int;
 }

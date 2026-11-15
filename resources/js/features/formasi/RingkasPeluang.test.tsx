@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { peluangUji } from './data-uji';
+import { peluangJabatanUji, peluangUji } from './data-uji';
 import { RingkasPeluang } from './RingkasPeluang';
 
 describe('RingkasPeluang', () => {
@@ -41,5 +41,33 @@ describe('RingkasPeluang', () => {
 
         expect(screen.getByText('Belum ada data')).toBeInTheDocument();
         expect(screen.getByText('Belum ada data pelamar 2024 untuk instansi ini.')).toBeInTheDocument();
+    });
+
+    it('menampilkan data per jabatan lebih dulu dengan label lolos administrasi dan rata-rata instansi', () => {
+        render(<RingkasPeluang peluang={peluangUji} jabatan={peluangJabatanUji} ambang={{ longgarMaks: 5, ketatMin: 20 }} />);
+
+        expect(screen.getByText('Per jabatan 2024')).toBeInTheDocument();
+        expect(screen.getByText('Lolos administrasi')).toBeInTheDocument();
+        expect(screen.getByText('100')).toBeInTheDocument();
+        expect(screen.getByText('12,5')).toBeInTheDocument();
+        expect(screen.getByText('Peserta yang dinyatakan lulus seleksi administrasi, bukan total pendaftar.')).toBeInTheDocument();
+        expect(screen.getByText(/Data tingkat B · Pengumuman seleksi administrasi instansi · 19 September 2024/)).toBeInTheDocument();
+        expect(screen.getByText('Rata-rata instansi')).toBeInTheDocument();
+        expect(screen.queryByText('Rata-rata instansi, bukan per jabatan')).not.toBeInTheDocument();
+    });
+
+    it('menjelaskan bila rasio jabatan tidak bisa dihitung karena formasi 2024 tidak ada', () => {
+        render(<RingkasPeluang peluang={peluangUji} jabatan={{ ...peluangJabatanUji, formasi: null, rasio: null, tingkat: 'belum_ada_data' }} />);
+
+        expect(screen.getByText(/Rasio belum bisa dihitung karena jumlah formasi jabatan ini pada 2024 tidak tersedia/)).toBeInTheDocument();
+        expect(screen.getByText('100')).toBeInTheDocument();
+    });
+
+    it('menyebut lokasi bila data jabatan spesifik lokasi', () => {
+        render(<RingkasPeluang peluang={null} jabatan={{ ...peluangJabatanUji, lokasi: 'Kab. Sleman' }} />);
+
+        expect(screen.getByText('Lokasi Kab. Sleman')).toBeInTheDocument();
+        expect(screen.getByText('Rata-rata instansi')).toBeInTheDocument();
+        expect(screen.getByText('Belum ada data')).toBeInTheDocument();
     });
 });

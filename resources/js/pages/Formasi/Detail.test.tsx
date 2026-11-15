@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
 import { DialogProvider } from '@/components/dialog/DialogProvider';
-import { detailUji, peluangUji } from '@/features/formasi/data-uji';
+import { detailUji, peluangJabatanUji, peluangUji } from '@/features/formasi/data-uji';
 import { snapshotUji } from '@/features/peluang/data-uji';
 
 vi.mock('@inertiajs/react', () => ({
@@ -26,7 +26,7 @@ function render(isi: ReactNode) {
     return renderPolos(<DialogProvider>{isi}</DialogProvider>);
 }
 
-const dasar = { formasi: detailUji, peluang: peluangUji, riwayat: [snapshotUji], tautanResmi: 'https://sscasn.bkn.go.id', ambang: { longgarMaks: 5, ketatMin: 20 } };
+const dasar = { formasi: detailUji, peluang: peluangUji, peluangJabatan: null, riwayatJabatan: [], riwayat: [snapshotUji], tautanResmi: 'https://sscasn.bkn.go.id', ambang: { longgarMaks: 5, ketatMin: 20 } };
 
 describe('Formasi/Detail', () => {
     it('menampilkan informasi lengkap formasi', () => {
@@ -85,5 +85,19 @@ describe('Formasi/Detail', () => {
         render(<Detail {...dasar} formasi={{ ...detailUji, penghasilanMin: 3000000, penghasilanMaks: 5000000 }} />);
 
         expect(screen.getByText('Rp 3.000.000 – Rp 5.000.000')).toBeInTheDocument();
+    });
+
+    it('menampilkan riwayat angka jabatan beserta sumber bila ada data per jabatan', () => {
+        render(<Detail {...dasar} peluangJabatan={peluangJabatanUji} riwayatJabatan={[{ ...snapshotUji, tingkatData: 'B', sumberNama: 'Pengumuman jabatan uji', lokasi: null }]} />);
+
+        expect(screen.getByText('Riwayat angka jabatan ini')).toBeInTheDocument();
+        expect(screen.getAllByText(/Pengumuman jabatan uji/).length).toBeGreaterThan(0);
+        expect(screen.getByText('Per jabatan 2024')).toBeInTheDocument();
+    });
+
+    it('tidak menampilkan riwayat jabatan bila kosong', () => {
+        render(<Detail {...dasar} />);
+
+        expect(screen.queryByText('Riwayat angka jabatan ini')).not.toBeInTheDocument();
     });
 });

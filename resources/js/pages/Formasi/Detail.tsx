@@ -16,11 +16,13 @@ import { teksFormasi } from '@/lang/formasi';
 import { LayoutMember } from '@/layouts/LayoutMember';
 import { formatWaktu } from '@/lib/format';
 import { rute } from '@/lib/rute';
-import type { DetailFormasiItem, PeluangFormasiItem, SnapshotItem } from '@/types';
+import type { DetailFormasiItem, PeluangFormasiItem, PeluangJabatanItem, SnapshotItem } from '@/types';
 
 interface PropsHalaman {
     formasi: DetailFormasiItem;
     peluang: PeluangFormasiItem | null;
+    peluangJabatan: PeluangJabatanItem | null;
+    riwayatJabatan: SnapshotItem[];
     riwayat: SnapshotItem[];
     tautanResmi: string;
     ambang: { longgarMaks: number; ketatMin: number };
@@ -36,7 +38,7 @@ function rentangPenghasilan(formasi: DetailFormasiItem): string {
     return min !== null || maks !== null ? teksFormasi.detail.rupiah((min ?? maks) as number) : teksFormasi.detail.belumTersedia;
 }
 
-export default function Detail({ formasi, peluang, riwayat, tautanResmi, ambang }: PropsHalaman) {
+export default function Detail({ formasi, peluang, peluangJabatan, riwayatJabatan, riwayat, tautanResmi, ambang }: PropsHalaman) {
     const teks = teksFormasi.detail;
     const usia = teksFormasi.kartu.usia(formasi.usiaMin, formasi.usiaMaks);
 
@@ -100,7 +102,7 @@ export default function Detail({ formasi, peluang, riwayat, tautanResmi, ambang 
                             <CardTitle>{teks.persaingan}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <RingkasPeluang peluang={peluang} ambang={ambang} />
+                            <RingkasPeluang peluang={peluang} jabatan={peluangJabatan} ambang={ambang} />
                         </CardContent>
                     </Card>
                 </div>
@@ -133,6 +135,21 @@ export default function Detail({ formasi, peluang, riwayat, tautanResmi, ambang 
                         <DaftarPersyaratan persyaratan={formasi.persyaratan} />
                     </CardContent>
                 </Card>
+
+                {riwayatJabatan.length > 0 && (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>{teks.riwayatJabatan}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <ul className="grid gap-3 md:grid-cols-2">
+                                {riwayatJabatan.map((snapshot) => (
+                                    <ButirSnapshot key={`${snapshot.tanggal}-${snapshot.sumberNama}-${snapshot.status}-${snapshot.lokasi ?? ''}`} snapshot={snapshot} />
+                                ))}
+                            </ul>
+                        </CardContent>
+                    </Card>
+                )}
 
                 {riwayat.length > 0 && (
                     <Card>

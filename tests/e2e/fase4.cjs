@@ -98,7 +98,7 @@ const hapusFilter = (page) => klikDanTunggu(page, page.getByRole('button', { nam
   cek('Filter kabupaten/kota mempersempit ke satu wilayah', kartuWilayah.length > 0 && kartuWilayah.every((t) => t.includes(lokasiTerpilih)), lokasiTerpilih);
 
   await hapusFilter(dm);
-  const instansiBox = dm.getByRole('combobox', { name: 'Instansi' });
+  const instansiBox = dm.getByRole('combobox', { name: 'Instansi', exact: true });
   await instansiBox.click();
   await instansiBox.fill('Kementerian');
   const opsiInstansi = dm.locator('[role=listbox] [role=option]').first();
@@ -155,7 +155,7 @@ const hapusFilter = (page) => klikDanTunggu(page, page.getByRole('button', { nam
   await tautanFormasi.click();
   await dm.waitForURL(/\/formasi\?instansi=\d+/);
   await dm.waitForLoadState('networkidle');
-  cek('Tautan membuka daftar formasi terfilter instansi (chip instansi tampil)', (await dm.getByRole('combobox', { name: 'Instansi' }).count()) === 0 && (await dm.locator('button[aria-label^="Hapus "]').count()) >= 1);
+  cek('Tautan membuka daftar formasi terfilter instansi (chip instansi tampil)', (await dm.getByRole('combobox', { name: 'Instansi', exact: true }).count()) === 0 && (await dm.locator('button[aria-label^="Hapus "]').count()) >= 1);
 
   const { page: hp } = await baru(390, 844);
   await masukMember(hp);

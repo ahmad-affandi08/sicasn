@@ -33,6 +33,12 @@ final readonly class AmbilDetailFormasi
         $peluang = $mentah === null ? null : new PeluangFormasi(NilaiPersaingan::nilai($mentah->pelamar, $mentah->submit, $mentah->formasi, $mentah->statusAngka, $ambang), $mentah);
         $riwayat = $this->statistik->snapshot(HitungPeluangInstansi::TAHUN_ACUAN, JenisPengadaan::Cpns, Cakupan::Instansi, $instansiId);
 
-        return new DetailFormasi($rincian, $peluang, $riwayat, self::TAUTAN_RESMI, $ambang);
+        $kunci = $instansiId.'|'.$rincian->ringkas->jabatanNormal;
+        $perJabatan = $this->statistik->jabatan(HitungPeluangInstansi::TAHUN_ACUAN, JenisPengadaan::Cpns, [[$instansiId, $rincian->ringkas->jabatanNormal]])[$kunci] ?? [];
+        $cocok = PencocokPeluangJabatan::semuaYangCocok($rincian->ringkas, $perJabatan);
+        $terpilih = $cocok[0] ?? null;
+        $peluangJabatan = $terpilih === null ? null : new PeluangJabatan(NilaiPersaingan::nilai($terpilih->pelamar, $terpilih->submit, $terpilih->formasi, $terpilih->statusAngka, $ambang, $terpilih->lolosAdministrasi), $terpilih);
+
+        return new DetailFormasi($rincian, $peluang, $riwayat, self::TAUTAN_RESMI, $ambang, $peluangJabatan, $cocok);
     }
 }
