@@ -29,9 +29,10 @@ final readonly class AmbilDetailFormasi
 
         $instansiId = $rincian->ringkas->instansiId;
         $mentah = $this->peluang->semua()[$instansiId] ?? null;
-        $peluang = $mentah === null ? null : new PeluangFormasi(NilaiPersaingan::nilai($mentah->pelamar, $mentah->submit, $mentah->formasi, $mentah->statusAngka, $this->ambang->ambil()), $mentah);
+        $ambang = $this->ambang->ambil();
+        $peluang = $mentah === null ? null : new PeluangFormasi(NilaiPersaingan::nilai($mentah->pelamar, $mentah->submit, $mentah->formasi, $mentah->statusAngka, $ambang), $mentah);
         $riwayat = $this->statistik->snapshot(HitungPeluangInstansi::TAHUN_ACUAN, JenisPengadaan::Cpns, Cakupan::Instansi, $instansiId);
 
-        return new DetailFormasi($rincian, $peluang, $riwayat, self::TAUTAN_RESMI);
+        return new DetailFormasi($rincian, $peluang, $riwayat, self::TAUTAN_RESMI, $ambang);
     }
 }

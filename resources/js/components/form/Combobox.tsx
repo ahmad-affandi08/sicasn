@@ -112,11 +112,11 @@ export function Combobox({ id, label, placeholder, terpilih, banyak = false, mua
             <label htmlFor={id} className="text-sm font-medium text-teks">
                 {label}
             </label>
-            <div className={cn('flex min-h-11 flex-wrap items-center gap-1.5 rounded-xl border border-garis bg-kartu px-2.5 py-1.5', terbuka && 'ring-2 ring-primer/40')}>
+            <div className={cn('flex min-h-11 flex-wrap items-center gap-1.5 rounded-lg border border-garis-input bg-kartu px-2.5 py-1 md:min-h-10', terbuka && 'ring-2 ring-primer/40')}>
                 {terpilih.map((butir) => (
-                    <span key={butir.nilai} className="inline-flex max-w-full items-center gap-1 rounded-lg bg-primer-lembut py-1 pr-1 pl-2.5 text-sm text-primer">
+                    <span key={butir.nilai} className="inline-flex max-w-full items-center gap-1 rounded-md bg-primer-lembut py-0.5 pr-0.5 pl-2 text-sm text-primer">
                         <span className="truncate">{butir.label}</span>
-                        <button type="button" aria-label={teksFormasi.combobox.hapus(butir.label)} onClick={() => hapus(butir.nilai)} className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md hover:bg-primer/10">
+                        <button type="button" aria-label={teksFormasi.combobox.hapus(butir.label)} onClick={() => hapus(butir.nilai)} className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded hover:bg-primer/10">
                             <LuX aria-hidden className="h-4 w-4" />
                         </button>
                     </span>
@@ -138,14 +138,14 @@ export function Combobox({ id, label, placeholder, terpilih, banyak = false, mua
                         }}
                         onFocus={() => setTerbuka(true)}
                         onKeyDown={tekan}
-                        className="min-h-8 min-w-24 flex-1 bg-transparent px-1 text-base text-teks outline-none placeholder:text-redup"
+                        className="min-h-8 min-w-24 flex-1 bg-transparent px-1 text-base text-teks outline-none placeholder:text-redup md:text-sm"
                     />
                 )}
                 {disembunyikan && <span id={id} className="sr-only">{terakhirDipilih?.label}</span>}
                 {!disembunyikan && <LuChevronsUpDown aria-hidden className="ml-auto h-4 w-4 shrink-0 text-redup" />}
             </div>
             {terbuka && (
-                <ul id={idDaftar} role="listbox" aria-label={label} className="absolute top-full right-0 left-0 z-30 mt-1 max-h-60 overflow-y-auto rounded-xl border border-garis bg-kartu p-1 shadow-lg">
+                <ul id={idDaftar} role="listbox" aria-label={label} className="absolute top-full right-0 left-0 z-30 mt-1 max-h-60 overflow-y-auto rounded-lg border border-garis bg-kartu p-1 shadow-lg">
                     {memuat && <li className="px-3 py-2 text-sm text-redup">{teksFormasi.combobox.memuat}</li>}
                     {!memuat && galat && <li className="px-3 py-2 text-sm text-bahaya">{teksFormasi.combobox.galat}</li>}
                     {!memuat && !galat && tersedia.length === 0 && <li className="px-3 py-2 text-sm text-redup">{teksFormasi.combobox.kosong}</li>}

@@ -1,6 +1,6 @@
 import { Head, Link, router } from '@inertiajs/react';
 import { useEffect } from 'react';
-import { LuCircleAlert, LuCircleCheck, LuUserPlus, LuUsers } from 'react-icons/lu';
+import { LuCircleAlert, LuCircleCheck, LuUserPlus } from 'react-icons/lu';
 
 import { useDialog } from '@/components/dialog/konteks';
 import { HeaderHalaman } from '@/components/HeaderHalaman';
@@ -61,39 +61,25 @@ export default function Dasbor({ ringkasan, kesiapan, sinkron, eventBaru }: Prop
                 }
             />
 
-            <div className="grid gap-4 sm:grid-cols-2">
-                <Card>
-                    <CardContent className="flex items-center gap-4 pt-6">
-                        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sukses-lembut text-sukses">
-                            <LuUsers aria-hidden className="h-6 w-6" />
-                        </span>
-                        <div>
-                            <p className="text-3xl font-bold">{ringkasan.aktif}</p>
-                            <p className="text-sm text-redup">{teks.memberAktif}</p>
-                        </div>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardContent className="flex items-center gap-4 pt-6">
-                        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-peringatan-lembut text-peringatan">
-                            <LuUsers aria-hidden className="h-6 w-6" />
-                        </span>
-                        <div>
-                            <p className="text-3xl font-bold">{ringkasan.nonaktif}</p>
-                            <p className="text-sm text-redup">{teks.memberNonaktif}</p>
-                        </div>
-                    </CardContent>
-                </Card>
-            </div>
+            <dl className="grid grid-cols-2 overflow-hidden rounded-kartu border border-garis bg-kartu">
+                <div className="flex flex-col gap-1 p-4">
+                    <dt className="text-sm text-redup">{teks.memberAktif}</dt>
+                    <dd className="text-3xl leading-none font-medium">{ringkasan.aktif}</dd>
+                </div>
+                <div className="flex flex-col gap-1 border-l border-garis p-4">
+                    <dt className="text-sm text-redup">{teks.memberNonaktif}</dt>
+                    <dd className="text-3xl leading-none font-medium">{ringkasan.nonaktif}</dd>
+                </div>
+            </dl>
 
             <Card className="mt-4">
-                <CardContent className="flex flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <CardContent className="flex flex-col gap-4 pt-5 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <p className="font-medium">{teks.kartuSinkron.judul}</p>
                         <p className="text-sm text-redup">
                             {teks.kartuSinkron.terakhir}: {sinkron.terakhir ? formatWaktu(sinkron.terakhir.selesaiAt) : teks.kartuSinkron.belumPernah}
                         </p>
-                        <p className="mt-2 text-2xl font-bold">
+                        <p className="mt-2 text-2xl font-medium">
                             {sinkron.formasiAktif.toLocaleString('id-ID')} <span className="text-sm font-normal text-redup">{teks.kartuSinkron.formasiAktif}</span>
                         </p>
                         {sinkron.formasiAktif === 0 && <p className="mt-1 max-w-xl text-sm text-redup">{teks.kartuSinkron.kosong}</p>}
@@ -127,7 +113,7 @@ export default function Dasbor({ ringkasan, kesiapan, sinkron, eventBaru }: Prop
                                         <p className="text-sm text-redup">{item.siap ? item.keterangan : item.belum}</p>
                                     </div>
                                 </div>
-                                <Button asChild variant={item.siap ? 'outline' : 'default'} size="sm" className="self-start sm:self-center">
+                                <Button asChild variant="outline" size="sm" className="self-start sm:self-center">
                                     <Link href={item.tujuan}>{teks.atur}</Link>
                                 </Button>
                             </li>

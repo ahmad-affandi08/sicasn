@@ -2,35 +2,41 @@ import { Link } from '@inertiajs/react';
 import { LuAccessibility, LuChevronRight, LuGraduationCap, LuMapPin, LuUsers } from 'react-icons/lu';
 
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
 import { teksFormasi } from '@/lang/formasi';
 import { rute } from '@/lib/rute';
 import type { FormasiItem } from '@/types';
 
 import { RingkasPeluang } from './RingkasPeluang';
 
-export function KartuFormasi({ formasi }: { formasi: FormasiItem }) {
+interface PropsKartuFormasi {
+    formasi: FormasiItem;
+    ambang?: { longgarMaks: number; ketatMin: number };
+}
+
+export function KartuFormasi({ formasi, ambang }: PropsKartuFormasi) {
     const teks = teksFormasi.kartu;
     const usia = teks.usia(formasi.usiaMin, formasi.usiaMaks);
 
     return (
-        <Card className="h-full">
-            <CardContent className="flex h-full flex-col gap-4 pt-6">
-                <div className="flex flex-col gap-1.5">
+        <article className="grid gap-4 p-4 md:grid-cols-[1fr_15rem] md:gap-6 md:p-5">
+            <div className="flex min-w-0 flex-col gap-2.5">
+                <div className="flex flex-col gap-0.5">
                     <p className="text-sm text-redup break-words">{formasi.instansi}</p>
-                    <h3 className="text-lg leading-snug font-medium break-words">{formasi.jabatan}</h3>
-                    <div className="flex flex-wrap gap-2 empty:hidden">
-                        {formasi.disabilitas === true && (
+                    <h3 className="text-base leading-snug font-medium break-words">{formasi.jabatan}</h3>
+                </div>
+                {(formasi.disabilitas === true || formasi.jenisFormasi !== 'UMUM') && (
+                    <div className="flex flex-wrap gap-2">
+                        {formasi.disabilitas === true ? (
                             <Badge variant="info">
                                 <LuAccessibility aria-hidden className="h-3.5 w-3.5" />
                                 {teks.disabilitas}
                             </Badge>
+                        ) : (
+                            <Badge variant="netral">{formasi.jenisFormasi}</Badge>
                         )}
-                        {formasi.jenisFormasi !== 'UMUM' && formasi.disabilitas !== true && <Badge variant="netral">{formasi.jenisFormasi}</Badge>}
                     </div>
-                </div>
-
-                <ul className="flex flex-col gap-2 text-sm">
+                )}
+                <ul className="flex flex-col gap-1.5 text-sm">
                     <li className="flex items-start gap-2">
                         <LuMapPin aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-redup" />
                         <span className="break-words">
@@ -41,7 +47,7 @@ export function KartuFormasi({ formasi }: { formasi: FormasiItem }) {
                     <li className="flex items-start gap-2">
                         <LuUsers aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-redup" />
                         <span>
-                            {teks.kuota} <strong>{formasi.kuota.toLocaleString('id-ID')}</strong>
+                            {teks.kuota} <strong className="font-medium">{formasi.kuota.toLocaleString('id-ID')}</strong>
                             {usia && <span className="text-redup"> · {usia}</span>}
                         </span>
                     </li>
@@ -53,17 +59,17 @@ export function KartuFormasi({ formasi }: { formasi: FormasiItem }) {
                         </span>
                     </li>
                 </ul>
-
-                <RingkasPeluang peluang={formasi.peluang} />
-
-                <div className="mt-auto flex justify-end border-t border-garis pt-3">
-                    <Link href={rute.detailFormasi(formasi.id)} className="inline-flex min-h-11 items-center gap-1 rounded-xl px-3 text-sm font-medium text-primer hover:bg-primer-lembut">
+                <div>
+                    <Link href={rute.detailFormasi(formasi.id)} className="-ml-2 inline-flex min-h-11 items-center gap-1 rounded-lg px-2 text-sm font-medium text-primer hover:bg-primer-lembut md:min-h-9">
                         {teks.lihat}
                         <span className="sr-only"> {formasi.jabatan}</span>
                         <LuChevronRight aria-hidden className="h-4 w-4" />
                     </Link>
                 </div>
-            </CardContent>
-        </Card>
+            </div>
+            <div className="border-t border-garis pt-4 md:border-t-0 md:border-l md:pt-0 md:pl-6">
+                <RingkasPeluang peluang={formasi.peluang} ambang={ambang} lengkap={false} />
+            </div>
+        </article>
     );
 }

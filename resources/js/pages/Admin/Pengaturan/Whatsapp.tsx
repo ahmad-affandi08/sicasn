@@ -68,7 +68,7 @@ export default function Whatsapp({ pengaturan }: PropsHalaman) {
                         <CardTitle>{teks.pratinjau}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <div className="flex items-start gap-3 rounded-2xl bg-sukses-lembut p-4">
+                        <div className="flex items-start gap-3 rounded-xl bg-sukses-lembut p-4">
                             <LuMessageCircle aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-sukses" />
                             <p className="break-words">{pratinjau}</p>
                         </div>

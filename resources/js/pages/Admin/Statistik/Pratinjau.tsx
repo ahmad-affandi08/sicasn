@@ -48,7 +48,7 @@ export default function Pratinjau({ pratinjau }: { pratinjau: PratinjauStatistik
                     ].map((butir) => (
                         <Card key={butir.label}>
                             <CardContent className="flex flex-col gap-1 pt-6">
-                                <p className="text-3xl font-bold">{butir.nilai.toLocaleString('id-ID')}</p>
+                                <p className="text-3xl font-medium">{butir.nilai.toLocaleString('id-ID')}</p>
                                 <p className="text-sm text-redup">{butir.label}</p>
                             </CardContent>
                         </Card>

@@ -56,8 +56,8 @@ const masukAdmin = (page) => masuk(page, 'admin@uji.test', 'AdminUji12345', '/ad
   cek('Tautan sumber resmi sscasn.bkn.go.id ada', (await dm.locator('a[href="https://sscasn.bkn.go.id"]').count()) === 1);
   cek('Total pelamar nasional 3.963.832 tampil dengan sumber', /3\.963\.832/.test(teks) && /Resmi/.test(teks));
   cek('Jumlah instansi 70 tercatat', /dari 70 instansi/.test(teks), (teks.match(/Menampilkan [\d.]+ dari [\d.]+ instansi/) || [''])[0]);
-  cek('Ambang persaingan dijelaskan', /Longgar bila rasio di bawah 5, Ketat bila di atas 20/.test(teks));
-  cek('Tabel padat tampil di desktop dan kartu tersembunyi', (await dm.locator('table').isVisible()) && !(await dm.locator('ul.grid').isVisible()));
+  cek('Skala persaingan dijelaskan', /Longgar < 5/.test(teks) && /Ketat > 20/.test(teks));
+  cek('Tabel padat tampil di desktop dan kartu tersembunyi', (await dm.locator('table').isVisible()) && !(await dm.locator('main ul.divide-y').isVisible()));
 
   const barisPertama = (await dm.locator('tbody tr').first().innerText()).replace(/\s+/g, ' ');
   cek('Peringkat awal tidak dimulai dari angka sementara (Belum final)', !/Belum final/.test(barisPertama), barisPertama.slice(0, 90));
@@ -98,7 +98,7 @@ const masukAdmin = (page) => masuk(page, 'admin@uji.test', 'AdminUji12345', '/ad
 
   const { page: hp } = await baru(390, 844);
   await masukMember(hp);
-  cek('HP menampilkan kartu, bukan tabel', (await hp.locator('ul.grid').isVisible()) && !(await hp.locator('table').isVisible()));
+  cek('HP menampilkan kartu, bukan tabel', (await hp.locator('main ul.divide-y').isVisible()) && !(await hp.locator('table').isVisible()));
   cek('HP menampilkan navigasi bawah', await hp.locator('nav[aria-label="Navigasi utama"]').last().isVisible());
   cek('Opsi filter tersembunyi di HP sampai tombol Filter ditekan', !(await hp.locator('#opsi-filter').isVisible()));
   await hp.getByRole('button', { name: 'Filter', exact: true }).click();
@@ -180,7 +180,7 @@ const masukAdmin = (page) => masuk(page, 'admin@uji.test', 'AdminUji12345', '/ad
 
   const { page: pemantau } = await baru();
   await masukMember(pemantau);
-  cek('Member langsung melihat ambang baru', /di bawah 2, Ketat bila di atas 4/.test(await pemantau.locator('main').innerText()));
+  cek('Member langsung melihat ambang baru', /Longgar < 2/.test(await pemantau.locator('main').innerText()) && /Ketat > 4/.test(await pemantau.locator('main').innerText()));
   await da.goto(BASE + '/admin/pengaturan/persaingan');
   await da.locator('#longgar_maks').fill('5');
   await da.locator('#ketat_min').fill('20');

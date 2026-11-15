@@ -21,7 +21,7 @@ async function masuk(page, email, sandi, tujuan) {
 const masukMember = (page) => masuk(page, 'member@uji.test', 'MemberUji12345', '/peluang-instansi');
 const masukAdmin = (page) => masuk(page, 'admin@uji.test', 'AdminUji12345', '/admin');
 
-const teksKartu = async (page) => (await page.locator('main ul.grid > li').allInnerTexts()).map((t) => t.replace(/\s+/g, ' '));
+const teksKartu = async (page) => (await page.locator('ul[aria-label="Daftar formasi"] > li').allInnerTexts()).map((t) => t.replace(/\s+/g, ' '));
 
 async function klikDanTunggu(page, tombol) {
   await Promise.all([page.waitForResponse((r) => r.url().includes('/formasi') && r.request().method() === 'GET' && !r.url().includes('/opsi/')), tombol.click()]);
@@ -76,8 +76,8 @@ const hapusFilter = (page) => klikDanTunggu(page, page.getByRole('button', { nam
   const kartuHukum = await teksKartu(dm);
   cek('Filter jurusan Hukum menyaring ke kualifikasi Hukum atau semua jurusan', kartuHukum.length > 0 && kartuHukum.every((t) => /HUKUM|SEMUA JURUSAN/.test(t)), `${kartuHukum.length} kartu`);
   await dm.reload();
-  const chip = await dm.getByRole('button', { name: 'Hapus HUKUM' }).count();
   const s1 = await dm.getByRole('button', { name: 'S1', exact: true }).getAttribute('aria-pressed');
+  const chip = await dm.getByRole('button', { name: 'Hapus HUKUM' }).count();
   cek('Chip jurusan bertahan setelah muat ulang (URL bisa dibagikan)', chip === 1 && s1 === 'true', `chip=${chip} s1=${s1} url=${decodeURIComponent(dm.url())}`);
   await dm.screenshot({ path: `${OUT}/41-formasi-filter-desktop.png`, fullPage: true });
 
@@ -110,8 +110,9 @@ const hapusFilter = (page) => klikDanTunggu(page, page.getByRole('button', { nam
 
   await hapusFilter(dm);
   await dm.getByLabel('Tingkat persaingan').selectOption('ketat');
-  await dm.getByLabel('Urutkan').selectOption('kuota_terbanyak');
   await terapkan(dm);
+  await Promise.all([dm.waitForResponse((r) => r.url().includes('/formasi') && r.request().method() === 'GET' && !r.url().includes('/opsi/')), dm.getByLabel('Urutkan').selectOption('kuota_terbanyak')]);
+  await dm.waitForLoadState('networkidle');
   const kartuKetat = await teksKartu(dm);
   const kuota = kartuKetat.map((t) => Number((t.match(/Kuota (\d+)/) || [])[1]));
   cek('Filter tingkat Ketat hanya menampilkan lencana Ketat', kartuKetat.length > 0 && kartuKetat.every((t) => /Ketat/.test(t)), `${kartuKetat.length} kartu`);
@@ -133,7 +134,7 @@ const hapusFilter = (page) => klikDanTunggu(page, page.getByRole('button', { nam
 
   await dm.goto(BASE + '/formasi?cari=Analis');
   await dm.waitForLoadState('networkidle');
-  await dm.locator('main ul.grid > li').first().getByRole('link', { name: /Lihat detail/ }).click();
+  await dm.locator('ul[aria-label="Daftar formasi"] > li').first().getByRole('link', { name: /Lihat detail/ }).click();
   await dm.waitForURL(/\/formasi\/\d+$/);
   await dm.waitForLoadState('networkidle');
   const detail = (await dm.locator('main').innerText()).replace(/\s+/g, ' ');
@@ -162,7 +163,7 @@ const hapusFilter = (page) => klikDanTunggu(page, page.getByRole('button', { nam
   await hp.waitForLoadState('networkidle');
   cek('HP: panel filter tidak tampil permanen, tombol Filter tersedia', !(await hp.locator('aside').count()) && (await hp.getByRole('button', { name: 'Filter', exact: true }).isVisible()));
   cek('HP: navigasi bawah memuat 3 tujuan', (await hp.locator('nav[aria-label="Navigasi utama"]').last().getByRole('link').count()) === 3);
-  cek('HP: kartu satu kolom', (await hp.locator('main ul.grid > li').first().boundingBox()).width > 300);
+  cek('HP: daftar selebar layar', (await hp.locator('ul[aria-label="Daftar formasi"] > li').first().boundingBox()).width > 300);
   await hp.getByRole('button', { name: 'Filter', exact: true }).click();
   await hp.waitForSelector('[role=dialog]');
   await hp.waitForTimeout(300);
@@ -190,7 +191,7 @@ const hapusFilter = (page) => klikDanTunggu(page, page.getByRole('button', { nam
       await masukMember(m.page);
       await m.page.goto(BASE + '/formasi?cari=Analis');
       await m.page.waitForLoadState('networkidle');
-      const idDetail = (await m.page.locator('main ul.grid a[href^="/formasi/"]').first().getAttribute('href'));
+      const idDetail = (await m.page.locator('ul[aria-label="Daftar formasi"] a[href^="/formasi/"]').first().getAttribute('href'));
 
       for (const [berkas, jalur] of [['formasi', '/formasi'], ['formasi-filter', '/formasi?tingkat=ketat&jenjang[]=S1'], ['detail', idDetail], ['peluang', '/peluang-instansi']]) {
         await m.page.goto(BASE + jalur, { waitUntil: 'networkidle' });

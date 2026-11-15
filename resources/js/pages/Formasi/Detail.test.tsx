@@ -26,7 +26,7 @@ function render(isi: ReactNode) {
     return renderPolos(<DialogProvider>{isi}</DialogProvider>);
 }
 
-const dasar = { formasi: detailUji, peluang: peluangUji, riwayat: [snapshotUji], tautanResmi: 'https://sscasn.bkn.go.id' };
+const dasar = { formasi: detailUji, peluang: peluangUji, riwayat: [snapshotUji], tautanResmi: 'https://sscasn.bkn.go.id', ambang: { longgarMaks: 5, ketatMin: 20 } };
 
 describe('Formasi/Detail', () => {
     it('menampilkan informasi lengkap formasi', () => {

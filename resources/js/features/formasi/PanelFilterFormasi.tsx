@@ -19,8 +19,6 @@ interface PropsPanelFilterFormasi {
     onTerapkan: (filter: FilterFormasiItem) => void;
 }
 
-const urutan = Object.entries(teksFormasi.filter.urutOpsi);
-
 export function PanelFilterFormasi({ filter, opsi, tingkat, onTerapkan }: PropsPanelFilterFormasi) {
     const teks = teksFormasi.filter;
     const [nilai, setNilai] = useState(filter);
@@ -60,7 +58,7 @@ export function PanelFilterFormasi({ filter, opsi, tingkat, onTerapkan }: PropsP
 
     return (
         <form
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-4"
             onSubmit={(kejadian) => {
                 kejadian.preventDefault();
                 onTerapkan(nilai);
@@ -79,7 +77,7 @@ export function PanelFilterFormasi({ filter, opsi, tingkat, onTerapkan }: PropsP
                                 type="button"
                                 aria-pressed={dipilih}
                                 onClick={() => pilihJenjang(kode)}
-                                className={cn('min-h-11 min-w-14 rounded-xl border px-3.5 text-sm font-medium transition-colors', dipilih ? 'border-primer bg-primer text-primer-teks' : 'border-garis bg-kartu hover:bg-primer-lembut')}
+                                className={cn('min-h-11 min-w-12 rounded-lg border px-3 text-sm font-medium transition-colors md:min-h-9', dipilih ? 'border-primer bg-primer text-primer-teks' : 'border-garis-input bg-kartu hover:bg-permukaan')}
                             >
                                 {kode}
                             </button>
@@ -166,19 +164,6 @@ export function PanelFilterFormasi({ filter, opsi, tingkat, onTerapkan }: PropsP
                     {tingkat.map((butir) => (
                         <option key={butir.kode} value={butir.kode}>
                             {butir.label}
-                        </option>
-                    ))}
-                </Select>
-            </div>
-
-            <div className="flex flex-col gap-2">
-                <label htmlFor="filter-urut" className="text-sm font-medium">
-                    {teks.urut}
-                </label>
-                <Select id="filter-urut" value={nilai.urut} onChange={(kejadian) => ubah({ urut: kejadian.target.value })}>
-                    {urutan.map(([kode, label]) => (
-                        <option key={kode} value={kode}>
-                            {label}
                         </option>
                     ))}
                 </Select>

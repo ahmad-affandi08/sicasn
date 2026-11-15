@@ -1,13 +1,13 @@
 import { Head, router } from '@inertiajs/react';
 import { useState } from 'react';
-import { LuExternalLink, LuInfo } from 'react-icons/lu';
 
+import { Catatan } from '@/components/Catatan';
 import { HeaderHalaman } from '@/components/HeaderHalaman';
 import { KeadaanKosong } from '@/components/KeadaanKosong';
 import { Paginasi } from '@/components/Paginasi';
-import { Alert } from '@/components/ui/alert';
 import { parameterFilter } from '@/features/peluang/hitungFilter';
 import { KartuInstansi } from '@/features/peluang/KartuInstansi';
+import { LegendaMeter } from '@/features/peluang/LegendaMeter';
 import { PanelFilter } from '@/features/peluang/PanelFilter';
 import { RincianInstansi } from '@/features/peluang/RincianInstansi';
 import { RingkasanNasional } from '@/features/peluang/RingkasanNasional';
@@ -40,27 +40,22 @@ export default function PeluangInstansi({ item, paginasi, totalInstansi, nasiona
             <Head title={teks.judul} />
             <HeaderHalaman judul={teks.judul} sub={teks.sub} />
 
-            <div className="flex flex-col gap-6">
-                <Alert variant="peringatan">
-                    <LuInfo aria-hidden className="mt-0.5 h-5 w-5 shrink-0" />
-                    <div className="flex flex-col gap-1">
-                        <p className="font-medium">{teks.disclaimer.judul}</p>
-                        <p>{teks.disclaimer.isi}</p>
-                        <a href="https://sscasn.bkn.go.id" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-medium text-primer underline">
-                            {teks.disclaimer.tautan}
-                            <LuExternalLink aria-hidden className="h-4 w-4" />
-                        </a>
-                    </div>
-                </Alert>
+            <div className="flex flex-col gap-5">
+                <Catatan>
+                    <span className="md:hidden">{teks.disclaimer.ringkas}</span>
+                    <span className="hidden md:inline">{teks.disclaimer.isi}</span>{' '}
+                    <a href="https://sscasn.bkn.go.id" target="_blank" rel="noopener noreferrer" className="font-medium text-primer underline underline-offset-2">
+                        {teks.disclaimer.tautan} ↗
+                    </a>
+                </Catatan>
 
                 <RingkasanNasional angka={nasional} />
 
                 <PanelFilter key={JSON.stringify(filter)} filter={filter} tingkat={tingkat} onTerapkan={(baru) => buka(baru)} />
 
-                <div className="flex flex-col gap-1 text-sm text-redup">
-                    <p>{teks.hasil.jumlah(item.length, paginasi.total)}</p>
-                    <p>{teks.ambang(ambang.longgarMaks, ambang.ketatMin)}</p>
-                    <p>{teks.batasBawah}</p>
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-sm text-redup">{teks.hasil.jumlah(item.length, paginasi.total)}</p>
+                    <LegendaMeter longgarMaks={ambang.longgarMaks} ketatMin={ambang.ketatMin} />
                 </div>
 
                 {totalInstansi === 0 && <KeadaanKosong judul={teks.hasil.belumAdaJudul} pesan={teks.hasil.belumAdaPesan} />}
@@ -69,12 +64,12 @@ export default function PeluangInstansi({ item, paginasi, totalInstansi, nasiona
                 {item.length > 0 && (
                     <>
                         <div className="hidden lg:block">
-                            <TabelInstansi instansi={item} urut={filter.urut} onUrut={(urut) => buka({ ...filter, urut })} onBuka={setDibuka} />
+                            <TabelInstansi instansi={item} urut={filter.urut} ambang={ambang} onUrut={(urut) => buka({ ...filter, urut })} onBuka={setDibuka} />
                         </div>
-                        <ul className="grid gap-4 md:grid-cols-2 lg:hidden">
+                        <ul className="divide-y divide-garis overflow-hidden rounded-kartu border border-garis bg-kartu lg:hidden">
                             {item.map((butir) => (
                                 <li key={butir.id}>
-                                    <KartuInstansi instansi={butir} onBuka={setDibuka} />
+                                    <KartuInstansi instansi={butir} ambang={ambang} onBuka={setDibuka} />
                                 </li>
                             ))}
                         </ul>

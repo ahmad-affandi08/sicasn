@@ -1,37 +1,26 @@
-import { LuBookmarkCheck, LuChartColumn, LuListFilter } from 'react-icons/lu';
-
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { teks } from '@/lang/id';
-
-const ikon = [LuListFilter, LuChartColumn, LuBookmarkCheck];
 
 export function Manfaat() {
     return (
-        <section id="manfaat" className="scroll-mt-20 border-y border-garis bg-kartu">
-            <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 md:py-20">
-                <div className="mx-auto mb-10 flex max-w-2xl flex-col gap-3 text-center">
-                    <h2 className="text-2xl font-bold sm:text-3xl">{teks.manfaat.judul}</h2>
+        <section id="manfaat" className="scroll-mt-16 border-t border-garis">
+            <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1fr_2fr] lg:gap-16">
+                <div className="flex flex-col gap-2 lg:sticky lg:top-24 lg:self-start">
+                    <h2 className="text-2xl font-medium sm:text-3xl">{teks.manfaat.judul}</h2>
                     <p className="text-redup">{teks.manfaat.sub}</p>
                 </div>
-                <div className="grid gap-5 md:grid-cols-3">
-                    {teks.manfaat.daftar.map((item, indeks) => {
-                        const Ikon = ikon[indeks] ?? LuListFilter;
-
-                        return (
-                            <Card key={item.judul} className="bg-latar shadow-none">
-                                <CardHeader>
-                                    <span className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primer-lembut text-primer">
-                                        <Ikon aria-hidden className="h-6 w-6" />
-                                    </span>
-                                    <CardTitle>{item.judul}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-redup">{item.isi}</p>
-                                </CardContent>
-                            </Card>
-                        );
-                    })}
-                </div>
+                <ol className="flex flex-col divide-y divide-garis border-y border-garis">
+                    {teks.manfaat.daftar.map((item, indeks) => (
+                        <li key={item.judul} className="grid gap-2 py-6 sm:grid-cols-[4rem_1fr] sm:gap-6">
+                            <span aria-hidden className="text-sm font-medium text-redup">
+                                {String(indeks + 1).padStart(2, '0')}
+                            </span>
+                            <div className="flex flex-col gap-1">
+                                <h3 className="text-lg font-medium">{item.judul}</h3>
+                                <p className="max-w-xl text-redup">{item.isi}</p>
+                            </div>
+                        </li>
+                    ))}
+                </ol>
             </div>
         </section>
     );

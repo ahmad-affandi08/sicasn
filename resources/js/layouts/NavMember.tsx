@@ -21,11 +21,12 @@ const item: ItemNav[] = [
 
 export function NavMember({ posisi }: { posisi: 'atas' | 'bawah' }) {
     const { url } = usePage();
+    const atas = posisi === 'atas';
 
     return (
         <nav
             aria-label={teksPeluang.nav.utama}
-            className={cn(posisi === 'atas' ? 'hidden items-center gap-1 sm:flex' : 'fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-garis bg-kartu sm:hidden')}
+            className={cn(atas ? 'hidden h-full items-stretch gap-1 sm:flex' : 'fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-garis bg-kartu pb-[env(safe-area-inset-bottom)] sm:hidden')}
         >
             {item.map((butir) => {
                 const aktif = url.startsWith(butir.href);
@@ -37,12 +38,14 @@ export function NavMember({ posisi }: { posisi: 'atas' | 'bawah' }) {
                         href={butir.href}
                         aria-current={aktif ? 'page' : undefined}
                         className={cn(
-                            'flex min-h-14 items-center justify-center gap-2 text-sm font-medium transition-colors',
-                            posisi === 'atas' ? 'min-h-11 rounded-xl px-4' : 'flex-col gap-0.5 text-xs',
-                            aktif ? (posisi === 'atas' ? 'bg-primer text-primer-teks' : 'text-primer') : 'text-redup hover:text-primer',
+                            'relative flex items-center justify-center text-sm font-medium transition-colors',
+                            atas ? 'px-3' : 'min-h-14 flex-col gap-0.5 text-xs',
+                            aktif ? 'text-teks' : 'text-redup hover:text-teks',
+                            aktif && atas && 'after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:bg-primer',
+                            aktif && !atas && 'text-primer before:absolute before:inset-x-6 before:top-0 before:h-0.5 before:bg-primer',
                         )}
                     >
-                        <Ikon aria-hidden className="h-5 w-5" />
+                        {!atas && <Ikon aria-hidden className="h-5 w-5" />}
                         {butir.label}
                     </Link>
                 );

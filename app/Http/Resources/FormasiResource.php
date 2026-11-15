@@ -57,6 +57,7 @@ final class FormasiResource
             'peluang' => self::peluang($detail->peluang),
             'riwayat' => array_map(PeluangResource::snapshot(...), $detail->riwayat),
             'tautanResmi' => $detail->tautanResmi,
+            'ambang' => ['longgarMaks' => $detail->ambang->longgarMaks, 'ketatMin' => $detail->ambang->ketatMin],
         ];
     }
 

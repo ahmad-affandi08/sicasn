@@ -11,16 +11,16 @@ export const teks = {
         modeTerang: 'Aktifkan mode terang',
     },
     hero: {
-        lencana: 'Khusus calon CPNS',
+        lencana: 'Untuk calon CPNS',
         judul: 'Pilih formasi CPNS yang peluangnya paling masuk akal',
         sub: 'Cari formasi lewat filter pendidikan, jurusan, dan lokasi. Lihat tingkat persaingannya berdasarkan jumlah pelamar CPNS 2024, tanpa mengisi data apa pun.',
         ctaWhatsapp: 'Chat Admin via WhatsApp',
         ctaCaraAkses: 'Lihat cara akses',
         catatan: 'Akun dibuat admin setelah pembayaran dikonfirmasi.',
-        ilustrasi: 'Ilustrasi daftar formasi dengan lencana tingkat persaingan',
+        ilustrasi: 'Contoh tampilan daftar instansi dengan skala persaingan, angka disamarkan',
     },
     manfaat: {
-        judul: 'Semua yang Anda perlukan untuk memilih formasi',
+        judul: 'Cara kerja',
         sub: 'Satu tempat untuk membandingkan peluang, bukan menebak-nebak.',
         daftar: [
             {
@@ -36,6 +36,22 @@ export const teks = {
                 isi: 'Simpan formasi incaran dan bandingkan beberapa formasi berdampingan sebelum Anda mendaftar.',
             },
         ],
+    },
+    data: {
+        judul: 'Angka yang bisa ditelusuri',
+        sub: 'Setiap angka pelamar tampil bersama sumber, tanggal, dan tingkat datanya. Tidak ada angka tanpa asal-usul.',
+        poin: [
+            { judul: 'Ada sumber dan tanggal', isi: 'Rilis BKN dan pemberitaan yang mengutipnya dicatat lengkap dengan tautan, supaya Anda bisa memeriksanya sendiri.' },
+            { judul: 'Angka sementara ditandai', isi: 'Data yang masih berjalan diberi tanda ≥ dan tidak pernah disebut longgar, karena jumlah pelamar akhirnya bisa lebih besar.' },
+            { judul: 'Bukan prediksi', isi: 'Yang ditampilkan adalah riwayat persaingan 2024. Itu gambaran, bukan jaminan untuk tahun ini.' },
+        ],
+        skala: {
+            judul: 'Cara membaca skala',
+            isi: 'Rasio adalah jumlah pelamar dibagi jumlah formasi. Penanda bergeser ke kanan seiring ketatnya persaingan.',
+            contoh: 'Contoh penanda',
+            catatan: 'Ambang awal, dapat disesuaikan admin dan bukan klaim resmi.',
+            tingkat: ['Longgar: rasio di bawah 5', 'Sedang: rasio 5 sampai 20', 'Ketat: rasio di atas 20'],
+        },
     },
     caraAkses: {
         judul: 'Cara mendapatkan akses',

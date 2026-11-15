@@ -9,66 +9,75 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-    --latar: #f6faf9;
+    --latar: #fafaf8;
     --kartu: #ffffff;
-    --teks: #10201d;
-    --teks-redup: #566763;
-    --garis: #d8e4e1;
-    --primer: #0f766e;
+    --permukaan: #f3f2ee;
+    --teks: #1c1b18;
+    --teks-redup: #66625a;
+    --garis: #e5e2db;
+    --garis-input: #8f8b81;
+    --primer: #0b5d53;
+    --primer-hover: #08483f;
     --primer-teks: #ffffff;
-    --primer-lembut: #d6f1ec;
-    --sukses: #15803d;
-    --sukses-lembut: #dcfce7;
-    --peringatan: #b45309;
-    --peringatan-lembut: #fef3c7;
-    --bahaya: #b91c1c;
-    --bahaya-lembut: #fee2e2;
-    --info: #1d4ed8;
-    --info-lembut: #dbeafe;
-    --ilustrasi-primer: #0f766e;
-    --ilustrasi-primer-lembut: #cdeee8;
-    --ilustrasi-aksen: #f59e0b;
+    --primer-lembut: #e7f0ee;
+    --sukses: #176c3a;
+    --sukses-lembut: #e6f4ea;
+    --peringatan: #94510a;
+    --peringatan-lembut: #fdf1dc;
+    --bahaya: #b3261e;
+    --bahaya-lembut: #fce9e7;
+    --info: #2b52b8;
+    --info-lembut: #e8eefb;
+    --ilustrasi-primer: #0b5d53;
+    --ilustrasi-primer-lembut: #dbe9e6;
+    --ilustrasi-aksen: #d98b1f;
     --ilustrasi-kartu: #ffffff;
-    --ilustrasi-garis: #c9dad6;
-    --ilustrasi-teks: #10201d;
+    --ilustrasi-garis: #d6d2c8;
+    --ilustrasi-teks: #1c1b18;
     --ilustrasi-glif: #ffffff;
-    --radius: 0.875rem;
+    --radius: 0.625rem;
 }
 
 .dark {
-    --latar: #0b1513;
-    --kartu: #12211e;
-    --teks: #e8f3f0;
-    --teks-redup: #9db3ae;
-    --garis: #243a35;
-    --primer: #2dd4bf;
-    --primer-teks: #04211d;
-    --primer-lembut: #123a34;
-    --sukses: #4ade80;
-    --sukses-lembut: #10321e;
-    --peringatan: #fbbf24;
-    --peringatan-lembut: #3b2a0a;
-    --bahaya: #f87171;
-    --bahaya-lembut: #3d1414;
-    --info: #60a5fa;
-    --info-lembut: #11264a;
-    --ilustrasi-primer: #2dd4bf;
-    --ilustrasi-primer-lembut: #17413a;
-    --ilustrasi-aksen: #fbbf24;
-    --ilustrasi-kartu: #16302b;
-    --ilustrasi-garis: #2c4b44;
-    --ilustrasi-teks: #e8f3f0;
-    --ilustrasi-glif: #0b1513;
+    --latar: #121311;
+    --kartu: #1a1b19;
+    --permukaan: #1f201d;
+    --teks: #ecebe6;
+    --teks-redup: #a29e94;
+    --garis: #2e2f2b;
+    --garis-input: #6f6d65;
+    --primer: #4fc3af;
+    --primer-hover: #6fd8c6;
+    --primer-teks: #06201c;
+    --primer-lembut: #1a2f2b;
+    --sukses: #5fd48a;
+    --sukses-lembut: #16301f;
+    --peringatan: #f0b45c;
+    --peringatan-lembut: #352609;
+    --bahaya: #f28b82;
+    --bahaya-lembut: #3a1816;
+    --info: #8fb0f5;
+    --info-lembut: #16233f;
+    --ilustrasi-primer: #4fc3af;
+    --ilustrasi-primer-lembut: #1d332e;
+    --ilustrasi-aksen: #f0b45c;
+    --ilustrasi-kartu: #222420;
+    --ilustrasi-garis: #3a3c36;
+    --ilustrasi-teks: #ecebe6;
+    --ilustrasi-glif: #121311;
 }
 
 @theme inline {
     --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
     --color-latar: var(--latar);
     --color-kartu: var(--kartu);
+    --color-permukaan: var(--permukaan);
     --color-teks: var(--teks);
     --color-redup: var(--teks-redup);
     --color-garis: var(--garis);
+    --color-garis-input: var(--garis-input);
     --color-primer: var(--primer);
+    --color-primer-hover: var(--primer-hover);
     --color-primer-teks: var(--primer-teks);
     --color-primer-lembut: var(--primer-lembut);
     --color-sukses: var(--sukses);
@@ -96,8 +105,17 @@
         background-color: var(--latar);
         color: var(--teks);
         font-size: 1rem;
-        line-height: 1.6;
+        line-height: 1.55;
+        font-variant-numeric: tabular-nums;
         -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.012em;
+        text-wrap: balance;
     }
 
     :focus-visible {

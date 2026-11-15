@@ -46,8 +46,9 @@ describe('PeluangInstansi', () => {
     it('menampilkan disclaimer, ambang, dan tautan sumber resmi', () => {
         render(<PeluangInstansi {...dasar} />);
 
-        expect(screen.getByText(/bukan prediksi dan bukan jaminan/)).toBeInTheDocument();
-        expect(screen.getByText(/Longgar bila rasio di bawah 5, Ketat bila di atas 20/)).toBeInTheDocument();
+        expect(screen.getAllByText(/bukan prediksi dan bukan jaminan/).length).toBeGreaterThan(0);
+        expect(screen.getByRole('list', { name: 'Skala rasio pelamar per formasi' })).toHaveTextContent('Longgar < 5');
+        expect(screen.getByRole('list', { name: 'Skala rasio pelamar per formasi' })).toHaveTextContent('Ketat > 20');
         expect(screen.getByRole('link', { name: /sscasn.bkn.go.id/ })).toHaveAttribute('href', 'https://sscasn.bkn.go.id');
         expect(screen.getAllByText('Kementerian Hukum dan Hak Asasi Manusia').length).toBeGreaterThan(0);
     });

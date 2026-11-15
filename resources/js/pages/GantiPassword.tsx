@@ -31,7 +31,7 @@ export default function GantiPassword({ wajib }: PropsHalaman) {
             <Head title={teks.judul} />
             <Card className="w-full max-w-lg p-6 sm:p-10">
                 <div className="mb-6 flex flex-col gap-2">
-                    <h1 className="text-2xl font-bold">{teks.judul}</h1>
+                    <h1 className="text-2xl font-medium">{teks.judul}</h1>
                     <p className="text-redup">{wajib ? teks.subWajib : teks.subBiasa}</p>
                 </div>
 

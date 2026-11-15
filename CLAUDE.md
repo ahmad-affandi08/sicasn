@@ -417,7 +417,14 @@ Pencocokan formasi ↔ statistik 2024: (1) instansi + kode/nama jabatan ternorma
 
 ### 13.1 Prinsip
 
-Bersih, lapang, mudah dipahami orang awam, modern. Satu warna aksen, banyak ruang kosong, radius seragam, tipografi **Roboto** (400/500/700, `font-display: swap`) lewat `@fontsource/roboto` yang di-bundle. Mode terang dan gelap dengan token CSS variables. Bahasa antarmuka Indonesia yang ramah dan lugas.
+Arah desain: **"tinta dan kertas"**. Bersih, padat informasi, mudah dipahami orang awam, **tidak seperti template SaaS atau buatan generator**. Rincian token dan aturan ada di [`docs/desain.md`](docs/desain.md); ringkasnya:
+
+- Permukaan abu hangat netral, **border tipis alih-alih bayangan**, radius 8–10 px, satu aksen hijau-tinta yang hanya dipakai untuk aksi utama dan penanda aktif. Warna semantik (hijau/kuning/merah/biru) hanya untuk status.
+- Tipografi **Roboto** (400/500/700, `font-display: swap`) lewat `@fontsource/roboto`. Judul berbobot 500 dengan jarak huruf rapat, angka tabular. Tanpa label huruf kapital semua.
+- **Dilarang** (pola "AI slop"): hero dengan blob dekoratif, deretan kartu fitur identik dengan ikon di kotak berwarna, kartu di dalam kartu, banner CTA berwarna penuh, gradien, banner kuning untuk disclaimer, lencana pil di mana-mana.
+- Utamakan struktur tipografi: daftar berbaris (garis tipis), tabel padat, `dl` untuk angka. Kartu hanya untuk satu kelompok yang memang berdiri sendiri.
+- **Data lebih dulu**: angka dan sumbernya dipertontonkan, disclaimer berupa catatan tenang (`Catatan`), bukan kotak peringatan. Rasio persaingan ditampilkan dengan `MeterRasio` (skala visual fungsional, `aria-hidden`, angka tetap tertulis di sampingnya).
+- Mode terang dan gelap lewat token CSS; ilustrasi SVG memakai variabel `--ilustrasi-*`. Bahasa antarmuka Indonesia yang ramah dan lugas.
 
 ### 13.2 Responsif (wajib diuji di tiga lebar)
 

@@ -2,7 +2,9 @@ export const teksFormasi = {
     judul: 'Eksplorasi Formasi CPNS',
     sub: 'Cari formasi yang cocok dengan pendidikan, jurusan, dan lokasi Anda, lengkap dengan tingkat persaingan CPNS 2024 instansinya.',
     nav: 'Formasi',
+    daftar: 'Daftar formasi',
     disclaimer: 'SICASN bukan portal resmi pemerintah. Pendaftaran dan data resmi hanya di sscasn.bkn.go.id. Tingkat persaingan berasal dari riwayat pelamar CPNS 2024, bukan prediksi dan bukan jaminan tahun ini.',
+    disclaimerRingkas: 'Bukan portal resmi pemerintah. Persaingan berasal dari riwayat pelamar 2024, bukan jaminan.',
     sumberResmi: 'Buka sscasn.bkn.go.id',
     kosongBelumDibuka: {
         judul: 'Formasi CPNS belum dibuka BKN',
@@ -10,7 +12,7 @@ export const teksFormasi = {
         tombol: 'Lihat Peluang Instansi',
     },
     kosongFilter: { judul: 'Tidak ada formasi yang cocok', pesan: 'Longgarkan filter atau hapus sebagian pilihan. Formasi tanpa rincian kualifikasi bisa disertakan lewat pengaturan filter.' },
-    cari: { label: 'Cari jabatan atau instansi', tombol: 'Cari' },
+    cari: { label: 'Cari jabatan atau instansi', placeholder: 'Cari formasi', tombol: 'Cari' },
     filter: {
         judul: 'Filter',
         tombol: 'Filter',

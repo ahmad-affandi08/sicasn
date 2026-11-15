@@ -32,7 +32,7 @@ export function ButirRiwayat({ impor }: { impor: RiwayatStatistikItem }) {
     }
 
     return (
-        <li className="flex flex-col gap-3 rounded-xl border border-garis p-4">
+        <li className="flex flex-col gap-3 rounded-lg border border-garis p-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="min-w-0">
                     <p className="font-medium break-all">{impor.berkas ?? '-'}</p>

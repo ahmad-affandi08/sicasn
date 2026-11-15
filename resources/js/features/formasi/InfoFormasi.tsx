@@ -1,10 +1,18 @@
 import type { ReactNode } from 'react';
 
-export function InfoFormasi({ label, children }: { label: string; children: ReactNode }) {
+import { cn } from '@/lib/utils';
+
+interface PropsInfoFormasi {
+    label: string;
+    children: ReactNode;
+    penuh?: boolean;
+}
+
+export function InfoFormasi({ label, children, penuh = false }: PropsInfoFormasi) {
     return (
-        <div className="flex flex-col gap-0.5">
-            <dt className="text-sm text-redup">{label}</dt>
-            <dd className="font-medium break-words">{children}</dd>
+        <div className={cn('flex flex-col gap-0.5', penuh && 'col-span-2')}>
+            <dt className="text-xs text-redup">{label}</dt>
+            <dd className="text-sm font-medium break-words sm:text-base">{children}</dd>
         </div>
     );
 }

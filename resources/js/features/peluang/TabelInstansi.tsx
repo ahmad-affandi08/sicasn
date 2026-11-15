@@ -1,7 +1,6 @@
 import { Link } from '@inertiajs/react';
 
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { teksPeluang } from '@/lang/peluang';
 import { formatHari, formatRasio } from '@/lib/format';
@@ -11,10 +10,12 @@ import type { InstansiPeluangItem } from '@/types';
 import { catatanFormasi, tampilFormasi, tampilPelamar } from './AngkaInstansi';
 import { KepalaUrut } from './KepalaUrut';
 import { LencanaPersaingan } from './LencanaPersaingan';
+import { MeterRasio } from './MeterRasio';
 
 interface PropsTabelInstansi {
     instansi: InstansiPeluangItem[];
     urut: string;
+    ambang: { longgarMaks: number; ketatMin: number };
     onUrut: (urut: string) => void;
     onBuka: (instansi: InstansiPeluangItem) => void;
 }
@@ -31,11 +32,11 @@ const kolomUrut: KolomUrut[] = [
     { label: teksPeluang.kolom.rasio, urut: 'rasio_terendah' },
 ];
 
-export function TabelInstansi({ instansi, urut, onUrut, onBuka }: PropsTabelInstansi) {
+export function TabelInstansi({ instansi, urut, ambang, onUrut, onBuka }: PropsTabelInstansi) {
     return (
-        <Card>
+        <div className="overflow-hidden rounded-kartu border border-garis bg-kartu">
             <Table>
-                <TableHeader>
+                <TableHeader className="bg-permukaan">
                     <TableRow className="hover:bg-transparent">
                         {kolomUrut.map((kolom) => (
                             <KepalaUrut key={kolom.urut} label={kolom.label} aktif={urut === kolom.urut} onUrut={() => onUrut(kolom.urut)} />
@@ -50,7 +51,7 @@ export function TabelInstansi({ instansi, urut, onUrut, onBuka }: PropsTabelInst
                 <TableBody>
                     {instansi.map((butir) => (
                         <TableRow key={butir.id}>
-                            <TableCell className="max-w-72 font-medium">
+                            <TableCell className="max-w-64 font-medium">
                                 <span className="line-clamp-2 break-words" title={butir.nama}>
                                     {butir.nama}
                                 </span>
@@ -60,21 +61,28 @@ export function TabelInstansi({ instansi, urut, onUrut, onBuka }: PropsTabelInst
                                 {catatanFormasi(butir) && <span className="block text-xs text-redup">{catatanFormasi(butir)}</span>}
                             </TableCell>
                             <TableCell>{tampilPelamar(butir)}</TableCell>
-                            <TableCell>{formatRasio(butir.rasio, butir.batasBawah)}</TableCell>
+                            <TableCell className="w-36">
+                                <div className="flex flex-col gap-1.5">
+                                    <span className="font-medium">{formatRasio(butir.rasio, butir.batasBawah)}</span>
+                                    <MeterRasio rasio={butir.rasio} tingkat={butir.tingkat} batasBawah={butir.batasBawah} longgarMaks={ambang.longgarMaks} ketatMin={ambang.ketatMin} />
+                                </div>
+                            </TableCell>
                             <TableCell>
                                 <LencanaPersaingan tingkat={butir.tingkat} />
                             </TableCell>
-                            <TableCell className="text-xs text-redup">
-                                {butir.terbaru.sumberNama}
+                            <TableCell className="max-w-40 text-xs text-redup">
+                                <span className="block truncate" title={butir.terbaru.sumberNama}>
+                                    {butir.terbaru.sumberNama}
+                                </span>
                                 <span className="block">{formatHari(butir.terbaru.tanggal)}</span>
                             </TableCell>
                             <TableCell>
-                                <div className="flex flex-col items-start gap-1.5">
-                                    <Button variant="outline" size="sm" onClick={() => onBuka(butir)}>
+                                <div className="flex flex-col items-start gap-1">
+                                    <Button variant="ghost" size="sm" onClick={() => onBuka(butir)}>
                                         {teksPeluang.kartu.rincian}
                                     </Button>
                                     {butir.formasiAktif > 0 && (
-                                        <Link href={`${rute.formasi}?instansi=${butir.id}`} className="text-xs font-medium text-primer underline">
+                                        <Link href={`${rute.formasi}?instansi=${butir.id}`} className="px-3 text-xs font-medium text-primer underline-offset-4 hover:underline">
                                             {teksPeluang.kartu.formasiAktif(butir.formasiAktif)}
                                         </Link>
                                     )}
@@ -84,6 +92,6 @@ export function TabelInstansi({ instansi, urut, onUrut, onBuka }: PropsTabelInst
                     ))}
                 </TableBody>
             </Table>
-        </Card>
+        </div>
     );
 }

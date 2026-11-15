@@ -33,6 +33,7 @@ const dasar = {
     item: [formasiUji],
     paginasi: { total: 1, halaman: 1, terakhir: 1, perHalaman: 20 },
     totalAktif: 1,
+    ambang: { longgarMaks: 5, ketatMin: 20 },
     tingkat: [{ kode: 'ketat', label: 'Ketat' }],
     opsi: opsiUji,
     filter: FILTER_KOSONG,
@@ -48,7 +49,7 @@ describe('Formasi/Index', () => {
 
         expect(screen.getByRole('heading', { name: 'Penghulu Ahli Pertama' })).toBeInTheDocument();
         expect(screen.getByText(/SICASN bukan portal resmi pemerintah/)).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: 'Buka sscasn.bkn.go.id' })).toHaveAttribute('href', 'https://sscasn.bkn.go.id');
+        expect(screen.getByRole('link', { name: /Buka sscasn.bkn.go.id/ })).toHaveAttribute('href', 'https://sscasn.bkn.go.id');
         expect(screen.getByText(/Menampilkan 1 dari 1 formasi/)).toBeInTheDocument();
     });
 
@@ -88,5 +89,13 @@ describe('Formasi/Index', () => {
 
         expect(await screen.findByRole('dialog')).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Terapkan filter' })).toBeInTheDocument();
+    });
+
+    it('mengurutkan lewat pilihan di toolbar daftar dan menyimpannya di URL', async () => {
+        render(<Index {...dasar} />);
+
+        await userEvent.selectOptions(screen.getByLabelText('Urutkan'), 'kuota_terbanyak');
+
+        expect(inertia.ambil).toHaveBeenCalledWith('/formasi', { urut: 'kuota_terbanyak' }, expect.objectContaining({ preserveState: true }));
     });
 });

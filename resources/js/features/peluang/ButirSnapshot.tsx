@@ -18,7 +18,7 @@ export function ButirSnapshot({ snapshot }: { snapshot: SnapshotItem }) {
     const teks = teksPeluang.rincian;
 
     return (
-        <li className="flex flex-col gap-3 rounded-xl border border-garis p-4">
+        <li className="flex flex-col gap-3 rounded-lg border border-garis p-4">
             <div className="flex flex-wrap items-center gap-2">
                 <p className="font-medium">{formatHari(snapshot.tanggal)}</p>
                 <Badge variant={snapshot.status === 'akhir' ? 'sukses' : 'peringatan'}>{teks.status[snapshot.status]}</Badge>

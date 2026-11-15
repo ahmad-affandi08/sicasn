@@ -18,7 +18,7 @@ describe('RingkasanNasional', () => {
         expect(screen.getByText('Resmi')).toBeInTheDocument();
         expect(screen.getByText('Kutipan media')).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /BKN/ })).toHaveAttribute('href', 'https://contoh.id/bkn');
-        expect(screen.getByText('detikEdu mengutip BKN')).toBeInTheDocument();
+        expect(screen.getByText(/detikEdu mengutip BKN/)).toBeInTheDocument();
     });
 
     it('tidak menampilkan kartu bila tidak ada data nasional', () => {

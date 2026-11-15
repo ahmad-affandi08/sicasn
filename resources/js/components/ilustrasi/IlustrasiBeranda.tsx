@@ -2,37 +2,37 @@ import { KerangkaSvg } from './KerangkaSvg';
 import type { PropsIlustrasi } from './tipe';
 
 const baris = [
-    { y: 138, lebar: 120, warna: 'var(--sukses)' },
-    { y: 188, lebar: 96, warna: 'var(--peringatan)' },
-    { y: 238, lebar: 132, warna: 'var(--bahaya)' },
+    { y: 86, nama: 128, posisi: 46, warna: 'var(--sukses)', lencana: 52 },
+    { y: 132, nama: 104, posisi: 118, warna: 'var(--peringatan)', lencana: 60 },
+    { y: 178, nama: 144, posisi: 150, warna: 'var(--peringatan)', lencana: 60 },
+    { y: 224, nama: 116, posisi: 196, warna: 'var(--bahaya)', lencana: 48 },
+    { y: 270, nama: 136, posisi: 232, warna: 'var(--bahaya)', lencana: 48 },
 ];
 
 export function IlustrasiBeranda(props: PropsIlustrasi) {
     return (
-        <KerangkaSvg viewBox="0 0 480 380" {...props}>
-            <circle cx="240" cy="196" r="164" fill="var(--ilustrasi-primer-lembut)" />
-            <circle cx="66" cy="92" r="10" fill="var(--ilustrasi-aksen)" />
-            <circle cx="430" cy="322" r="14" fill="var(--ilustrasi-primer)" opacity=".25" />
-            <circle cx="52" cy="290" r="7" fill="var(--ilustrasi-primer)" opacity=".4" />
-            <rect x="86" y="72" width="308" height="236" rx="22" fill="var(--ilustrasi-kartu)" stroke="var(--ilustrasi-garis)" strokeWidth="2" />
-            <circle cx="112" cy="98" r="6" fill="var(--ilustrasi-aksen)" />
-            <circle cx="132" cy="98" r="6" fill="var(--ilustrasi-primer)" opacity=".5" />
-            <rect x="156" y="92" width="130" height="12" rx="6" fill="var(--ilustrasi-garis)" />
+        <KerangkaSvg viewBox="0 0 480 340" {...props}>
+            <rect x="8" y="8" width="464" height="324" rx="12" fill="var(--ilustrasi-kartu)" stroke="var(--ilustrasi-garis)" strokeWidth="2" />
+            <rect x="8" y="8" width="464" height="44" rx="12" fill="var(--ilustrasi-primer-lembut)" />
+            <rect x="8" y="40" width="464" height="12" fill="var(--ilustrasi-primer-lembut)" />
+            <rect x="28" y="24" width="86" height="10" rx="5" fill="var(--ilustrasi-primer)" opacity=".55" />
+            <rect x="196" y="24" width="52" height="10" rx="5" fill="var(--ilustrasi-primer)" opacity=".3" />
+            <rect x="296" y="24" width="60" height="10" rx="5" fill="var(--ilustrasi-primer)" opacity=".3" />
+            <rect x="404" y="24" width="48" height="10" rx="5" fill="var(--ilustrasi-primer)" opacity=".3" />
             {baris.map((item) => (
                 <g key={item.y}>
-                    <rect x="112" y={item.y} width="36" height="36" rx="11" fill="var(--ilustrasi-primer-lembut)" />
-                    <rect x="162" y={item.y + 4} width={item.lebar} height="10" rx="5" fill="var(--ilustrasi-garis)" />
-                    <rect x="162" y={item.y + 22} width={item.lebar - 36} height="8" rx="4" fill="var(--ilustrasi-garis)" opacity=".6" />
-                    <rect x="318" y={item.y + 7} width="58" height="22" rx="11" fill={item.warna} opacity=".9" />
+                    <line x1="8" x2="472" y1={item.y - 16} y2={item.y - 16} stroke="var(--ilustrasi-garis)" strokeWidth="1.5" opacity=".7" />
+                    <rect x="28" y={item.y} width={item.nama} height="10" rx="5" fill="var(--ilustrasi-teks)" opacity=".18" />
+                    <rect x="28" y={item.y + 16} width={item.nama * 0.6} height="8" rx="4" fill="var(--ilustrasi-teks)" opacity=".08" />
+                    <rect x="196" y={item.y + 6} width="52" height="10" rx="5" fill="var(--ilustrasi-teks)" opacity=".1" />
+                    <rect x="296" y={item.y + 9} width="21" height="6" rx="3" fill="var(--sukses)" opacity=".22" />
+                    <rect x="318" y={item.y + 9} width="21" height="6" fill="var(--peringatan)" opacity=".22" />
+                    <rect x="340" y={item.y + 9} width="21" height="6" rx="3" fill="var(--bahaya)" opacity=".22" />
+                    <rect x={296 + item.posisi * 0.32} y={item.y + 4} width="4" height="16" rx="2" fill={item.warna} />
+                    <rect x="404" y={item.y + 3} width={item.lencana} height="18" rx="6" fill={item.warna} opacity=".16" />
+                    <rect x="412" y={item.y + 9} width="28" height="6" rx="3" fill={item.warna} />
                 </g>
             ))}
-            <circle cx="352" cy="262" r="42" fill="var(--ilustrasi-kartu)" fillOpacity=".7" stroke="var(--ilustrasi-primer)" strokeWidth="10" />
-            <path d="M382 292 L414 324" stroke="var(--ilustrasi-primer)" strokeWidth="14" strokeLinecap="round" />
-            <rect x="326" y="40" width="116" height="64" rx="16" fill="var(--ilustrasi-kartu)" stroke="var(--ilustrasi-garis)" strokeWidth="2" />
-            <circle cx="356" cy="72" r="15" fill="var(--sukses)" />
-            <path d="M349 72 L354 77 L363 67" stroke="var(--ilustrasi-glif)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-            <rect x="380" y="62" width="48" height="8" rx="4" fill="var(--ilustrasi-garis)" />
-            <rect x="380" y="78" width="32" height="8" rx="4" fill="var(--ilustrasi-garis)" opacity=".6" />
         </KerangkaSvg>
     );
 }

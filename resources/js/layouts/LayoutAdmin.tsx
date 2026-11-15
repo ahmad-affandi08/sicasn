@@ -1,6 +1,6 @@
 import { Link, router, usePage } from '@inertiajs/react';
 import { useState, type ReactNode } from 'react';
-import { LuChevronRight, LuExternalLink, LuLayoutDashboard, LuLogOut, LuMail, LuMenu, LuMessageCircle, LuChartColumn, LuRefreshCw, LuSettings, LuTarget, LuUsers, LuWallet } from 'react-icons/lu';
+import { LuExternalLink, LuLayoutDashboard, LuLogOut, LuMail, LuMenu, LuMessageCircle, LuChartColumn, LuRefreshCw, LuSettings, LuTarget, LuUsers, LuWallet } from 'react-icons/lu';
 import type { IconType } from 'react-icons';
 
 import { PenangkapFlash } from '@/components/dialog/PenangkapFlash';
@@ -45,13 +45,12 @@ function TautanNav({ item, url, onPilih }: { item: ItemNav; url: string; onPilih
             onClick={onPilih}
             aria-current={aktif ? 'page' : undefined}
             className={cn(
-                'flex min-h-11 items-center gap-3 rounded-xl px-3.5 text-sm font-medium transition-colors',
-                aktif ? 'bg-primer text-primer-teks' : 'text-redup hover:bg-primer-lembut hover:text-primer',
+                'relative flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm transition-colors md:min-h-9',
+                aktif ? 'bg-kartu font-medium text-teks ring-1 ring-garis before:absolute before:inset-y-2 before:left-0 before:w-0.5 before:rounded-full before:bg-primer' : 'text-redup hover:bg-kartu/70 hover:text-teks',
             )}
         >
-            <Ikon aria-hidden className="h-5 w-5 shrink-0" />
+            <Ikon aria-hidden className="h-4 w-4 shrink-0" />
             {item.label}
-            {aktif && <LuChevronRight aria-hidden className="ml-auto h-4 w-4" />}
         </Link>
     );
 }
@@ -62,7 +61,7 @@ function IsiNavigasi({ url, onPilih }: { url: string; onPilih?: () => void }) {
             {utama.map((item) => (
                 <TautanNav key={item.href} item={item} url={url} onPilih={onPilih} />
             ))}
-            <p className="mt-4 mb-1 px-3.5 text-xs font-medium tracking-wide text-redup uppercase">{teksAdmin.nav.pengaturan}</p>
+            <p className="mt-5 mb-1 px-3 text-xs font-medium text-redup">{teksAdmin.nav.pengaturan}</p>
             {pengaturan.map((item) => (
                 <TautanNav key={item.href} item={item} url={url} onPilih={onPilih} />
             ))}
@@ -76,10 +75,10 @@ export function LayoutAdmin({ children }: { children: ReactNode }) {
 
     return (
         <div className="min-h-dvh lg:grid lg:grid-cols-[17rem_1fr]">
-            <aside className="sticky top-0 hidden h-dvh flex-col gap-6 overflow-y-auto border-r border-garis bg-kartu p-4 lg:flex">
-                <div className="px-1.5 pt-1">
+            <aside className="sticky top-0 hidden h-dvh flex-col gap-6 overflow-y-auto border-r border-garis bg-permukaan p-3 lg:flex">
+                <div className="flex items-center justify-between px-2 pt-2">
                     <Logo />
-                    <p className="mt-3 px-1 text-xs font-medium tracking-wide text-redup uppercase">{teksAdmin.nav.judul}</p>
+                    <span className="text-xs text-redup">{teksAdmin.nav.judul}</span>
                 </div>
                 <IsiNavigasi url={url} />
                 <div className="mt-auto flex flex-col gap-1 border-t border-garis pt-4">
@@ -87,16 +86,16 @@ export function LayoutAdmin({ children }: { children: ReactNode }) {
                         href="/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex min-h-11 items-center gap-3 rounded-xl px-3.5 text-sm font-medium text-redup hover:bg-primer-lembut hover:text-primer"
+                        className="flex min-h-9 items-center gap-3 rounded-lg px-3 text-sm text-redup hover:bg-kartu/70 hover:text-teks"
                     >
-                        <LuExternalLink aria-hidden className="h-5 w-5" />
+                        <LuExternalLink aria-hidden className="h-4 w-4" />
                         {teksAdmin.nav.lihatSitus}
                     </a>
                 </div>
             </aside>
 
             <div className="flex min-w-0 flex-col">
-                <header className="sticky top-0 z-40 flex h-16 items-center justify-between gap-3 border-b border-garis bg-latar/90 px-4 backdrop-blur sm:px-6">
+                <header className="sticky top-0 z-40 flex h-14 items-center justify-between gap-3 border-b border-garis bg-latar/95 px-4 backdrop-blur sm:px-6">
                     <div className="flex items-center gap-2 lg:hidden">
                         <Sheet open={menuTerbuka} onOpenChange={setMenuTerbuka}>
                             <SheetTrigger asChild>
@@ -116,7 +115,7 @@ export function LayoutAdmin({ children }: { children: ReactNode }) {
                     <div className="flex items-center gap-1.5">
                         <span className="hidden max-w-56 truncate text-sm text-redup sm:block">{props.auth.pengguna?.nama}</span>
                         <TombolTema />
-                        <Button variant="outline" onClick={() => router.post(rute.keluar)}>
+                        <Button variant="ghost" onClick={() => router.post(rute.keluar)}>
                             <LuLogOut aria-hidden className="h-4 w-4" />
                             <span className="hidden sm:inline">{teksAdmin.nav.keluar}</span>
                             <span className="sr-only sm:hidden">{teksAdmin.nav.keluar}</span>

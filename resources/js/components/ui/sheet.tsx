@@ -18,7 +18,7 @@ export function SheetContent({ className, children, sisi = 'kanan', ...props }: 
             <SheetPrimitive.Overlay className="dialog-overlay fixed inset-0 z-50 bg-black/50" />
             <SheetPrimitive.Content
                 className={cn(
-                    'fixed inset-y-0 z-50 flex h-dvh w-[85%] max-w-sm flex-col gap-4 border-garis bg-kartu p-6 text-teks shadow-2xl',
+                    'fixed inset-y-0 z-50 flex h-dvh w-[85%] max-w-sm flex-col gap-4 border-garis bg-kartu p-5 text-teks shadow-xl',
                     sisi === 'kanan' ? 'sheet-konten right-0 border-l' : 'sheet-konten-kiri left-0 border-r',
                     className,
                 )}
@@ -27,7 +27,7 @@ export function SheetContent({ className, children, sisi = 'kanan', ...props }: 
                 {children}
                 <SheetPrimitive.Close
                     aria-label="Tutup"
-                    className="absolute top-4 right-4 inline-flex h-11 w-11 items-center justify-center rounded-xl text-redup hover:bg-primer-lembut"
+                    className="absolute top-4 right-4 inline-flex h-11 w-11 items-center justify-center rounded-lg text-redup hover:bg-permukaan"
                 >
                     <LuX aria-hidden className="h-5 w-5" />
                 </SheetPrimitive.Close>

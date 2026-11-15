@@ -24,10 +24,10 @@ export default function Masuk() {
     return (
         <LayoutAuth>
             <Head title={teks.tombol} />
-            <Card className="grid w-full max-w-4xl overflow-hidden md:grid-cols-2">
+            <Card className="grid w-full max-w-3xl overflow-hidden md:grid-cols-[1.1fr_1fr]">
                 <div className="flex flex-col gap-6 p-6 sm:p-10">
                     <div className="flex flex-col gap-2">
-                        <h1 className="text-2xl font-bold">{teks.judul}</h1>
+                        <h1 className="text-2xl font-medium">{teks.judul}</h1>
                         <p className="text-redup">{teks.sub}</p>
                     </div>
 
@@ -62,7 +62,7 @@ export default function Masuk() {
                                     type="button"
                                     onClick={() => setTampil((nilai) => !nilai)}
                                     aria-label={tampil ? teks.sembunyikan : teks.tampilkan}
-                                    className="absolute top-0 right-0 inline-flex h-11 w-11 items-center justify-center rounded-xl text-redup hover:text-primer"
+                                    className="absolute top-0 right-0 inline-flex h-11 w-11 items-center justify-center rounded-lg text-redup hover:text-primer"
                                 >
                                     {tampil ? <LuEyeOff aria-hidden className="h-5 w-5" /> : <LuEye aria-hidden className="h-5 w-5" />}
                                 </button>
@@ -91,7 +91,7 @@ export default function Masuk() {
                         </Link>
                     </p>
                 </div>
-                <div className="hidden items-center justify-center bg-primer-lembut p-8 md:flex">
+                <div className="hidden items-center justify-center bg-permukaan p-8 md:flex">
                     <IlustrasiLogin className="h-auto w-full max-w-sm" judul={teks.ilustrasi} />
                 </div>
             </Card>

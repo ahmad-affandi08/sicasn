@@ -1,6 +1,7 @@
 import { Head, Link } from '@inertiajs/react';
 import { LuArrowLeft, LuExternalLink } from 'react-icons/lu';
 
+import { Catatan } from '@/components/Catatan';
 import { HeaderHalaman } from '@/components/HeaderHalaman';
 import { Alert } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
@@ -22,6 +23,7 @@ interface PropsHalaman {
     peluang: PeluangFormasiItem | null;
     riwayat: SnapshotItem[];
     tautanResmi: string;
+    ambang: { longgarMaks: number; ketatMin: number };
 }
 
 function rentangPenghasilan(formasi: DetailFormasiItem): string {
@@ -34,7 +36,7 @@ function rentangPenghasilan(formasi: DetailFormasiItem): string {
     return min !== null || maks !== null ? teksFormasi.detail.rupiah((min ?? maks) as number) : teksFormasi.detail.belumTersedia;
 }
 
-export default function Detail({ formasi, peluang, riwayat, tautanResmi }: PropsHalaman) {
+export default function Detail({ formasi, peluang, riwayat, tautanResmi, ambang }: PropsHalaman) {
     const teks = teksFormasi.detail;
     const usia = teksFormasi.kartu.usia(formasi.usiaMin, formasi.usiaMaks);
 
@@ -64,7 +66,7 @@ export default function Detail({ formasi, peluang, riwayat, tautanResmi }: Props
 
             <div className="flex flex-col gap-6">
                 {formasi.status === 'ditarik' && <Alert variant="bahaya">{teks.ditarik}</Alert>}
-                <Alert variant="peringatan">{teksFormasi.disclaimer}</Alert>
+                <Catatan>{teksFormasi.disclaimer}</Catatan>
 
                 <div className="grid gap-6 lg:grid-cols-3">
                     <Card className="lg:col-span-2">
@@ -72,9 +74,9 @@ export default function Detail({ formasi, peluang, riwayat, tautanResmi }: Props
                             <CardTitle>{teks.info}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <dl className="grid gap-4 sm:grid-cols-2">
-                                <InfoFormasi label={teks.instansi}>{formasi.instansi}</InfoFormasi>
-                                <InfoFormasi label={teks.lokasi}>{formasi.lokasi}</InfoFormasi>
+                            <dl className="grid grid-cols-2 gap-x-4 gap-y-4">
+                                <InfoFormasi label={teks.instansi} penuh>{formasi.instansi}</InfoFormasi>
+                                <InfoFormasi label={teks.lokasi} penuh>{formasi.lokasi}</InfoFormasi>
                                 {formasi.provinsi && <InfoFormasi label={teks.provinsi}>{formasi.provinsi}</InfoFormasi>}
                                 <InfoFormasi label={teks.kuota}>{formasi.kuota.toLocaleString('id-ID')}</InfoFormasi>
                                 <InfoFormasi label={teks.usia}>{usia || teks.belumTersedia}</InfoFormasi>
@@ -85,7 +87,7 @@ export default function Detail({ formasi, peluang, riwayat, tautanResmi }: Props
                                     </span>
                                 </InfoFormasi>
                                 <InfoFormasi label={teks.jenisPengadaan}>{formasi.jenisPengadaan}</InfoFormasi>
-                                <InfoFormasi label={teks.event}>{formasi.namaEvent}</InfoFormasi>
+                                <InfoFormasi label={teks.event} penuh>{formasi.namaEvent}</InfoFormasi>
                                 <InfoFormasi label={teks.penghasilan}>{rentangPenghasilan(formasi)}</InfoFormasi>
                                 {formasi.kodeJabatan && <InfoFormasi label={teks.kodeJabatan}>{formasi.kodeJabatan}</InfoFormasi>}
                             </dl>
@@ -98,7 +100,7 @@ export default function Detail({ formasi, peluang, riwayat, tautanResmi }: Props
                             <CardTitle>{teks.persaingan}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <RingkasPeluang peluang={peluang} />
+                            <RingkasPeluang peluang={peluang} ambang={ambang} />
                         </CardContent>
                     </Card>
                 </div>

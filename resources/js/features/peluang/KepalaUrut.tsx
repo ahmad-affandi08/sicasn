@@ -12,7 +12,7 @@ interface PropsKepalaUrut {
 export function KepalaUrut({ label, aktif, onUrut }: PropsKepalaUrut) {
     return (
         <TableHead aria-sort={aktif ? 'ascending' : 'none'}>
-            <Button variant="ghost" size="sm" className="-ml-3 gap-1.5 text-xs tracking-wide uppercase" onClick={onUrut}>
+            <Button variant="ghost" size="sm" className="-ml-3 gap-1.5 text-xs" onClick={onUrut}>
                 {label}
                 <LuArrowUpDown aria-hidden className={aktif ? 'h-3.5 w-3.5 text-primer' : 'h-3.5 w-3.5'} />
             </Button>

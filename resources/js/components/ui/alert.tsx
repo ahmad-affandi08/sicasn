@@ -3,13 +3,13 @@ import type { ComponentProps } from 'react';
 
 import { cn } from '@/lib/utils';
 
-const alertVariants = cva('flex gap-3 rounded-xl border p-4 text-sm', {
+const alertVariants = cva('flex gap-3 rounded-lg border border-garis border-l-4 bg-kartu px-4 py-3 text-sm text-teks', {
     variants: {
         variant: {
-            info: 'border-info/30 bg-info-lembut text-teks',
-            peringatan: 'border-peringatan/30 bg-peringatan-lembut text-teks',
-            sukses: 'border-sukses/30 bg-sukses-lembut text-teks',
-            bahaya: 'border-bahaya/30 bg-bahaya-lembut text-teks',
+            info: 'border-l-info',
+            peringatan: 'border-l-peringatan',
+            sukses: 'border-l-sukses',
+            bahaya: 'border-l-bahaya',
         },
     },
     defaultVariants: { variant: 'info' },

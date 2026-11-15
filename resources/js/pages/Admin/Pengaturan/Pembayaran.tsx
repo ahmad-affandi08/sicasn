@@ -75,7 +75,7 @@ export default function Pembayaran({ pengaturan }: PropsHalaman) {
                     </CardHeader>
                     <CardContent className="flex flex-col gap-5">
                         {form.data.rekening.map((baris, indeks) => (
-                            <fieldset key={indeks} className="grid gap-4 rounded-xl border border-garis p-4 sm:grid-cols-[1fr_1.4fr_1.4fr_auto] sm:items-end">
+                            <fieldset key={indeks} className="grid gap-4 rounded-lg border border-garis p-4 sm:grid-cols-[1fr_1.4fr_1.4fr_auto] sm:items-end">
                                 <legend className="sr-only">{`${teks.rekening} ${indeks + 1}`}</legend>
                                 <BidangForm id={`bank-${indeks}`} label={teks.bank} error={galat[`rekening.${indeks}.bank`]}>
                                     <Input id={`bank-${indeks}`} value={baris.bank} onChange={(kejadian) => ubahRekening(indeks, 'bank', kejadian.target.value)} />

@@ -4,6 +4,7 @@ export const teksPeluang = {
     sub: 'Lihat seberapa ramai tiap instansi diminati pada seleksi CPNS 2024, supaya pilihan Anda lebih realistis.',
     disclaimer: {
         judul: 'Baca dulu',
+        ringkas: 'Angka dari rilis BKN pada tanggal tertentu, bukan prediksi dan bukan jaminan. Bukan portal resmi pemerintah.',
         isi: 'Angka berasal dari rilis BKN dan pemberitaan yang mengutipnya pada tanggal tertentu, bukan prediksi dan bukan jaminan untuk tahun ini. SICASN bukan portal resmi pemerintah.',
         tautan: 'Buka sumber resmi di sscasn.bkn.go.id',
     },
@@ -61,7 +62,13 @@ export const teksPeluang = {
             belum_ada_data: 'Jumlah formasi atau pelamar tidak tersedia',
         },
     },
-    ambang: (longgar: number, ketat: number) => `Longgar bila rasio di bawah ${longgar.toLocaleString('id-ID')}, Ketat bila di atas ${ketat.toLocaleString('id-ID')}. Rasio = pelamar ÷ formasi.`,
+    legenda: {
+        judul: 'Skala rasio pelamar per formasi',
+        longgar: (batas: string) => `Longgar < ${batas}`,
+        sedang: (bawah: string, atas: string) => `Sedang ${bawah}–${atas}`,
+        ketat: (batas: string) => `Ketat > ${batas}`,
+        sementara: '≥ angka sementara, bisa bertambah',
+    },
     batasBawah: 'Tanda ≥ berarti angka sementara dan bisa bertambah.',
     rincian: {
         judul: 'Rincian data',

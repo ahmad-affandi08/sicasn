@@ -24,13 +24,13 @@ export function HeaderPublik() {
     const tujuanAkun = auth.pengguna?.peran === 'admin' ? rute.admin.dasbor : rute.akun;
 
     return (
-        <header className="sticky top-0 z-40 border-b border-garis bg-latar/90 backdrop-blur">
-            <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+        <header className="sticky top-0 z-40 border-b border-garis bg-latar/95 backdrop-blur">
+            <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
                 <Logo />
 
                 <nav aria-label="Navigasi utama" className="hidden items-center gap-1 md:flex">
                     {tautan.map((item) => (
-                        <a key={item.href} href={item.href} className="rounded-xl px-4 py-2 text-sm font-medium text-redup hover:bg-primer-lembut hover:text-primer">
+                        <a key={item.href} href={item.href} className="rounded-md px-3 py-2 text-sm text-redup hover:text-teks">
                             {item.label}
                         </a>
                     ))}
@@ -38,7 +38,7 @@ export function HeaderPublik() {
 
                 <div className="flex items-center gap-1.5">
                     <TombolTema />
-                    <Button asChild variant="outline" className="hidden sm:inline-flex">
+                    <Button asChild variant="ghost" className="hidden sm:inline-flex">
                         <Link href={auth.pengguna ? tujuanAkun : rute.masuk}>{auth.pengguna ? teksAuth.nav.bukaAkun : teksAuth.nav.masuk}</Link>
                     </Button>
                     <Button onClick={hubungiAdmin} className="hidden sm:inline-flex">
@@ -61,7 +61,7 @@ export function HeaderPublik() {
                                         key={item.href}
                                         href={item.href}
                                         onClick={() => setMenuTerbuka(false)}
-                                        className="rounded-xl px-4 py-3 text-base font-medium hover:bg-primer-lembut"
+                                        className="rounded-lg px-3 py-3 text-base font-medium hover:bg-permukaan"
                                     >
                                         {item.label}
                                     </a>

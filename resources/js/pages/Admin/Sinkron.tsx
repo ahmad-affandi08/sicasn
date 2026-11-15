@@ -86,7 +86,7 @@ export default function Sinkron({ sedangBerjalan, formasiAktif, lokasiTidakTerpe
                     </Card>
                     <Card>
                         <CardContent className="flex h-full flex-col justify-center gap-1 pt-6">
-                            <p className="text-4xl font-bold">{formasiAktif.toLocaleString('id-ID')}</p>
+                            <p className="text-4xl font-medium">{formasiAktif.toLocaleString('id-ID')}</p>
                             <p className="text-sm text-redup">{teks.formasiAktif}</p>
                         </CardContent>
                     </Card>
@@ -130,7 +130,7 @@ export default function Sinkron({ sedangBerjalan, formasiAktif, lokasiTidakTerpe
                         ) : (
                             <ul className="flex flex-col gap-4">
                                 {riwayat.map((batch) => (
-                                    <li key={batch.id} className="flex flex-col gap-2 rounded-xl border border-garis p-4">
+                                    <li key={batch.id} className="flex flex-col gap-2 rounded-lg border border-garis p-4">
                                         <div className="flex flex-wrap items-center justify-between gap-2">
                                             <p className="text-sm text-redup">
                                                 {teks.riwayat.mulai} {formatWaktu(batch.mulaiAt)}

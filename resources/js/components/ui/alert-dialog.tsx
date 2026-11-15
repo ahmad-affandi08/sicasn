@@ -23,7 +23,7 @@ export function AlertDialogContent({ className, ...props }: ComponentProps<typeo
             <AlertDialogOverlay />
             <AlertDialogPrimitive.Content
                 className={cn(
-                    'dialog-konten fixed top-1/2 left-1/2 z-50 flex max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 flex-col gap-4 overflow-y-auto rounded-2xl border border-garis bg-kartu p-6 text-teks shadow-2xl sm:p-8',
+                    'dialog-konten fixed top-1/2 left-1/2 z-50 flex max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 flex-col gap-4 overflow-y-auto rounded-xl border border-garis bg-kartu p-6 text-teks shadow-xl sm:p-7',
                     className,
                 )}
                 {...props}
@@ -41,11 +41,11 @@ export function AlertDialogFooter({ className, ...props }: ComponentProps<'div'>
 }
 
 export function AlertDialogTitle({ className, ...props }: ComponentProps<typeof AlertDialogPrimitive.Title>) {
-    return <AlertDialogPrimitive.Title className={cn('text-xl font-medium leading-snug', className)} {...props} />;
+    return <AlertDialogPrimitive.Title className={cn('text-lg font-medium leading-snug', className)} {...props} />;
 }
 
 export function AlertDialogDescription({ className, ...props }: ComponentProps<typeof AlertDialogPrimitive.Description>) {
-    return <AlertDialogPrimitive.Description className={cn('text-base text-redup', className)} {...props} />;
+    return <AlertDialogPrimitive.Description className={cn('text-sm text-redup', className)} {...props} />;
 }
 
 export function AlertDialogAction({ className, ...props }: ComponentProps<typeof AlertDialogPrimitive.Action>) {

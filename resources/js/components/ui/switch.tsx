@@ -15,15 +15,15 @@ export function Switch({ checked, onCheckedChange, className, ...props }: PropsS
             aria-checked={checked}
             onClick={() => onCheckedChange(!checked)}
             className={cn(
-                'relative inline-flex h-7 w-12 shrink-0 items-center rounded-full border border-garis transition-colors disabled:opacity-50',
-                checked ? 'bg-primer' : 'bg-garis',
+                'relative inline-flex h-6 w-11 shrink-0 items-center rounded-full border border-garis-input transition-colors disabled:opacity-50',
+                checked ? 'border-primer bg-primer' : 'bg-permukaan',
                 className,
             )}
             {...props}
         >
             <span
                 aria-hidden
-                className={cn('inline-block h-5 w-5 rounded-full bg-white shadow transition-transform', checked ? 'translate-x-6' : 'translate-x-1')}
+                className={cn('inline-block h-4 w-4 rounded-full transition-transform', checked ? 'translate-x-6 bg-primer-teks' : 'translate-x-1 bg-garis-input')}
             />
         </button>
     );

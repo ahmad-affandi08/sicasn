@@ -1,6 +1,7 @@
 import { Head } from '@inertiajs/react';
 
 import { CaraAkses } from '@/features/beranda/CaraAkses';
+import { DataTelusur } from '@/features/beranda/DataTelusur';
 import { InfoPembayaran } from '@/features/beranda/InfoPembayaran';
 import { Hero } from '@/features/beranda/Hero';
 import { Manfaat } from '@/features/beranda/Manfaat';
@@ -19,6 +20,7 @@ export default function Beranda({ pembayaran }: PropsHalaman) {
             <Head title={teks.tagline} />
             <Hero />
             <Manfaat />
+            <DataTelusur />
             <CaraAkses />
             {pembayaran && <InfoPembayaran info={pembayaran} />}
             <PenutupCta />

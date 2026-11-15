@@ -28,7 +28,7 @@ export default function Index({ riwayat, totalBaris }: PropsHalaman) {
                     </div>
                     <Card>
                         <CardContent className="flex h-full flex-col justify-center gap-1 pt-6">
-                            <p className="text-4xl font-bold">{totalBaris.toLocaleString('id-ID')}</p>
+                            <p className="text-4xl font-medium">{totalBaris.toLocaleString('id-ID')}</p>
                             <p className="text-sm text-redup">{teks.totalBaris}</p>
                         </CardContent>
                     </Card>

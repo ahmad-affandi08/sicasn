@@ -29,7 +29,7 @@ export function RingkasanBatch({ batch }: { batch: BatchItem }) {
                 {angka.map(([label, nilai]) => (
                     <div key={label}>
                         <dt className="text-xs text-redup">{label}</dt>
-                        <dd className="text-xl font-bold">{nilai.toLocaleString('id-ID')}</dd>
+                        <dd className="text-xl font-medium">{nilai.toLocaleString('id-ID')}</dd>
                     </div>
                 ))}
             </dl>

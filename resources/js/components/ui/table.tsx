@@ -19,11 +19,11 @@ export function TableBody({ className, ...props }: ComponentProps<'tbody'>) {
 }
 
 export function TableRow({ className, ...props }: ComponentProps<'tr'>) {
-    return <tr className={cn('border-b border-garis hover:bg-primer-lembut/40', className)} {...props} />;
+    return <tr className={cn('border-b border-garis hover:bg-permukaan/70', className)} {...props} />;
 }
 
 export function TableHead({ className, ...props }: ComponentProps<'th'>) {
-    return <th className={cn('h-11 px-4 text-xs font-medium tracking-wide uppercase', className)} {...props} />;
+    return <th className={cn('h-10 px-4 text-xs font-medium', className)} {...props} />;
 }
 
 export function TableCell({ className, ...props }: ComponentProps<'td'>) {

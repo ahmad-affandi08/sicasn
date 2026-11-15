@@ -67,16 +67,15 @@ describe('PanelFilterFormasi', () => {
         expect(terapkan).toHaveBeenCalledWith(expect.objectContaining({ provinsi: 34, wilayah: 77 }));
     });
 
-    it('menerapkan tingkat persaingan, urutan, dan opsi sertakan tanpa kualifikasi', async () => {
+    it('menerapkan tingkat persaingan dan opsi sertakan tanpa kualifikasi', async () => {
         const terapkan = vi.fn();
         render(<PanelFilterFormasi filter={FILTER_KOSONG} opsi={opsiUji} tingkat={tingkat} onTerapkan={terapkan} />);
 
         await userEvent.selectOptions(screen.getByLabelText('Tingkat persaingan'), 'ketat');
-        await userEvent.selectOptions(screen.getByLabelText('Urutkan'), 'kuota_terbanyak');
         await userEvent.click(screen.getByRole('switch', { name: /Sertakan formasi tanpa rincian kualifikasi/ }));
         await userEvent.click(screen.getByRole('button', { name: /Terapkan filter/ }));
 
-        expect(terapkan).toHaveBeenCalledWith(expect.objectContaining({ tingkat: 'ketat', urut: 'kuota_terbanyak', sertakan: true }));
+        expect(terapkan).toHaveBeenCalledWith(expect.objectContaining({ tingkat: 'ketat', sertakan: true }));
     });
 
     it('menghapus semua filter tetapi mempertahankan kata pencarian', async () => {

@@ -81,3 +81,7 @@ php tests/perf/formasi.php 100000 20
 
 Membuat ulang database (`migrate:fresh`!), mengisi 100.000 formasi sintetis, lalu mengukur p50/p95/maks untuk 14 skenario filter dan urutan. Argumen ketiga `pakai-ulang` melewati pembuatan data. Keluar dengan status 1 bila p95 terburuk ≥ 300 ms. Hasil terakhir (SQLite): p95 terburuk 255 ms. **Jangan jalankan di database yang berisi data nyata.**
 
+
+## Catatan setelah penyegaran desain
+
+Skrip E2E memilih elemen lewat peran dan nama aksesibel, bukan kelas CSS, kecuali daftar formasi (`ul[aria-label="Daftar formasi"]`) dan daftar Peluang Instansi di HP (`main ul.divide-y`). Jangan mengganti `aria-label` daftar tanpa memperbarui skrip.
