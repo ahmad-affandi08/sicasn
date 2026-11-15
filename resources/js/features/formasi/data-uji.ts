@@ -1,4 +1,4 @@
-import type { DetailFormasiItem, FormasiItem, OpsiFormasiItem, PeluangFormasiItem, PeluangJabatanItem } from '@/types';
+import type { DetailFormasiItem, FormasiItem, OpsiFormasiItem, PantauanItem, PeluangFormasiItem, PeluangJabatanItem } from '@/types';
 
 export const peluangUji: PeluangFormasiItem = {
     tingkat: 'ketat',
@@ -93,3 +93,7 @@ export const detailUji: DetailFormasiItem = {
     pertamaKaliTerlihat: '2026-11-15T10:00:00+07:00',
     terakhirTerlihat: '2026-11-16T02:00:00+07:00',
 };
+
+export function pantauanUji(id: number, ubah: Partial<PantauanItem> = {}): PantauanItem {
+    return { ...formasiUji, id, jabatan: `Jabatan ${id}`, status: 'aktif', catatan: null, ditambahkanAt: '2026-11-17 10:00:00', ...ubah };
+}

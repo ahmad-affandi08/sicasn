@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render as renderPolos, screen } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
+import { DialogProvider } from '@/components/dialog/DialogProvider';
+
 vi.mock('@inertiajs/react', () => ({
+    router: { post: vi.fn(), delete: vi.fn() },
     Link: ({ href, children, ...sisa }: { href: string; children: ReactNode }) => (
         <a href={href} {...sisa}>
             {children}
@@ -12,6 +15,10 @@ vi.mock('@inertiajs/react', () => ({
 
 import { formasiUji, peluangJabatanUji } from './data-uji';
 import { KartuFormasi } from './KartuFormasi';
+
+function render(isi: ReactNode) {
+    return renderPolos(<DialogProvider>{isi}</DialogProvider>);
+}
 
 describe('KartuFormasi', () => {
     it('menampilkan instansi, jabatan, lokasi, kuota, usia, dan syarat pendidikan', () => {

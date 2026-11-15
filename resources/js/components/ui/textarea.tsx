@@ -6,7 +6,7 @@ export function Textarea({ className, ...props }: ComponentProps<'textarea'>) {
     return (
         <textarea
             className={cn(
-                'flex min-h-24 w-full rounded-xl border border-garis bg-kartu px-4 py-3 text-base text-teks placeholder:text-redup disabled:cursor-not-allowed disabled:opacity-50',
+                'flex min-h-20 w-full rounded-lg border border-garis-input bg-kartu px-3 py-2 text-base text-teks placeholder:text-redup disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
                 className,
             )}
             {...props}

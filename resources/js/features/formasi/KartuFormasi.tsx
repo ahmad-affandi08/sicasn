@@ -1,6 +1,7 @@
 import { Link } from '@inertiajs/react';
 import { LuAccessibility, LuChevronRight, LuGraduationCap, LuMapPin, LuUsers } from 'react-icons/lu';
 
+import { TombolPantau } from '@/components/TombolPantau';
 import { Badge } from '@/components/ui/badge';
 import { teksFormasi } from '@/lang/formasi';
 import { rute } from '@/lib/rute';
@@ -11,9 +12,11 @@ import { RingkasPeluang } from './RingkasPeluang';
 interface PropsKartuFormasi {
     formasi: FormasiItem;
     ambang?: { longgarMaks: number; ketatMin: number };
+    dipantau?: boolean;
+    muatUlang?: string[];
 }
 
-export function KartuFormasi({ formasi, ambang }: PropsKartuFormasi) {
+export function KartuFormasi({ formasi, ambang, dipantau = false, muatUlang }: PropsKartuFormasi) {
     const teks = teksFormasi.kartu;
     const usia = teks.usia(formasi.usiaMin, formasi.usiaMaks);
 
@@ -59,12 +62,13 @@ export function KartuFormasi({ formasi, ambang }: PropsKartuFormasi) {
                         </span>
                     </li>
                 </ul>
-                <div>
+                <div className="flex flex-wrap items-center gap-2">
                     <Link href={rute.detailFormasi(formasi.id)} className="-ml-2 inline-flex min-h-11 items-center gap-1 rounded-lg px-2 text-sm font-medium text-primer hover:bg-primer-lembut md:min-h-9">
                         {teks.lihat}
                         <span className="sr-only"> {formasi.jabatan}</span>
                         <LuChevronRight aria-hidden className="h-4 w-4" />
                     </Link>
+                    <TombolPantau formasiId={formasi.id} jabatan={formasi.jabatan} dipantau={dipantau} muatUlang={muatUlang} />
                 </div>
             </div>
             <div className="border-t border-garis pt-4 md:border-t-0 md:border-l md:pt-0 md:pl-6">

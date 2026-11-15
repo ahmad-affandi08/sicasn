@@ -96,3 +96,15 @@ node tests/e2e/fase5.cjs /tmp/tangkapan-layar
 
 Alurnya: admin mengunggah CSV `cakupan=jabatan` (dua baris valid dan satu tanpa nama jabatan), pratinjau, konfirmasi; member melihat blok "Per jabatan 2024" di daftar dan detail beserta riwayatnya; tampilan HP tanpa scroll horizontal; rollback mengembalikan tampilan ke rata-rata instansi. Data memakai instansi dan jabatan yang dibaca dari kartu pertama hasil pencarian, jadi tidak bergantung pada nama tertentu.
 
+## Fase 6 (pantauan dan perbandingan)
+
+`tests/e2e/fase6.cjs` memakai database yang sama dengan Fase 4. Skrip membersihkan tabel `pantauans` lebih dulu (`tests/e2e/bersihkan_pantauan.php`).
+
+```
+node tests/e2e/fase6.cjs /tmp/tangkapan-layar
+```
+
+Alurnya: daftar kosong; memantau lima formasi dari daftar (tanpa dialog, status bertahan setelah muat ulang); catatan pribadi tersimpan dan bertahan; pilihan perbandingan (minimal dua, maksimal empat); tabel perbandingan; penolakan perbandingan satu formasi lewat dialog; menghentikan pantauan dengan konfirmasi modal; tombol pantau di daftar dan detail; HP dan tanpa scroll horizontal.
+
+Catatan: aturan satu sesi per akun membuat login kedua mengeluarkan sesi pertama (halaman berikutnya mengalihkan ke `/masuk` dengan dialog "Akun dipakai di perangkat lain"). Skrip login ulang di konteks yang dikeluarkan sebelum melanjutkan.
+

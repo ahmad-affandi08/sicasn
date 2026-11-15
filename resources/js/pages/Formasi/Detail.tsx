@@ -2,6 +2,7 @@ import { Head, Link } from '@inertiajs/react';
 import { LuArrowLeft, LuExternalLink } from 'react-icons/lu';
 
 import { Catatan } from '@/components/Catatan';
+import { TombolPantau } from '@/components/TombolPantau';
 import { HeaderHalaman } from '@/components/HeaderHalaman';
 import { Alert } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
@@ -26,6 +27,7 @@ interface PropsHalaman {
     riwayat: SnapshotItem[];
     tautanResmi: string;
     ambang: { longgarMaks: number; ketatMin: number };
+    dipantau: boolean;
 }
 
 function rentangPenghasilan(formasi: DetailFormasiItem): string {
@@ -38,7 +40,7 @@ function rentangPenghasilan(formasi: DetailFormasiItem): string {
     return min !== null || maks !== null ? teksFormasi.detail.rupiah((min ?? maks) as number) : teksFormasi.detail.belumTersedia;
 }
 
-export default function Detail({ formasi, peluang, peluangJabatan, riwayatJabatan, riwayat, tautanResmi, ambang }: PropsHalaman) {
+export default function Detail({ formasi, peluang, peluangJabatan, riwayatJabatan, riwayat, tautanResmi, ambang, dipantau }: PropsHalaman) {
     const teks = teksFormasi.detail;
     const usia = teksFormasi.kartu.usia(formasi.usiaMin, formasi.usiaMaks);
 
@@ -57,12 +59,15 @@ export default function Detail({ formasi, peluang, peluangJabatan, riwayatJabata
                 judul={formasi.jabatan}
                 sub={formasi.instansi}
                 aksi={
-                    <Button asChild variant="outline">
+                    <>
+                        <TombolPantau formasiId={formasi.id} jabatan={formasi.jabatan} dipantau={dipantau} />
+                        <Button asChild variant="outline">
                         <a href={tautanResmi} target="_blank" rel="noopener noreferrer">
                             {teksFormasi.sumberResmi}
                             <LuExternalLink aria-hidden className="h-4 w-4" />
                         </a>
                     </Button>
+                    </>
                 }
             />
 

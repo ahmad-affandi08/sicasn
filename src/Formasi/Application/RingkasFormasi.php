@@ -23,5 +23,6 @@ final readonly class RingkasFormasi
         public ?int $usiaMaks,
         public bool $kualifikasiTersedia,
         public ?string $kualifikasi,
+        public string $status = 'aktif',
     ) {}
 }

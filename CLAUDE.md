@@ -240,7 +240,7 @@ Semua tabel: `id` bigint unsigned, `created_at`, `updated_at`. Foreign key beser
 ### 6.4 Identity, pantauan, pengaturan
 
 **`users`**: `name`, `email` unik, `password`, `peran` enum(`admin`,`member`), `no_whatsapp` nullable, `aktif` boolean default true, `diaktifkan_at`, `dinonaktifkan_at` nullable, `alasan_nonaktif` nullable, `catatan_pembayaran` nullable (mis. "TF 14/11 BCA", hanya untuk pembukuan admin), `wajib_ganti_password` boolean default true, `password_sementara_berlaku_sampai` nullable, `dibuat_oleh` nullable, `last_login_at`. **Tidak ada kolom masa aktif.**
-**`pantauans`**: `user_id`, `formasi_id`, `catatan` nullable. Unik (`user_id`,`formasi_id`).
+**`pantauans`**: `user_id`, `formasi_id` (keduanya `cascadeOnDelete`), `catatan` nullable (maks 500 karakter), unik (`user_id`,`formasi_id`). Satu pengguna maksimal 100 pantauan.
 **`pengaturans`**: lihat §5.2.
 **`email_logs`**: `user_id` nullable, `tipe`, `penyedia`, `status`, `error` nullable, `dikirim_at`.
 **`audit_logs`**: `aktor_id`, `aksi`, `target_id`, `rincian` JSON. Tanpa data rahasia.
@@ -279,7 +279,7 @@ Semua tabel: `id` bigint unsigned, `created_at`, `updated_at`. Foreign key beser
 - **Keadaan kosong CPNS**: bila belum ada formasi CPNS aktif, tampilkan ilustrasi dan arahkan ke Peluang Instansi.
 
 **Detail Formasi** (`/formasi/{id}`): data lengkap, persyaratan, riwayat statistik pelamar (semua snapshot beserta sumber), tautan sumber resmi, disclaimer.
-**Daftar Pantauan** (`/pantauan`): simpan, catatan pribadi, bandingkan hingga 4 formasi.
+**Daftar Pantauan** (`/pantauan`): simpan, catatan pribadi, bandingkan 2 sampai 4 formasi (`/pantauan/bandingkan`). Memantau tidak memakai modal (tombol berubah menjadi "Dipantau"); **menghentikan pantauan meminta konfirmasi modal** karena menghapus catatan.
 **Akun** (`/akun`): ubah password (wajib saat login pertama), hubungi admin.
 **Panduan Singkat**: modal 3 langkah bergambar saat login pertama (bisa dilewati, bisa dibuka lagi dari menu).
 
@@ -602,6 +602,10 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 
 **Fase 6, Pantauan dan perbandingan**
 - ✅ Simpan, catatan, bandingkan hingga 4 formasi.
+- **Status: selesai (17 Nov 2026).** Terverifikasi: Pest 426 tes, Vitest 141 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau; uji browser `tests/e2e/fase6.cjs` 28 pemeriksaan lulus (memantau dari daftar, catatan, pilih dan bandingkan, batas empat, konfirmasi hentikan, HP tanpa scroll horizontal, 2 halaman x 3 ukuran x 2 tema).
+- **Arsitektur:** konteks `Pantauan` (Domain `BatasPantauan` dan pengecualian; Application: `PantauFormasi`, `HentikanPantauan`, `UbahCatatanPantauan`, `AmbilDaftarPantauan`, `AmbilStatusPantauan`, `BandingkanPantauan`; Infrastructure: `EloquentPantauanRepository`). Data formasi diambil lewat antarmuka `SumberFormasi` yang diadaptasi ke `AmbilItemFormasi` milik Formasi, sehingga daftar pantauan memakai logika persaingan **yang sama persis** dengan daftar formasi (`PerkayaFormasi`, hasil refaktor dari `SearchFormasi`).
+- **Aturan:** pantauan bersifat pribadi (semua kueri memakai `user_id` pengguna masuk); memantau idempoten; formasi yang sudah ditarik dari data BKN tetap tampil dengan peringatan; perbandingan hanya untuk formasi yang ada di daftar pantauan sendiri, 2 sampai 4 formasi, urutan kolom sesuai permintaan; angka tidak diberi penanda "terbaik" karena itu akan menjadi prediksi. Memantau dibatasi 60 permintaan per menit.
+- Tabel perbandingan bergeser di dalam wadahnya pada layar sempit (kolom pertama menempel), halaman tidak scroll horizontal.
 
 **Fase 7, Pengerasan dan rilis**
 - `sicasn:install` lengkap, `docs/deployment.md`, audit keamanan (`/security-review`), uji aksesibilitas, panduan singkat, backup.

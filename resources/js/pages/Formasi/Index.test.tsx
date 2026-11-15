@@ -34,6 +34,7 @@ const dasar = {
     paginasi: { total: 1, halaman: 1, terakhir: 1, perHalaman: 20 },
     totalAktif: 1,
     ambang: { longgarMaks: 5, ketatMin: 20 },
+    dipantau: [] as number[],
     tingkat: [{ kode: 'ketat', label: 'Ketat' }],
     opsi: opsiUji,
     filter: FILTER_KOSONG,

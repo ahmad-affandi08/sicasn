@@ -162,7 +162,7 @@ const hapusFilter = (page) => klikDanTunggu(page, page.getByRole('button', { nam
   await hp.goto(BASE + '/formasi');
   await hp.waitForLoadState('networkidle');
   cek('HP: panel filter tidak tampil permanen, tombol Filter tersedia', !(await hp.locator('aside').count()) && (await hp.getByRole('button', { name: 'Filter', exact: true }).isVisible()));
-  cek('HP: navigasi bawah memuat 3 tujuan', (await hp.locator('nav[aria-label="Navigasi utama"]').last().getByRole('link').count()) === 3);
+  cek('HP: navigasi bawah memuat 4 tujuan', (await hp.locator('nav[aria-label="Navigasi utama"]').last().getByRole('link').count()) === 4);
   cek('HP: daftar selebar layar', (await hp.locator('ul[aria-label="Daftar formasi"] > li').first().boundingBox()).width > 300);
   await hp.getByRole('button', { name: 'Filter', exact: true }).click();
   await hp.waitForSelector('[role=dialog]');

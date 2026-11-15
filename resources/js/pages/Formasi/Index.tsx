@@ -24,12 +24,13 @@ interface PropsHalaman {
     paginasi: { total: number; halaman: number; terakhir: number; perHalaman: number };
     totalAktif: number;
     ambang: { longgarMaks: number; ketatMin: number };
+    dipantau: number[];
     tingkat: { kode: string; label: string }[];
     opsi: OpsiFormasiItem;
     filter: FilterFormasiItem;
 }
 
-export default function Index({ item, paginasi, totalAktif, ambang, tingkat, opsi, filter }: PropsHalaman) {
+export default function Index({ item, paginasi, totalAktif, ambang, dipantau, tingkat, opsi, filter }: PropsHalaman) {
     const teks = teksFormasi;
     const lebar = useLayarLebar();
     const [cari, setCari] = useState(filter.cari);
@@ -114,7 +115,7 @@ export default function Index({ item, paginasi, totalAktif, ambang, tingkat, ops
                                 <ul aria-label={teks.daftar} className="divide-y divide-garis overflow-hidden rounded-kartu border border-garis bg-kartu">
                                     {item.map((butir) => (
                                         <li key={butir.id}>
-                                            <KartuFormasi formasi={butir} ambang={ambang} />
+                                            <KartuFormasi formasi={butir} ambang={ambang} dipantau={dipantau.includes(butir.id)} />
                                         </li>
                                     ))}
                                 </ul>

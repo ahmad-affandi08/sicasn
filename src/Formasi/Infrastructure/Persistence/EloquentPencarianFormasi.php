@@ -33,18 +33,22 @@ final class EloquentPencarianFormasi implements PencarianFormasi
 
         $id = $this->urutkan($this->dasar($filter, $instansiDiizinkan, $instansiDikecualikan), $filter->urut)->forPage($halaman, $perHalaman)->pluck('f.id')->map(fn ($nilai) => (int) $nilai)->all();
 
-        return new HalamanFormasi($this->muatRingkas($id), $total);
+        return new HalamanFormasi($this->ringkas($id), $total);
     }
 
-    private function muatRingkas(array $id): array
+    public function ringkas(array $id): array
     {
+        if ($id === []) {
+            return [];
+        }
+
         $baris = DB::table('formasis as f')
             ->join('instansis as i', 'i.id', '=', 'f.instansi_id')
             ->join('jabatans as j', 'j.id', '=', 'f.jabatan_id')
             ->leftJoin('wilayahs as w', 'w.id', '=', 'f.wilayah_id')
             ->leftJoin('kualifikasi_sets as ks', 'ks.id', '=', 'f.kualifikasi_set_id')
             ->whereIn('f.id', $id)
-            ->get(['f.id', 'f.instansi_id', 'i.nama as instansi', 'j.nama as jabatan', 'j.kode as kode_jabatan', 'j.nama_normal as jabatan_normal', 'f.lokasi_teks', 'f.wilayah_id', 'w.nama as wilayah', 'f.kuota', 'f.jenis_formasi', 'f.is_disabilitas', 'f.usia_min', 'f.usia_max', 'f.kualifikasi_tersedia', 'ks.teks as kualifikasi'])
+            ->get(['f.id', 'f.instansi_id', 'i.nama as instansi', 'j.nama as jabatan', 'j.kode as kode_jabatan', 'j.nama_normal as jabatan_normal', 'f.lokasi_teks', 'f.wilayah_id', 'w.nama as wilayah', 'f.kuota', 'f.jenis_formasi', 'f.is_disabilitas', 'f.usia_min', 'f.usia_max', 'f.kualifikasi_tersedia', 'ks.teks as kualifikasi', 'f.status'])
             ->keyBy('id');
 
         $hasil = [];
@@ -70,6 +74,7 @@ final class EloquentPencarianFormasi implements PencarianFormasi
                     $b->usia_max === null ? null : (int) $b->usia_max,
                     (bool) $b->kualifikasi_tersedia,
                     $b->kualifikasi,
+                    $b->status,
                 );
             }
         }

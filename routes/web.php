@@ -18,6 +18,7 @@ use App\Http\Controllers\GantiPasswordController;
 use App\Http\Controllers\KeluarController;
 use App\Http\Controllers\MasukController;
 use App\Http\Controllers\OpsiFormasiController;
+use App\Http\Controllers\PantauanController;
 use App\Http\Controllers\PeluangInstansiController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,12 @@ Route::middleware(['auth', 'akun.aktif', 'password.sudah-diganti', 'satu.sesi'])
     Route::get('/formasi/opsi/jurusan', [OpsiFormasiController::class, 'jurusan'])->middleware('throttle:120,1')->name('formasi.opsi.jurusan');
     Route::get('/formasi/opsi/provinsi/{id}/wilayah', [OpsiFormasiController::class, 'kabupatenKota'])->whereNumber('id')->middleware('throttle:120,1')->name('formasi.opsi.wilayah');
     Route::get('/formasi/{id}', [FormasiController::class, 'tampil'])->whereNumber('id')->name('formasi.tampil');
+
+    Route::get('/pantauan', [PantauanController::class, 'index'])->name('pantauan');
+    Route::get('/pantauan/bandingkan', [PantauanController::class, 'bandingkan'])->name('pantauan.bandingkan');
+    Route::post('/pantauan', [PantauanController::class, 'simpan'])->middleware('throttle:60,1')->name('pantauan.simpan');
+    Route::delete('/pantauan/{id}', [PantauanController::class, 'hapus'])->whereNumber('id')->name('pantauan.hapus');
+    Route::put('/pantauan/{id}/catatan', [PantauanController::class, 'catatan'])->whereNumber('id')->middleware('throttle:60,1')->name('pantauan.catatan');
 
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function (): void {
         Route::get('/', DasborController::class)->name('dasbor');

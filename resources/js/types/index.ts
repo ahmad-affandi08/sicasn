@@ -252,3 +252,9 @@ export interface DetailFormasiItem extends Omit<FormasiItem, 'peluang' | 'peluan
     pertamaKaliTerlihat: string;
     terakhirTerlihat: string;
 }
+
+export interface PantauanItem extends FormasiItem {
+    status: 'aktif' | 'ditarik';
+    catatan: string | null;
+    ditambahkanAt: string;
+}

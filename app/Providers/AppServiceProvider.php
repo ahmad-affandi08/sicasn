@@ -50,6 +50,10 @@ use Src\Identity\Infrastructure\Persistence\EloquentPenggunaRepository;
 use Src\Identity\Infrastructure\Queue\AntreanPengirimKredensial;
 use Src\Identity\Infrastructure\SecurePasswordGenerator;
 use Src\Identity\Infrastructure\SessionAuthenticator;
+use Src\Pantauan\Application\PantauanRepository;
+use Src\Pantauan\Application\SumberFormasi;
+use Src\Pantauan\Infrastructure\EloquentPantauanRepository;
+use Src\Pantauan\Infrastructure\SumberFormasiDariKatalog;
 use Src\Pengaturan\Application\PengaturanEmailStore;
 use Src\Pengaturan\Application\PengaturanPembayaranStore;
 use Src\Pengaturan\Application\PengaturanPersainganStore;
@@ -99,6 +103,8 @@ final class AppServiceProvider extends ServiceProvider
         StatistikRepository::class => EloquentStatistikRepository::class,
         ReferensiInstansi::class => EloquentReferensiInstansi::class,
         PeluangInstansiRepository::class => EloquentPeluangInstansiRepository::class,
+        PantauanRepository::class => EloquentPantauanRepository::class,
+        SumberFormasi::class => SumberFormasiDariKatalog::class,
         PencarianFormasi::class => EloquentPencarianFormasi::class,
         OpsiFormasiRepository::class => EloquentOpsiFormasi::class,
         DetailFormasiRepository::class => EloquentDetailFormasi::class,
