@@ -2,7 +2,14 @@
 
 declare(strict_types=1);
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\Client\Factory as HttpFactory;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Sleep;
+use Src\DataImport\Application\HasilSinkron;
+use Src\DataImport\Application\SyncFormasiFromBkn;
 use Src\Identity\Infrastructure\Persistence\UserModel;
 use Src\Pengaturan\Application\InputKonfigurasiSmtp;
 use Src\Pengaturan\Application\InputPengaturanEmail;
@@ -23,6 +30,7 @@ pest()
             'mail.default' => 'array',
             'hashing.bcrypt.rounds' => 4,
         ]);
+        Sleep::fake();
     })
     ->in('Feature');
 
@@ -54,4 +62,52 @@ function konfigurasiEmailTersimpan(string $aktif = 'hostinger', ?string $cadanga
         new InputPengaturanEmail($aktif, $cadangan, 'SICASN', 'noreply@contoh.id', null, $konfigurasi),
         1,
     );
+}
+
+function barisBkn(): array
+{
+    return json_decode((string) file_get_contents(__DIR__.'/Fixtures/bkn-cpns-sintetis.json'), true)['data'];
+}
+
+function fakeBkn(array $baris, int $status = 200): void
+{
+    Http::swap(new HttpFactory);
+    Http::fake(['*' => Http::response(['status' => 200, 'error' => false, 'message' => 'success', 'data' => array_values($baris)], $status)]);
+}
+
+function fakeBknMentah(string $isi, int $status = 200, string $jenis = 'application/json'): void
+{
+    Http::swap(new HttpFactory);
+    Http::fake(['*' => Http::response($isi, $status, ['Content-Type' => $jenis])]);
+}
+
+function sinkron(): HasilSinkron
+{
+    return app(SyncFormasiFromBkn::class)->handle(null);
+}
+
+function majukanWaktu(int $menit = 10): void
+{
+    Carbon::setTestNow(now()->addMinutes($menit));
+}
+
+function barisCpns(): array
+{
+    return array_slice(barisBkn(), 0, 5);
+}
+
+function jumlah(string $tabel, ?array $where = null): int
+{
+    $kueri = DB::table($tabel);
+
+    foreach ($where ?? [] as $kolom => $nilai) {
+        $kueri->where($kolom, $nilai);
+    }
+
+    return $kueri->count();
+}
+
+function berkasSementara(): int
+{
+    return count(glob(sys_get_temp_dir().'/bkn-*') ?: []);
 }

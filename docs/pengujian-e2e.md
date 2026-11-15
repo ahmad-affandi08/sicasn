@@ -14,7 +14,7 @@ php artisan migrate:fresh --force
 php artisan sicasn:buat-admin --nama="Admin Uji" --email="admin@uji.test" --password="AdminUji12345"
 php artisan serve --host=127.0.0.1 --port=8000 &
 python3 tests/e2e/smtp_sink.py /tmp/surat-uji &
-node tests/e2e/fase1.js /tmp/tangkapan-layar /tmp/surat-uji
+node tests/e2e/fase1.cjs /tmp/tangkapan-layar /tmp/surat-uji
 ```
 
 Argumen pertama adalah folder tangkapan layar, argumen kedua folder tempat server SMTP uji menyimpan email (`.eml`). Ubah alamat aplikasi dengan variabel `E2E_BASE`.
@@ -26,3 +26,14 @@ Login dan galat inline; preset Hostinger; menyimpan pengaturan email dengan konf
 ## Catatan
 
 Satu pemeriksaan membuka tab `wa.me`. Di lingkungan tanpa internet pemeriksaan itu gagal karena halaman tujuan tidak terjangkau, bukan karena aplikasi. Verifikasi URL-nya dengan mencegat `window.open` (lihat riwayat pengembangan Fase 1).
+
+## Fase 2 (sinkron BKN)
+
+Skrip `tests/e2e/fase2.cjs` memakai database yang sama dengan langkah di atas dan **API BKN sungguhan** (butuh internet). Urutannya: sinkron nyata lewat artisan, cek dasbor dan halaman Sinkron, klik "Sinkron sekarang" dan proses antrean, uji validasi pengaturan, lalu `tests/e2e/sinkron_fixture.php` memasukkan fixture CPNS sintetis untuk menguji modal event baru.
+
+```
+php artisan migrate:fresh --force
+php artisan sicasn:buat-admin --nama="Admin Uji" --email="admin@uji.test" --password="AdminUji12345"
+php artisan serve --host=127.0.0.1 --port=8000 &
+node tests/e2e/fase2.cjs /tmp/tangkapan-layar
+```

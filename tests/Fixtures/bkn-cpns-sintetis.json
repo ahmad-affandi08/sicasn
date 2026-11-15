@@ -1,0 +1,221 @@
+{
+  "status": 200,
+  "error": false,
+  "message": "success",
+  "data": [
+    {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "event_id": "evt-cpns-sintetis",
+      "nama_event": "Seleksi CPNS Sintetis (fixture uji)",
+      "rekrutmen_id": "rek-evt-cpns-sintetis",
+      "instansi": "Kementerian Agama",
+      "jenis_pengadaan": "CPNS",
+      "jenis_formasi": "UMUM",
+      "periode": 1,
+      "jabatan_kode": "JF-PENGHULU",
+      "nama_jabatan": "Penghulu Ahli Pertama",
+      "group_pendidikan": null,
+      "nama_pendidikan": "S-1 HUKUM / S-1 SYARIAH / D-IV HUKUM",
+      "lokasi_formasi": "Kab. Sleman",
+      "is_disabilitas": false,
+      "jumlah": 3,
+      "usia_min": 18,
+      "usia_max": 35,
+      "jobdesc": null,
+      "penghasilan_min": null,
+      "penghasilan_max": null,
+      "persyaratan": [
+        {
+          "id": "s1",
+          "nama": "Ijazah asli sesuai kualifikasi pendidikan, dipindai berwarna.",
+          "mandatory": 1
+        },
+        {
+          "id": "s2",
+          "nama": "Kartu Tanda Penduduk elektronik yang masih berlaku.",
+          "mandatory": 1
+        },
+        {
+          "id": "s3",
+          "nama": "Surat keterangan sehat dari fasilitas kesehatan.",
+          "mandatory": 0
+        }
+      ]
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000002",
+      "event_id": "evt-cpns-sintetis",
+      "nama_event": "Seleksi CPNS Sintetis (fixture uji)",
+      "rekrutmen_id": "rek-evt-cpns-sintetis",
+      "instansi": "Kementerian Agama",
+      "jenis_pengadaan": "CPNS",
+      "jenis_formasi": "UMUM",
+      "periode": 1,
+      "jabatan_kode": "JF-PENGHULU",
+      "nama_jabatan": "Penghulu Ahli Pertama",
+      "group_pendidikan": null,
+      "nama_pendidikan": "S-1 HUKUM / S-1 SYARIAH / D-IV HUKUM",
+      "lokasi_formasi": "Kota Malang",
+      "is_disabilitas": false,
+      "jumlah": 2,
+      "usia_min": 18,
+      "usia_max": 35,
+      "jobdesc": null,
+      "penghasilan_min": null,
+      "penghasilan_max": null,
+      "persyaratan": [
+        {
+          "id": "s1",
+          "nama": "Ijazah asli sesuai kualifikasi pendidikan, dipindai berwarna.",
+          "mandatory": 1
+        },
+        {
+          "id": "s2",
+          "nama": "Kartu Tanda Penduduk elektronik yang masih berlaku.",
+          "mandatory": 1
+        },
+        {
+          "id": "s3",
+          "nama": "Surat keterangan sehat dari fasilitas kesehatan.",
+          "mandatory": 0
+        }
+      ]
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000003",
+      "event_id": "evt-cpns-sintetis",
+      "nama_event": "Seleksi CPNS Sintetis (fixture uji)",
+      "rekrutmen_id": "rek-evt-cpns-sintetis",
+      "instansi": "Pemerintah Kabupaten Sleman",
+      "jenis_pengadaan": "CPNS",
+      "jenis_formasi": "UMUM",
+      "periode": 1,
+      "jabatan_kode": "JF-ANALIS",
+      "nama_jabatan": "Analis Kebijakan Ahli Pertama",
+      "group_pendidikan": null,
+      "nama_pendidikan": "S-1 SEMUA JURUSAN",
+      "lokasi_formasi": "Kab. Sleman",
+      "is_disabilitas": true,
+      "jumlah": 2,
+      "usia_min": 18,
+      "usia_max": 35,
+      "jobdesc": null,
+      "penghasilan_min": null,
+      "penghasilan_max": null,
+      "persyaratan": [
+        {
+          "id": "s1",
+          "nama": "Ijazah asli sesuai kualifikasi pendidikan, dipindai berwarna.",
+          "mandatory": 1
+        },
+        {
+          "id": "s2",
+          "nama": "Kartu Tanda Penduduk elektronik yang masih berlaku.",
+          "mandatory": 1
+        }
+      ]
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000004",
+      "event_id": "evt-cpns-sintetis",
+      "nama_event": "Seleksi CPNS Sintetis (fixture uji)",
+      "rekrutmen_id": "rek-evt-cpns-sintetis",
+      "instansi": "Pemerintah Provinsi Jawa Tengah",
+      "jenis_pengadaan": "CPNS",
+      "jenis_formasi": "UMUM",
+      "periode": 1,
+      "jabatan_kode": "JF-PRANATA",
+      "nama_jabatan": "Pranata Komputer Ahli Pertama",
+      "group_pendidikan": null,
+      "nama_pendidikan": null,
+      "lokasi_formasi": "Prov. Jawa Tengah",
+      "is_disabilitas": null,
+      "jumlah": 4,
+      "usia_min": 18,
+      "usia_max": 35,
+      "jobdesc": null,
+      "penghasilan_min": null,
+      "penghasilan_max": null,
+      "persyaratan": [
+        {
+          "id": "s1",
+          "nama": "Ijazah asli sesuai kualifikasi pendidikan, dipindai berwarna.",
+          "mandatory": 1
+        },
+        {
+          "id": "s2",
+          "nama": "Kartu Tanda Penduduk elektronik yang masih berlaku.",
+          "mandatory": 1
+        }
+      ]
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000005",
+      "event_id": "evt-cpns-sintetis",
+      "nama_event": "Seleksi CPNS Sintetis (fixture uji)",
+      "rekrutmen_id": "rek-evt-cpns-sintetis",
+      "instansi": "Badan Pusat Statistik",
+      "jenis_pengadaan": "CPNS",
+      "jenis_formasi": "UMUM",
+      "periode": 1,
+      "jabatan_kode": "JF-STAT",
+      "nama_jabatan": "Statistisi Ahli Pertama",
+      "group_pendidikan": null,
+      "nama_pendidikan": "SMA/SMK/MA SEMUA JURUSAN / D-III STATISTIKA",
+      "lokasi_formasi": "Pusat Pendidikan dan Pelatihan | Wilayah II",
+      "is_disabilitas": null,
+      "jumlah": 5,
+      "usia_min": 18,
+      "usia_max": 35,
+      "jobdesc": null,
+      "penghasilan_min": null,
+      "penghasilan_max": null,
+      "persyaratan": [
+        {
+          "id": "s1",
+          "nama": "Ijazah asli sesuai kualifikasi pendidikan, dipindai berwarna.",
+          "mandatory": 1
+        },
+        {
+          "id": "s2",
+          "nama": "Kartu Tanda Penduduk elektronik yang masih berlaku.",
+          "mandatory": 1
+        }
+      ]
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000006",
+      "event_id": "evt-pppk-sintetis",
+      "nama_event": "Seleksi PPPK Sintetis (fixture uji)",
+      "rekrutmen_id": "rek-evt-pppk-sintetis",
+      "instansi": "Kementerian Sosial",
+      "jenis_pengadaan": "PPPK Guru",
+      "jenis_formasi": "UMUM",
+      "periode": 1,
+      "jabatan_kode": "JF-GURU",
+      "nama_jabatan": "Guru Ahli Pertama - Matematika",
+      "group_pendidikan": null,
+      "nama_pendidikan": null,
+      "lokasi_formasi": "Kab. Temanggung",
+      "is_disabilitas": null,
+      "jumlah": 1,
+      "usia_min": 18,
+      "usia_max": 35,
+      "jobdesc": null,
+      "penghasilan_min": null,
+      "penghasilan_max": null,
+      "persyaratan": [
+        {
+          "id": "s1",
+          "nama": "Ijazah asli sesuai kualifikasi pendidikan, dipindai berwarna.",
+          "mandatory": 1
+        },
+        {
+          "id": "s2",
+          "nama": "Kartu Tanda Penduduk elektronik yang masih berlaku.",
+          "mandatory": 1
+        }
+      ]
+    }
+  ]
+}

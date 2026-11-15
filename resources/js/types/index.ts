@@ -50,3 +50,34 @@ export interface CatatanAuditItem {
     rincian: Record<string, unknown>;
     waktu: string;
 }
+
+export interface BatchItem {
+    id: number;
+    status: 'berjalan' | 'sukses' | 'sebagian' | 'gagal';
+    mulaiAt: string;
+    selesaiAt: string | null;
+    ringkasan: {
+        total_baris?: number;
+        baris_aktif?: number;
+        diabaikan?: number;
+        baru?: number;
+        diubah?: number;
+        tak_berubah?: number;
+        ditarik?: number;
+        gagal_baris?: number;
+        penarikan_ditunda?: boolean;
+        durasi_detik?: number;
+        dilewati?: boolean;
+        galat?: string;
+    };
+}
+
+export interface EventItem {
+    eventId: string;
+    nama: string;
+    jenis: string;
+    jumlahBaris: number;
+    diabaikan: boolean;
+    pertamaKaliTerlihat: string;
+    sudahDiberitahukan: boolean;
+}

@@ -1,6 +1,6 @@
 import { Link, router, usePage } from '@inertiajs/react';
 import { useState, type ReactNode } from 'react';
-import { LuChevronRight, LuExternalLink, LuLayoutDashboard, LuLogOut, LuMail, LuMenu, LuMessageCircle, LuSettings, LuUsers, LuWallet } from 'react-icons/lu';
+import { LuChevronRight, LuExternalLink, LuLayoutDashboard, LuLogOut, LuMail, LuMenu, LuMessageCircle, LuRefreshCw, LuSettings, LuUsers, LuWallet } from 'react-icons/lu';
 import type { IconType } from 'react-icons';
 
 import { PenangkapFlash } from '@/components/dialog/PenangkapFlash';
@@ -23,6 +23,7 @@ interface ItemNav {
 const utama: ItemNav[] = [
     { href: rute.admin.dasbor, label: teksAdmin.nav.dasbor, ikon: LuLayoutDashboard, cocok: (url) => url === rute.admin.dasbor },
     { href: rute.admin.pengguna, label: teksAdmin.nav.pengguna, ikon: LuUsers, cocok: (url) => url.startsWith(rute.admin.pengguna) },
+    { href: rute.admin.sinkron, label: teksAdmin.nav.sinkron, ikon: LuRefreshCw, cocok: (url) => url.startsWith(rute.admin.sinkron) },
 ];
 
 const pengaturan: ItemNav[] = [

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Pengaturan\PembayaranController;
 use App\Http\Controllers\Admin\Pengaturan\SitusController;
 use App\Http\Controllers\Admin\Pengaturan\WhatsappController;
 use App\Http\Controllers\Admin\PenggunaController;
+use App\Http\Controllers\Admin\SinkronController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\GantiPasswordController;
@@ -41,6 +42,11 @@ Route::middleware(['auth', 'akun.aktif', 'password.sudah-diganti', 'satu.sesi'])
         Route::post('/pengguna/{id}/kirim-ulang', [PenggunaController::class, 'kirimUlang'])->whereNumber('id')->name('pengguna.kirim-ulang');
         Route::post('/pengguna/{id}/nonaktifkan', [PenggunaController::class, 'nonaktifkan'])->whereNumber('id')->name('pengguna.nonaktifkan');
         Route::post('/pengguna/{id}/aktifkan', [PenggunaController::class, 'aktifkan'])->whereNumber('id')->name('pengguna.aktifkan');
+
+        Route::get('/sinkron', [SinkronController::class, 'tampil'])->name('sinkron');
+        Route::post('/sinkron/jalankan', [SinkronController::class, 'jalankan'])->name('sinkron.jalankan');
+        Route::put('/sinkron/pengaturan', [SinkronController::class, 'simpan'])->name('sinkron.simpan');
+        Route::post('/sinkron/event-diberitahukan', [SinkronController::class, 'eventDiberitahukan'])->name('sinkron.event-diberitahukan');
 
         Route::prefix('pengaturan')->name('pengaturan.')->group(function (): void {
             Route::get('/email', [EmailController::class, 'tampil'])->name('email');

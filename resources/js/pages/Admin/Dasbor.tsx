@@ -1,25 +1,47 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, router } from '@inertiajs/react';
+import { useEffect } from 'react';
 import { LuCircleAlert, LuCircleCheck, LuUserPlus, LuUsers } from 'react-icons/lu';
 
+import { useDialog } from '@/components/dialog/konteks';
 import { HeaderHalaman } from '@/components/HeaderHalaman';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { teksAdmin } from '@/lang/admin';
 import { LayoutAdmin } from '@/layouts/LayoutAdmin';
+import { formatWaktu } from '@/lib/format';
 import { rute } from '@/lib/rute';
+import type { BatchItem, EventItem } from '@/types';
 
 interface PropsHalaman {
     ringkasan: { aktif: number; nonaktif: number };
-    kesiapan: { email: boolean; whatsapp: boolean; pembayaran: boolean };
+    kesiapan: { email: boolean; whatsapp: boolean; pembayaran: boolean; sinkron: boolean };
+    sinkron: { terakhir: BatchItem | null; formasiAktif: number };
+    eventBaru: EventItem[];
 }
 
-export default function Dasbor({ ringkasan, kesiapan }: PropsHalaman) {
+export default function Dasbor({ ringkasan, kesiapan, sinkron, eventBaru }: PropsHalaman) {
     const teks = teksAdmin.dasbor;
+    const dialog = useDialog();
+
+    useEffect(() => {
+        if (eventBaru.length === 0) {
+            return;
+        }
+
+        void dialog
+            .info({
+                judul: teksAdmin.dasbor.eventBaru.judul,
+                pesan: teksAdmin.dasbor.eventBaru.pesan(eventBaru.map((butir) => butir.nama).join(', ')),
+                teksTombol: teksAdmin.dasbor.eventBaru.tombol,
+            })
+            .then(() => router.post(rute.admin.eventDiberitahukan, {}, { preserveScroll: true }));
+    }, [eventBaru, dialog]);
 
     const butir = [
         { kunci: 'email', siap: kesiapan.email, tujuan: rute.admin.email, judul: teks.butir.email.judul, keterangan: teks.butir.email.siap, belum: teks.butir.email.belum },
         { kunci: 'whatsapp', siap: kesiapan.whatsapp, tujuan: rute.admin.whatsapp, judul: teks.butir.whatsapp.judul, keterangan: teks.butir.whatsapp.siap, belum: teks.butir.whatsapp.belum },
+        { kunci: 'sinkron', siap: kesiapan.sinkron, tujuan: rute.admin.sinkron, judul: teks.butir.sinkron.judul, keterangan: teks.butir.sinkron.siap, belum: teks.butir.sinkron.belum },
         { kunci: 'pembayaran', siap: kesiapan.pembayaran, tujuan: rute.admin.pembayaran, judul: teks.butir.pembayaran.judul, keterangan: teks.butir.pembayaran.siap, belum: teks.butir.pembayaran.belum },
     ];
 
@@ -63,6 +85,24 @@ export default function Dasbor({ ringkasan, kesiapan }: PropsHalaman) {
                     </CardContent>
                 </Card>
             </div>
+
+            <Card className="mt-4">
+                <CardContent className="flex flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                        <p className="font-medium">{teks.kartuSinkron.judul}</p>
+                        <p className="text-sm text-redup">
+                            {teks.kartuSinkron.terakhir}: {sinkron.terakhir ? formatWaktu(sinkron.terakhir.selesaiAt) : teks.kartuSinkron.belumPernah}
+                        </p>
+                        <p className="mt-2 text-2xl font-bold">
+                            {sinkron.formasiAktif.toLocaleString('id-ID')} <span className="text-sm font-normal text-redup">{teks.kartuSinkron.formasiAktif}</span>
+                        </p>
+                        {sinkron.formasiAktif === 0 && <p className="mt-1 max-w-xl text-sm text-redup">{teks.kartuSinkron.kosong}</p>}
+                    </div>
+                    <Button asChild variant="outline" className="self-start sm:self-center">
+                        <Link href={rute.admin.sinkron}>{teks.kartuSinkron.buka}</Link>
+                    </Button>
+                </CardContent>
+            </Card>
 
             <Card className="mt-6">
                 <CardHeader>

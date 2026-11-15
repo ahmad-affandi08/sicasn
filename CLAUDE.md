@@ -219,18 +219,17 @@ Semua tabel: `id` bigint unsigned, `created_at`, `updated_at`. Foreign key beser
 **`instansis`**: `nama` (unik ternormalisasi), `slug`, `tipe` enum(`pusat`,`daerah`,`unknown`), `provinsi_id` nullable.
 **`wilayahs`**: `kode` nullable, `nama`, `tingkat` enum(`provinsi`,`kabupaten`,`kota`), `provinsi_id` nullable. Sumber referensi dipilih agent (§18 butir 3).
 **`jabatans`**: `kode` (tidak unik global), `nama`, `nama_normal`.
-**`formasis`**: `external_id` char(36) **unik**, `event_id`, `nama_event`, `rekrutmen_id`, `instansi_id`, `jabatan_id`, `jenis_pengadaan` enum(`cpns`,`pppk_guru`,`pppk_teknis`,`pppk_nakes`,`lainnya`), `jenis_formasi`, `periode`, `lokasi_teks`, `wilayah_id` nullable, `provinsi_id` nullable, `kuota`, `usia_min`, `usia_max`, `penghasilan_min/max` nullable, `jobdesc` nullable, `is_disabilitas` nullable, `kualifikasi_tersedia` boolean, `payload` JSON, `first_seen_at`, `last_seen_at`, `status` enum(`aktif`,`ditarik`). Indeks gabungan untuk filter.
-**`formasi_kualifikasis`**: `formasi_id`, `jenjang`, `jurusan_id` nullable, `semua_jurusan` boolean.
+**`formasis`**: `external_id` char(36) **unik**, `event_id`, `nama_event`, `rekrutmen_id`, `instansi_id`, `jabatan_id`, `jenis_pengadaan` (`cpns`, `pppk_guru`, `pppk_teknis`, `pppk_nakes`, `lainnya`), `jenis_formasi`, `periode`, `lokasi_teks`, `tipe_lokasi` (`provinsi`, `kabupaten`, `kota`, `satuan_kerja`), `wilayah_id` nullable, `provinsi_id` nullable, `kuota`, `usia_min`, `usia_max`, `penghasilan_min/max` nullable, `jobdesc` nullable, `is_disabilitas` nullable, `kualifikasi_set_id` nullable, `kualifikasi_tersedia` boolean, `hash_baris` (sha1 isi baris, untuk mendeteksi perubahan), `first_seen_at`, `last_seen_at`, `status` (`aktif`, `ditarik`). Indeks gabungan untuk filter. **Payload mentah tidak disimpan** (hemat ruang pada ratusan ribu baris); `hash_baris` cukup untuk idempotensi.
+**`kualifikasi_sets`** (`hash` unik, `teks`) dan **`kualifikasi_set_items`** (`kualifikasi_set_id`, `jenjang`, `jurusan_id` nullable, `semua_jurusan`): satu set per teks `nama_pendidikan` yang unik, dipakai bersama oleh banyak formasi. Pada data nyata 14 butir kualifikasi hanya menghasilkan 4 set. Filter jenjang/jurusan memakai `EXISTS` pada set, bukan per formasi.
 **`jurusans`**: `nama`, `nama_normal` unik.
-**`formasi_persyaratans`**: `formasi_id`, `uraian`, `wajib`, `urutan`.
-
+**`persyaratans`** (`hash` unik, `uraian`) dan pivot **`formasi_persyaratans`** (`formasi_id`, `persyaratan_id`, `wajib`, `urutan`): teks persyaratan disimpan sekali per isi unik. Pada data nyata 10.378 butir persyaratan hanya menunjuk 16 teks.
 ### 6.2 Statistik pelamar
 
 **`statistik_pelamars`**: `tahun`, `jenis_pengadaan`, `cakupan` enum(`instansi`,`jabatan`), `instansi_id`, `jabatan_id` nullable, `wilayah_id` nullable, `jumlah_pelamar`, `jumlah_formasi` nullable, `jumlah_lolos_administrasi` nullable, `tanggal_snapshot`, `tingkat_data` enum(`A`,`B`,`C`), `sumber_nama`, `sumber_url`, `keyakinan` enum(`resmi`,`turunan`), `import_batch_id`. Unik pada kombinasi kunci + `tanggal_snapshot`. Tampilan memakai snapshot terbaru per kunci.
 
 ### 6.3 Impor dan sinkron
 
-**`import_batches`**: `tipe` enum(`sinkron_bkn`,`csv_statistik`), `status`, `mulai_at`, `selesai_at`, `ringkasan` JSON, `sumber`, `dibuat_oleh` nullable, `file_path` nullable.
+**`import_batches`**: `tipe` (`sinkron_bkn`, `csv_statistik`), `status` (`berjalan`, `sukses`, `sebagian`, `gagal`), `mulai_at`, `selesai_at`, `ringkasan` JSON, `sumber`, `hash_respons` (sha256 isi respons), `dibuat_oleh` nullable, `file_path` nullable.
 **`import_errors`**: `import_batch_id`, `baris`, `kolom`, `pesan`, `nilai`.
 **`event_terdeteksis`**: `event_id`, `nama_event`, `jenis_pengadaan_teramati`, `jumlah_baris`, `diabaikan` boolean (mis. PPPK karena fokus CPNS), `first_seen_at`, `diberitahukan_at` nullable.
 
@@ -331,7 +330,8 @@ Aturan:
 
 ### 10.1 Adapter
 
-- Interface Application `BknFormasiSource`; implementasi Infrastructure `HttpBknFormasiSource` memakai `Http` Laravel (`timeout` 120 dtk, `retry` 3× backoff).
+- Interface Application `BknFormasiSource`; implementasi Infrastructure `HttpBknFormasiSource` memakai `Http` Laravel (`connectTimeout` 15 dtk, `timeout` 180 dtk). Mencoba ulang (3×, jeda 5 dtk) **hanya** untuk gangguan koneksi dan galat server 5xx; 401, 403, dan 429 langsung dihentikan.
+- **Respons diunduh ke berkas sementara (`sink`) lalu dibaca secara streaming** dengan `halaxa/json-machine`, sehingga memori tetap datar berapa pun ukuran respons (diuji: 2.012 baris memakai 36 MB). Berkas sementara selalu dihapus. Respons yang bukan JSON (misalnya halaman tantangan WAF) ditolak.
 - URL endpoint disimpan di `pengaturans` (default §3), mudah diganti admin bila BKN memindahkan API.
 - Header: `User-Agent: SICASN/1.0 (+kontak dari pengaturan)`, `Accept: application/json`. Tanpa penyamaran.
 - Validasi skema respons: `error === false` dan `data` array. Bila field wajib hilang, batch gagal, **data lama tetap dipakai**, jangan hapus apa pun.
@@ -348,7 +348,7 @@ Aturan:
 2. Catat semua `nama_event` dan jenis pengadaan yang teramati ke `event_terdeteksis` (termasuk yang diabaikan).
 3. **Proses hanya jenis pengadaan aktif** (`config('sicasn.jenis_pengadaan_aktif') = ['cpns']`). Baris PPPK dilewati dan dihitung sebagai "diabaikan" di ringkasan.
 4. Untuk tiap baris CPNS: normalisasi instansi, jabatan, lokasi (§10.4), kualifikasi (di bawah), persyaratan; upsert `formasis` per `external_id`; perbarui `last_seen_at`.
-5. Formasi aktif yang tidak muncul pada sinkron sukses → `ditarik` (bukan hapus), hanya bila respons sah dan jumlah baris ≥ 50% sinkron sukses sebelumnya.
+5. Formasi aktif yang tidak muncul pada sinkron sukses → `ditarik` (bukan hapus). **Pengaman**: penarikan **ditunda** bila jumlah baris aktif turun di bawah 50% dari jumlah aktif sebelumnya, atau bila lebih dari 1% baris gagal diproses. Penarikan yang ditunda baru dijalankan bila **respons yang sama muncul lagi** pada sinkron berikutnya (bukan gangguan sesaat). Respons identik dengan sinkron sukses sebelumnya (hash sama) dilewati seluruhnya.
 6. Event CPNS baru yang belum diberitahukan → tandai untuk notifikasi admin (§11.3).
 7. Tutup batch dengan ringkasan (baru/diubah/ditarik/diabaikan/gagal). Satu record rusak tidak menggagalkan batch (catat di `import_errors`). Idempoten.
 
@@ -550,6 +550,11 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 **Fase 2, Sinkron BKN (CPNS)**
 - Skema §6.1/§6.3, adapter dan use case §10, event terdeteksi, wilayah, scheduler, panel status.
 - ✅ Dari fixture dan API nyata: baris PPPK diabaikan dan terhitung, nol formasi CPNS ditangani mulus, event baru memicu notifikasi, idempoten, aman terhadap respons rusak.
+- **Status: selesai (15 Nov 2026).** Terverifikasi: Pest 219 tes (termasuk 34 tes pipeline sinkron dan 90 tes unit), Vitest 33 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau. **Terhadap API BKN sungguhan**: 2.012 baris PPPK diabaikan dengan kebijakan CPNS, dua event tercatat sebagai diabaikan, nol formasi CPNS ditangani mulus. **Uji beban pada data nyata yang sama dengan PPPK diaktifkan sementara**: 2.012 formasi diproses dalam ±10 dtk dengan memori puncak 36 MB, putaran ulang idempoten (0 baru, 2.012 tak berubah). Uji menyeluruh di browser (`tests/e2e/fase2.cjs`): 20 pemeriksaan lulus, termasuk "Sinkron sekarang" lewat antrean dan modal event CPNS baru yang hanya muncul sekali.
+- **Fixture CPNS bersifat sintetis** (`tests/Fixtures/bkn-cpns-sintetis.json`): BKN belum pernah menayangkan data CPNS, jadi bentuk baris CPNS meniru skema nyata dengan `jenis_pengadaan: "CPNS"`. **Parser CPNS harus diuji ulang begitu data nyata muncul.** Fixture ini hanya untuk tes dan tidak boleh masuk seeding production.
+- **Belum dikerjakan (diteruskan ke Fase 4)**: pemetaan kabupaten/kota ke **provinsi**. Tabel `wilayahs` terisi dari lokasi yang teramati (159 wilayah pada data nyata) dengan `provinsi_id` kosong. Filter provinsi memerlukan dataset referensi wilayah berlisensi jelas (lihat §19 butir 1); jangan menebak dari ingatan. Notifikasi event lewat email ke admin (opsional) juga belum dibuat; notifikasi modal di dasbor sudah ada.
+- Catatan klasifikasi: `tipe` instansi diisi secara konservatif dari awalan nama (`Kementerian`, `Pemerintah Kabupaten`, dst.); nama yang tidak jelas (mis. "Badan Pusat Statistik") tetap `unknown` dan jangan dipaksa menjadi pusat atau daerah.
+- Catatan tes: `Http::fake` yang dipanggil dua kali **tidak** menggantikan yang pertama dan isi respons palsu hanya terbaca sekali; helper `fakeBkn()` membuat `Http` baru tiap panggilan.
 
 **Fase 3, Statistik 2024 dan Peluang Instansi**
 - Skema §6.2, use case impor, impor CSV + rollback, seed tingkat A, lencana persaingan, halaman **Peluang Instansi 2024**.

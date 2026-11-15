@@ -32,7 +32,7 @@ it('menampilkan dasbor dengan ringkasan dan daftar kesiapan', function (): void 
         ->component('Admin/Dasbor')
         ->where('ringkasan.aktif', 2)
         ->where('ringkasan.nonaktif', 1)
-        ->where('kesiapan', ['email' => false, 'whatsapp' => false, 'pembayaran' => false]));
+        ->where('kesiapan', ['email' => false, 'whatsapp' => false, 'pembayaran' => false, 'sinkron' => false]));
 });
 
 it('membuat akun member, mengantrekan email kredensial, dan mencatat audit', function (): void {

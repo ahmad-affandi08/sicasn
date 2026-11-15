@@ -211,5 +211,5 @@ it('menandai kesiapan di dasbor setelah semua pengaturan diisi', function (): vo
     $this->actingAs($this->admin)->put('/admin/pengaturan/pembayaran', ['rekening' => [['bank' => 'BCA', 'nomor' => '123', 'atas_nama' => 'X']], 'harga_teks' => 'Rp 1']);
 
     $this->actingAs($this->admin)->get('/admin')->assertInertia(fn (Assert $h) => $h
-        ->where('kesiapan', ['email' => true, 'whatsapp' => true, 'pembayaran' => true]));
+        ->where('kesiapan', ['email' => true, 'whatsapp' => true, 'pembayaran' => true, 'sinkron' => false]));
 });

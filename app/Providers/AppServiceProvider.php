@@ -5,6 +5,20 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Src\DataImport\Application\BknFormasiSource;
+use Src\DataImport\Application\EventTerdeteksiRepository;
+use Src\DataImport\Application\ImportBatchRepository;
+use Src\DataImport\Application\KebijakanJenisPengadaan;
+use Src\DataImport\Application\PemicuSinkron;
+use Src\DataImport\Application\PengaturanSinkronStore;
+use Src\DataImport\Infrastructure\ConfigKebijakanJenisPengadaan;
+use Src\DataImport\Infrastructure\HttpBknFormasiSource;
+use Src\DataImport\Infrastructure\Persistence\EloquentEventTerdeteksiRepository;
+use Src\DataImport\Infrastructure\Persistence\EloquentImportBatchRepository;
+use Src\DataImport\Infrastructure\Queue\AntreanPemicuSinkron;
+use Src\DataImport\Infrastructure\SettingsPengaturanSinkronStore;
+use Src\Formasi\Application\KatalogFormasi;
+use Src\Formasi\Infrastructure\Persistence\EloquentKatalogFormasi;
 use Src\Identity\Application\Authenticator;
 use Src\Identity\Application\PasswordGenerator;
 use Src\Identity\Application\PasswordHasher;
@@ -52,6 +66,13 @@ final class AppServiceProvider extends ServiceProvider
         PasswordGenerator::class => SecurePasswordGenerator::class,
         PengirimKredensial::class => AntreanPengirimKredensial::class,
         Authenticator::class => SessionAuthenticator::class,
+        BknFormasiSource::class => HttpBknFormasiSource::class,
+        KatalogFormasi::class => EloquentKatalogFormasi::class,
+        ImportBatchRepository::class => EloquentImportBatchRepository::class,
+        EventTerdeteksiRepository::class => EloquentEventTerdeteksiRepository::class,
+        PengaturanSinkronStore::class => SettingsPengaturanSinkronStore::class,
+        KebijakanJenisPengadaan::class => ConfigKebijakanJenisPengadaan::class,
+        PemicuSinkron::class => AntreanPemicuSinkron::class,
         SettingsRepository::class => EloquentSettingsRepository::class,
         PengaturanEmailStore::class => SettingsPengaturanEmailStore::class,
         PengaturanWhatsappStore::class => SettingsPengaturanWhatsappStore::class,
