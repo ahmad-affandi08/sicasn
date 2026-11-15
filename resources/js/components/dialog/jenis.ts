@@ -42,4 +42,5 @@ export interface PerintahDialog {
     info: (opsi: OpsiPesan) => Promise<void>;
     konfirmasi: (opsi: OpsiKonfirmasi) => Promise<boolean>;
     konfirmasiKetik: (opsi: OpsiKonfirmasiKetik) => Promise<boolean>;
+    tunggu: () => Promise<void>;
 }

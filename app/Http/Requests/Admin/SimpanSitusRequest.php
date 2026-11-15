@@ -10,6 +10,9 @@ final class SimpanSitusRequest extends FormRequest
 {
     public function rules(): array
     {
-        return ['satu_sesi' => ['required', 'boolean']];
+        return [
+            'satu_sesi' => ['required', 'boolean'],
+            'url' => ['nullable', 'url:http,https', 'max:200'],
+        ];
     }
 }

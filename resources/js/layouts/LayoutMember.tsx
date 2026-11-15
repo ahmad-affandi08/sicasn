@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 
 import { PenangkapFlash } from '@/components/dialog/PenangkapFlash';
 import { Logo } from '@/components/Logo';
+import { PanduanSingkat } from '@/components/PanduanSingkat';
 import { TombolTema } from '@/components/TombolTema';
 import { Button } from '@/components/ui/button';
 import { teksAuth } from '@/lang/auth';
@@ -28,6 +29,7 @@ export function LayoutMember({ children, lebar = false }: PropsLayoutMember) {
                     <NavMember posisi="atas" />
                     <div className="ml-auto flex items-center gap-1">
                         <span className="mr-2 hidden max-w-48 truncate text-sm text-redup md:block">{auth.pengguna?.nama}</span>
+                        <PanduanSingkat />
                         <TombolTema />
                         <Button variant="ghost" onClick={() => router.post(rute.keluar)}>
                             {teksAuth.akun.keluar}

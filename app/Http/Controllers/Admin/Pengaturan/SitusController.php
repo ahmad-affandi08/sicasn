@@ -17,12 +17,12 @@ final class SitusController extends Controller
 {
     public function tampil(AmbilPengaturanSitus $ambil): Response
     {
-        return Inertia::render('Admin/Pengaturan/Situs', ['pengaturan' => ['satuSesi' => $ambil->handle()->satuSesi]]);
+        return Inertia::render('Admin/Pengaturan/Situs', ['pengaturan' => ['satuSesi' => $ambil->handle()->satuSesi, 'url' => $ambil->handle()->url]]);
     }
 
     public function simpan(SimpanSitusRequest $request, SimpanPengaturanSitus $simpan): RedirectResponse
     {
-        $simpan->handle($request->boolean('satu_sesi'), (int) $request->user()->getAuthIdentifier());
+        $simpan->handle($request->boolean('satu_sesi'), (int) $request->user()->getAuthIdentifier(), $request->input('url'));
 
         return back()->with('dialog', DialogFlash::sukses('Pengaturan situs tersimpan', 'Perubahan berlaku mulai permintaan berikutnya.'));
     }

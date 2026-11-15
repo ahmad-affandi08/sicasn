@@ -127,3 +127,27 @@ it('membiarkan banyak sesi bila pengaturan satu sesi dimatikan', function (): vo
 
     $this->get('/akun')->assertOk();
 });
+
+it('membatasi percobaan per email meski alamat IP berganti-ganti', function (): void {
+    $member = UserModel::factory()->create();
+
+    foreach (range(1, 20) as $ke) {
+        $this->withServerVariables(['REMOTE_ADDR' => "203.0.113.{$ke}"])->post('/masuk', ['email' => $member->email, 'password' => 'salah-salah']);
+    }
+
+    $this->withServerVariables(['REMOTE_ADDR' => '198.51.100.77'])->post('/masuk', ['email' => $member->email, 'password' => 'password'])
+        ->assertSessionHasErrors('email');
+    $this->assertGuest();
+});
+
+it('tidak membatasi email lain ketika satu email sudah terkunci', function (): void {
+    $korban = UserModel::factory()->create();
+    $lain = UserModel::factory()->create();
+
+    foreach (range(1, 20) as $ke) {
+        $this->withServerVariables(['REMOTE_ADDR' => "203.0.113.{$ke}"])->post('/masuk', ['email' => $korban->email, 'password' => 'salah-salah']);
+    }
+
+    $this->post('/masuk', ['email' => $lain->email, 'password' => 'password'])->assertSessionHasNoErrors();
+    $this->assertAuthenticatedAs($lain);
+});

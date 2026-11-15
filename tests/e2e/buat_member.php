@@ -18,6 +18,7 @@ UserModel::query()->updateOrCreate(['email' => 'member@uji.test'], [
     'peran' => Peran::Member,
     'aktif' => true,
     'wajib_ganti_password' => false,
+    'panduan_dilihat_at' => now(),
 ]);
 
 echo 'member@uji.test siap', PHP_EOL;

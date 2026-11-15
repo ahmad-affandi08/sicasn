@@ -17,11 +17,30 @@ export function AlertDialogOverlay({ className, ...props }: ComponentProps<typeo
     );
 }
 
-export function AlertDialogContent({ className, ...props }: ComponentProps<typeof AlertDialogPrimitive.Content>) {
+function fokusAwalTanpaBatal(kejadian: Event) {
+    const konten = kejadian.currentTarget as HTMLElement | null;
+
+    if (konten === null || konten.querySelector('[data-batal]') !== null || konten.contains(document.activeElement)) {
+        return;
+    }
+
+    const sasaran = konten.querySelector<HTMLElement>('input:not([disabled]), button:not([disabled])');
+
+    if (sasaran !== null) {
+        kejadian.preventDefault();
+        sasaran.focus({ preventScroll: true });
+    }
+}
+
+export function AlertDialogContent({ className, onOpenAutoFocus, ...props }: ComponentProps<typeof AlertDialogPrimitive.Content>) {
     return (
         <AlertDialogPortal>
             <AlertDialogOverlay />
             <AlertDialogPrimitive.Content
+                onOpenAutoFocus={(kejadian) => {
+                    onOpenAutoFocus?.(kejadian);
+                    fokusAwalTanpaBatal(kejadian);
+                }}
                 className={cn(
                     'dialog-konten fixed top-1/2 left-1/2 z-50 flex max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 flex-col gap-4 overflow-y-auto rounded-xl border border-garis bg-kartu p-6 text-teks shadow-xl sm:p-7',
                     className,
@@ -53,5 +72,5 @@ export function AlertDialogAction({ className, ...props }: ComponentProps<typeof
 }
 
 export function AlertDialogCancel({ className, ...props }: ComponentProps<typeof AlertDialogPrimitive.Cancel>) {
-    return <AlertDialogPrimitive.Cancel className={cn(buttonVariants({ variant: 'outline' }), 'sm:min-w-32', className)} {...props} />;
+    return <AlertDialogPrimitive.Cancel data-batal="" className={cn(buttonVariants({ variant: 'outline' }), 'sm:min-w-32', className)} {...props} />;
 }

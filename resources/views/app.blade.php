@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title inertia>{{ config('app.name') }}</title>
-    <script>
+    <script nonce="{{ Illuminate\Support\Facades\Vite::cspNonce() }}">
         (function () {
             try {
                 var tersimpan = localStorage.getItem('tema');

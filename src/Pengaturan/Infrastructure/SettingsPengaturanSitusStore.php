@@ -18,11 +18,13 @@ final readonly class SettingsPengaturanSitusStore implements PengaturanSitusStor
     {
         $nilai = $this->settings->ambilGrup(self::GRUP);
 
-        return new PengaturanSitus(($nilai['satu_sesi'] ?? '1') === '1');
+        $url = trim((string) ($nilai['url'] ?? ''));
+
+        return new PengaturanSitus(($nilai['satu_sesi'] ?? '1') === '1', $url === '' ? null : $url);
     }
 
     public function simpan(PengaturanSitus $pengaturan): void
     {
-        $this->settings->simpanBanyak(self::GRUP, ['satu_sesi' => $pengaturan->satuSesi ? '1' : '0']);
+        $this->settings->simpanBanyak(self::GRUP, ['satu_sesi' => $pengaturan->satuSesi ? '1' : '0', 'url' => $pengaturan->url ?? '']);
     }
 }

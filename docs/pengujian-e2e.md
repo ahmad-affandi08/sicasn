@@ -108,3 +108,29 @@ Alurnya: daftar kosong; memantau lima formasi dari daftar (tanpa dialog, status 
 
 Catatan: aturan satu sesi per akun membuat login kedua mengeluarkan sesi pertama (halaman berikutnya mengalihkan ke `/masuk` dengan dialog "Akun dipakai di perangkat lain"). Skrip login ulang di konteks yang dikeluarkan sebelum melanjutkan.
 
+
+## Fase 7 (pengerasan dan rilis)
+
+`tests/e2e/fase7.cjs` memakai database yang sama dengan Fase 4 (admin, statistik 2024, member uji, formasi sintetis) dan `axe-core` (devDependency). Skrip membuat member `baru@uji.test` yang belum melihat Panduan Singkat (`tests/e2e/buat_member_baru.php`) dan membersihkan cache (`php artisan cache:clear`) agar detak penjadwal mulai dari kosong.
+
+```
+php artisan migrate:fresh --force
+php artisan sicasn:buat-admin --nama="Admin Uji" --email="admin@uji.test" --password="AdminUji12345"
+php artisan db:seed --class=StatistikPelamarSeeder --force
+php tests/e2e/buat_member.php
+php tests/e2e/data_formasi.php
+npm run build
+php artisan serve --host=127.0.0.1 --port=8000 &
+node tests/e2e/fase7.cjs /tmp/tangkapan-layar
+```
+
+Yang diperiksa (26 pemeriksaan): header keamanan dan nonce CSP yang cocok dengan skrip di halaman, halaman terender penuh di bawah CSP tanpa galat konsol, skrip tema inline bernonce tetap berjalan, halaman 404 dan 403 ramah, kebijakan privasi dari footer, alur Panduan Singkat (muncul di login pertama, fokus terkunci, tiga langkah, tercatat selesai, tidak muncul lagi, dibuka dari tombol bantuan, Esc, tampilan HP), kesehatan sistem di dasbor admin (penjadwal tidak terdeteksi lalu berjalan setelah `schedule:run`), pengaturan alamat situs dengan galat inline, tanpa scroll horizontal pada 12 halaman x 3 ukuran x 2 tema, axe-core WCAG 2.1 A/AA (pelanggaran serius dan kritis dianggap gagal; yang lain dicetak) pada 1366 px dan 390 px, dan tanpa galat konsol selain status 403/404 yang memang disengaja.
+
+Catatan:
+
+- `fase1.cjs` memakai server SMTP uji (`pip install aiosmtpd`). Satu pemeriksaan (tab `wa.me`) gagal di lingkungan tanpa internet karena halaman tujuan tidak terjangkau; URL-nya benar.
+- Skrip login member baru memunculkan Panduan Singkat setelah dialog "Kata sandi diperbarui" ditutup; `fase1.cjs` menutupnya dengan "Lewati". Member yang dibuat `buat_member.php` sudah ditandai melihat panduan agar skrip lain tidak terganggu.
+
+### Perintah instalasi
+
+`php artisan sicasn:install` diuji di Pest (`tests/Feature/InstalasiTest.php`) dan dijalankan manual dari salinan bersih tanpa `.env` (SQLite, API BKN sungguhan). Verifikasi di MySQL dan Docker menunggu pemilik; lihat `docs/deployment.md`.

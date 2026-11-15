@@ -2,6 +2,8 @@ export const rute = {
     beranda: '/',
     masuk: '/masuk',
     keluar: '/keluar',
+    privasi: '/privasi',
+    panduanSelesai: '/akun/panduan-selesai',
     akun: '/akun',
     gantiPassword: '/ganti-password',
     peluangInstansi: '/peluang-instansi',

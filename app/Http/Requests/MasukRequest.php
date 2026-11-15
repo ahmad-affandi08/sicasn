@@ -14,6 +14,10 @@ final class MasukRequest extends FormRequest
 
     private const DETIK_KUNCI = 60;
 
+    private const BATAS_PERCOBAAN_PER_EMAIL = 20;
+
+    private const DETIK_KUNCI_PER_EMAIL = 900;
+
     public function rules(): array
     {
         return [
@@ -34,11 +38,13 @@ final class MasukRequest extends FormRequest
 
     public function pastikanTidakTerbatasi(): void
     {
-        if (! RateLimiter::tooManyAttempts($this->kunciBatas(), self::BATAS_PERCOBAAN)) {
+        $perEmail = RateLimiter::tooManyAttempts($this->kunciBatasEmail(), self::BATAS_PERCOBAAN_PER_EMAIL);
+
+        if (! $perEmail && ! RateLimiter::tooManyAttempts($this->kunciBatas(), self::BATAS_PERCOBAAN)) {
             return;
         }
 
-        $detik = RateLimiter::availableIn($this->kunciBatas());
+        $detik = RateLimiter::availableIn($perEmail ? $this->kunciBatasEmail() : $this->kunciBatas());
 
         throw ValidationException::withMessages([
             'email' => "Terlalu banyak percobaan masuk. Coba lagi dalam {$detik} detik.",
@@ -48,11 +54,17 @@ final class MasukRequest extends FormRequest
     public function catatGagal(): void
     {
         RateLimiter::hit($this->kunciBatas(), self::DETIK_KUNCI);
+        RateLimiter::hit($this->kunciBatasEmail(), self::DETIK_KUNCI_PER_EMAIL);
     }
 
     public function bersihkanBatas(): void
     {
         RateLimiter::clear($this->kunciBatas());
+    }
+
+    private function kunciBatasEmail(): string
+    {
+        return 'masuk-email:'.mb_strtolower((string) $this->input('email'));
     }
 
     private function kunciBatas(): string

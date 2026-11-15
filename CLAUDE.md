@@ -206,7 +206,7 @@ Persyaratan:
 
 ### 5.5 Pengaturan lain
 
-Info rekening (mendukung beberapa rekening: bank, nomor, atas nama), harga dan teks paket, teks beranda, URL situs (diisi otomatis saat instal), ambang tingkat persaingan, satu-sesi-per-akun (default aktif), kontak balas, jam sinkron BKN, tombol "Tampilkan password sementara sekali" (default **mati**).
+Info rekening (mendukung beberapa rekening: bank, nomor, atas nama), harga dan teks paket, teks beranda, URL situs (diisi saat `sicasn:install`, dipakai pada tautan masuk di email kredensial; bila kosong dipakai alamat yang sedang dibuka admin), ambang tingkat persaingan, satu-sesi-per-akun (default aktif), kontak balas, jam sinkron BKN, tombol "Tampilkan password sementara sekali" (default **mati**).
 
 ---
 
@@ -239,7 +239,7 @@ Semua tabel: `id` bigint unsigned, `created_at`, `updated_at`. Foreign key beser
 
 ### 6.4 Identity, pantauan, pengaturan
 
-**`users`**: `name`, `email` unik, `password`, `peran` enum(`admin`,`member`), `no_whatsapp` nullable, `aktif` boolean default true, `diaktifkan_at`, `dinonaktifkan_at` nullable, `alasan_nonaktif` nullable, `catatan_pembayaran` nullable (mis. "TF 14/11 BCA", hanya untuk pembukuan admin), `wajib_ganti_password` boolean default true, `password_sementara_berlaku_sampai` nullable, `dibuat_oleh` nullable, `last_login_at`. **Tidak ada kolom masa aktif.**
+**`users`**: `name`, `email` unik, `password`, `peran` enum(`admin`,`member`), `no_whatsapp` nullable, `aktif` boolean default true, `diaktifkan_at`, `dinonaktifkan_at` nullable, `alasan_nonaktif` nullable, `catatan_pembayaran` nullable (mis. "TF 14/11 BCA", hanya untuk pembukuan admin), `wajib_ganti_password` boolean default true, `password_sementara_berlaku_sampai` nullable, `dibuat_oleh` nullable, `last_login_at`, `panduan_dilihat_at` nullable (Panduan Singkat sudah dilihat). **Tidak ada kolom masa aktif.**
 **`pantauans`**: `user_id`, `formasi_id` (keduanya `cascadeOnDelete`), `catatan` nullable (maks 500 karakter), unik (`user_id`,`formasi_id`). Satu pengguna maksimal 100 pantauan.
 **`pengaturans`**: lihat §5.2.
 **`email_logs`**: `user_id` nullable, `tipe`, `penyedia`, `status`, `error` nullable, `dikirim_at`.
@@ -527,6 +527,8 @@ Keterbatasan yang perlu diketahui: pendeteksi komentar adalah pemindai sederhana
 
 ## 17. Deployment (target: tinggal deploy)
 
+Status: **jalur dan perintah sudah dibangun dan diuji otomatis; belum diuji di MySQL, Docker, nginx, atau Hostinger sungguhan** (lihat `docs/deployment.md`, bagian "Status verifikasi"). Berkas terkait: `docs/deployment.md`, `docker-compose.yml`, `docker/` (Dockerfile bertahap, nginx, php.ini, entrypoint), `bin/buat-rilis.sh` (paket zip siap unggah untuk hosting biasa), `bin/cadangkan-database.sh` (cadangan MySQL harian).
+
 Dua jalur, keduanya hanya perlu `.env` berisi database:
 
 1. **Hosting biasa** (termasuk Hostinger): unggah kode dengan `public/build` sudah dibangun, atur satu **cron tiap menit**: `php artisan schedule:run`. Scheduler juga menjalankan `queue:work --stop-when-empty --max-time=50` tiap menit, sehingga **tidak butuh proses antrean permanen**. Email dapat tertunda ±1 menit.
@@ -610,6 +612,10 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 **Fase 7, Pengerasan dan rilis**
 - `sicasn:install` lengkap, `docs/deployment.md`, audit keamanan (`/security-review`), uji aksesibilitas, panduan singkat, backup.
 - ✅ Deploy bersih di mesin baru hanya dengan `.env` database dan perintah dokumentasi.
+- **Status: sebagian (15 Nov 2026). Semua yang bisa diverifikasi di sandbox selesai; verifikasi di MySQL, Docker, dan hosting sungguhan menunggu pemilik.** Terverifikasi: Pest 474 tes, Vitest 158 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau; uji browser `tests/e2e/fase7.cjs` 26 pemeriksaan lulus (di bawah CSP dengan nonce tanpa galat konsol, 404/403 ramah, Panduan Singkat, kesehatan sistem, axe WCAG 2.1 A/AA tanpa pelanggaran pada 12 halaman, tanpa scroll horizontal 12 halaman x 3 ukuran x 2 tema); regresi E2E Fase 1 (40 dari 41; satu pemeriksaan tab `wa.me` gagal karena sandbox tanpa internet, lihat catatan di `docs/pengujian-e2e.md`), 2, 3, 4, 5, 6 tetap lulus.
+- **Yang dibangun:** `php artisan sicasn:install` (periksa PHP/ekstensi/izin tulis/koneksi DB, buat `APP_KEY`, migrasi, admin pertama lewat `sicasn:buat-admin`, alamat situs, seed statistik 2024, sinkron BKN pertama yang tidak menggagalkan instalasi bila sumber tak terjangkau, daftar periksa; aman diulang; dijalankan dari salinan bersih tanpa `.env` terhadap API BKN sungguhan). Middleware `AmankanHeader` (CSP dengan nonce per permintaan tanpa `unsafe-eval`, `X-Frame-Options`, `nosniff`, `Referrer-Policy`, `Permissions-Policy`, COOP, HSTS di HTTPS) berlaku global sehingga halaman galat pun terlindungi; proxy tepercaya hanya rentang privat; cookie sesi `Secure` otomatis di HTTPS (`SesiAmanBilaHttps`); pembatas login ditambah batas per email (20 gagal per 15 menit) agar pemalsuan IP tidak melewati perlindungan; halaman galat Inertia (403/404/419/429/500/503) dengan `Route::fallback`; kebijakan privasi `/privasi`; Panduan Singkat (modal 3 langkah, kolom `panduan_dilihat_at`, bisa dibuka lagi dari tombol bantuan, mengantre di belakang dialog lain lewat `useDialog().tunggu()`); fokus awal dialog tanpa tombol batal; dasbor admin menampilkan kesehatan sistem (detak penjadwal tiap menit, antrean menunggu/gagal, email gagal 7 hari).
+- **Hasil tinjauan keamanan (manual, karena skill `/security-review` tidak bisa berjalan tanpa `origin/HEAD` di sandbox):** pembatas login per email+IP dapat dilewati bila IP bisa dipalsukan (diperbaiki); cookie sesi belum `Secure` di HTTPS (diperbaiki); port Docker `web` dipublikasikan ke semua antarmuka (kini `127.0.0.1` saja); berkas cadangan dibuat dengan umask longgar sesaat (`umask 077`). Diterima dengan sadar: `style-src 'unsafe-inline'` karena Radix/React memakai atribut `style`; kunci pada `APP_KEY` (kehilangan `.env` berarti rahasia SMTP harus diisi ulang).
+- **Belum dikerjakan:** Larastan; halaman admin "Data Referensi" (§7.3); email notifikasi event CPNS ke admin; tema email kustom; "tampilkan password sementara sekali".
 
 ### Izin jaringan agent
 Host yang sudah diizinkan di lingkungan: `sscasn.bkn.go.id`, `api-sscasn.bkn.go.id`, `api-rekrutmen.bkn.go.id`, `bkn.go.id`, `www.bkn.go.id`, `data.go.id`. Untuk Fase 3 dan 5, agent perlu menambah host sumber lewat `update_environment` dengan host eksak per kebutuhan nyata dan alasan jelas.

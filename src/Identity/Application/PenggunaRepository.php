@@ -28,9 +28,13 @@ interface PenggunaRepository
 
     public function setPasswordBaru(int $id, string $passwordHash): void;
 
+    public function tandaiPanduanDilihat(int $id, DateTimeImmutable $sekarang): void;
+
     public function setAktif(int $id, bool $aktif, ?string $alasan, DateTimeImmutable $sekarang): void;
 
     public function halaman(?string $cari, ?bool $aktif, int $halaman, int $perHalaman): HalamanPengguna;
 
     public function ringkasan(): RingkasanPengguna;
+
+    public function adaAdmin(): bool;
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Schedule;
 use Src\DataImport\Application\AmbilPengaturanSinkron;
 use Src\DataImport\Domain\FrekuensiSinkron;
+use Src\Shared\Application\CatatDetakScheduler;
 
 $frekuensiSaatIni = fn (): FrekuensiSinkron => resolve(AmbilPengaturanSinkron::class)->handle()->frekuensi;
 
@@ -24,3 +25,7 @@ Schedule::command('queue:work --stop-when-empty --max-time=50')
     ->name('antrean')
     ->everyMinute()
     ->withoutOverlapping();
+
+Schedule::call(fn () => resolve(CatatDetakScheduler::class)->handle())
+    ->name('detak-scheduler')
+    ->everyMinute();

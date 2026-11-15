@@ -1,5 +1,6 @@
 export { IlustrasiAkunNonaktif } from './IlustrasiAkunNonaktif';
 export { IlustrasiBeranda } from './IlustrasiBeranda';
+export { IlustrasiCariFormasi } from './IlustrasiCariFormasi';
 export { IlustrasiGagal } from './IlustrasiGagal';
 export { IlustrasiGalat } from './IlustrasiGalat';
 export { IlustrasiInfo } from './IlustrasiInfo';
@@ -11,6 +12,7 @@ export { IlustrasiLangkahMasuk } from './IlustrasiLangkahMasuk';
 export { IlustrasiLangkahTransfer } from './IlustrasiLangkahTransfer';
 export { IlustrasiLogin } from './IlustrasiLogin';
 export { IlustrasiNotFound } from './IlustrasiNotFound';
+export { IlustrasiPantau } from './IlustrasiPantau';
 export { IlustrasiPeringatan } from './IlustrasiPeringatan';
 export { IlustrasiServerError } from './IlustrasiServerError';
 export { IlustrasiSukses } from './IlustrasiSukses';

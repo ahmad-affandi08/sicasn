@@ -24,6 +24,7 @@ export interface PropsBersama {
     aplikasi: { nama: string };
     whatsappUrl: string | null;
     auth: { pengguna: PenggunaMasuk | null };
+    panduan: boolean;
     dialog: FlashDialog | null;
     [kunci: string]: unknown;
 }

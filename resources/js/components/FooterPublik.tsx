@@ -1,5 +1,9 @@
+import { Link } from '@inertiajs/react';
+
 import { Logo } from '@/components/Logo';
 import { teks } from '@/lang/id';
+import { teksSistem } from '@/lang/sistem';
+import { rute } from '@/lib/rute';
 
 export function FooterPublik() {
     return (
@@ -13,6 +17,9 @@ export function FooterPublik() {
                     <a href="https://sscasn.bkn.go.id" target="_blank" rel="noopener noreferrer" className="font-medium text-primer underline-offset-4 hover:underline">
                         {teks.footer.portalResmi} ↗
                     </a>
+                    <Link href={rute.privasi} className="text-redup underline-offset-4 hover:text-teks hover:underline">
+                        {teksSistem.footer.privasi}
+                    </Link>
                     <span className="text-redup">{teks.footer.hakCipta(new Date().getFullYear())}</span>
                 </div>
             </div>

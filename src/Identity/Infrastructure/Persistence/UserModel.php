@@ -40,6 +40,7 @@ final class UserModel extends Authenticatable
             'dinonaktifkan_at' => 'datetime',
             'password_sementara_berlaku_sampai' => 'datetime',
             'last_login_at' => 'datetime',
+            'panduan_dilihat_at' => 'datetime',
         ];
     }
 }

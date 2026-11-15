@@ -17,10 +17,11 @@ interface PropsHalaman {
     ringkasan: { aktif: number; nonaktif: number };
     kesiapan: { email: boolean; whatsapp: boolean; pembayaran: boolean; sinkron: boolean };
     sinkron: { terakhir: BatchItem | null; formasiAktif: number };
+    kesehatan: { antreanMenunggu: number; antreanGagal: number; emailGagal: number; schedulerAktif: boolean; detakTerakhir: string | null };
     eventBaru: EventItem[];
 }
 
-export default function Dasbor({ ringkasan, kesiapan, sinkron, eventBaru }: PropsHalaman) {
+export default function Dasbor({ ringkasan, kesiapan, sinkron, kesehatan, eventBaru }: PropsHalaman) {
     const teks = teksAdmin.dasbor;
     const dialog = useDialog();
 
@@ -87,6 +88,39 @@ export default function Dasbor({ ringkasan, kesiapan, sinkron, eventBaru }: Prop
                     <Button asChild variant="outline" className="self-start sm:self-center">
                         <Link href={rute.admin.sinkron}>{teks.kartuSinkron.buka}</Link>
                     </Button>
+                </CardContent>
+            </Card>
+
+            <Card className="mt-4">
+                <CardHeader>
+                    <CardTitle>{teks.kesehatan.judul}</CardTitle>
+                    <CardDescription>{teks.kesehatan.sub}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <dl className="grid grid-cols-2 gap-x-4 gap-y-5 text-sm md:grid-cols-4">
+                        <div>
+                            <dt className="text-redup">{teks.kesehatan.scheduler}</dt>
+                            <dd className="mt-1 flex items-center gap-2 font-medium">
+                                {kesehatan.schedulerAktif ? <LuCircleCheck aria-hidden className="h-4 w-4 text-sukses" /> : <LuCircleAlert aria-hidden className="h-4 w-4 text-peringatan" />}
+                                {kesehatan.schedulerAktif ? teks.kesehatan.aktif : teks.kesehatan.mati}
+                            </dd>
+                            <dd className="mt-1 text-redup">{kesehatan.detakTerakhir ? formatWaktu(kesehatan.detakTerakhir) : teks.kesehatan.belumPernah}</dd>
+                        </div>
+                        <div>
+                            <dt className="text-redup">{teks.kesehatan.antreanMenunggu}</dt>
+                            <dd className="mt-1 text-2xl leading-none font-medium tabular-nums">{kesehatan.antreanMenunggu}</dd>
+                        </div>
+                        <div>
+                            <dt className="text-redup">{teks.kesehatan.antreanGagal}</dt>
+                            <dd className="mt-1 text-2xl leading-none font-medium tabular-nums">{kesehatan.antreanGagal}</dd>
+                        </div>
+                        <div>
+                            <dt className="text-redup">{teks.kesehatan.emailGagal}</dt>
+                            <dd className="mt-1 text-2xl leading-none font-medium tabular-nums">{kesehatan.emailGagal}</dd>
+                        </div>
+                    </dl>
+                    {!kesehatan.schedulerAktif && <p className="mt-4 text-sm text-redup">{teks.kesehatan.petunjukMati}</p>}
+                    {(kesehatan.antreanGagal > 0 || kesehatan.emailGagal > 0) && <p className="mt-4 text-sm text-redup">{teks.kesehatan.petunjukGagal}</p>}
                 </CardContent>
             </Card>
 

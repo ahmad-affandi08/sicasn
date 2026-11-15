@@ -78,6 +78,11 @@ final class EloquentPenggunaRepository implements PenggunaRepository
         ])->save();
     }
 
+    public function tandaiPanduanDilihat(int $id, DateTimeImmutable $sekarang): void
+    {
+        UserModel::query()->whereKey($id)->whereNull('panduan_dilihat_at')->update(['panduan_dilihat_at' => $sekarang]);
+    }
+
     public function setAktif(int $id, bool $aktif, ?string $alasan, DateTimeImmutable $sekarang): void
     {
         $pengguna = UserModel::query()->whereKey($id)->first();
@@ -112,6 +117,11 @@ final class EloquentPenggunaRepository implements PenggunaRepository
             $paginasi->perPage(),
             $paginasi->lastPage(),
         );
+    }
+
+    public function adaAdmin(): bool
+    {
+        return UserModel::query()->where('peran', Peran::Admin->value)->exists();
     }
 
     public function ringkasan(): RingkasanPengguna

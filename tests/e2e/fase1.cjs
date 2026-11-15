@@ -131,7 +131,7 @@ async function masuk(page, email, password) {
 
   await ap.goto(BASE + '/admin');
   const dasborSiap = await ap.locator('main').innerText();
-  cek('Dasbor menandai semua kesiapan siap', (dasborSiap.match(/Siap/g) || []).length >= 3 && !/Belum siap/.test(dasborSiap));
+  cek('Dasbor menandai email, WhatsApp, dan pembayaran siap (sinkron BKN belum dijalankan)', (dasborSiap.match(/Siap/g) || []).length >= 3 && (dasborSiap.match(/Belum siap/g) || []).length === 1);
 
   await ap.goto(BASE + '/admin/pengguna/buat');
   await ap.getByLabel('Nama lengkap').fill('Siti Aminah');
@@ -184,7 +184,10 @@ async function masuk(page, email, password) {
   const gantiOk = await dialogTeks(mp);
   cek('Setelah ganti kata sandi member masuk ke akun dengan dialog sukses', /Kata sandi diperbarui/.test(gantiOk));
   await mp.screenshot({ path: `${OUT}/11-dialog-password-diganti-hp.png` });
-  await tutup(mp);
+  await mp.getByRole('button', { name: 'Mengerti', exact: true }).click();
+  await mp.waitForFunction(() => /Langkah 1 dari 3/.test(document.querySelector('[role=alertdialog]')?.textContent ?? ''));
+  cek('Panduan singkat muncul setelah dialog kata sandi ditutup, tidak menumpuk', (await mp.locator('[role=alertdialog]').count()) === 1);
+  await tutup(mp, 'Lewati');
   await mp.screenshot({ path: `${OUT}/12-akun-hp.png`, fullPage: true });
 
   const adminGagal = await mp.goto(BASE + '/admin');

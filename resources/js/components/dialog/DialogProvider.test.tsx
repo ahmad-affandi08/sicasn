@@ -33,6 +33,14 @@ function Uji() {
             </button>
             <button
                 onClick={() => {
+                    void dialog.sukses({ judul: 'Sedang tampil', pesan: 'Dialog yang ditunggu.' });
+                    void dialog.tunggu().then(() => setHasil('selesai-menunggu'));
+                }}
+            >
+                tunggu
+            </button>
+            <button
+                onClick={() => {
                     void dialog.gagal({ judul: 'Pertama', pesan: 'Dialog pertama.' });
                     void dialog.galat({ judul: 'Kedua', pesan: 'Dialog kedua.' });
                 }}
@@ -76,6 +84,69 @@ describe('DialogProvider', () => {
 
         await pengguna.click(screen.getByRole('button', { name: 'Mengerti' }));
         await waitFor(() => expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument());
+    });
+
+    it('menyelesaikan tunggu seketika bila tidak ada dialog yang tampil', async () => {
+        const pengguna = userEvent.setup();
+        let selesai = false;
+
+        function Pemicu() {
+            const dialog = useDialog();
+
+            return (
+                <button
+                    onClick={() => {
+                        void dialog.tunggu().then(() => {
+                            selesai = true;
+                        });
+                    }}
+                >
+                    langsung
+                </button>
+            );
+        }
+
+        render(
+            <DialogProvider>
+                <Pemicu />
+            </DialogProvider>,
+        );
+        await pengguna.click(screen.getByRole('button', { name: 'langsung' }));
+
+        await waitFor(() => expect(selesai).toBe(true));
+    });
+
+    it('baru menyelesaikan tunggu setelah dialog yang sedang tampil ditutup', async () => {
+        const pengguna = userEvent.setup();
+        tampilkan();
+
+        await pengguna.click(screen.getByRole('button', { name: 'tunggu' }));
+        await screen.findByRole('alertdialog');
+        expect(screen.getByText('belum')).toBeInTheDocument();
+
+        await pengguna.click(screen.getByRole('button', { name: 'Mengerti' }));
+
+        await waitFor(() => expect(screen.getByText('selesai-menunggu')).toBeInTheDocument());
+    });
+
+    it('memindahkan fokus ke tombol utama pada dialog tanpa tombol batal', async () => {
+        const pengguna = userEvent.setup();
+        tampilkan();
+
+        await pengguna.click(screen.getByRole('button', { name: 'sukses' }));
+        await screen.findByRole('alertdialog');
+
+        await waitFor(() => expect(screen.getByRole('button', { name: 'Mengerti' })).toHaveFocus());
+    });
+
+    it('memfokuskan tombol batal pada dialog konfirmasi agar aksi berisiko tidak terpicu tak sengaja', async () => {
+        const pengguna = userEvent.setup();
+        tampilkan();
+
+        await pengguna.click(screen.getByRole('button', { name: 'konfirmasi' }));
+        await screen.findByRole('alertdialog');
+
+        await waitFor(() => expect(screen.getByRole('button', { name: 'Batal' })).toHaveFocus());
     });
 
     it('mengembalikan true saat konfirmasi disetujui', async () => {

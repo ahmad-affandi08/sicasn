@@ -13,12 +13,26 @@ interface ItemAntrean {
 export function DialogProvider({ children }: { children: ReactNode }) {
     const [antrean, setAntrean] = useState<ItemAntrean[]>([]);
     const penghitung = useRef(0);
+    const jumlahAntrean = useRef(0);
+    const penunggu = useRef<(() => void)[]>([]);
 
     const buka = useCallback((tampilan: TampilanDialog) => {
         return new Promise<boolean>((selesai) => {
             penghitung.current += 1;
+            jumlahAntrean.current += 1;
             const id = penghitung.current;
             setAntrean((sebelumnya) => [...sebelumnya, { id, tampilan, selesai }]);
+        });
+    }, []);
+
+    const tunggu = useCallback(() => {
+        return new Promise<void>((selesai) => {
+            if (jumlahAntrean.current === 0) {
+                selesai();
+                return;
+            }
+
+            penunggu.current.push(selesai);
         });
     }, []);
 
@@ -35,8 +49,9 @@ export function DialogProvider({ children }: { children: ReactNode }) {
             info: pesan('info'),
             konfirmasi: (opsi: OpsiKonfirmasi) => buka({ jenis: 'konfirmasi', ...opsi }),
             konfirmasiKetik: (opsi: OpsiKonfirmasiKetik) => buka({ jenis: 'konfirmasi', berisiko: true, ...opsi }),
+            tunggu,
         };
-    }, [buka]);
+    }, [buka, tunggu]);
 
     const aktif = antrean[0];
 
@@ -49,6 +64,12 @@ export function DialogProvider({ children }: { children: ReactNode }) {
                     tampilan={aktif.tampilan}
                     onTutup={(hasil) => {
                         aktif.selesai(hasil);
+                        jumlahAntrean.current -= 1;
+
+                        if (jumlahAntrean.current === 0) {
+                            penunggu.current.splice(0).forEach((lanjut) => lanjut());
+                        }
+
                         setAntrean((sebelumnya) => sebelumnya.slice(1));
                     }}
                 />

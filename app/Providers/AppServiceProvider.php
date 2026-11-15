@@ -75,14 +75,20 @@ use Src\Shared\Application\Clock;
 use Src\Shared\Application\EmailTerkonfigurasi;
 use Src\Shared\Application\LogEmail;
 use Src\Shared\Application\MailGateway;
+use Src\Shared\Application\PembacaKesehatanSistem;
+use Src\Shared\Application\PemeriksaLingkungan;
+use Src\Shared\Infrastructure\DatabasePembacaKesehatanSistem;
 use Src\Shared\Infrastructure\EloquentAuditLog;
 use Src\Shared\Infrastructure\EloquentLogEmail;
+use Src\Shared\Infrastructure\PemeriksaLingkunganLaravel;
 use Src\Shared\Infrastructure\SystemClock;
 
 final class AppServiceProvider extends ServiceProvider
 {
     public array $bindings = [
         Clock::class => SystemClock::class,
+        PembacaKesehatanSistem::class => DatabasePembacaKesehatanSistem::class,
+        PemeriksaLingkungan::class => PemeriksaLingkunganLaravel::class,
         AuditLog::class => EloquentAuditLog::class,
         LogEmail::class => EloquentLogEmail::class,
         MailGateway::class => LaravelMailGateway::class,

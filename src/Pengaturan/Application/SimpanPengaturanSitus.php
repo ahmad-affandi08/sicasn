@@ -14,9 +14,9 @@ final readonly class SimpanPengaturanSitus
         private AuditLog $audit,
     ) {}
 
-    public function handle(bool $satuSesi, int $aktorId): void
+    public function handle(bool $satuSesi, int $aktorId, ?string $url = null): void
     {
-        $this->store->simpan(new PengaturanSitus($satuSesi));
-        $this->audit->catat($aktorId, 'pengaturan.situs_disimpan', null, ['satu_sesi' => $satuSesi]);
+        $this->store->simpan(new PengaturanSitus($satuSesi, $url === null || trim($url) === '' ? null : rtrim(trim($url), '/')));
+        $this->audit->catat($aktorId, 'pengaturan.situs_disimpan', null, ['satu_sesi' => $satuSesi, 'url' => $url]);
     }
 }

@@ -18,11 +18,15 @@ use App\Http\Controllers\GantiPasswordController;
 use App\Http\Controllers\KeluarController;
 use App\Http\Controllers\MasukController;
 use App\Http\Controllers\OpsiFormasiController;
+use App\Http\Controllers\PanduanController;
 use App\Http\Controllers\PantauanController;
 use App\Http\Controllers\PeluangInstansiController;
+use App\Http\Controllers\PrivasiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', BerandaController::class)->name('beranda');
+Route::get('/privasi', PrivasiController::class)->name('privasi');
+Route::fallback(fn () => abort(404));
 
 Route::middleware('guest')->group(function (): void {
     Route::get('/masuk', [MasukController::class, 'tampil'])->name('masuk');
@@ -31,6 +35,7 @@ Route::middleware('guest')->group(function (): void {
 
 Route::middleware(['auth', 'akun.aktif'])->group(function (): void {
     Route::post('/keluar', KeluarController::class)->name('keluar');
+    Route::post('/akun/panduan-selesai', PanduanController::class)->middleware('throttle:30,1')->name('panduan.selesai');
     Route::get('/ganti-password', [GantiPasswordController::class, 'tampil'])->name('ganti-password');
     Route::post('/ganti-password', [GantiPasswordController::class, 'proses'])->name('ganti-password.proses');
 });

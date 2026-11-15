@@ -23,6 +23,7 @@ use Src\Identity\Application\PenggunaBaru;
 use Src\Identity\Application\ResendCredentials;
 use Src\Identity\Domain\Exception\EmailSudahTerdaftar;
 use Src\Identity\Domain\Exception\TidakBolehMenonaktifkan;
+use Src\Pengaturan\Application\AmbilTautanMasuk;
 
 final class PenggunaController extends Controller
 {
@@ -47,7 +48,7 @@ final class PenggunaController extends Controller
         return Inertia::render('Admin/Pengguna/Buat');
     }
 
-    public function simpan(BuatPenggunaRequest $request, CreateMemberAccount $buat): RedirectResponse
+    public function simpan(BuatPenggunaRequest $request, CreateMemberAccount $buat, AmbilTautanMasuk $tautanMasuk): RedirectResponse
     {
         try {
             $id = $buat->handle(new PenggunaBaru(
@@ -55,7 +56,7 @@ final class PenggunaController extends Controller
                 (string) $request->input('email'),
                 $request->filled('no_whatsapp') ? (string) $request->input('no_whatsapp') : null,
                 $request->filled('catatan_pembayaran') ? (string) $request->input('catatan_pembayaran') : null,
-                route('masuk'),
+                $tautanMasuk->handle(route('masuk')),
                 (int) $request->user()->getAuthIdentifier(),
             ));
         } catch (EmailSudahTerdaftar $galat) {
@@ -73,9 +74,9 @@ final class PenggunaController extends Controller
         ]);
     }
 
-    public function kirimUlang(int $id, Request $request, ResendCredentials $kirimUlang): RedirectResponse
+    public function kirimUlang(int $id, Request $request, ResendCredentials $kirimUlang, AmbilTautanMasuk $tautanMasuk): RedirectResponse
     {
-        $kirimUlang->handle($id, (int) $request->user()->getAuthIdentifier(), route('masuk'));
+        $kirimUlang->handle($id, (int) $request->user()->getAuthIdentifier(), $tautanMasuk->handle(route('masuk')));
 
         return back()->with('dialog', DialogFlash::sukses('Kredensial baru dikirim', 'Kata sandi sementara yang baru sedang dikirim lewat email. Kata sandi lama tidak berlaku lagi.'));
     }

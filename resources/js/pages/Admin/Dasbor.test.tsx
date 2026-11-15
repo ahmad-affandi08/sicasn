@@ -25,11 +25,20 @@ vi.mock('@inertiajs/react', () => ({
 import Dasbor from './Dasbor';
 
 const kesiapan = { email: true, whatsapp: true, pembayaran: false, sinkron: false };
+interface Kesehatan {
+    antreanMenunggu: number;
+    antreanGagal: number;
+    emailGagal: number;
+    schedulerAktif: boolean;
+    detakTerakhir: string | null;
+}
 
-function tampilkan(eventBaru: EventItem[] = [], formasiAktif = 0) {
+const kesehatanSehat: Kesehatan = { antreanMenunggu: 0, antreanGagal: 0, emailGagal: 0, schedulerAktif: true, detakTerakhir: '2026-11-15T02:00:00+07:00' };
+
+function tampilkan(eventBaru: EventItem[] = [], formasiAktif = 0, kesehatan: Kesehatan = kesehatanSehat) {
     return render(
         <DialogProvider>
-            <Dasbor ringkasan={{ aktif: 3, nonaktif: 1 }} kesiapan={kesiapan} sinkron={{ terakhir: null, formasiAktif }} eventBaru={eventBaru} />
+            <Dasbor ringkasan={{ aktif: 3, nonaktif: 1 }} kesiapan={kesiapan} sinkron={{ terakhir: null, formasiAktif }} kesehatan={kesehatan} eventBaru={eventBaru} />
         </DialogProvider>,
     );
 }
@@ -61,6 +70,22 @@ describe('Dasbor admin', () => {
 
         expect(screen.getAllByText('Belum siap')).toHaveLength(2);
         expect(screen.getAllByRole('link', { name: 'Atur' }).map((a) => a.getAttribute('href'))).toContain('/admin/sinkron');
+    });
+
+    it('menandai penjadwal yang berjalan tanpa peringatan', () => {
+        tampilkan();
+
+        expect(screen.getByText('Berjalan')).toBeInTheDocument();
+        expect(screen.queryByText(/Penjadwal belum terdeteksi/)).not.toBeInTheDocument();
+    });
+
+    it('memperingatkan bila penjadwal mati dan ada email atau antrean yang gagal', () => {
+        tampilkan([], 0, { antreanMenunggu: 4, antreanGagal: 2, emailGagal: 1, schedulerAktif: false, detakTerakhir: null });
+
+        expect(screen.getByText('Tidak terdeteksi')).toBeInTheDocument();
+        expect(screen.getByText(/Penjadwal belum terdeteksi/)).toBeInTheDocument();
+        expect(screen.getByText(/Ada email atau pekerjaan yang gagal/)).toBeInTheDocument();
+        expect(screen.getByText('Belum pernah berjalan')).toBeInTheDocument();
     });
 
     it('menyembunyikan penjelasan kosong saat sudah ada formasi aktif', () => {
