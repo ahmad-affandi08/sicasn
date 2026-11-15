@@ -3,7 +3,9 @@ import random
 from pathlib import Path
 
 import data_tkp
+import data_tkp_tambahan
 import data_twk
+import twk_fakta
 
 LABEL = ["A", "B", "C", "D", "E"]
 LISENSI = "Soal asli SICASN"
@@ -13,7 +15,9 @@ TUJUAN = Path(__file__).resolve().parents[2] / "database" / "seeders" / "data" /
 def bangun_twk():
     rng = random.Random(1945)
     hasil = []
-    for sub, pertanyaan, benar, salah, pembahasan, sumber in data_twk.DATA:
+    ditulis = {pertanyaan for _, pertanyaan, *_ in data_twk.DATA}
+    tambahan = [butir for butir in twk_fakta.bangun_semua() if butir[1] not in ditulis]
+    for sub, pertanyaan, benar, salah, pembahasan, sumber in [*data_twk.DATA, *tambahan]:
         semua = [benar] + list(salah)
         rng.shuffle(semua)
         posisi = semua.index(benar)
@@ -34,7 +38,7 @@ def bangun_twk():
 def bangun_tkp():
     rng = random.Random(2024)
     hasil = []
-    for sub, pertanyaan, opsi_urut, pembahasan in data_tkp.DATA:
+    for sub, pertanyaan, opsi_urut, pembahasan in [*data_tkp.DATA, *data_tkp_tambahan.DATA]:
         pasangan = list(zip(opsi_urut, [5, 4, 3, 2, 1]))
         rng.shuffle(pasangan)
         terbaik = next(i for i, (_, skor) in enumerate(pasangan) if skor == 5)

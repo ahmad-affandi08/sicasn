@@ -15,6 +15,16 @@ KLAUSA = [
     ("rapat dimulai", "rapat tidak dimulai"),
     ("jalan raya diperbaiki", "jalan raya tidak diperbaiki"),
     ("sistem diperbarui", "sistem tidak diperbarui"),
+    ("anggaran cair", "anggaran tidak cair"),
+    ("pelatihan diadakan", "pelatihan tidak diadakan"),
+    ("sinyal internet stabil", "sinyal internet tidak stabil"),
+    ("tim bekerja sama", "tim tidak bekerja sama"),
+    ("target tercapai", "target tidak tercapai"),
+    ("proposal disetujui", "proposal tidak disetujui"),
+    ("pemeriksaan dilakukan", "pemeriksaan tidak dilakukan"),
+    ("hasil rapat diumumkan", "hasil rapat tidak diumumkan"),
+    ("pegawai ikut apel pagi", "pegawai tidak ikut apel pagi"),
+    ("aplikasi diperbarui", "aplikasi tidak diperbarui"),
 ]
 
 KATEGORI = [
@@ -26,6 +36,13 @@ KATEGORI = [
     ("pedagang pasar", "wajib pajak", "pencatat omzet"),
     ("relawan", "warga peduli", "peserta kerja bakti"),
     ("perawat", "tenaga kesehatan", "pekerja shift"),
+    ("karyawan magang", "peserta pelatihan", "penerima modul"),
+    ("siswa teladan", "siswa berprestasi", "penerima beasiswa"),
+    ("dokter", "tenaga medis", "pemegang izin praktik"),
+    ("anggota paduan suara", "penyanyi", "peserta lomba"),
+    ("tim penyusun laporan", "staf analis", "pengguna data statistik"),
+    ("peserta tes CPNS", "pelamar ASN", "pemilik akun pendaftaran"),
+    ("pegawai bagian keuangan", "pegawai kantor", "pemegang kartu akses"),
 ]
 
 

@@ -1,721 +1,325 @@
 [
  {
   "kategori": "tkp",
-  "subkategori": "Anti radikalisme",
-  "pertanyaan": "Seorang tetangga mengajak warga memboikot kegiatan peringatan hari besar nasional karena dianggap tidak sesuai ajaran kelompoknya. Anda ...",
-  "pembahasan": "Partisipasi dalam kegiatan kebangsaan memperkuat persatuan; dialog lebih baik daripada konfrontasi. Jawaban terbaik (skor 5): B.",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Menjelang jam tutup layanan, masih ada beberapa warga yang mengantre dan berkas mereka lengkap. Sikap Anda adalah ...",
+  "pembahasan": "Warga yang telah datang dan memenuhi syarat berhak dilayani. Memangkas kualitas demi cepat selesai bukan pilihan terbaik. Jawaban terbaik (skor 5): B.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Berpartisipasi sendiri tanpa mengajak orang lain",
-    "skor": 4
-   },
-   {
-    "label": "B",
-    "teks": "Menjelaskan manfaat kegiatan kebangsaan, mengajak berpartisipasi, dan menghargai perbedaan tanpa menyetujui pemboikotan",
-    "skor": 5
-   },
-   {
-    "label": "C",
-    "teks": "Menyerang tetangga itu di media sosial",
-    "skor": 1
-   },
-   {
-    "label": "D",
-    "teks": "Ikut memboikot demi kerukunan lingkungan",
-    "skor": 2
-   },
-   {
-    "label": "E",
-    "teks": "Tidak ikut campur agar tidak ada konflik",
-    "skor": 3
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Anti radikalisme",
-  "pertanyaan": "Anda mengetahui ada brosur yang menyebarkan paham anti-Pancasila di sekitar kantor. Anda ...",
-  "pembahasan": "Pelaporan kepada pihak berwenang dan edukasi menjadi langkah tepat untuk mencegah penyebaran paham radikal. Jawaban terbaik (skor 5): D.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Membaca dan membagikannya kepada rekan untuk diskusi",
+    "teks": "Meninggalkan loket tanpa pemberitahuan",
     "skor": 1
    },
    {
     "label": "B",
-    "teks": "Memotret dan mengunggahnya di media sosial untuk peringatan",
-    "skor": 3
-   },
-   {
-    "label": "C",
-    "teks": "Membiarkan karena bukan tugas Anda",
-    "skor": 2
-   },
-   {
-    "label": "D",
-    "teks": "Mengamankan brosur tanpa menyebarkan, melaporkan kepada atasan dan pihak berwenang, serta menjelaskan bahaya paham itu kepada rekan",
+    "teks": "Tetap melayani semua warga yang sudah mengantre sesuai standar pelayanan, dan memberi tahu atasan bila perlu waktu tambahan",
     "skor": 5
    },
    {
-    "label": "E",
-    "teks": "Mengambil dan membuang brosur itu",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Sosial budaya",
-  "pertanyaan": "Kantor Anda akan mengadakan acara bersama yang melibatkan pegawai dari berbagai agama dan keyakinan. Sebagai panitia, Anda ...",
-  "pembahasan": "Acara bersama harus inklusif, menghargai keberagaman, dan melibatkan masukan peserta. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menyusun acara yang inklusif: menyiapkan menu dan jadwal yang memperhatikan keyakinan semua peserta serta meminta masukan peserta",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Mengadakan acara sesuai selera panitia",
-    "skor": 2
-   },
-   {
     "label": "C",
-    "teks": "Membatalkan acara agar tidak ada yang tersinggung",
-    "skor": 1
-   },
-   {
-    "label": "D",
-    "teks": "Menyesuaikan acara dengan kebiasaan mayoritas pegawai",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Menyerahkan teknis kepada seksi konsumsi tanpa arahan",
-    "skor": 3
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Sosial budaya",
-  "pertanyaan": "Dalam obrolan kantor, seorang rekan bergurau dengan merendahkan suku tertentu. Anda ...",
-  "pembahasan": "Candaan bernuansa SARA tidak boleh dibiarkan. Menegur dengan santun menjaga kerukunan di tempat kerja. Jawaban terbaik (skor 5): C.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Ikut tertawa agar tidak dianggap kaku",
-    "skor": 2
-   },
-   {
-    "label": "B",
-    "teks": "Menyebarkan candaan itu kepada orang lain",
-    "skor": 1
-   },
-   {
-    "label": "C",
-    "teks": "Menegur dengan santun bahwa candaan itu menyinggung dan tidak pantas, lalu mengalihkan pembicaraan ke topik yang positif",
-    "skor": 5
-   },
-   {
-    "label": "D",
-    "teks": "Tidak ikut tertawa dan mengganti topik tanpa berkata apa pun",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Menegurnya sesudah obrolan selesai agar tidak malu",
-    "skor": 3
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Sosial budaya",
-  "pertanyaan": "Rekan Anda mengalami musibah keluarga dan membutuhkan dukungan. Anda ...",
-  "pembahasan": "Empati yang nyata memperkuat solidaritas dan kepedulian sosial di tempat kerja. Jawaban terbaik (skor 5): D.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengirim pesan singkat tanpa hadir atau menawarkan bantuan",
+    "teks": "Melayani sebagian dan meminta sisanya kembali besok",
     "skor": 3
    },
    {
-    "label": "B",
-    "teks": "Menunggu beliau meminta bantuan lebih dulu",
+    "label": "D",
+    "teks": "Menutup loket tepat waktu karena jam kerja sudah habis",
     "skor": 2
    },
    {
-    "label": "C",
-    "teks": "Menyampaikan belasungkawa dan menawarkan bantuan seperlunya",
-    "skor": 4
-   },
-   {
-    "label": "D",
-    "teks": "Menyampaikan belasungkawa, menawarkan bantuan konkret, dan mengajak rekan lain membantu sesuai kemampuan",
-    "skor": 5
-   },
-   {
     "label": "E",
-    "teks": "Menganggap itu urusan pribadi dan tidak peduli",
-    "skor": 1
+    "teks": "Melayani warga yang sudah mengantre dengan lebih cepat agar tepat jam",
+    "skor": 4
    }
   ]
  },
  {
   "kategori": "tkp",
   "subkategori": "Pelayanan publik",
-  "pertanyaan": "Sistem antrean elektronik di kantor Anda sedang gangguan sehingga masyarakat menumpuk. Anda adalah petugas yang berada di lokasi. Anda akan ...",
-  "pembahasan": "Petugas yang baik bertindak cepat pada gangguan layanan: melapor, membuat solusi sementara, dan menjaga komunikasi dengan masyarakat. Jawaban terbaik (skor 5): A.",
+  "pertanyaan": "Seorang warga datang meminta informasi tentang syarat layanan yang sudah tertera di papan pengumuman, tetapi ia kesulitan membaca karena tulisannya kecil. Anda ...",
+  "pembahasan": "Pelayanan yang baik memastikan informasi benar-benar dipahami oleh pemohon, bukan sekadar tersedia. Jawaban terbaik (skor 5): D.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Segera melapor ke atasan dan teknisi, sambil membuat antrean manual sementara dan menginformasikan perkiraan waktu kepada warga",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Meminta warga datang lagi besok tanpa penjelasan",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Mengatur antrean seadanya tanpa melapor karena gangguan biasanya cepat teratasi",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Melapor ke atasan lalu menunggu instruksi sambil melayani yang terdekat",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Membiarkan karena perbaikan sistem bukan tugas Anda",
-    "skor": 1
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Anti radikalisme",
-  "pertanyaan": "Di media sosial Anda menemukan ujaran kebencian terhadap kelompok tertentu yang memancing kemarahan banyak orang. Anda ...",
-  "pembahasan": "Menangkal ujaran kebencian dilakukan dengan tidak menyebarkan, melaporkan, dan menyebarkan narasi damai. Jawaban terbaik (skor 5): B.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Membagikan ulang agar banyak orang tahu",
-    "skor": 2
-   },
-   {
-    "label": "B",
-    "teks": "Tidak ikut menyebarkan, melaporkan konten kepada platform, dan membagikan informasi yang menyejukkan serta berdasar fakta",
-    "skor": 5
-   },
-   {
-    "label": "C",
-    "teks": "Menanggapi dengan komentar marah",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Memperkuat ujaran itu dengan menambahkan argumen sendiri",
-    "skor": 1
-   },
-   {
-    "label": "E",
-    "teks": "Tidak ikut menyebarkan dan melaporkan konten kepada platform",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Jejaring kerja",
-  "pertanyaan": "Anda memimpin tim kecil dan salah seorang anggota tampak kewalahan dengan beban kerjanya. Anda ...",
-  "pembahasan": "Pemimpin yang baik peka pada kondisi tim dan bertindak proaktif secara adil dan terbuka. Jawaban terbaik (skor 5): C.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengurangi tugasnya diam-diam tanpa berbicara",
-    "skor": 1
-   },
-   {
-    "label": "B",
-    "teks": "Membiarkan karena setiap orang bertanggung jawab atas tugasnya",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Mengajak berdiskusi untuk memahami kesulitannya, menata ulang prioritas, dan membagi sebagian tugas dengan adil",
-    "skor": 5
-   },
-   {
-    "label": "D",
-    "teks": "Menyediakan waktu bila beliau datang meminta bantuan",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Mengingatkan agar lebih disiplin mengatur waktu",
-    "skor": 3
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Sosial budaya",
-  "pertanyaan": "Rekan kerja Anda berasal dari agama berbeda dan sedang menjalankan ibadah pada jam istirahat. Anda ...",
-  "pembahasan": "Toleransi berarti menghormati dan memfasilitasi ibadah rekan kerja tanpa diskriminasi. Jawaban terbaik (skor 5): D.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Tidak mengganggu dan melanjutkan pekerjaan seperti biasa",
-    "skor": 4
-   },
-   {
-    "label": "B",
-    "teks": "Menunggu sampai selesai tanpa berkata apa-apa",
-    "skor": 3
-   },
-   {
-    "label": "C",
-    "teks": "Mengajaknya berdiskusi tentang agama Anda",
-    "skor": 2
-   },
-   {
-    "label": "D",
-    "teks": "Menghormati dengan tidak mengganggu dan memberi ruang waktu yang cukup, serta menyesuaikan jadwal rapat bila diperlukan",
-    "skor": 5
-   },
-   {
-    "label": "E",
-    "teks": "Menyindir bahwa ibadah mengganggu pekerjaan",
-    "skor": 1
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Sosial budaya",
-  "pertanyaan": "Seorang rekan baru berpakaian adat pada hari tertentu sesuai kebiasaan daerahnya, dan beberapa rekan berbisik mencibir. Anda ...",
-  "pembahasan": "Menghargai ekspresi budaya rekan dan memperkuat sikap saling menghormati adalah wujud kebinekaan. Jawaban terbaik (skor 5): C.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Membiarkan karena itu urusan mereka",
+    "teks": "Menunjuk papan pengumuman dan meminta beliau membacanya lebih dekat",
     "skor": 3
    },
    {
     "label": "B",
-    "teks": "Meminta rekan itu berpakaian seragam agar tidak jadi omongan",
-    "skor": 1
-   },
-   {
-    "label": "C",
-    "teks": "Menyapa dengan ramah dan menanyakan makna pakaiannya, serta mengajak rekan lain menghargai keberagaman budaya",
-    "skor": 5
-   },
-   {
-    "label": "D",
-    "teks": "Tidak ikut mencibir dan bersikap biasa saja",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Ikut berbisik agar tidak dikucilkan",
-    "skor": 2
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Sosial budaya",
-  "pertanyaan": "Warga setempat meminta kantor Anda ikut gotong royong membersihkan lingkungan pada hari kerja. Anda ...",
-  "pembahasan": "Kepedulian sosial dijalankan seimbang dengan tanggung jawab layanan dan prosedur izin. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengomunikasikan kepada atasan, mengatur pembagian tugas agar layanan tetap berjalan, dan ikut serta sesuai izin",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Menolak karena bukan tugas pokok",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Ikut serta setelah jam kerja berakhir",
-    "skor": 4
-   },
-   {
-    "label": "D",
-    "teks": "Menyarankan warga meminta bantuan instansi lain",
-    "skor": 3
-   },
-   {
-    "label": "E",
-    "teks": "Menyuruh bawahan mewakili sementara Anda tetap di kantor",
-    "skor": 1
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Pelayanan publik",
-  "pertanyaan": "Anda menemukan kekeliruan data pada dokumen layanan seorang warga akibat kesalahan input rekan Anda. Warga belum menyadarinya. Anda akan ...",
-  "pembahasan": "Kesalahan data harus diperbaiki secara transparan sesuai prosedur dan dengan komunikasi yang tepat, tanpa menutupi atau mempermalukan siapa pun. Jawaban terbaik (skor 5): B.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Memperbaiki data diam-diam sesuai prosedur dan menyampaikan kepada rekan agar lebih teliti",
-    "skor": 4
-   },
-   {
-    "label": "B",
-    "teks": "Memberi tahu rekan dan atasan, segera memperbaiki data sesuai prosedur, lalu menginformasikan kepada warga bila terkait dengan haknya",
-    "skor": 5
-   },
-   {
-    "label": "C",
-    "teks": "Membiarkan karena warga belum menyadarinya",
-    "skor": 2
-   },
-   {
-    "label": "D",
-    "teks": "Menyalahkan rekan di depan warga agar warga memahami sumber kesalahan",
-    "skor": 1
-   },
-   {
-    "label": "E",
-    "teks": "Memberi tahu rekan saja dan menyerahkan perbaikannya kepadanya",
-    "skor": 3
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Teknologi informasi dan komunikasi",
-  "pertanyaan": "Anda menerima surel yang mengaku dari bagian TI dan meminta kata sandi akun kantor Anda dengan alasan pembaruan sistem. Anda ...",
-  "pembahasan": "Kata sandi tidak boleh dibagikan. Melaporkan upaya phishing melindungi organisasi. Jawaban terbaik (skor 5): B.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Tidak membalas dan menghapus surel tersebut",
-    "skor": 4
-   },
-   {
-    "label": "B",
-    "teks": "Tidak membalas, melaporkannya ke bagian TI melalui kanal resmi sebagai upaya phishing, dan mengingatkan rekan",
-    "skor": 5
-   },
-   {
-    "label": "C",
-    "teks": "Menghubungi pengirim untuk memastikan keasliannya lebih dulu",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Mengirim kata sandi karena pengirim tampak resmi",
-    "skor": 2
-   },
-   {
-    "label": "E",
-    "teks": "Menyebarkan surel itu ke grup tanpa penjelasan",
-    "skor": 1
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Jejaring kerja",
-  "pertanyaan": "Ada selisih informasi antara unit Anda dan unit lain yang menyebabkan pekerjaan tertunda. Anda ...",
-  "pembahasan": "Inisiatif berkomunikasi lintas unit mencegah pekerjaan terhambat. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menghubungi unit tersebut, mengklarifikasi informasi, mencatat kesepakatan, dan memberi tahu pihak yang terdampak",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Menunggu unit lain menghubungi lebih dulu",
-    "skor": 3
-   },
-   {
-    "label": "C",
-    "teks": "Menghentikan pekerjaan sampai ada instruksi tertulis",
-    "skor": 1
-   },
-   {
-    "label": "D",
-    "teks": "Meminta atasan menghubungi atasan unit lain",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Menyalahkan unit lain dalam rapat",
-    "skor": 2
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Teknologi informasi dan komunikasi",
-  "pertanyaan": "Anda menemukan dokumen internal bertanda rahasia tersebar di grup percakapan umum yang berisi banyak orang di luar kantor. Anda ...",
-  "pembahasan": "Keamanan informasi menuntut respons cepat dan tidak ikut menyebarkan dokumen rahasia. Jawaban terbaik (skor 5): E.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menyimpan dokumen itu untuk berjaga-jaga",
-    "skor": 2
-   },
-   {
-    "label": "B",
-    "teks": "Membaca isi dokumen untuk memastikan benar rahasia",
-    "skor": 3
-   },
-   {
-    "label": "C",
-    "teks": "Membagikan ke grup lain agar orang lain mengetahui",
-    "skor": 1
-   },
-   {
-    "label": "D",
-    "teks": "Meminta orang yang mengunggah menghapus dokumen",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Segera melapor kepada atasan atau admin grup, meminta dokumen dihapus, dan tidak menyebarkannya lebih lanjut",
-    "skor": 5
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Anti radikalisme",
-  "pertanyaan": "Dalam upacara bendera di kantor, seorang rekan menolak hormat kepada bendera karena alasan keyakinan pribadi. Anda ...",
-  "pembahasan": "Penghormatan pada simbol negara merupakan kewajiban ASN; pendekatan persuasif disertai pelaporan bila perlu. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengajaknya berdialog dengan tenang tentang makna hormat bendera sebagai penghormatan terhadap negara, dan melaporkan ke atasan bila menolak terus-menerus",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Membiarkan agar tidak terjadi keributan",
-    "skor": 3
-   },
-   {
-    "label": "C",
-    "teks": "Mengikuti sikap rekan itu agar kompak",
-    "skor": 1
-   },
-   {
-    "label": "D",
-    "teks": "Menegurnya dengan tegas di depan peserta upacara",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Mengejek rekan itu setelah upacara",
-    "skor": 2
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Sosial budaya",
-  "pertanyaan": "Terjadi perselisihan antarwarga di lingkungan tempat tinggal Anda yang dipicu perbedaan suku. Anda dikenal sebagai ASN. Anda ...",
-  "pembahasan": "ASN sebagai perekat bangsa mengutamakan musyawarah dan keadilan, bukan memihak. Jawaban terbaik (skor 5): C.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mendukung pihak yang berasal dari suku Anda",
-    "skor": 2
-   },
-   {
-    "label": "B",
-    "teks": "Membantu mendamaikan dengan menasihati kedua pihak",
+    "teks": "Menjelaskan syarat layanan secara lisan dengan jelas lalu mempersilakan beliau bertanya bila perlu",
     "skor": 4
    },
    {
     "label": "C",
-    "teks": "Berperan sebagai penengah, mengajak tokoh masyarakat berdialog, dan menyarankan penyelesaian secara musyawarah",
-    "skor": 5
-   },
-   {
-    "label": "D",
-    "teks": "Memprovokasi kelompok lain agar segera selesai",
-    "skor": 1
-   },
-   {
-    "label": "E",
-    "teks": "Tidak ikut campur agar tidak dianggap berpihak",
-    "skor": 3
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Jejaring kerja",
-  "pertanyaan": "Anda berbeda pendapat dengan rekan dalam menentukan metode kerja pada proyek tim. Anda ...",
-  "pembahasan": "Perbedaan pendapat disikapi dengan diskusi berbasis data dan terbuka pada alternatif. Jawaban terbaik (skor 5): C.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menolak bekerja sama sampai pendapat Anda diterima",
-    "skor": 1
-   },
-   {
-    "label": "B",
-    "teks": "Mengikuti pendapat rekan agar suasana tetap nyaman, walaupun Anda ragu",
-    "skor": 3
-   },
-   {
-    "label": "C",
-    "teks": "Memaparkan alasan Anda dengan data, mendengarkan alasan rekan, lalu mencari kesepakatan atau menguji kedua metode secara singkat",
-    "skor": 5
-   },
-   {
-    "label": "D",
-    "teks": "Menyerahkan keputusan kepada atasan tanpa menyampaikan alasan",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Tetap memakai metode Anda tanpa memberi tahu rekan",
+    "teks": "Meminta beliau bertanya kepada petugas lain",
     "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Menjelaskan syarat layanan secara lisan dengan jelas, memberikan lembar syarat tercetak, dan menanyakan apakah ada bagian yang masih kurang jelas",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Mengatakan informasinya sudah ada sehingga tidak perlu dijelaskan lagi",
+    "skor": 1
    }
   ]
  },
  {
   "kategori": "tkp",
   "subkategori": "Profesionalisme",
-  "pertanyaan": "Anda ingin meningkatkan kompetensi tetapi instansi belum menyediakan pelatihan yang Anda butuhkan. Anda ...",
-  "pembahasan": "Pengembangan diri proaktif dan sejalan dengan kebutuhan organisasi mencerminkan profesionalisme. Jawaban terbaik (skor 5): C.",
+  "pertanyaan": "Pekerjaan Anda menumpuk menjelang akhir tahun anggaran dan Anda merasa kelelahan. Anda ...",
+  "pembahasan": "Manajemen prioritas, komunikasi beban kerja, dan menjaga kesehatan menjaga kualitas kinerja. Jawaban terbaik (skor 5): C.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Belajar mandiri dan menunggu kesempatan pelatihan",
-    "skor": 4
-   },
-   {
-    "label": "B",
-    "teks": "Tidak belajar karena tidak diwajibkan",
+    "teks": "Berhenti bekerja sampai pulih sepenuhnya",
     "skor": 1
    },
    {
+    "label": "B",
+    "teks": "Mengurangi kualitas pekerjaan agar cepat selesai",
+    "skor": 3
+   },
+   {
     "label": "C",
-    "teks": "Mengusulkan pelatihan kepada atasan dengan alasan kebutuhan unit, sambil belajar mandiri dari sumber yang terpercaya",
+    "teks": "Menyusun prioritas, menyampaikan beban kepada atasan untuk dibagi ulang bila perlu, dan menjaga kesehatan agar kinerja stabil",
     "skor": 5
    },
    {
     "label": "D",
-    "teks": "Mengikuti pelatihan mahal dengan alasan dinas tanpa izin",
-    "skor": 2
+    "teks": "Menyelesaikan satu per satu tanpa melapor, lembur seperlunya",
+    "skor": 4
    },
    {
     "label": "E",
-    "teks": "Menunggu instansi menawarkan pelatihan",
+    "teks": "Menunda pekerjaan yang paling sulit",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Warga setempat memiliki kebiasaan berbeda dalam menyelesaikan masalah, yaitu melalui musyawarah adat, sedangkan Anda terbiasa dengan prosedur formal. Anda ...",
+  "pembahasan": "Kearifan lokal dihormati selama selaras dengan hukum nasional. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Tidak ikut campur dalam musyawarah itu",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Menyebut kebiasaan itu terbelakang di depan warga",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Meminta warga mengikuti prosedur formal saja",
     "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Menghormati musyawarah adat sebagai kearifan lokal sambil memastikan hasilnya tidak bertentangan dengan hukum yang berlaku",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Menghormati musyawarah adat tanpa memeriksa kesesuaiannya dengan hukum",
+    "skor": 4
    }
   ]
  },
  {
   "kategori": "tkp",
   "subkategori": "Pelayanan publik",
-  "pertanyaan": "Anda diminta atasan menyiapkan informasi layanan untuk dipublikasikan, tetapi data biaya belum final. Anda ...",
-  "pembahasan": "Informasi publik harus akurat dan dapat dipertanggungjawabkan. Memastikan data final lebih penting daripada sekadar cepat. Jawaban terbaik (skor 5): A.",
+  "pertanyaan": "Seorang ibu membawa balita dan tampak kelelahan saat mengantre lama untuk mengurus dokumen. Anda ...",
+  "pembahasan": "Kelompok rentan layak mendapat perhatian khusus sesuai aturan layanan prioritas. Jawaban terbaik (skor 5): B.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Mengonfirmasi data final dengan unit terkait lebih dulu, baru mempublikasikan dengan sumber dan tanggal pembaruan",
+    "teks": "Menyarankan beliau datang lain waktu tanpa balita",
+    "skor": 3
+   },
+   {
+    "label": "B",
+    "teks": "Mempersilakan beliau duduk, menawarkan jalur layanan prioritas sesuai ketentuan kantor, dan melayani dengan ramah",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Mempersilakan beliau duduk dan tetap menunggu giliran",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Memintanya menunggu sampai giliran tiba tanpa perhatian khusus",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Mengabaikan karena semua warga harus mengantre",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Komputer kantor Anda terdampak virus saat Anda membuka berkas unduhan dari flashdisk pribadi. Anda ...",
+  "pembahasan": "Insiden keamanan harus segera diisolasi dan dilaporkan agar tidak menyebar. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Memakai komputer rekan tanpa memberi tahu siapa pun",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Segera memutus jaringan, melaporkan kepada bagian TI, dan tidak memakai flashdisk itu lagi pada perangkat kantor",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Membersihkan sendiri dengan aplikasi yang diunduh dari internet",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Menyembunyikan kejadian agar tidak dimarahi",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Melapor kepada bagian TI sambil tetap bekerja pada komputer yang sama",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Dalam kelompok kerja ada anggota yang berbicara dengan logat daerah yang kental dan sering ditirukan secara bercanda oleh rekan lain. Anda ...",
+  "pembahasan": "Candaan yang merendahkan identitas daerah perlu dihentikan dengan cara yang santun. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengingatkan rekan dengan santun bahwa menirukan logat dapat menyakitkan, lalu mengajak semua menghargai perbedaan cara bicara",
     "skor": 5
    },
    {
     "label": "B",
-    "teks": "Mengambil data dari kantor lain yang tampak mirip",
+    "teks": "Ikut menirukan agar suasana akrab",
     "skor": 1
    },
    {
     "label": "C",
-    "teks": "Menunda tugas sampai data final tanpa memberi tahu atasan",
+    "teks": "Membiarkan karena hanya bercanda",
     "skor": 2
    },
    {
     "label": "D",
-    "teks": "Mempublikasikan data sementara dengan keterangan bahwa dapat berubah",
+    "teks": "Tidak ikut menirukan dan mengalihkan pembicaraan",
     "skor": 4
    },
    {
     "label": "E",
-    "teks": "Mempublikasikan data sesuai perkiraan agar tepat waktu",
+    "teks": "Ikut tertawa sesekali agar tidak dikucilkan",
     "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Rekan senior mengajak Anda pulang lebih awal dan menitipkan tanda tangan kehadiran. Anda ...",
+  "pembahasan": "Disiplin kerja dan kejujuran adalah kewajiban pegawai; menolak pelanggaran dilakukan dengan tegas dan santun. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menolak dengan sopan tanpa penjelasan",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Menolak dengan sopan, mengingatkan bahwa itu pelanggaran disiplin, dan melapor bila terus diminta",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menyetujui dan menitipkan balik ketika berhalangan",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menyetujui sekali ini saja karena segan",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Menolak sambil mengatakan mungkin lain kali",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Dalam tim, seorang rekan mengajukan kritik keras atas hasil kerja Anda di depan umum. Anda ...",
+  "pembahasan": "Menyikapi kritik dengan kepala dingin dan mengambil manfaatnya menjaga hubungan kerja. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Membalas dengan mengkritik hasil kerja rekan itu",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Mendengarkan hingga selesai, mengambil masukan yang berguna, dan meminta waktu berbicara pribadi untuk membahas hal yang kurang tepat",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Mendengarkan lalu memperbaiki hasil kerja tanpa menanggapi",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Membela diri dengan keras di forum yang sama",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Diam dan menghindari rekan itu setelah rapat",
+    "skor": 2
    }
   ]
  },
@@ -757,432 +361,36 @@
  },
  {
   "kategori": "tkp",
-  "subkategori": "Teknologi informasi dan komunikasi",
-  "pertanyaan": "Anda menerima kabar di media sosial yang belum jelas kebenarannya tentang kebijakan instansi, dan banyak teman meneruskannya. Anda ...",
-  "pembahasan": "Literasi digital: verifikasi sebelum membagikan, dan bantu meluruskan informasi keliru. Jawaban terbaik (skor 5): D.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menambahkan dugaan sendiri agar menarik perhatian",
-    "skor": 1
-   },
-   {
-    "label": "B",
-    "teks": "Meneruskan agar teman lain waspada",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Menyebarkan dengan tambahan kalimat 'belum tentu benar'",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Menelusuri kebenarannya di sumber resmi sebelum menyebarkan, dan meluruskan bila ternyata keliru",
-    "skor": 5
-   },
-   {
-    "label": "E",
-    "teks": "Tidak menyebarkan dan tidak ikut berkomentar",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
   "subkategori": "Profesionalisme",
-  "pertanyaan": "Anda ditugaskan memimpin proyek yang melampaui pengalaman Anda. Anda ...",
-  "pembahasan": "Tugas baru dihadapi dengan sikap belajar, konsultasi, dan transparansi progres. Jawaban terbaik (skor 5): B.",
+  "pertanyaan": "Anda mengetahui ada kesalahan dalam kebijakan unit yang diambil atasan, dan Anda memiliki data pendukung. Anda ...",
+  "pembahasan": "Masukan kepada pimpinan disampaikan dengan data dan jalur yang tepat. Jawaban terbaik (skor 5): C.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Menerima tugas namun menyembunyikan keterbatasan",
+    "teks": "Menyabotase pelaksanaan kebijakan",
     "skor": 1
    },
    {
     "label": "B",
-    "teks": "Menerima tugas, memetakan kebutuhan, berkonsultasi dengan ahli atau senior, dan belajar dengan cepat sambil melapor perkembangan",
-    "skor": 5
-   },
-   {
-    "label": "C",
-    "teks": "Menerima tugas tetapi menyerahkan kepada rekan yang lebih berpengalaman",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Menolak tugas karena takut gagal",
-    "skor": 2
-   },
-   {
-    "label": "E",
-    "teks": "Menerima tugas dan mengerjakan sebisanya",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Pelayanan publik",
-  "pertanyaan": "Menjelang jam tutup layanan, masih ada beberapa warga yang mengantre dan berkas mereka lengkap. Sikap Anda adalah ...",
-  "pembahasan": "Warga yang telah datang dan memenuhi syarat berhak dilayani. Memangkas kualitas demi cepat selesai bukan pilihan terbaik. Jawaban terbaik (skor 5): B.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Meninggalkan loket tanpa pemberitahuan",
-    "skor": 1
-   },
-   {
-    "label": "B",
-    "teks": "Tetap melayani semua warga yang sudah mengantre sesuai standar pelayanan, dan memberi tahu atasan bila perlu waktu tambahan",
-    "skor": 5
-   },
-   {
-    "label": "C",
-    "teks": "Melayani sebagian dan meminta sisanya kembali besok",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Menutup loket tepat waktu karena jam kerja sudah habis",
-    "skor": 2
-   },
-   {
-    "label": "E",
-    "teks": "Melayani warga yang sudah mengantre dengan lebih cepat agar tepat jam",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Teknologi informasi dan komunikasi",
-  "pertanyaan": "Aplikasi layanan unit Anda sering lambat pada jam sibuk dan warga mengeluh. Anda ...",
-  "pembahasan": "Pelaporan berbasis data mempercepat perbaikan, dan alternatif sementara menjaga pelayanan. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mencatat pola dan waktu gangguan, melaporkan kepada tim pengembang dengan data, dan menyiapkan alternatif layanan sementara",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Menyalahkan tim pengembang di grup kantor",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Meminta warga bersabar tanpa tindak lanjut",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Melaporkan kepada tim pengembang bahwa aplikasi lambat",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Mengabaikan karena bukan wewenang Anda",
-    "skor": 1
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Teknologi informasi dan komunikasi",
-  "pertanyaan": "Anda diminta membuat presentasi data layanan untuk rapat pimpinan. Anda memiliki data dalam berbagai format. Anda ...",
-  "pembahasan": "Pemanfaatan TIK yang baik menghasilkan informasi akurat, ringkas, dan mudah dipahami pengambil keputusan. Jawaban terbaik (skor 5): D.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menampilkan semua data mentah tanpa ringkasan",
-    "skor": 1
-   },
-   {
-    "label": "B",
-    "teks": "Menyalin data dari presentasi lama agar cepat",
+    "teks": "Mengikuti kebijakan tanpa menyampaikan keberatan",
     "skor": 3
    },
    {
     "label": "C",
-    "teks": "Meminta rekan membuat presentasi tanpa memeriksa hasilnya",
-    "skor": 2
-   },
-   {
-    "label": "D",
-    "teks": "Merapikan data dengan alat yang sesuai, memeriksa keakuratannya, dan menyajikannya dengan grafik yang mudah dipahami",
+    "teks": "Menyampaikan data dan analisis kepada atasan secara santun dalam forum yang tepat, serta menyarankan alternatif",
     "skor": 5
    },
    {
-    "label": "E",
-    "teks": "Menyajikan data apa adanya dalam tabel dan melengkapi dengan penjelasan lisan",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Anti radikalisme",
-  "pertanyaan": "Seorang kenalan mengajak Anda menggalang dana untuk kegiatan yang disebut 'perjuangan' tetapi tujuannya tidak jelas dan menolak pertanggungjawaban. Anda ...",
-  "pembahasan": "Pendanaan yang tidak transparan berpotensi disalahgunakan untuk kegiatan terlarang; waspada dan laporkan bila mencurigakan. Jawaban terbaik (skor 5): E.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menggalang dana dari rekan kantor",
-    "skor": 1
-   },
-   {
-    "label": "B",
-    "teks": "Menyumbang dalam jumlah besar karena tertarik tujuannya",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Menolak sumbangan tanpa menanyakan lebih jauh",
-    "skor": 4
-   },
-   {
     "label": "D",
-    "teks": "Menyumbang sedikit agar tidak dianggap pelit",
-    "skor": 3
-   },
-   {
-    "label": "E",
-    "teks": "Menolak, meminta kejelasan tujuan dan pertanggungjawaban, dan melapor kepada pihak berwenang bila mencurigakan",
-    "skor": 5
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Jejaring kerja",
-  "pertanyaan": "Anda dan rekan lintas unit ditugaskan bersama, tetapi pembagian peran tidak jelas dan menimbulkan tumpang tindih. Anda ...",
-  "pembahasan": "Kejelasan peran dibangun dengan komunikasi dan kesepakatan tertulis yang menghindari tumpang tindih. Jawaban terbaik (skor 5): B.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengerjakan semua yang bisa dikerjakan agar tidak ada yang terlewat",
-    "skor": 3
-   },
-   {
-    "label": "B",
-    "teks": "Mengusulkan rapat singkat untuk menyusun pembagian peran tertulis dan menyepakati penanggung jawab tiap bagian",
-    "skor": 5
-   },
-   {
-    "label": "C",
-    "teks": "Menunggu rekan menentukan pembagian",
-    "skor": 2
-   },
-   {
-    "label": "D",
-    "teks": "Mengerjakan sendiri tanpa berkoordinasi agar cepat",
-    "skor": 1
-   },
-   {
-    "label": "E",
-    "teks": "Menyampaikan kebingungan itu kepada atasan masing-masing",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Profesionalisme",
-  "pertanyaan": "Anda mendapat tawaran pekerjaan sampingan yang bersinggungan dengan tugas di instansi Anda dan berpotensi menimbulkan konflik kepentingan. Anda ...",
-  "pembahasan": "Konflik kepentingan harus dihindari; konsultasi kepada atasan dan unit kepatuhan wajib dilakukan sebelum bertindak. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menolak atau berkonsultasi dengan atasan dan unit kepatuhan, serta tidak menerima sebelum dipastikan tidak melanggar aturan",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Menerima dan mengajak rekan kantor ikut serta",
-    "skor": 1
-   },
-   {
-    "label": "C",
-    "teks": "Menerima dan merahasiakannya dari kantor",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Menerima dan memakai fasilitas kantor agar efisien",
-    "skor": 2
-   },
-   {
-    "label": "E",
-    "teks": "Menerima dengan syarat dikerjakan di luar jam kerja",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Jejaring kerja",
-  "pertanyaan": "Anda anggota baru di unit kerja. Seorang senior tampak enggan membagikan pengetahuannya. Anda ...",
-  "pembahasan": "Jejaring kerja dibangun dengan sikap terbuka, hormat, dan saling membantu, bukan keluhan. Jawaban terbaik (skor 5): D.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengeluh kepada rekan sebaya bahwa senior itu tertutup",
-    "skor": 2
-   },
-   {
-    "label": "B",
-    "teks": "Belajar sendiri dari dokumen yang ada dan tidak mengganggu senior",
-    "skor": 3
-   },
-   {
-    "label": "C",
-    "teks": "Menyalahkan senior bila pekerjaan Anda keliru",
-    "skor": 1
-   },
-   {
-    "label": "D",
-    "teks": "Menunjukkan inisiatif belajar, meminta bimbingan dengan sopan, dan menawarkan bantuan pada pekerjaannya",
-    "skor": 5
-   },
-   {
-    "label": "E",
-    "teks": "Meminta bimbingan dari atasan atau mentor lain",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Profesionalisme",
-  "pertanyaan": "Atasan memberi instruksi lisan yang menurut Anda bertentangan dengan peraturan yang berlaku. Anda ...",
-  "pembahasan": "ASN taat pada peraturan; menyampaikan keberatan secara santun dan meminta arahan tertulis adalah sikap profesional. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menyampaikan dengan sopan peraturan yang relevan, meminta arahan tertulis, dan mengusulkan alternatif yang sesuai aturan",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Menanyakan alasan instruksi tersebut sebelum melaksanakan",
-    "skor": 4
-   },
-   {
-    "label": "C",
-    "teks": "Melaksanakan sambil mengeluh kepada rekan",
-    "skor": 1
-   },
-   {
-    "label": "D",
-    "teks": "Menolak secara terbuka di depan rekan lain",
-    "skor": 2
-   },
-   {
-    "label": "E",
-    "teks": "Melaksanakan karena itu perintah atasan",
-    "skor": 3
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Profesionalisme",
-  "pertanyaan": "Anda menemukan cara kerja yang lebih efisien dalam proses di unit Anda, tetapi belum diatur dalam prosedur resmi. Anda ...",
-  "pembahasan": "Inovasi dilakukan secara tertib: usulkan dengan bukti dan jalankan setelah disetujui. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengusulkan perbaikan kepada atasan dengan data uji coba, dan menerapkannya setelah mendapat persetujuan",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Tidak berbuat apa-apa karena prosedur sudah ada",
-    "skor": 1
-   },
-   {
-    "label": "C",
-    "teks": "Menerapkan sendiri karena lebih efisien",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Menunggu ada yang mengusulkan",
-    "skor": 2
-   },
-   {
-    "label": "E",
-    "teks": "Menerapkan secara terbatas lalu melaporkan hasilnya",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Pelayanan publik",
-  "pertanyaan": "Anda bertugas di loket layanan. Seorang warga lanjut usia datang dengan berkas yang kurang satu lampiran dan tampak kebingungan. Antrean di belakangnya panjang. Sikap Anda adalah ...",
-  "pembahasan": "Pelayanan publik menuntut ramah, jelas, dan membantu kelompok rentan tanpa melanggar aturan. Opsi terbaik memberi solusi nyata dan mudah dipahami. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menjelaskan dengan sabar lampiran yang kurang, memberi daftar tertulis, lalu mempersilakan beliau melengkapinya tanpa mengantre ulang bila memungkinkan",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Menolak berkas tanpa penjelasan karena aturan sudah jelas",
-    "skor": 1
-   },
-   {
-    "label": "C",
-    "teks": "Mengembalikan berkas dan meminta beliau membaca pengumuman persyaratan di dinding",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Menjelaskan lampiran yang kurang secara singkat dan meminta beliau kembali setelah melengkapinya",
+    "teks": "Menyampaikan keberatan secara lisan tanpa data",
     "skor": 4
    },
    {
     "label": "E",
-    "teks": "Meminta petugas lain menangani beliau karena antrean masih panjang",
+    "teks": "Mengkritik kebijakan itu di media sosial",
     "skor": 2
    }
   ]
@@ -1226,35 +434,71 @@
  {
   "kategori": "tkp",
   "subkategori": "Jejaring kerja",
-  "pertanyaan": "Tim Anda sedang mengerjakan laporan bersama dan seorang rekan sering terlambat menyerahkan bagiannya sehingga seluruh pekerjaan mundur. Anda ...",
-  "pembahasan": "Kolaborasi yang baik dimulai dari komunikasi langsung dan solusi bersama sebelum mengeskalasi. Jawaban terbaik (skor 5): B.",
+  "pertanyaan": "Anda memimpin tim kecil dan salah seorang anggota tampak kewalahan dengan beban kerjanya. Anda ...",
+  "pembahasan": "Pemimpin yang baik peka pada kondisi tim dan bertindak proaktif secara adil dan terbuka. Jawaban terbaik (skor 5): C.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Mengingatkan rekan melalui grup tim agar semua mengetahui tenggat",
-    "skor": 4
-   },
-   {
-    "label": "B",
-    "teks": "Berbicara empat mata untuk memahami kendalanya, menawarkan bantuan atau pembagian ulang tugas, dan menyepakati tenggat yang jelas",
-    "skor": 5
-   },
-   {
-    "label": "C",
-    "teks": "Mengabaikan karena itu bukan bagian Anda",
+    "teks": "Mengurangi tugasnya diam-diam tanpa berbicara",
     "skor": 1
    },
    {
+    "label": "B",
+    "teks": "Membiarkan karena setiap orang bertanggung jawab atas tugasnya",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Mengajak berdiskusi untuk memahami kesulitannya, menata ulang prioritas, dan membagi sebagian tugas dengan adil",
+    "skor": 5
+   },
+   {
     "label": "D",
-    "teks": "Melaporkan kepada atasan agar rekan tersebut ditegur",
+    "teks": "Menyediakan waktu bila beliau datang meminta bantuan",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Mengingatkan agar lebih disiplin mengatur waktu",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Dalam grup percakapan keluarga, seorang kerabat membagikan video ceramah yang mengajak membenci pemerintah dan menolak hormat kepada bendera. Anda ...",
+  "pembahasan": "Menangkal paham radikal di lingkungan keluarga dilakukan dengan dialog santun dan tidak menyebarkan konten. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyampaikan dengan santun bahwa isi video bertentangan dengan nilai kebangsaan, mengajak berdiskusi dengan fakta, dan tidak meneruskan video itu",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menyetujui isi video agar tidak berdebat",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Tidak meneruskan video dan tidak menanggapi",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Menanggapi dengan emosi di dalam grup",
     "skor": 3
    },
    {
     "label": "E",
-    "teks": "Mengerjakan bagian rekan itu diam-diam sambil mengeluh kepada teman lain",
+    "teks": "Meneruskan video itu ke grup lain agar dinilai bersama",
     "skor": 2
    }
   ]
@@ -1262,179 +506,287 @@
  {
   "kategori": "tkp",
   "subkategori": "Profesionalisme",
-  "pertanyaan": "Anda diberi tugas oleh atasan dengan tenggat besok, tetapi di tengah jalan menemukan data tidak lengkap. Anda ...",
-  "pembahasan": "Profesional berarti jujur melaporkan kendala dan menawarkan solusi, bukan menyembunyikan atau berasumsi. Jawaban terbaik (skor 5): B.",
+  "pertanyaan": "Anda diberi akses ke data pribadi pegawai untuk keperluan kerja, lalu seorang teman bertanya gaji rekan lain. Anda ...",
+  "pembahasan": "Kerahasiaan data pribadi adalah kewajiban profesional. Jawaban terbaik (skor 5): C.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Menunggu data lengkap meski melewati tenggat",
-    "skor": 2
+    "teks": "Memberikan salinan data agar temannya bisa melihat sendiri",
+    "skor": 1
    },
    {
     "label": "B",
-    "teks": "Segera melapor kepada atasan, mengusulkan solusi atau sumber data alternatif, dan menyelesaikan bagian yang bisa dikerjakan",
-    "skor": 5
+    "teks": "Menyebutkan angka karena temannya dapat dipercaya",
+    "skor": 2
    },
    {
     "label": "C",
-    "teks": "Menyelesaikan tugas dengan data yang ada tanpa memberi tahu",
-    "skor": 3
+    "teks": "Menolak dengan sopan karena data pribadi bersifat rahasia dan hanya dipakai untuk keperluan tugas",
+    "skor": 5
    },
    {
     "label": "D",
-    "teks": "Melengkapi data dengan perkiraan yang masuk akal lalu memberi catatan",
-    "skor": 4
+    "teks": "Menyarankan teman bertanya langsung kepada yang bersangkutan sambil memberi petunjuk",
+    "skor": 3
    },
    {
     "label": "E",
-    "teks": "Mengembalikan tugas kepada atasan",
-    "skor": 1
+    "teks": "Menjawab secara umum tanpa menyebut nama",
+    "skor": 4
    }
   ]
  },
  {
   "kategori": "tkp",
-  "subkategori": "Anti radikalisme",
-  "pertanyaan": "Seseorang yang baru Anda kenal mengajak Anda mengikuti pengajian tertutup yang menolak sistem pemerintahan dan mengkafirkan pihak lain. Anda ...",
-  "pembahasan": "Menolak paham intoleran dan melapor bila ada indikasi kekerasan melindungi diri dan masyarakat. Jawaban terbaik (skor 5): E.",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Seorang rekan membutuhkan bantuan menyelesaikan pekerjaan mendesak, padahal pekerjaan Anda sendiri juga hampir tenggat. Anda ...",
+  "pembahasan": "Kerja sama bukan berarti mengorbankan tanggung jawab sendiri; kelola prioritas dan tetap bantu. Jawaban terbaik (skor 5): A.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Mengajak rekan kantor ikut serta",
-    "skor": 1
+    "teks": "Menilai prioritas, menyelesaikan bagian Anda yang paling mendesak, lalu membantu rekan sesuai kemampuan atau mencarikan bantuan lain",
+    "skor": 5
    },
    {
     "label": "B",
-    "teks": "Menolak dengan sopan dan menjauhi orang tersebut",
-    "skor": 4
-   },
-   {
-    "label": "C",
-    "teks": "Menerima ajakan karena tidak enak menolak",
+    "teks": "Menolak karena fokus pada pekerjaan sendiri",
     "skor": 2
    },
    {
+    "label": "C",
+    "teks": "Membantu rekan sepenuhnya dan menyampaikan kepada atasan bila pekerjaan Anda terlambat",
+    "skor": 4
+   },
+   {
     "label": "D",
-    "teks": "Datang sekali untuk melihat isinya",
+    "teks": "Meminta rekan bertanya kepada orang lain",
     "skor": 3
    },
    {
     "label": "E",
-    "teks": "Menolak dengan tegas, menjelaskan alasan menjaga persatuan, dan melaporkan ajakan itu kepada aparat bila mengarah pada kekerasan",
-    "skor": 5
+    "teks": "Berpura-pura sibuk agar tidak dimintai tolong",
+    "skor": 1
    }
   ]
  },
  {
   "kategori": "tkp",
   "subkategori": "Profesionalisme",
-  "pertanyaan": "Anda melakukan kesalahan yang membuat laporan unit berisi angka keliru dan sudah dikirim ke pimpinan. Anda ...",
-  "pembahasan": "Akuntabilitas berarti mengakui kesalahan, memperbaiki, dan mencegah pengulangan. Jawaban terbaik (skor 5): A.",
+  "pertanyaan": "Anda ditugaskan memimpin proyek yang melampaui pengalaman Anda. Anda ...",
+  "pembahasan": "Tugas baru dihadapi dengan sikap belajar, konsultasi, dan transparansi progres. Jawaban terbaik (skor 5): B.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Segera mengakui kepada atasan, menyampaikan data yang benar, dan memperbaiki prosedur agar tidak berulang",
+    "teks": "Menerima tugas namun menyembunyikan keterbatasan",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Menerima tugas, memetakan kebutuhan, berkonsultasi dengan ahli atau senior, dan belajar dengan cepat sambil melapor perkembangan",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menerima tugas tetapi menyerahkan kepada rekan yang lebih berpengalaman",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Menolak tugas karena takut gagal",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Menerima tugas dan mengerjakan sebisanya",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Aplikasi layanan unit Anda sering lambat pada jam sibuk dan warga mengeluh. Anda ...",
+  "pembahasan": "Pelaporan berbasis data mempercepat perbaikan, dan alternatif sementara menjaga pelayanan. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mencatat pola dan waktu gangguan, melaporkan kepada tim pengembang dengan data, dan menyiapkan alternatif layanan sementara",
     "skor": 5
    },
    {
     "label": "B",
-    "teks": "Menunggu apakah ada yang menyadari kesalahan itu",
-    "skor": 3
+    "teks": "Menyalahkan tim pengembang di grup kantor",
+    "skor": 2
    },
    {
     "label": "C",
-    "teks": "Menarik laporan diam-diam",
-    "skor": 1
+    "teks": "Meminta warga bersabar tanpa tindak lanjut",
+    "skor": 3
    },
    {
     "label": "D",
-    "teks": "Memperbaiki laporan dan mengirim ulang dengan catatan revisi tanpa menjelaskan sebabnya",
+    "teks": "Melaporkan kepada tim pengembang bahwa aplikasi lambat",
     "skor": 4
    },
    {
     "label": "E",
-    "teks": "Menyalahkan sistem atau rekan yang menyediakan data",
+    "teks": "Mengabaikan karena bukan wewenang Anda",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda menerima tautan dari nomor tak dikenal yang mengaku sebagai pejabat dan meminta Anda mengisi data pribadi di formulir. Anda ...",
+  "pembahasan": "Waspada terhadap penipuan digital: verifikasi lewat kanal resmi dan laporkan. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengisi data lengkap karena mengaku pejabat",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Mengisi sebagian data yang tidak penting",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Tidak membuka tautan dan menghapus pesan",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Tidak membuka tautan, memeriksa kebenarannya lewat kanal resmi instansi, dan memblokir serta melaporkan nomor itu",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Menanyakan kebenarannya kepada pengirim melalui nomor yang sama",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Anda mendapat pujian atasan atas hasil kerja tim, padahal sebagian besar ide berasal dari rekan Anda. Anda ...",
+  "pembahasan": "Integritas dan kerja sama menuntut pengakuan atas kontribusi orang lain. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengucapkan terima kasih dan menyebut bahwa itu hasil kerja tim",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Menyampaikan kepada atasan bahwa keberhasilan itu hasil kerja tim dan menyebutkan kontribusi rekan yang memberi ide",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menerima pujian dan menambahkan bahwa Anda yang paling berperan",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Menyalahkan rekan lain bila hasil tim di kemudian hari kurang baik",
+    "skor": 1
+   },
+   {
+    "label": "E",
+    "teks": "Menerima pujian tanpa komentar",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Anda ditugaskan membimbing pegawai baru yang lambat memahami pekerjaan. Anda ...",
+  "pembahasan": "Membimbing rekan baru dengan sabar dan terstruktur membangun tim yang kuat. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengerjakan semua tugas pegawai baru itu sendiri",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Memberi tugas yang mudah saja agar tidak salah",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Menjelaskan tugasnya dengan jelas lalu memantau hasilnya",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Menyusun panduan kerja sederhana, membimbing langkah demi langkah dengan sabar, dan memberi umpan balik secara berkala",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Mengeluh kepada atasan karena pegawai baru itu lambat",
     "skor": 2
    }
   ]
  },
  {
   "kategori": "tkp",
-  "subkategori": "Anti radikalisme",
-  "pertanyaan": "Dalam rapat internal, seorang peserta menyatakan bahwa hanya satu kelompok yang pantas memimpin instansi karena alasan keyakinan. Anda ...",
-  "pembahasan": "Prinsip meritokrasi dan antidiskriminasi menjadi dasar manajemen ASN, dan harus ditegaskan bila dilanggar. Jawaban terbaik (skor 5): D.",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Seorang rekan baru berpakaian adat pada hari tertentu sesuai kebiasaan daerahnya, dan beberapa rekan berbisik mencibir. Anda ...",
+  "pembahasan": "Menghargai ekspresi budaya rekan dan memperkuat sikap saling menghormati adalah wujud kebinekaan. Jawaban terbaik (skor 5): C.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Menyampaikan keberatan secara singkat dan meminta rapat melanjutkan agenda",
-    "skor": 4
-   },
-   {
-    "label": "B",
-    "teks": "Mencatat ucapan tersebut dan membicarakannya sesudah rapat",
+    "teks": "Membiarkan karena itu urusan mereka",
     "skor": 3
    },
    {
-    "label": "C",
-    "teks": "Menyetujui agar tidak dianggap berbeda",
+    "label": "B",
+    "teks": "Meminta rekan itu berpakaian seragam agar tidak jadi omongan",
     "skor": 1
    },
    {
+    "label": "C",
+    "teks": "Menyapa dengan ramah dan menanyakan makna pakaiannya, serta mengajak rekan lain menghargai keberagaman budaya",
+    "skor": 5
+   },
+   {
     "label": "D",
-    "teks": "Menyampaikan bahwa pengangkatan didasarkan pada kompetensi dan aturan tanpa diskriminasi, sesuai UUD 1945 dan UU ASN",
-    "skor": 5
-   },
-   {
-    "label": "E",
-    "teks": "Diam agar rapat tetap kondusif",
-    "skor": 2
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Anti radikalisme",
-  "pertanyaan": "Anda menerima pesan berantai yang mengajak melakukan aksi kekerasan terhadap kelompok yang berbeda keyakinan di daerah Anda. Anda ...",
-  "pembahasan": "Ajakan kekerasan harus dilaporkan kepada aparat dan tidak boleh disebarkan. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Tidak meneruskan, segera melaporkan kepada kepolisian, dan menenangkan lingkungan dengan informasi yang benar",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Tidak meneruskan dan menghapus pesan",
+    "teks": "Tidak ikut mencibir dan bersikap biasa saja",
     "skor": 4
    },
    {
-    "label": "C",
-    "teks": "Menanyakan kebenarannya kepada pengirim",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Ikut menyebarkan ajakan itu",
-    "skor": 1
-   },
-   {
     "label": "E",
-    "teks": "Meneruskan ke grup keluarga agar waspada",
+    "teks": "Ikut berbisik agar tidak dikucilkan",
     "skor": 2
    }
   ]
@@ -1442,35 +794,35 @@
  {
   "kategori": "tkp",
   "subkategori": "Teknologi informasi dan komunikasi",
-  "pertanyaan": "Kantor mengadakan pelatihan penggunaan aplikasi baru pada hari yang sama dengan jadwal pekerjaan rutin Anda. Anda ...",
-  "pembahasan": "Pengembangan kompetensi digital diprioritaskan dengan mengatur ulang pekerjaan agar pelatihan diikuti penuh. Jawaban terbaik (skor 5): D.",
+  "pertanyaan": "Aplikasi pencatatan kerja kantor mengalami galat sehingga data hari ini tidak tersimpan. Anda ...",
+  "pembahasan": "Gangguan sistem dihadapi dengan pelaporan dan pencatatan sementara agar pekerjaan tetap terdokumentasi. Jawaban terbaik (skor 5): B.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Tidak mengikuti karena merasa sudah paham",
+    "teks": "Tidak mencatat pekerjaan hari itu",
     "skor": 1
    },
    {
     "label": "B",
-    "teks": "Mewakilkan kepada rekan yang lebih muda",
-    "skor": 3
+    "teks": "Melaporkan galat kepada tim TI beserta bukti, mencatat pekerjaan secara manual sementara, dan memasukkan ulang data setelah aplikasi pulih",
+    "skor": 5
    },
    {
     "label": "C",
-    "teks": "Mengikuti pelatihan setengah hari saja",
+    "teks": "Meminta rekan mencatatkan pekerjaan Anda",
     "skor": 2
    },
    {
     "label": "D",
-    "teks": "Mengatur ulang pekerjaan rutin agar dapat mengikuti pelatihan penuh, lalu menerapkan ilmunya di unit",
-    "skor": 5
+    "teks": "Mengisi data dari ingatan tanpa mencatat sementara",
+    "skor": 3
    },
    {
     "label": "E",
-    "teks": "Mengikuti pelatihan sambil menyelesaikan pekerjaan rutin",
+    "teks": "Melaporkan galat dan menunggu aplikasi pulih",
     "skor": 4
    }
   ]
@@ -1478,36 +830,216 @@
  {
   "kategori": "tkp",
   "subkategori": "Profesionalisme",
-  "pertanyaan": "Rekan senior mengajak Anda pulang lebih awal dan menitipkan tanda tangan kehadiran. Anda ...",
-  "pembahasan": "Disiplin kerja dan kejujuran adalah kewajiban pegawai; menolak pelanggaran dilakukan dengan tegas dan santun. Jawaban terbaik (skor 5): B.",
+  "pertanyaan": "Atasan baru Anda memiliki gaya kerja yang jauh berbeda dari atasan sebelumnya. Anda ...",
+  "pembahasan": "Adaptif terhadap perubahan kepemimpinan, dengan komunikasi yang efektif, menunjukkan profesionalisme. Jawaban terbaik (skor 5): E.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Menolak dengan sopan tanpa penjelasan",
+    "teks": "Mengikuti arahan atasan tanpa banyak bertanya",
     "skor": 4
    },
    {
     "label": "B",
-    "teks": "Menolak dengan sopan, mengingatkan bahwa itu pelanggaran disiplin, dan melapor bila terus diminta",
+    "teks": "Meminta dipindahkan ke unit lain",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Membandingkan atasan baru dengan atasan lama di depan rekan",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Terus memakai pola lama karena sudah terbukti",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Mempelajari gaya dan harapan atasan, menyesuaikan cara komunikasi, dan tetap menjaga kualitas serta standar kerja",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Instansi mitra mengirim surat resmi yang memerlukan jawaban cepat, tetapi atasan Anda sedang dinas luar. Anda ...",
+  "pembahasan": "Kelancaran koordinasi antarinstansi dijaga lewat jalur wewenang yang tepat dan respons cepat. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyiapkan konsep jawaban dan menunggu atasan kembali",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Menghubungi atasan melalui sarana komunikasi resmi atau pejabat pengganti yang berwenang, lalu menyiapkan konsep jawaban untuk disetujui",
     "skor": 5
    },
    {
     "label": "C",
-    "teks": "Menyetujui dan menitipkan balik ketika berhalangan",
-    "skor": 1
+    "teks": "Memberi tahu mitra bahwa atasan tidak ada tanpa tindak lanjut",
+    "skor": 2
    },
    {
     "label": "D",
-    "teks": "Menyetujui sekali ini saja karena segan",
+    "teks": "Mengabaikan surat sampai atasan kembali",
+    "skor": 1
+   },
+   {
+    "label": "E",
+    "teks": "Menjawab sendiri dengan perkiraan sikap atasan",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Warga di lingkungan Anda mengadakan kegiatan adat yang bertepatan dengan hari kerja, dan Anda diundang sebagai tokoh masyarakat. Anda ...",
+  "pembahasan": "Kepedulian sosial dijalankan tanpa mengabaikan disiplin kerja dan prosedur izin. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Hadir setelah jam kerja berakhir",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Meninggalkan pekerjaan tanpa izin demi hadir",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Meminta maaf dan mengirim wakil keluarga",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Tidak hadir tanpa memberi kabar",
     "skor": 2
    },
    {
     "label": "E",
-    "teks": "Menolak sambil mengatakan mungkin lain kali",
+    "teks": "Mengatur izin dengan atasan sesuai aturan agar dapat hadir sebentar, lalu memberi dukungan dan menghormati jalannya acara",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Anda menemukan kekeliruan data pada dokumen layanan seorang warga akibat kesalahan input rekan Anda. Warga belum menyadarinya. Anda akan ...",
+  "pembahasan": "Kesalahan data harus diperbaiki secara transparan sesuai prosedur dan dengan komunikasi yang tepat, tanpa menutupi atau mempermalukan siapa pun. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Memperbaiki data diam-diam sesuai prosedur dan menyampaikan kepada rekan agar lebih teliti",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Memberi tahu rekan dan atasan, segera memperbaiki data sesuai prosedur, lalu menginformasikan kepada warga bila terkait dengan haknya",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Membiarkan karena warga belum menyadarinya",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Menyalahkan rekan di depan warga agar warga memahami sumber kesalahan",
+    "skor": 1
+   },
+   {
+    "label": "E",
+    "teks": "Memberi tahu rekan saja dan menyerahkan perbaikannya kepadanya",
     "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Anda bertugas di unit pengaduan dan menerima laporan warga tentang jalan berlubang yang bukan wewenang unit Anda. Anda ...",
+  "pembahasan": "Pengaduan harus ditindaklanjuti dan pelapor diberi kejelasan, walaupun wewenang berada di unit lain. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mencatat laporan dan meneruskannya ke unit berwenang tanpa memberi tahu pelapor",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Menyimpan laporan sampai ada pertanyaan dari atasan",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Menolak laporan karena bukan wewenang unit Anda",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menyarankan pelapor melapor langsung ke unit yang berwenang",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Mencatat laporan dengan lengkap, meneruskannya ke unit yang berwenang, dan memberi tahu pelapor tindak lanjut serta nomor tiket laporannya",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Seorang kenalan mengajak Anda menggalang dana untuk kegiatan yang disebut 'perjuangan' tetapi tujuannya tidak jelas dan menolak pertanggungjawaban. Anda ...",
+  "pembahasan": "Pendanaan yang tidak transparan berpotensi disalahgunakan untuk kegiatan terlarang; waspada dan laporkan bila mencurigakan. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menggalang dana dari rekan kantor",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Menyumbang dalam jumlah besar karena tertarik tujuannya",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Menolak sumbangan tanpa menanyakan lebih jauh",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Menyumbang sedikit agar tidak dianggap pelit",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Menolak, meminta kejelasan tujuan dan pertanggungjawaban, dan melapor kepada pihak berwenang bila mencurigakan",
+    "skor": 5
    }
   ]
  },
@@ -1550,258 +1082,6 @@
  {
   "kategori": "tkp",
   "subkategori": "Pelayanan publik",
-  "pertanyaan": "Warga mengajukan keluhan tertulis tentang lambatnya pelayanan di unit Anda. Keluhan itu sebagian benar. Anda ...",
-  "pembahasan": "Keluhan adalah masukan perbaikan. Respons terbaik menindaklanjuti dan mengomunikasikan hasilnya kepada pelapor. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengucapkan terima kasih, menelaah penyebabnya bersama tim, memperbaiki proses, dan menyampaikan tindak lanjut kepada warga",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Menyimpan keluhan sebagai arsip",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Mencari tahu siapa pelapor dan meminta klarifikasi",
-    "skor": 1
-   },
-   {
-    "label": "D",
-    "teks": "Membalas dengan penjelasan bahwa unit sudah bekerja sesuai standar",
-    "skor": 3
-   },
-   {
-    "label": "E",
-    "teks": "Menelaah penyebab bersama tim dan memperbaikinya tanpa memberi tahu warga",
-    "skor": 4
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Teknologi informasi dan komunikasi",
-  "pertanyaan": "Seorang rekan menggunakan akun media sosial pribadinya untuk menyebarkan informasi internal yang belum boleh dipublikasikan. Anda ...",
-  "pembahasan": "Pembatasan informasi internal harus dijaga; langkah persuasif dilanjutkan eskalasi bila perlu. Jawaban terbaik (skor 5): E.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menyarankan rekan lain menegurnya",
-    "skor": 3
-   },
-   {
-    "label": "B",
-    "teks": "Membiarkan karena itu akun pribadinya",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Mengingatkan rekan secara pribadi saja",
-    "skor": 4
-   },
-   {
-    "label": "D",
-    "teks": "Ikut menyebarkan agar informasi lebih luas",
-    "skor": 1
-   },
-   {
-    "label": "E",
-    "teks": "Mengingatkan rekan secara pribadi tentang aturan kerahasiaan, dan melapor kepada atasan bila tidak dihentikan",
-    "skor": 5
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Teknologi informasi dan komunikasi",
-  "pertanyaan": "Anda menggunakan perangkat pribadi untuk bekerja dari rumah dan harus mengakses data pelayanan. Anda ...",
-  "pembahasan": "Pengamanan data layanan mewajibkan kepatuhan pada kebijakan keamanan informasi. Jawaban terbaik (skor 5): D.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengakses lewat akun resmi dan menghapus berkas setelah selesai",
-    "skor": 4
-   },
-   {
-    "label": "B",
-    "teks": "Menyimpan salinan data di perangkat pribadi untuk berjaga-jaga",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Mengakses melalui jaringan umum karena cepat",
-    "skor": 3
-   },
-   {
-    "label": "D",
-    "teks": "Mengikuti kebijakan keamanan kantor, memakai koneksi aman, dan tidak menyimpan data di perangkat pribadi",
-    "skor": 5
-   },
-   {
-    "label": "E",
-    "teks": "Membagikan akun kantor kepada keluarga agar membantu",
-    "skor": 1
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Sosial budaya",
-  "pertanyaan": "Anda ditempatkan di daerah dengan adat dan bahasa yang berbeda dari daerah asal Anda. Sikap Anda adalah ...",
-  "pembahasan": "ASN berperan menyatukan; adaptasi terhadap budaya setempat dilakukan dengan terbuka dan hormat. Jawaban terbaik (skor 5): E.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Tetap berpegang pada kebiasaan sendiri dan meminta masyarakat memahami",
-    "skor": 3
-   },
-   {
-    "label": "B",
-    "teks": "Mengeluh dan meminta dipindahkan",
-    "skor": 1
-   },
-   {
-    "label": "C",
-    "teks": "Bergaul hanya dengan sesama pendatang",
-    "skor": 2
-   },
-   {
-    "label": "D",
-    "teks": "Menyesuaikan diri seperlunya dalam pekerjaan",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Mempelajari adat dan bahasa setempat, menyesuaikan diri dengan sopan, dan membangun hubungan baik dengan masyarakat",
-    "skor": 5
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Pelayanan publik",
-  "pertanyaan": "Penyandang disabilitas netra datang ke kantor Anda untuk mengurus dokumen tetapi tidak ada petugas khusus. Anda ...",
-  "pembahasan": "Pelayanan publik harus inklusif. Pendampingan langsung dan perbaikan layanan ke depan menunjukkan kepedulian. Jawaban terbaik (skor 5): B.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Mengatakan layanan belum bisa diberikan",
-    "skor": 1
-   },
-   {
-    "label": "B",
-    "teks": "Mendampingi langsung, membacakan formulir, membantu mengisinya, dan mencatat masukan agar kantor menyediakan layanan ramah disabilitas",
-    "skor": 5
-   },
-   {
-    "label": "C",
-    "teks": "Mendampingi dan membacakan formulir, lalu meminta beliau mengisi sendiri",
-    "skor": 4
-   },
-   {
-    "label": "D",
-    "teks": "Meminta beliau menunggu hingga ada petugas yang berpengalaman",
-    "skor": 2
-   },
-   {
-    "label": "E",
-    "teks": "Memintanya membawa pendamping dari keluarga pada kunjungan berikutnya",
-    "skor": 3
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Jejaring kerja",
-  "pertanyaan": "Dalam rapat, rekan Anda menyampaikan gagasan yang menurut Anda kurang matang. Anda ...",
-  "pembahasan": "Kritik yang baik bersifat konstruktif dan menghargai orang yang menyampaikan gagasan. Jawaban terbaik (skor 5): C.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Memotong pembicaraannya dan menyampaikan gagasan sendiri",
-    "skor": 1
-   },
-   {
-    "label": "B",
-    "teks": "Menertawakan gagasan itu agar rapat lebih santai",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Menyampaikan apresiasi atas inisiatifnya, lalu mengajukan pertanyaan dan masukan konstruktif untuk menyempurnakannya",
-    "skor": 5
-   },
-   {
-    "label": "D",
-    "teks": "Menyampaikan keberatan secara singkat dan tegas di forum",
-    "skor": 4
-   },
-   {
-    "label": "E",
-    "teks": "Diam saja lalu membicarakan kekurangannya sesudah rapat",
-    "skor": 3
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Jejaring kerja",
-  "pertanyaan": "Seorang rekan membutuhkan bantuan menyelesaikan pekerjaan mendesak, padahal pekerjaan Anda sendiri juga hampir tenggat. Anda ...",
-  "pembahasan": "Kerja sama bukan berarti mengorbankan tanggung jawab sendiri; kelola prioritas dan tetap bantu. Jawaban terbaik (skor 5): A.",
-  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
-  "sumber_url": null,
-  "lisensi": "Soal asli SICASN",
-  "opsi": [
-   {
-    "label": "A",
-    "teks": "Menilai prioritas, menyelesaikan bagian Anda yang paling mendesak, lalu membantu rekan sesuai kemampuan atau mencarikan bantuan lain",
-    "skor": 5
-   },
-   {
-    "label": "B",
-    "teks": "Menolak karena fokus pada pekerjaan sendiri",
-    "skor": 2
-   },
-   {
-    "label": "C",
-    "teks": "Membantu rekan sepenuhnya dan menyampaikan kepada atasan bila pekerjaan Anda terlambat",
-    "skor": 4
-   },
-   {
-    "label": "D",
-    "teks": "Meminta rekan bertanya kepada orang lain",
-    "skor": 3
-   },
-   {
-    "label": "E",
-    "teks": "Berpura-pura sibuk agar tidak dimintai tolong",
-    "skor": 1
-   }
-  ]
- },
- {
-  "kategori": "tkp",
-  "subkategori": "Pelayanan publik",
   "pertanyaan": "Seorang pemohon izin marah-marah karena prosesnya dianggap lambat, padahal berkasnya belum lengkap. Tindakan Anda adalah ...",
   "pembahasan": "Menghadapi pemohon emosional memerlukan ketenangan dan solusi berbasis fakta. Membalas dengan emosi atau melempar tanggung jawab merusak kualitas layanan. Jawaban terbaik (skor 5): A.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
@@ -1837,36 +1117,396 @@
  },
  {
   "kategori": "tkp",
-  "subkategori": "Sosial budaya",
-  "pertanyaan": "Sebuah kegiatan sosial di desa binaan kantor Anda mengundang tokoh adat setempat yang memiliki tata cara khusus penyambutan tamu. Anda ...",
-  "pembahasan": "Menghormati adat setempat menunjukkan sikap menghargai kearifan lokal. Jawaban terbaik (skor 5): C.",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Seorang rekan mengajak Anda ikut diskusi tertutup yang menyebut Pancasila sebagai produk kafir dan menyarankan mengganti dasar negara. Anda ...",
+  "pembahasan": "Setia kepada Pancasila dan NKRI adalah kewajiban ASN; ajakan yang bertentangan harus ditolak dan dilaporkan bila perlu. Jawaban terbaik (skor 5): C.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Menertawakan tata cara itu karena dianggap kuno",
-    "skor": 1
-   },
-   {
-    "label": "B",
-    "teks": "Mengikuti dengan setengah hati karena bukan kebiasaan Anda",
+    "teks": "Hadir sekali untuk mendengarkan lalu memutuskan",
     "skor": 3
    },
    {
+    "label": "B",
+    "teks": "Menolak dengan sopan dan menghindari rekan itu",
+    "skor": 4
+   },
+   {
     "label": "C",
-    "teks": "Menanyakan tata cara kepada panitia atau tokoh adat, mengikuti dengan hormat, dan menjelaskannya kepada rekan yang belum paham",
+    "teks": "Menolak dengan tegas, menjelaskan bahwa Pancasila adalah kesepakatan bangsa, dan melapor kepada atasan atau pihak berwenang bila ajakan berlanjut",
     "skor": 5
    },
    {
     "label": "D",
-    "teks": "Menolak ikut bagian penyambutan",
+    "teks": "Menyetujui agar hubungan kerja tetap baik",
+    "skor": 1
+   },
+   {
+    "label": "E",
+    "teks": "Menolak tanpa memberi alasan",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Dalam rapat internal, seorang peserta menyatakan bahwa hanya satu kelompok yang pantas memimpin instansi karena alasan keyakinan. Anda ...",
+  "pembahasan": "Prinsip meritokrasi dan antidiskriminasi menjadi dasar manajemen ASN, dan harus ditegaskan bila dilanggar. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyampaikan keberatan secara singkat dan meminta rapat melanjutkan agenda",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Mencatat ucapan tersebut dan membicarakannya sesudah rapat",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Menyetujui agar tidak dianggap berbeda",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menyampaikan bahwa pengangkatan didasarkan pada kompetensi dan aturan tanpa diskriminasi, sesuai UUD 1945 dan UU ASN",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Diam agar rapat tetap kondusif",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda menemukan dokumen internal bertanda rahasia tersebar di grup percakapan umum yang berisi banyak orang di luar kantor. Anda ...",
+  "pembahasan": "Keamanan informasi menuntut respons cepat dan tidak ikut menyebarkan dokumen rahasia. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyimpan dokumen itu untuk berjaga-jaga",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Membaca isi dokumen untuk memastikan benar rahasia",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Membagikan ke grup lain agar orang lain mengetahui",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Meminta orang yang mengunggah menghapus dokumen",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Segera melapor kepada atasan atau admin grup, meminta dokumen dihapus, dan tidak menyebarkannya lebih lanjut",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda mengelola akun media sosial resmi unit dan menerima komentar kasar dari warga tentang layanan. Anda ...",
+  "pembahasan": "Komunikasi digital resmi harus sopan, responsif, dan menindaklanjuti keluhan. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Membalas dengan nada yang sama kerasnya",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Menanggapi dengan sopan dan menjelaskan aturan layanan",
+    "skor": 4
+   },
+   {
+    "label": "C",
+    "teks": "Memblokir warga itu tanpa menindaklanjuti",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menghapus komentar kasar tanpa menanggapi",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Menanggapi dengan sopan, meminta rincian masalah lewat pesan langsung, dan menindaklanjuti keluhan itu ke unit terkait",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda diminta membuat laporan menggunakan aplikasi pengolah data yang belum pernah Anda pakai, dengan tenggat dua hari. Anda ...",
+  "pembahasan": "Mau belajar dan memakai sumber yang tepat menunjukkan adaptasi terhadap teknologi baru. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mempelajari aplikasi sambil bekerja dan melapor bila terlambat",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Menolak tugas karena belum bisa memakai aplikasi",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Meminta rekan mengerjakan seluruhnya",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Menggunakan aplikasi lain yang Anda kuasai tanpa memberi tahu atasan",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Mempelajari fitur dasar lewat panduan resmi, mencoba dengan data kecil, meminta bantuan rekan yang mahir bila buntu, lalu menyelesaikan laporan tepat waktu",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Anda menemukan cara kerja yang lebih efisien dalam proses di unit Anda, tetapi belum diatur dalam prosedur resmi. Anda ...",
+  "pembahasan": "Inovasi dilakukan secara tertib: usulkan dengan bukti dan jalankan setelah disetujui. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengusulkan perbaikan kepada atasan dengan data uji coba, dan menerapkannya setelah mendapat persetujuan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Tidak berbuat apa-apa karena prosedur sudah ada",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Menerapkan sendiri karena lebih efisien",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Menunggu ada yang mengusulkan",
     "skor": 2
    },
    {
     "label": "E",
-    "teks": "Mengikuti rombongan dan meniru yang dilakukan orang lain",
+    "teks": "Menerapkan secara terbatas lalu melaporkan hasilnya",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda diminta membuat presentasi data layanan untuk rapat pimpinan. Anda memiliki data dalam berbagai format. Anda ...",
+  "pembahasan": "Pemanfaatan TIK yang baik menghasilkan informasi akurat, ringkas, dan mudah dipahami pengambil keputusan. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menampilkan semua data mentah tanpa ringkasan",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Menyalin data dari presentasi lama agar cepat",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Meminta rekan membuat presentasi tanpa memeriksa hasilnya",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Merapikan data dengan alat yang sesuai, memeriksa keakuratannya, dan menyajikannya dengan grafik yang mudah dipahami",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Menyajikan data apa adanya dalam tabel dan melengkapi dengan penjelasan lisan",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Rekan Anda yang beragama berbeda sedang berpuasa dan merasa tidak nyaman karena rekan lain makan di depan mejanya. Anda ...",
+  "pembahasan": "Menghormati ibadah rekan dengan cara santun menjaga keharmonisan di tempat kerja. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyindir rekan yang berpuasa agar tidak sensitif",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Menyarankan rekan yang berpuasa menyesuaikan diri",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Membiarkan karena itu hal biasa",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Makan di tempat lain tanpa menjelaskan kepada rekan lain",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Mengajak rekan lain makan di ruang istirahat dan menyampaikan alasan dengan santun agar saling menghormati",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda diminta atasan membuat rekap data dari beberapa berkas dengan format berbeda. Anda ...",
+  "pembahasan": "Rekap data yang baik akurat, konsisten, dan dapat ditelusuri sumbernya. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyalin data tanpa memeriksa kesesuaiannya",
+    "skor": 3
+   },
+   {
+    "label": "B",
+    "teks": "Menyalin data ke satu berkas lalu memeriksa angka besarnya saja",
+    "skor": 4
+   },
+   {
+    "label": "C",
+    "teks": "Mengisi rekap dengan perkiraan agar cepat",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menyeragamkan format dengan alat yang sesuai, memeriksa kesesuaian data sumber, dan mencantumkan sumber data pada rekap",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Meminta rekan membuat rekap tanpa arahan",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Anda berbeda pendapat dengan rekan dalam menentukan metode kerja pada proyek tim. Anda ...",
+  "pembahasan": "Perbedaan pendapat disikapi dengan diskusi berbasis data dan terbuka pada alternatif. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menolak bekerja sama sampai pendapat Anda diterima",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Mengikuti pendapat rekan agar suasana tetap nyaman, walaupun Anda ragu",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Memaparkan alasan Anda dengan data, mendengarkan alasan rekan, lalu mencari kesepakatan atau menguji kedua metode secara singkat",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Menyerahkan keputusan kepada atasan tanpa menyampaikan alasan",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Tetap memakai metode Anda tanpa memberi tahu rekan",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Anda anggota baru di unit kerja. Seorang senior tampak enggan membagikan pengetahuannya. Anda ...",
+  "pembahasan": "Jejaring kerja dibangun dengan sikap terbuka, hormat, dan saling membantu, bukan keluhan. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengeluh kepada rekan sebaya bahwa senior itu tertutup",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Belajar sendiri dari dokumen yang ada dan tidak mengganggu senior",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Menyalahkan senior bila pekerjaan Anda keliru",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menunjukkan inisiatif belajar, meminta bimbingan dengan sopan, dan menawarkan bantuan pada pekerjaannya",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Meminta bimbingan dari atasan atau mentor lain",
     "skor": 4
    }
   ]
@@ -1874,36 +1514,180 @@
  {
   "kategori": "tkp",
   "subkategori": "Profesionalisme",
-  "pertanyaan": "Pekerjaan Anda menumpuk menjelang akhir tahun anggaran dan Anda merasa kelelahan. Anda ...",
-  "pembahasan": "Manajemen prioritas, komunikasi beban kerja, dan menjaga kesehatan menjaga kualitas kinerja. Jawaban terbaik (skor 5): C.",
+  "pertanyaan": "Anda ingin meningkatkan kompetensi tetapi instansi belum menyediakan pelatihan yang Anda butuhkan. Anda ...",
+  "pembahasan": "Pengembangan diri proaktif dan sejalan dengan kebutuhan organisasi mencerminkan profesionalisme. Jawaban terbaik (skor 5): C.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Berhenti bekerja sampai pulih sepenuhnya",
-    "skor": 1
+    "teks": "Belajar mandiri dan menunggu kesempatan pelatihan",
+    "skor": 4
    },
    {
     "label": "B",
-    "teks": "Mengurangi kualitas pekerjaan agar cepat selesai",
-    "skor": 3
+    "teks": "Tidak belajar karena tidak diwajibkan",
+    "skor": 1
    },
    {
     "label": "C",
-    "teks": "Menyusun prioritas, menyampaikan beban kepada atasan untuk dibagi ulang bila perlu, dan menjaga kesehatan agar kinerja stabil",
+    "teks": "Mengusulkan pelatihan kepada atasan dengan alasan kebutuhan unit, sambil belajar mandiri dari sumber yang terpercaya",
     "skor": 5
    },
    {
     "label": "D",
-    "teks": "Menyelesaikan satu per satu tanpa melapor, lembur seperlunya",
+    "teks": "Mengikuti pelatihan mahal dengan alasan dinas tanpa izin",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Menunggu instansi menawarkan pelatihan",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Kantor Anda dikunjungi tamu dari daerah lain yang mengenakan pakaian adat dan memiliki tata cara salam tertentu. Anda ...",
+  "pembahasan": "Menghargai budaya tamu menunjukkan penghormatan terhadap keberagaman. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menanyakan tata cara salam dengan sopan, menyambut sesuai adat mereka, dan memperkenalkan tamu kepada rekan dengan hormat",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menyambut dengan canggung dan menghindari percakapan",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Menertawakan perbedaan tata cara salam itu",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menyambut dengan salam biasa dan bersikap ramah",
     "skor": 4
    },
    {
     "label": "E",
-    "teks": "Menunda pekerjaan yang paling sulit",
+    "teks": "Menyerahkan penyambutan kepada petugas protokol saja",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Anda mengetahui ada brosur yang menyebarkan paham anti-Pancasila di sekitar kantor. Anda ...",
+  "pembahasan": "Pelaporan kepada pihak berwenang dan edukasi menjadi langkah tepat untuk mencegah penyebaran paham radikal. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Membaca dan membagikannya kepada rekan untuk diskusi",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Memotret dan mengunggahnya di media sosial untuk peringatan",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Membiarkan karena bukan tugas Anda",
     "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Mengamankan brosur tanpa menyebarkan, melaporkan kepada atasan dan pihak berwenang, serta menjelaskan bahaya paham itu kepada rekan",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Mengambil dan membuang brosur itu",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Anda menerima dua tugas mendesak dari dua atasan yang berbeda dengan tenggat sama. Anda ...",
+  "pembahasan": "Konflik prioritas diselesaikan dengan komunikasi transparan kepada pemberi tugas. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyampaikan kedua tenggat kepada kedua atasan, meminta kesepakatan prioritas, lalu mengerjakan sesuai prioritas dan melaporkan perkembangan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Mengerjakan tugas atasan yang lebih tinggi lebih dulu",
+    "skor": 4
+   },
+   {
+    "label": "C",
+    "teks": "Mengabaikan salah satu tanpa memberi tahu",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Mengerjakan keduanya sekaligus dan menyerahkan apa adanya",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Mengerjakan tugas yang lebih mudah lebih dulu",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Seseorang yang baru Anda kenal mengajak Anda mengikuti pengajian tertutup yang menolak sistem pemerintahan dan mengkafirkan pihak lain. Anda ...",
+  "pembahasan": "Menolak paham intoleran dan melapor bila ada indikasi kekerasan melindungi diri dan masyarakat. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengajak rekan kantor ikut serta",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Menolak dengan sopan dan menjauhi orang tersebut",
+    "skor": 4
+   },
+   {
+    "label": "C",
+    "teks": "Menerima ajakan karena tidak enak menolak",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Datang sekali untuk melihat isinya",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Menolak dengan tegas, menjelaskan alasan menjaga persatuan, dan melaporkan ajakan itu kepada aparat bila mengarah pada kekerasan",
+    "skor": 5
    }
   ]
  },
@@ -1946,6 +1730,1194 @@
  {
   "kategori": "tkp",
   "subkategori": "Pelayanan publik",
+  "pertanyaan": "Anda diminta atasan menyiapkan informasi layanan untuk dipublikasikan, tetapi data biaya belum final. Anda ...",
+  "pembahasan": "Informasi publik harus akurat dan dapat dipertanggungjawabkan. Memastikan data final lebih penting daripada sekadar cepat. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengonfirmasi data final dengan unit terkait lebih dulu, baru mempublikasikan dengan sumber dan tanggal pembaruan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Mengambil data dari kantor lain yang tampak mirip",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Menunda tugas sampai data final tanpa memberi tahu atasan",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Mempublikasikan data sementara dengan keterangan bahwa dapat berubah",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Mempublikasikan data sesuai perkiraan agar tepat waktu",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Dalam upacara bendera di kantor, seorang rekan menolak hormat kepada bendera karena alasan keyakinan pribadi. Anda ...",
+  "pembahasan": "Penghormatan pada simbol negara merupakan kewajiban ASN; pendekatan persuasif disertai pelaporan bila perlu. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengajaknya berdialog dengan tenang tentang makna hormat bendera sebagai penghormatan terhadap negara, dan melaporkan ke atasan bila menolak terus-menerus",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Membiarkan agar tidak terjadi keributan",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Mengikuti sikap rekan itu agar kompak",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menegurnya dengan tegas di depan peserta upacara",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Mengejek rekan itu setelah upacara",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Kantor Anda akan mengadakan acara bersama yang melibatkan pegawai dari berbagai agama dan keyakinan. Sebagai panitia, Anda ...",
+  "pembahasan": "Acara bersama harus inklusif, menghargai keberagaman, dan melibatkan masukan peserta. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyusun acara yang inklusif: menyiapkan menu dan jadwal yang memperhatikan keyakinan semua peserta serta meminta masukan peserta",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Mengadakan acara sesuai selera panitia",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Membatalkan acara agar tidak ada yang tersinggung",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menyesuaikan acara dengan kebiasaan mayoritas pegawai",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Menyerahkan teknis kepada seksi konsumsi tanpa arahan",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Rekan yang menyandang disabilitas bergabung di unit Anda dan membutuhkan penyesuaian ruang kerja. Anda ...",
+  "pembahasan": "Lingkungan kerja yang inklusif memenuhi kebutuhan rekan penyandang disabilitas dan memperlakukannya setara. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Memberi tugas ringan saja agar tidak merepotkan",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Menyerahkan urusan penyesuaian kepada bagian umum",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Mengabaikan karena kantor belum menyediakan fasilitas khusus",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Berdiskusi dengan rekan itu tentang kebutuhannya, mengusulkan penyesuaian ruang kerja kepada atasan, dan memperlakukannya setara dalam pekerjaan",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Membantu bila rekan itu meminta bantuan",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda perlu mengirim berkas besar berisi data sensitif kepada instansi lain. Anda ...",
+  "pembahasan": "Data sensitif dikirim lewat saluran aman dan terlindungi sesuai kebijakan keamanan informasi. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengirim lewat surel resmi dengan kata sandi pada berkasnya",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Mengirim lewat aplikasi percakapan pribadi karena cepat",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Mengunggah ke layanan penyimpanan terbuka dan membagikan tautannya",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Mengirim lewat saluran resmi yang aman, melindungi berkas dengan kata sandi, dan memberi tahu penerima melalui jalur terpisah",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Mengirim tanpa perlindungan agar penerima mudah membuka",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Di media sosial Anda menemukan ujaran kebencian terhadap kelompok tertentu yang memancing kemarahan banyak orang. Anda ...",
+  "pembahasan": "Menangkal ujaran kebencian dilakukan dengan tidak menyebarkan, melaporkan, dan menyebarkan narasi damai. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Membagikan ulang agar banyak orang tahu",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Tidak ikut menyebarkan, melaporkan konten kepada platform, dan membagikan informasi yang menyejukkan serta berdasar fakta",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menanggapi dengan komentar marah",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Memperkuat ujaran itu dengan menambahkan argumen sendiri",
+    "skor": 1
+   },
+   {
+    "label": "E",
+    "teks": "Tidak ikut menyebarkan dan melaporkan konten kepada platform",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Anda melihat spanduk bernada kebencian terhadap kelompok tertentu dipasang di sekitar lingkungan Anda. Anda ...",
+  "pembahasan": "Ujaran kebencian ditangani lewat pelaporan kepada pihak berwenang dan menjaga kerukunan warga. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Melaporkan kepada ketua RT atau aparat setempat, tidak ikut menyebarkan fotonya, dan mengajak warga menjaga kerukunan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Ikut menyetujui isi spanduk di forum warga",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Membiarkan karena bukan urusan Anda",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Memotret dan membagikan di media sosial untuk peringatan",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Melaporkan kepada ketua RT dan mengajak warga memeriksa spanduk itu",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Anda melakukan kesalahan yang membuat laporan unit berisi angka keliru dan sudah dikirim ke pimpinan. Anda ...",
+  "pembahasan": "Akuntabilitas berarti mengakui kesalahan, memperbaiki, dan mencegah pengulangan. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Segera mengakui kepada atasan, menyampaikan data yang benar, dan memperbaiki prosedur agar tidak berulang",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menunggu apakah ada yang menyadari kesalahan itu",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Menarik laporan diam-diam",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Memperbaiki laporan dan mengirim ulang dengan catatan revisi tanpa menjelaskan sebabnya",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Menyalahkan sistem atau rekan yang menyediakan data",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Seorang siswa di lingkungan Anda dibully teman-temannya karena berbeda agama. Anda ...",
+  "pembahasan": "Perundungan karena perbedaan keyakinan harus dihentikan dengan pendekatan melindungi korban dan mendidik pelaku. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Ikut menertawakan agar dianggap akrab",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Melindungi siswa itu, menegur pelaku dengan bijak, melibatkan guru dan orang tua, serta mengajarkan sikap saling menghargai",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menegur pelaku dan melaporkan kepada guru",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Membiarkan karena hanya kenakalan anak",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Menyarankan siswa itu menghindari teman-temannya",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Sistem antrean elektronik di kantor Anda sedang gangguan sehingga masyarakat menumpuk. Anda adalah petugas yang berada di lokasi. Anda akan ...",
+  "pembahasan": "Petugas yang baik bertindak cepat pada gangguan layanan: melapor, membuat solusi sementara, dan menjaga komunikasi dengan masyarakat. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Segera melapor ke atasan dan teknisi, sambil membuat antrean manual sementara dan menginformasikan perkiraan waktu kepada warga",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Meminta warga datang lagi besok tanpa penjelasan",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Mengatur antrean seadanya tanpa melapor karena gangguan biasanya cepat teratasi",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Melapor ke atasan lalu menunggu instruksi sambil melayani yang terdekat",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Membiarkan karena perbaikan sistem bukan tugas Anda",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Dalam obrolan kantor, seorang rekan bergurau dengan merendahkan suku tertentu. Anda ...",
+  "pembahasan": "Candaan bernuansa SARA tidak boleh dibiarkan. Menegur dengan santun menjaga kerukunan di tempat kerja. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Ikut tertawa agar tidak dianggap kaku",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Menyebarkan candaan itu kepada orang lain",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Menegur dengan santun bahwa candaan itu menyinggung dan tidak pantas, lalu mengalihkan pembicaraan ke topik yang positif",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Tidak ikut tertawa dan mengganti topik tanpa berkata apa pun",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Menegurnya sesudah obrolan selesai agar tidak malu",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Ada selisih informasi antara unit Anda dan unit lain yang menyebabkan pekerjaan tertunda. Anda ...",
+  "pembahasan": "Inisiatif berkomunikasi lintas unit mencegah pekerjaan terhambat. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menghubungi unit tersebut, mengklarifikasi informasi, mencatat kesepakatan, dan memberi tahu pihak yang terdampak",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menunggu unit lain menghubungi lebih dulu",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Menghentikan pekerjaan sampai ada instruksi tertulis",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Meminta atasan menghubungi atasan unit lain",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Menyalahkan unit lain dalam rapat",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Anda ditempatkan di daerah dengan adat dan bahasa yang berbeda dari daerah asal Anda. Sikap Anda adalah ...",
+  "pembahasan": "ASN berperan menyatukan; adaptasi terhadap budaya setempat dilakukan dengan terbuka dan hormat. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Tetap berpegang pada kebiasaan sendiri dan meminta masyarakat memahami",
+    "skor": 3
+   },
+   {
+    "label": "B",
+    "teks": "Mengeluh dan meminta dipindahkan",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Bergaul hanya dengan sesama pendatang",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Menyesuaikan diri seperlunya dalam pekerjaan",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Mempelajari adat dan bahasa setempat, menyesuaikan diri dengan sopan, dan membangun hubungan baik dengan masyarakat",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Anda diminta rekan menandatangani dokumen yang belum Anda baca dengan alasan terburu-buru. Anda ...",
+  "pembahasan": "Pertanggungjawaban atas tanda tangan menuntut pemeriksaan isi dokumen. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Membaca dokumen lebih dulu dan menandatangani setelah yakin isinya benar, serta menjelaskan alasannya dengan sopan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menandatangani tanpa bertanya karena sedang sibuk",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Menandatangani karena percaya kepada rekan",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Membaca sekilas bagian pentingnya lalu menandatangani",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Menandatangani lalu memeriksa setelahnya",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Rekan kerja Anda berasal dari agama berbeda dan sedang menjalankan ibadah pada jam istirahat. Anda ...",
+  "pembahasan": "Toleransi berarti menghormati dan memfasilitasi ibadah rekan kerja tanpa diskriminasi. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Tidak mengganggu dan melanjutkan pekerjaan seperti biasa",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Menunggu sampai selesai tanpa berkata apa-apa",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Mengajaknya berdiskusi tentang agama Anda",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Menghormati dengan tidak mengganggu dan memberi ruang waktu yang cukup, serta menyesuaikan jadwal rapat bila diperlukan",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Menyindir bahwa ibadah mengganggu pekerjaan",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda menerima kabar di media sosial yang belum jelas kebenarannya tentang kebijakan instansi, dan banyak teman meneruskannya. Anda ...",
+  "pembahasan": "Literasi digital: verifikasi sebelum membagikan, dan bantu meluruskan informasi keliru. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menambahkan dugaan sendiri agar menarik perhatian",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Meneruskan agar teman lain waspada",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Menyebarkan dengan tambahan kalimat 'belum tentu benar'",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Menelusuri kebenarannya di sumber resmi sebelum menyebarkan, dan meluruskan bila ternyata keliru",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Tidak menyebarkan dan tidak ikut berkomentar",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Seorang pemohon dengan bahasa daerah yang berbeda kesulitan memahami penjelasan Anda dalam bahasa Indonesia. Anda ...",
+  "pembahasan": "Pelayanan publik bersifat inklusif; petugas berusaha agar penjelasan dipahami semua lapisan masyarakat. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengakhiri pelayanan karena penjelasan sulit dipahami",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Berbicara lebih pelan dan sederhana sambil mengulang penjelasan",
+    "skor": 4
+   },
+   {
+    "label": "C",
+    "teks": "Meminta pemohon datang bersama anggota keluarga yang fasih berbahasa Indonesia",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Berbicara lebih pelan dan sederhana, memakai contoh atau gambar, serta mencari rekan yang menguasai bahasa daerah untuk membantu menjelaskan",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Memberikan formulir tanpa penjelasan dan meminta pemohon mengisinya",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Sebuah kegiatan sosial di desa binaan kantor Anda mengundang tokoh adat setempat yang memiliki tata cara khusus penyambutan tamu. Anda ...",
+  "pembahasan": "Menghormati adat setempat menunjukkan sikap menghargai kearifan lokal. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menertawakan tata cara itu karena dianggap kuno",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Mengikuti dengan setengah hati karena bukan kebiasaan Anda",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Menanyakan tata cara kepada panitia atau tokoh adat, mengikuti dengan hormat, dan menjelaskannya kepada rekan yang belum paham",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Menolak ikut bagian penyambutan",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Mengikuti rombongan dan meniru yang dilakukan orang lain",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Penyandang disabilitas netra datang ke kantor Anda untuk mengurus dokumen tetapi tidak ada petugas khusus. Anda ...",
+  "pembahasan": "Pelayanan publik harus inklusif. Pendampingan langsung dan perbaikan layanan ke depan menunjukkan kepedulian. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengatakan layanan belum bisa diberikan",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Mendampingi langsung, membacakan formulir, membantu mengisinya, dan mencatat masukan agar kantor menyediakan layanan ramah disabilitas",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Mendampingi dan membacakan formulir, lalu meminta beliau mengisi sendiri",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Meminta beliau menunggu hingga ada petugas yang berpengalaman",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Memintanya membawa pendamping dari keluarga pada kunjungan berikutnya",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Kantor mengadakan pelatihan penggunaan aplikasi baru pada hari yang sama dengan jadwal pekerjaan rutin Anda. Anda ...",
+  "pembahasan": "Pengembangan kompetensi digital diprioritaskan dengan mengatur ulang pekerjaan agar pelatihan diikuti penuh. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Tidak mengikuti karena merasa sudah paham",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Mewakilkan kepada rekan yang lebih muda",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Mengikuti pelatihan setengah hari saja",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Mengatur ulang pekerjaan rutin agar dapat mengikuti pelatihan penuh, lalu menerapkan ilmunya di unit",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Mengikuti pelatihan sambil menyelesaikan pekerjaan rutin",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Antrean panjang karena hanya dua loket yang dibuka, padahal ada loket lain yang kosong karena petugasnya sedang rapat. Anda ...",
+  "pembahasan": "Kepentingan pelayanan diutamakan; bertindak proaktif dan komunikatif mengurangi beban antrean. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Meminta warga bersabar karena petugas sedang rapat",
+    "skor": 3
+   },
+   {
+    "label": "B",
+    "teks": "Menyampaikan kepada atasan bahwa antrean panjang dan menunggu keputusan",
+    "skor": 4
+   },
+   {
+    "label": "C",
+    "teks": "Menyalahkan petugas yang rapat di depan warga",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Menghubungi atasan agar loket tambahan dibuka, menginformasikan perkiraan waktu kepada warga, dan membantu mengarahkan antrean",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Tidak berbuat apa-apa karena bukan tugas Anda mengatur loket",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Anda diberi tugas oleh atasan dengan tenggat besok, tetapi di tengah jalan menemukan data tidak lengkap. Anda ...",
+  "pembahasan": "Profesional berarti jujur melaporkan kendala dan menawarkan solusi, bukan menyembunyikan atau berasumsi. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menunggu data lengkap meski melewati tenggat",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Segera melapor kepada atasan, mengusulkan solusi atau sumber data alternatif, dan menyelesaikan bagian yang bisa dikerjakan",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menyelesaikan tugas dengan data yang ada tanpa memberi tahu",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Melengkapi data dengan perkiraan yang masuk akal lalu memberi catatan",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Mengembalikan tugas kepada atasan",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Anda anggota tim lintas unit dan salah satu anggota dari unit lain sering tidak menghadiri rapat koordinasi. Anda ...",
+  "pembahasan": "Kerja sama lintas unit dibangun dengan komunikasi langsung dan solusi bersama. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengeluhkan anggota itu kepada rekan di unit sendiri",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Melaporkan ketidakhadirannya kepada atasan unit tanpa berbicara dengannya",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Menyampaikan hasil rapat kepada anggota itu setelah rapat selesai",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Menghubungi anggota itu untuk memahami kendalanya, menyesuaikan jadwal rapat bila memungkinkan, dan menyampaikan hasil rapat tertulis kepadanya",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Melanjutkan rapat tanpa melibatkan anggota itu",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Atasan memberi instruksi lisan yang menurut Anda bertentangan dengan peraturan yang berlaku. Anda ...",
+  "pembahasan": "ASN taat pada peraturan; menyampaikan keberatan secara santun dan meminta arahan tertulis adalah sikap profesional. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyampaikan dengan sopan peraturan yang relevan, meminta arahan tertulis, dan mengusulkan alternatif yang sesuai aturan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menanyakan alasan instruksi tersebut sebelum melaksanakan",
+    "skor": 4
+   },
+   {
+    "label": "C",
+    "teks": "Melaksanakan sambil mengeluh kepada rekan",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menolak secara terbuka di depan rekan lain",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Melaksanakan karena itu perintah atasan",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda menerima surel yang mengaku dari bagian TI dan meminta kata sandi akun kantor Anda dengan alasan pembaruan sistem. Anda ...",
+  "pembahasan": "Kata sandi tidak boleh dibagikan. Melaporkan upaya phishing melindungi organisasi. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Tidak membalas dan menghapus surel tersebut",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Tidak membalas, melaporkannya ke bagian TI melalui kanal resmi sebagai upaya phishing, dan mengingatkan rekan",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menghubungi pengirim untuk memastikan keasliannya lebih dulu",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Mengirim kata sandi karena pengirim tampak resmi",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Menyebarkan surel itu ke grup tanpa penjelasan",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Anda menemukan rekan memakai fasilitas kantor untuk menyebarkan selebaran yang mengajak mengganti ideologi negara. Anda ...",
+  "pembahasan": "Penyalahgunaan fasilitas negara untuk menyebarkan paham yang bertentangan dengan ideologi negara harus dilaporkan. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Melaporkan kepada atasan dan unit yang berwenang disertai bukti, serta tidak ikut menyebarkan selebaran itu",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Meminta salinan selebaran untuk dibaca di rumah",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Membiarkan karena rekan itu rajin bekerja",
+    "skor": 2
+   },
+   {
+    "label": "D",
+    "teks": "Mengingatkan rekan secara pribadi agar berhenti",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Menyimpan selebaran itu sebagai bahan diskusi",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Rekan di unit lain meminta bantuan data yang menjadi tanggung jawab Anda, namun Anda sedang mengejar tenggat. Anda ...",
+  "pembahasan": "Kerja sama tetap dijaga dengan komunikasi jelas dan komitmen waktu yang realistis. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menunda tanpa memberi kabar sampai tenggat Anda selesai",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Menolak karena itu bukan prioritas Anda",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Menjelaskan kondisi Anda, menyepakati waktu penyerahan data yang realistis, dan memastikan data diserahkan tepat pada waktu yang dijanjikan",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Meminta rekan mencari data dari sumber lain",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Memberikan data seadanya agar rekan tidak menunggu",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Rekan Anda mengalami musibah keluarga dan membutuhkan dukungan. Anda ...",
+  "pembahasan": "Empati yang nyata memperkuat solidaritas dan kepedulian sosial di tempat kerja. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengirim pesan singkat tanpa hadir atau menawarkan bantuan",
+    "skor": 3
+   },
+   {
+    "label": "B",
+    "teks": "Menunggu beliau meminta bantuan lebih dulu",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Menyampaikan belasungkawa dan menawarkan bantuan seperlunya",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Menyampaikan belasungkawa, menawarkan bantuan konkret, dan mengajak rekan lain membantu sesuai kemampuan",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Menganggap itu urusan pribadi dan tidak peduli",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Anda baru saja gagal dalam sebuah penilaian kinerja dan merasa kecewa. Anda ...",
+  "pembahasan": "Kegagalan dijadikan bahan belajar dengan rencana perbaikan nyata. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengurangi usaha karena merasa percuma",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Menyalahkan penilai di depan rekan",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Meminta umpan balik rinci, menyusun rencana perbaikan, dan berlatih sesuai catatan penilai",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Menganggap penilaian tidak adil dan tidak berubah",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Meminta umpan balik lalu berusaha lebih baik tanpa rencana",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Dokumen seorang pemohon hilang di kantor Anda dan belum diketahui siapa penyebabnya. Anda ...",
+  "pembahasan": "Kejujuran, kecepatan melapor, dan solusi nyata menjaga kepercayaan masyarakat. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyalahkan rekan yang terakhir memegang dokumen",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Meminta pemohon membuat dokumen baru tanpa penjelasan",
+    "skor": 3
+   },
+   {
+    "label": "C",
+    "teks": "Segera melapor kepada atasan, menelusuri dokumen bersama tim, menyampaikan kejadian secara jujur kepada pemohon, dan menawarkan solusi penggantian dokumen",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Menelusuri dokumen bersama tim dan memberi tahu pemohon bila sudah ditemukan",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Menunggu dokumen ditemukan tanpa memberi tahu siapa pun",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Anda menemukan prosedur kerja di unit Anda yang membuat proses lambat tetapi sudah lama dipakai. Anda ...",
+  "pembahasan": "Perbaikan proses dilakukan secara tertib: data, usulan, persetujuan, lalu penerapan. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menjalankan prosedur lama karena sudah biasa",
+    "skor": 3
+   },
+   {
+    "label": "B",
+    "teks": "Mengubah prosedur sendiri tanpa memberi tahu",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Mengumpulkan data tentang hambatan, mengusulkan perbaikan prosedur kepada atasan, dan menjalankan perubahan setelah disetujui",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Mengusulkan perbaikan secara lisan kepada atasan",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Mengeluh kepada rekan tanpa tindakan",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Tim Anda sedang mengerjakan laporan bersama dan seorang rekan sering terlambat menyerahkan bagiannya sehingga seluruh pekerjaan mundur. Anda ...",
+  "pembahasan": "Kolaborasi yang baik dimulai dari komunikasi langsung dan solusi bersama sebelum mengeskalasi. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengingatkan rekan melalui grup tim agar semua mengetahui tenggat",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Berbicara empat mata untuk memahami kendalanya, menawarkan bantuan atau pembagian ulang tugas, dan menyepakati tenggat yang jelas",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Mengabaikan karena itu bukan bagian Anda",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Melaporkan kepada atasan agar rekan tersebut ditegur",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Mengerjakan bagian rekan itu diam-diam sambil mengeluh kepada teman lain",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Seorang rekan menggunakan akun media sosial pribadinya untuk menyebarkan informasi internal yang belum boleh dipublikasikan. Anda ...",
+  "pembahasan": "Pembatasan informasi internal harus dijaga; langkah persuasif dilanjutkan eskalasi bila perlu. Jawaban terbaik (skor 5): E.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menyarankan rekan lain menegurnya",
+    "skor": 3
+   },
+   {
+    "label": "B",
+    "teks": "Membiarkan karena itu akun pribadinya",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Mengingatkan rekan secara pribadi saja",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Ikut menyebarkan agar informasi lebih luas",
+    "skor": 1
+   },
+   {
+    "label": "E",
+    "teks": "Mengingatkan rekan secara pribadi tentang aturan kerahasiaan, dan melapor kepada atasan bila tidak dihentikan",
+    "skor": 5
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
   "pertanyaan": "Seorang warga menawarkan uang agar berkas izinnya diproses lebih dulu daripada pemohon lain yang sudah mengantre. Anda ...",
   "pembahasan": "Menolak suap/gratifikasi dan menjaga keadilan layanan adalah kewajiban. Melaporkan membantu pencegahan perbuatan yang sama. Jawaban terbaik (skor 5): B.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
@@ -1981,72 +2953,540 @@
  },
  {
   "kategori": "tkp",
-  "subkategori": "Profesionalisme",
-  "pertanyaan": "Atasan baru Anda memiliki gaya kerja yang jauh berbeda dari atasan sebelumnya. Anda ...",
-  "pembahasan": "Adaptif terhadap perubahan kepemimpinan, dengan komunikasi yang efektif, menunjukkan profesionalisme. Jawaban terbaik (skor 5): E.",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Anda menerima pesan berantai yang mengajak melakukan aksi kekerasan terhadap kelompok yang berbeda keyakinan di daerah Anda. Anda ...",
+  "pembahasan": "Ajakan kekerasan harus dilaporkan kepada aparat dan tidak boleh disebarkan. Jawaban terbaik (skor 5): A.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Mengikuti arahan atasan tanpa banyak bertanya",
-    "skor": 4
+    "teks": "Tidak meneruskan, segera melaporkan kepada kepolisian, dan menenangkan lingkungan dengan informasi yang benar",
+    "skor": 5
    },
    {
     "label": "B",
-    "teks": "Meminta dipindahkan ke unit lain",
-    "skor": 1
+    "teks": "Tidak meneruskan dan menghapus pesan",
+    "skor": 4
    },
    {
     "label": "C",
-    "teks": "Membandingkan atasan baru dengan atasan lama di depan rekan",
+    "teks": "Menanyakan kebenarannya kepada pengirim",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Ikut menyebarkan ajakan itu",
+    "skor": 1
+   },
+   {
+    "label": "E",
+    "teks": "Meneruskan ke grup keluarga agar waspada",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Dalam rapat, rekan Anda menyampaikan gagasan yang menurut Anda kurang matang. Anda ...",
+  "pembahasan": "Kritik yang baik bersifat konstruktif dan menghargai orang yang menyampaikan gagasan. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Memotong pembicaraannya dan menyampaikan gagasan sendiri",
+    "skor": 1
+   },
+   {
+    "label": "B",
+    "teks": "Menertawakan gagasan itu agar rapat lebih santai",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Menyampaikan apresiasi atas inisiatifnya, lalu mengajukan pertanyaan dan masukan konstruktif untuk menyempurnakannya",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Menyampaikan keberatan secara singkat dan tegas di forum",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Diam saja lalu membicarakan kekurangannya sesudah rapat",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Anda dan rekan lintas unit ditugaskan bersama, tetapi pembagian peran tidak jelas dan menimbulkan tumpang tindih. Anda ...",
+  "pembahasan": "Kejelasan peran dibangun dengan komunikasi dan kesepakatan tertulis yang menghindari tumpang tindih. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengerjakan semua yang bisa dikerjakan agar tidak ada yang terlewat",
+    "skor": 3
+   },
+   {
+    "label": "B",
+    "teks": "Mengusulkan rapat singkat untuk menyusun pembagian peran tertulis dan menyepakati penanggung jawab tiap bagian",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menunggu rekan menentukan pembagian",
     "skor": 2
    },
    {
     "label": "D",
-    "teks": "Terus memakai pola lama karena sudah terbukti",
-    "skor": 3
+    "teks": "Mengerjakan sendiri tanpa berkoordinasi agar cepat",
+    "skor": 1
    },
    {
     "label": "E",
-    "teks": "Mempelajari gaya dan harapan atasan, menyesuaikan cara komunikasi, dan tetap menjaga kualitas serta standar kerja",
+    "teks": "Menyampaikan kebingungan itu kepada atasan masing-masing",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Anda bertugas di loket layanan. Seorang warga lanjut usia datang dengan berkas yang kurang satu lampiran dan tampak kebingungan. Antrean di belakangnya panjang. Sikap Anda adalah ...",
+  "pembahasan": "Pelayanan publik menuntut ramah, jelas, dan membantu kelompok rentan tanpa melanggar aturan. Opsi terbaik memberi solusi nyata dan mudah dipahami. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menjelaskan dengan sabar lampiran yang kurang, memberi daftar tertulis, lalu mempersilakan beliau melengkapinya tanpa mengantre ulang bila memungkinkan",
     "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menolak berkas tanpa penjelasan karena aturan sudah jelas",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Mengembalikan berkas dan meminta beliau membaca pengumuman persyaratan di dinding",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Menjelaskan lampiran yang kurang secara singkat dan meminta beliau kembali setelah melengkapinya",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Meminta petugas lain menangani beliau karena antrean masih panjang",
+    "skor": 2
    }
   ]
  },
  {
   "kategori": "tkp",
   "subkategori": "Teknologi informasi dan komunikasi",
-  "pertanyaan": "Komputer kantor Anda terdampak virus saat Anda membuka berkas unduhan dari flashdisk pribadi. Anda ...",
-  "pembahasan": "Insiden keamanan harus segera diisolasi dan dilaporkan agar tidak menyebar. Jawaban terbaik (skor 5): B.",
+  "pertanyaan": "Anda menggunakan komputer kantor bersama dan menemukan rekan meninggalkan akun terbuka berisi data warga. Anda ...",
+  "pembahasan": "Menjaga keamanan data warga adalah tanggung jawab bersama. Jawaban terbaik (skor 5): C.",
   "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
   "sumber_url": null,
   "lisensi": "Soal asli SICASN",
   "opsi": [
    {
     "label": "A",
-    "teks": "Memakai komputer rekan tanpa memberi tahu siapa pun",
-    "skor": 1
+    "teks": "Membiarkan karena itu urusan rekan",
+    "skor": 3
    },
    {
     "label": "B",
-    "teks": "Segera memutus jaringan, melaporkan kepada bagian TI, dan tidak memakai flashdisk itu lagi pada perangkat kantor",
-    "skor": 5
+    "teks": "Memakai akun terbuka itu untuk menyelesaikan pekerjaan Anda",
+    "skor": 1
    },
    {
     "label": "C",
-    "teks": "Membersihkan sendiri dengan aplikasi yang diunduh dari internet",
+    "teks": "Mengunci atau menutup sesi akun itu, menyampaikan kepada rekan agar lebih berhati-hati, dan mengingatkan tim tentang keamanan data",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Menutup sesi akun itu tanpa memberi tahu rekan",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Membuka data itu untuk memastikan isinya",
+    "skor": 2
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Profesionalisme",
+  "pertanyaan": "Anda mendapat tawaran pekerjaan sampingan yang bersinggungan dengan tugas di instansi Anda dan berpotensi menimbulkan konflik kepentingan. Anda ...",
+  "pembahasan": "Konflik kepentingan harus dihindari; konsultasi kepada atasan dan unit kepatuhan wajib dilakukan sebelum bertindak. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Menolak atau berkonsultasi dengan atasan dan unit kepatuhan, serta tidak menerima sebelum dipastikan tidak melanggar aturan",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menerima dan mengajak rekan kantor ikut serta",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Menerima dan merahasiakannya dari kantor",
     "skor": 3
    },
    {
     "label": "D",
-    "teks": "Menyembunyikan kejadian agar tidak dimarahi",
+    "teks": "Menerima dan memakai fasilitas kantor agar efisien",
     "skor": 2
    },
    {
     "label": "E",
-    "teks": "Melapor kepada bagian TI sambil tetap bekerja pada komputer yang sama",
+    "teks": "Menerima dengan syarat dikerjakan di luar jam kerja",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Pemohon layanan mengeluh karena prosedur dianggap berbelit, padahal prosedur itu sesuai aturan. Anda ...",
+  "pembahasan": "Prosedur harus ditaati, tetapi pelayanan yang baik membantu pemohon memahaminya dan menjadikan keluhan bahan perbaikan. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Meminta pemohon membaca peraturan sendiri",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Mempersingkat prosedur untuk pemohon itu agar tidak mengeluh",
+    "skor": 1
+   },
+   {
+    "label": "C",
+    "teks": "Menjelaskan alasan tiap tahap prosedur dengan bahasa sederhana, membantu menyiapkan berkas, dan mencatat masukannya untuk perbaikan layanan",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Menjelaskan alasan prosedur dan membantu berkas tanpa mencatat masukannya",
+    "skor": 4
+   },
+   {
+    "label": "E",
+    "teks": "Menjelaskan bahwa prosedur memang demikian dan tidak dapat diubah",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Seorang tetangga mengajak warga memboikot kegiatan peringatan hari besar nasional karena dianggap tidak sesuai ajaran kelompoknya. Anda ...",
+  "pembahasan": "Partisipasi dalam kegiatan kebangsaan memperkuat persatuan; dialog lebih baik daripada konfrontasi. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Berpartisipasi sendiri tanpa mengajak orang lain",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Menjelaskan manfaat kegiatan kebangsaan, mengajak berpartisipasi, dan menghargai perbedaan tanpa menyetujui pemboikotan",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Menyerang tetangga itu di media sosial",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Ikut memboikot demi kerukunan lingkungan",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Tidak ikut campur agar tidak ada konflik",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Warga setempat meminta kantor Anda ikut gotong royong membersihkan lingkungan pada hari kerja. Anda ...",
+  "pembahasan": "Kepedulian sosial dijalankan seimbang dengan tanggung jawab layanan dan prosedur izin. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengomunikasikan kepada atasan, mengatur pembagian tugas agar layanan tetap berjalan, dan ikut serta sesuai izin",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menolak karena bukan tugas pokok",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Ikut serta setelah jam kerja berakhir",
+    "skor": 4
+   },
+   {
+    "label": "D",
+    "teks": "Menyarankan warga meminta bantuan instansi lain",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Menyuruh bawahan mewakili sementara Anda tetap di kantor",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Sosial budaya",
+  "pertanyaan": "Terjadi perselisihan antarwarga di lingkungan tempat tinggal Anda yang dipicu perbedaan suku. Anda dikenal sebagai ASN. Anda ...",
+  "pembahasan": "ASN sebagai perekat bangsa mengutamakan musyawarah dan keadilan, bukan memihak. Jawaban terbaik (skor 5): C.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mendukung pihak yang berasal dari suku Anda",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Membantu mendamaikan dengan menasihati kedua pihak",
+    "skor": 4
+   },
+   {
+    "label": "C",
+    "teks": "Berperan sebagai penengah, mengajak tokoh masyarakat berdialog, dan menyarankan penyelesaian secara musyawarah",
+    "skor": 5
+   },
+   {
+    "label": "D",
+    "teks": "Memprovokasi kelompok lain agar segera selesai",
+    "skor": 1
+   },
+   {
+    "label": "E",
+    "teks": "Tidak ikut campur agar tidak dianggap berpihak",
+    "skor": 3
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Teknologi informasi dan komunikasi",
+  "pertanyaan": "Anda menggunakan perangkat pribadi untuk bekerja dari rumah dan harus mengakses data pelayanan. Anda ...",
+  "pembahasan": "Pengamanan data layanan mewajibkan kepatuhan pada kebijakan keamanan informasi. Jawaban terbaik (skor 5): D.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengakses lewat akun resmi dan menghapus berkas setelah selesai",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Menyimpan salinan data di perangkat pribadi untuk berjaga-jaga",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Mengakses melalui jaringan umum karena cepat",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Mengikuti kebijakan keamanan kantor, memakai koneksi aman, dan tidak menyimpan data di perangkat pribadi",
+    "skor": 5
+   },
+   {
+    "label": "E",
+    "teks": "Membagikan akun kantor kepada keluarga agar membantu",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Jejaring kerja",
+  "pertanyaan": "Dua rekan Anda berselisih hingga suasana kerja tegang dan memengaruhi tim. Anda ...",
+  "pembahasan": "Menengahi perselisihan dengan netral dan berorientasi tujuan tim menjaga iklim kerja. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Membicarakan perselisihan itu dengan rekan lain",
+    "skor": 2
+   },
+   {
+    "label": "B",
+    "teks": "Mengajak keduanya berdialog secara terpisah lalu bersama, memfokuskan pada tujuan tim, dan melibatkan atasan bila belum selesai",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Memihak salah satu yang Anda anggap benar secara terbuka",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Menyarankan keduanya menyelesaikan sendiri",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Berbicara kepada salah satu yang lebih mudah diajak bicara",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Anti radikalisme",
+  "pertanyaan": "Anda diundang menghadiri acara yang ternyata menyalahkan kelompok agama tertentu dan mengajak melakukan aksi pengusiran. Anda ...",
+  "pembahasan": "Ajakan pengusiran atau kekerasan harus ditolak dan dilaporkan; ASN menjaga persatuan. Jawaban terbaik (skor 5): B.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Meninggalkan acara dan tidak membicarakan lagi",
+    "skor": 4
+   },
+   {
+    "label": "B",
+    "teks": "Meninggalkan acara dengan sopan, melaporkannya kepada aparat bila ada ajakan kekerasan, dan menyampaikan pandangan damai kepada kerabat",
+    "skor": 5
+   },
+   {
+    "label": "C",
+    "teks": "Tetap hadir sampai selesai agar tidak menyinggung penyelenggara",
+    "skor": 3
+   },
+   {
+    "label": "D",
+    "teks": "Ikut bertepuk tangan agar tidak diasingkan",
+    "skor": 2
+   },
+   {
+    "label": "E",
+    "teks": "Mengikuti aksi yang diajak",
+    "skor": 1
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Anda mengetahui ada pungutan tidak resmi yang dilakukan seorang rekan kepada pemohon layanan. Anda ...",
+  "pembahasan": "Pungutan liar harus dilaporkan agar pelayanan bersih; teguran pribadi saja tidak cukup. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Melaporkannya melalui saluran pengaduan resmi dengan bukti yang ada, dan menyarankan pemohon agar tidak membayar di luar tarif resmi",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Membiarkan karena bukan urusan Anda",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Meminta bagian dari pungutan itu",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Mengingatkan pemohon agar berhati-hati tanpa melapor",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Menegur rekan secara pribadi agar menghentikan pungutan",
+    "skor": 4
+   }
+  ]
+ },
+ {
+  "kategori": "tkp",
+  "subkategori": "Pelayanan publik",
+  "pertanyaan": "Warga mengajukan keluhan tertulis tentang lambatnya pelayanan di unit Anda. Keluhan itu sebagian benar. Anda ...",
+  "pembahasan": "Keluhan adalah masukan perbaikan. Respons terbaik menindaklanjuti dan mengomunikasikan hasilnya kepada pelapor. Jawaban terbaik (skor 5): A.",
+  "sumber_nama": "Soal asli SICASN; penilaian mengacu pada nilai dasar ASN (BerAKHLAK) dan prinsip pelayanan publik",
+  "sumber_url": null,
+  "lisensi": "Soal asli SICASN",
+  "opsi": [
+   {
+    "label": "A",
+    "teks": "Mengucapkan terima kasih, menelaah penyebabnya bersama tim, memperbaiki proses, dan menyampaikan tindak lanjut kepada warga",
+    "skor": 5
+   },
+   {
+    "label": "B",
+    "teks": "Menyimpan keluhan sebagai arsip",
+    "skor": 2
+   },
+   {
+    "label": "C",
+    "teks": "Mencari tahu siapa pelapor dan meminta klarifikasi",
+    "skor": 1
+   },
+   {
+    "label": "D",
+    "teks": "Membalas dengan penjelasan bahwa unit sudah bekerja sesuai standar",
+    "skor": 3
+   },
+   {
+    "label": "E",
+    "teks": "Menelaah penyebab bersama tim dan memperbaikinya tanpa memberi tahu warga",
     "skor": 4
    }
   ]
