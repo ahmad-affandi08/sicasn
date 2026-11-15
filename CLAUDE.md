@@ -225,7 +225,9 @@ Semua tabel: `id` bigint unsigned, `created_at`, `updated_at`. Foreign key beser
 **`persyaratans`** (`hash` unik, `uraian`) dan pivot **`formasi_persyaratans`** (`formasi_id`, `persyaratan_id`, `wajib`, `urutan`): teks persyaratan disimpan sekali per isi unik. Pada data nyata 10.378 butir persyaratan hanya menunjuk 16 teks.
 ### 6.2 Statistik pelamar
 
-**`statistik_pelamars`**: `tahun`, `jenis_pengadaan`, `cakupan` enum(`instansi`,`jabatan`), `instansi_id`, `jabatan_id` nullable, `wilayah_id` nullable, `jumlah_pelamar`, `jumlah_formasi` nullable, `jumlah_lolos_administrasi` nullable, `tanggal_snapshot`, `tingkat_data` enum(`A`,`B`,`C`), `sumber_nama`, `sumber_url`, `keyakinan` enum(`resmi`,`turunan`), `import_batch_id`. Unik pada kombinasi kunci + `tanggal_snapshot`. Tampilan memakai snapshot terbaru per kunci.
+**`statistik_pelamars`**: `kunci` char(40) **unik** (sha1 dari tahun, jenis, cakupan, instansi, tanggal snapshot, sumber; membuat impor idempoten), `tahun`, `jenis_pengadaan`, `cakupan` enum(`nasional`,`instansi`,`jabatan`; `jabatan` belum didukung impor), `instansi_id` nullable, `jumlah_formasi`, `jumlah_pelamar`, `jumlah_submit`, `jumlah_lolos_administrasi` (semua nullable, minimal satu terisi), `tanggal_snapshot`, `status_angka` enum(`sementara`,`akhir`), `tingkat_data` enum(`A`,`B`,`C`), `keyakinan` enum(`resmi`,`turunan`), `sumber_nama`, `sumber_url`, `catatan`, `import_batch_id`. Tampilan memakai snapshot terbaru per instansi (angka akhir menang bila tanggal sama); semua snapshot lama tetap ditampilkan sebagai riwayat.
+
+**Semantik angka sementara (penting):** angka `sementara` adalah **batas bawah** (pelamar akhir hanya bisa lebih banyak). Rasio dari angka sementara atau dari `jumlah_submit` saja ditandai `≥` dan **tidak pernah diberi lencana Longgar**; lencananya "Belum final". Urutan "rasio terendah" dan "pelamar tersedikit" menaruh angka sementara **setelah** angka akhir supaya instansi yang tampak sepi hanya karena datanya awal tidak berada di puncak. Bila snapshot terbaru tidak memuat formasi, jumlah formasi dipinjam dari snapshot instansi yang sama yang terdekat dan tanggalnya ditampilkan.
 
 ### 6.3 Impor dan sinkron
 
@@ -284,9 +286,9 @@ Semua tabel: `id` bigint unsigned, `created_at`, `updated_at`. Foreign key beser
 - **Dashboard**: member aktif/nonaktif, status sinkron BKN terakhir, event baru terdeteksi, batch impor terakhir, **daftar periksa kesiapan** (email terkonfigurasi? WA terisi? rekening terisi? sinkron berhasil?) dengan tautan ke pengaturan terkait.
 - **Pengguna**: daftar, cari, filter (aktif/nonaktif), **buat akun** (nama, email, WA, catatan pembayaran), **kirim ulang kredensial**, reset password, **nonaktifkan/aktifkan** (dengan alasan, konfirmasi modal), riwayat audit per pengguna.
 - **Sinkron BKN**: status, "Sinkron sekarang" (konfirmasi), riwayat batch, event terdeteksi dan yang diabaikan.
-- **Statistik Pelamar**: unggah CSV, pratinjau, laporan baris gagal, template CSV, riwayat, rollback.
+- **Statistik Pelamar** (`/admin/statistik`): unggah CSV, pratinjau, laporan baris gagal, template CSV, riwayat, rollback.
 - **Data Referensi**: instansi, jabatan, jurusan, wilayah (koreksi pemetaan).
-- **Pengaturan**: Email (§5.3), WhatsApp (§5.4), Rekening dan Harga, Situs, Persaingan, Keamanan.
+- **Pengaturan**: Email (§5.3), WhatsApp (§5.4), Rekening dan Harga, Situs, **Persaingan** (`/admin/pengaturan/persaingan`: ambang Longgar/Ketat), Keamanan.
 
 ---
 
@@ -370,12 +372,12 @@ Tidak ada sumber resmi terbuka untuk pelamar 2024 per jabatan. Sistem menyimpan 
 | **B** | Per **jabatan** | Hasil seleksi administrasi 2024 yang dipublikasikan tiap instansi | Agent, Fase 5, bertahap |
 | **C** | Per jabatan, lengkap | Permohonan informasi publik ke PPID BKN | Pemilik mengirim surat; sistem menyiapkan format impor |
 
-### 11.1 Tingkat A (Fase 3)
+### 11.1 Tingkat A (Fase 3, selesai)
 
-- Kumpulkan angka dari sumber resmi BKN atau arsipnya; bila hanya lewat media, catat **nama media, URL, tanggal snapshot** dan tandai `keyakinan = turunan`.
-- Validasi silang: total nasional 17 Sep 2024 = 3.963.832. Angka dengan snapshot berbeda disimpan sebagai baris terpisah.
-- Simpan sebagai `database/seeders/data/statistik_instansi_2024.csv` (dengan kolom sumber dan tanggal), dimuat `StatistikPelamarSeeder` lewat use case impor yang sama dengan CSV admin.
-- **Dilarang mengisi angka dari ingatan.**
+- Seed: `database/seeders/data/statistik_instansi_2024.csv` (95 baris, 70 instansi, plus angka nasional), dimuat `StatistikPelamarSeeder` lewat use case impor yang sama dengan CSV admin (pratinjau lalu konfirmasi; seeder gagal bila ada baris bermasalah). Idempoten.
+- Sumber yang dipakai (semua dibuka langsung, bukan dari ingatan): rilis BKN (`bkn.go.id`: berita penutupan pendaftaran dan siaran pers 010/RILIS/BKN/X/2024), detikEdu, Kompas TV, dan Liputan6 yang mengutip BKN. Tirto dilindungi Cloudflare sehingga **tidak** dipakai dan tidak ditembus.
+- Validasi silang: total pelamar nasional 17 Sep 2024 = 3.963.832 (dijaga tes seeder). Snapshot dengan tanggal berbeda disimpan sebagai baris terpisah. Angka dari media ditandai `keyakinan = turunan` dengan nama media, URL, dan tanggal.
+- **Dilarang mengisi angka dari ingatan.** Menambah baris seed berarti membuka sumbernya dulu dan mencatat URL serta tanggal.
 
 ### 11.2 Tingkat B (Fase 5)
 
@@ -398,10 +400,11 @@ Pencocokan formasi ↔ statistik 2024: (1) instansi + kode/nama jabatan ternorma
 
 ## 12. Impor CSV (admin)
 
-- Unggah → validasi seluruh baris → pratinjau (berhasil/gagal) → konfirmasi modal → proses lewat antrean.
-- Validasi: kolom wajib, angka, `jumlah_pelamar ≥ 0`, tanggal valid, instansi dikenali (saran fuzzy; yang baru dibuat setelah konfirmasi).
-- Hasil: ringkasan di modal, unduh CSV baris gagal, `ImportBatch` tercatat, **rollback** per batch (konfirmasi modal).
-- Tangani BOM, pemisah `;`/`,`, encoding Windows-1252. Batasi ukuran dan jenis berkas.
+- Unggah → validasi seluruh baris → pratinjau (berhasil/gagal) → konfirmasi modal → simpan. Pratinjau disimpan di disk privat (`pratinjau-statistik`, token acak 40 karakter, dibersihkan setelah 24 jam) dan **tidak menyimpan apa pun ke database** sebelum dikonfirmasi. Impor statistik cukup kecil (maks 5.000 baris) sehingga diproses langsung, bukan lewat antrean.
+- Validasi per baris: kolom wajib (`tahun`, `cakupan`, `tanggal_snapshot`, `sumber_nama`), bilangan bulat ≥ 0 (titik ribuan diterima), `submit` dan `lolos_administrasi` tidak boleh melebihi `pelamar`, tanggal valid dan tidak di masa depan, URL sumber http/https, baris ganda ditolak, minimal satu kolom jumlah terisi. Baris bermasalah dilewati dan dilaporkan (50 pertama di pratinjau, seluruhnya di unduhan CSV); baris valid tetap bisa diimpor. Instansi dicocokkan tanpa membedakan huruf besar-kecil dan spasi ganda; yang belum ada dibuat saat konfirmasi.
+- Nilai bawaan bila kolom kosong, sengaja konservatif: `jenis_pengadaan=cpns`, `status_angka=sementara`, `tingkat_data=A`, `keyakinan=turunan`.
+- Hasil: dialog ringkasan, unduh CSV baris gagal (sel diawali `'` bila berisi karakter rumus, untuk mencegah injeksi CSV), `ImportBatch` tercatat, **rollback** per batch (konfirmasi modal berisiko; hanya batch `csv_statistik` yang berhasil dan belum dibatalkan). Unggahan dan konfirmasi dibatasi 10 permintaan per menit.
+- Tangani BOM, pemisah `,` `;` tab, encoding Windows-1252. Berkas maks 2 MB, ekstensi csv/txt. Template CSV (dengan BOM) tersedia di halaman admin.
 - Format kolom: lihat `docs/ppid-bkn-request.md` §3.
 
 ---
@@ -559,6 +562,10 @@ Kerjakan berurutan. Setiap fase selesai bila **kriteria penerimaan** terpenuhi d
 **Fase 3, Statistik 2024 dan Peluang Instansi**
 - Skema §6.2, use case impor, impor CSV + rollback, seed tingkat A, lencana persaingan, halaman **Peluang Instansi 2024**.
 - ✅ Halaman berfungsi tanpa formasi 2026; setiap angka menampilkan sumber, tanggal, dan tingkat data.
+- **Status: selesai (15 Nov 2026).** Terverifikasi: Pest 308 tes, Vitest 70 tes, `tsc`, ESLint, Pint, `CekKonvensi.py` hijau. Uji menyeluruh di browser (`tests/e2e/fase3.cjs`): 41 pemeriksaan lulus (login member → Peluang Instansi, filter/urutan/URL yang bisa dibagikan, rincian riwayat, impor CSV dengan baris bermasalah, unduhan galat, rollback, ambang persaingan, kontrol akses, tanpa scroll horizontal pada 5 halaman x 3 ukuran x 2 tema, tanpa galat konsol).
+- Halaman member `/peluang-instansi` memakai tabel padat di layar ≥1024 px dan kartu di bawahnya; opsi filter di HP berupa panel yang dibuka tombol "Filter (n)" (bukan drawer terpisah). **Member kini diarahkan ke Peluang Instansi setelah login** (bukan `/akun`); navigasi member: header di tablet/desktop, bar bawah di HP.
+- Cakupan statistik saat ini hanya **per instansi** (tingkat A) dan nasional; cakupan `jabatan` baru dibuka di Fase 5. Tautan "Lihat formasi" per instansi menunggu Fase 4.
+- Catatan data: 70 instansi terdaftar, sebagian berstatus sementara (snapshot 29 Agu 2024) dan tampil "Belum final". Beberapa instansi (mis. DKI Jakarta, Jawa Timur, Gorontalo) tidak punya jumlah formasi pada snapshot akhir sehingga rasionya meminjam formasi snapshot lain atau "Belum ada data". `tipe` instansi yang tidak jelas tetap "Belum terklasifikasi".
 
 **Fase 4, Eksplorasi Formasi CPNS**
 - Query + read model, `/formasi` dan detail, semua filter, paginasi server, UI tiga ukuran layar, aturan kualifikasi kosong, keadaan kosong CPNS.

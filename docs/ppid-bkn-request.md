@@ -82,24 +82,27 @@ Hormat saya,
 
 ## 3. Format impor yang disiapkan SICASN
 
-CSV UTF-8, pemisah koma, baris pertama header:
+CSV UTF-8 (BOM, titik koma, tab, dan Windows-1252 juga diterima), baris pertama header. Unduh templatenya di menu admin **Statistik Pelamar**.
 
 | Kolom | Wajib | Contoh |
 |---|---|---|
 | `tahun` | ya | `2024` |
-| `jenis_pengadaan` | ya | `cpns` / `pppk_guru` / `pppk_teknis` / `pppk_nakes` |
-| `instansi` | ya | `Kementerian Agama` |
-| `kode_jabatan` | tidak | `JF0000418-79` |
-| `nama_jabatan` | ya | `Penata Layanan Operasional` |
-| `lokasi` | tidak | `Kota Malang` |
-| `jumlah_formasi` | tidak | `12` |
-| `jumlah_pelamar` | ya | `1840` |
-| `jumlah_lolos_administrasi` | tidak | `1203` |
-| `tanggal_snapshot` | ya | `2024-09-17` |
+| `jenis_pengadaan` | tidak (bawaan `cpns`) | `cpns` / `pppk_guru` / `pppk_teknis` / `pppk_nakes` |
+| `cakupan` | ya | `nasional` atau `instansi` (`jabatan` belum didukung, menyusul Fase 5) |
+| `instansi` | ya bila cakupan instansi; kosong bila nasional | `Kementerian Agama` |
+| `jumlah_formasi` | salah satu kolom jumlah wajib terisi | `20772` |
+| `jumlah_pelamar` | | `411194` |
+| `jumlah_submit` | | `3572414` (tidak boleh melebihi pelamar) |
+| `jumlah_lolos_administrasi` | | `1203` (tidak boleh melebihi pelamar) |
+| `tanggal_snapshot` | ya | `2024-09-17` (tidak boleh di masa depan) |
+| `status_angka` | tidak (bawaan `sementara`) | `sementara` / `akhir` |
+| `tingkat_data` | tidak (bawaan `A`) | `A` / `B` / `C` |
+| `keyakinan` | tidak (bawaan `turunan`) | `resmi` / `turunan` |
 | `sumber_nama` | ya | `PPID BKN` |
-| `sumber_url` | tidak | tautan atau nomor surat jawaban |
+| `sumber_url` | tidak | tautan http(s) |
+| `catatan` | tidak | teks bebas, maks 255 karakter |
 
-Data dari jalur ini diberi tingkat **C** (`keyakinan = resmi`) dan menggantikan tingkat A/B pada tampilan untuk kunci yang sama.
+Untuk data dari jalur ini isi `tingkat_data=C`, `keyakinan=resmi`, dan `status_angka=akhir` bila angkanya final. Data C menggantikan A/B pada tampilan untuk kunci yang sama (cakupan per jabatan tersedia setelah Fase 5).
 
 ## 4. Bila ditolak atau tidak dijawab
 

@@ -1,6 +1,6 @@
 # Sumber Data SICASN — Hasil Riset
 
-Diperbarui: 14 Nov 2026. Dokumen ini mencatat apa yang **sudah diperiksa langsung** dan apa yang **hanya ringkasan hasil pencarian** (perlu dibuka dan diverifikasi agent sebelum dipakai).
+Diperbarui: 15 Nov 2026. Dokumen ini mencatat apa yang **sudah diperiksa langsung** dan apa yang **hanya ringkasan hasil pencarian** (perlu dibuka dan diverifikasi agent sebelum dipakai).
 
 ## 1. Formasi saat ini: API publik BKN (diverifikasi langsung)
 
@@ -64,14 +64,16 @@ Fixture uji: [`samples/bkn-spf-sample.json`](samples/bkn-spf-sample.json) (2 bar
 
 Yang **tidak** ditemukan: API publik, dataset terbuka (data.go.id tidak memuat), atau kumpulan data pelamar per jabatan 2024 di GitHub.
 
-Yang ada (dari ringkasan pencarian; **belum dibuka langsung oleh agent**, verifikasi dulu sebelum memasukkan angka):
+Status per 15 Nov 2026 (Fase 3): angka tingkat A sudah dimuat ke `database/seeders/data/statistik_instansi_2024.csv` dari sumber yang **dibuka langsung** (BKN, detikEdu, Kompas TV, Liputan6). Tirto dilindungi Cloudflare (403) dan sengaja tidak ditembus. Tabel di bawah adalah daftar rujukan awal; kolom catatan menunjukkan sumber mana yang akhirnya dipakai.
+
+Rujukan awal:
 
 | Rujukan | Isi menurut ringkasan | Catatan |
 |---|---|---|
-| [Tirto: 30 instansi pusat dengan pelamar CPNS 2024 terbanyak](https://tirto.id/30-instansi-pusat-dengan-pelamar-cpns-2024-terbanyak-menurut-bkn-g3Ul) | Data akhir BKN; total 3.963.832 pelamar (±3,57 juta submit); Kemenkumham 567.552; Kemenag 411.194 dari 20.772 formasi | Rujukan utama tingkat A |
-| [Tirto: 30 instansi pusat sepi peminat](https://tirto.id/30-instansi-pusat-sepi-peminat-cpns-2024-acuan-tahun-depan-g3Xb) | 30 instansi terendah, dimulai Kemenko PMK 385 pelamar | Tingkat A |
-| [Liputan6: instansi paling ramai dan sepi](https://www.liputan6.com/bisnis/read/5689091/cpns-2024-daftar-instansi-pemerintah-paling-ramai-dan-sepi-peminat) | Snapshot 29 Agu 2024 (mis. Kemenkumham 183.931 submit dari 9.070 formasi) | Snapshot lebih awal; simpan sebagai baris terpisah |
-| [Kompas TV: cara melihat jumlah pelamar](https://www.kompas.tv/nasional/537705/cara-melihat-jumlah-pelamar-cpns-2024-per-instansi-ini-data-terbaru-bkn) | Menyebut BKN hanya merilis instansi terbanyak/tersedikit; snapshot awal (Kemenag 287.683) | Menegaskan rekap BKN parsial |
+| [Tirto: 30 instansi pusat dengan pelamar CPNS 2024 terbanyak](https://tirto.id/30-instansi-pusat-dengan-pelamar-cpns-2024-terbanyak-menurut-bkn-g3Ul) | Data akhir BKN; total 3.963.832 pelamar (±3,57 juta submit); Kemenkumham 567.552; Kemenag 411.194 dari 20.772 formasi | Tidak dipakai (Cloudflare 403); angka yang sama diambil dari detikEdu |
+| [Tirto: 30 instansi pusat sepi peminat](https://tirto.id/30-instansi-pusat-sepi-peminat-cpns-2024-acuan-tahun-depan-g3Xb) | 30 instansi terendah, dimulai Kemenko PMK 385 pelamar | Tidak dipakai (Cloudflare 403) |
+| [Liputan6: instansi paling ramai dan sepi](https://www.liputan6.com/bisnis/read/5689091/cpns-2024-daftar-instansi-pemerintah-paling-ramai-dan-sepi-peminat) | Snapshot 29 Agu 2024 (mis. Kemenkumham 183.931 submit dari 9.070 formasi) | Dipakai: snapshot 29 Agu 2024 (sementara) |
+| [Kompas TV: cara melihat jumlah pelamar](https://www.kompas.tv/nasional/537705/cara-melihat-jumlah-pelamar-cpns-2024-per-instansi-ini-data-terbaru-bkn) | Menyebut BKN hanya merilis instansi terbanyak/tersedikit; snapshot awal (Kemenag 287.683) | Dipakai: menegaskan rekap BKN parsial dan snapshot awal |
 | [Detik: statistik pelamar CPNS 2024](https://news.detik.com/berita/d-7506615/info-data-statistik-pelamar-cpns-2024-berdasarkan-data-bkn-terkini) | Statistik per tanggal tertentu | Snapshot |
 | [Goodnews: pesaing dari hasil seleksi administrasi](https://www.goodnewsfromindonesia.id/ragam/serba-serbi/ternyata-jumlah-pesaing-bisa-diketahui-lewat-hasil-seleksi-administrasi-cpns) | Jumlah pesaing per jabatan bisa dihitung dari hasil seleksi administrasi | Dasar tingkat B |
 | [CNN Indonesia: cek pesaing](https://www.cnnindonesia.com/edukasi/20241004165434-561-1151655/cara-cek-jumlah-pesaing-cpns-2024-sesuai-jabatan-yang-dilamar) | Peserta lolos administrasi dapat melihat pesaing per jabatan di SSCASN | Tidak bisa diakses publik tanpa login |

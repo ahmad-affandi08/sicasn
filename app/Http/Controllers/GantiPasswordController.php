@@ -29,7 +29,7 @@ final class GantiPasswordController extends Controller
             return back()->withErrors(['password_lama' => $galat->getMessage()]);
         }
 
-        $tujuan = $request->user()->peran === Peran::Admin ? '/admin' : '/akun';
+        $tujuan = $request->user()->peran === Peran::Admin ? '/admin' : '/peluang-instansi';
 
         return redirect($tujuan)->with('dialog', DialogFlash::sukses('Kata sandi diperbarui', 'Kata sandi baru Anda sudah tersimpan. Gunakan kata sandi ini saat masuk berikutnya.'));
     }

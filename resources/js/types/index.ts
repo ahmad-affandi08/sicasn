@@ -81,3 +81,72 @@ export interface EventItem {
     pertamaKaliTerlihat: string;
     sudahDiberitahukan: boolean;
 }
+
+export type TingkatPersainganKode = 'longgar' | 'sedang' | 'ketat' | 'belum_final' | 'belum_ada_data';
+
+export interface SnapshotItem {
+    tanggal: string;
+    status: 'sementara' | 'akhir';
+    formasi: number | null;
+    pelamar: number | null;
+    submit: number | null;
+    lolosAdministrasi: number | null;
+    tingkatData: 'A' | 'B' | 'C';
+    keyakinan: 'resmi' | 'turunan';
+    sumberNama: string;
+    sumberUrl: string | null;
+    catatan: string | null;
+}
+
+export interface InstansiPeluangItem {
+    id: number;
+    nama: string;
+    tipe: 'pusat' | 'daerah' | 'unknown';
+    formasi: number | null;
+    formasiDariTanggal: string | null;
+    pelamar: number | null;
+    submit: number | null;
+    rasio: number | null;
+    batasBawah: boolean;
+    tingkat: TingkatPersainganKode;
+    tingkatLabel: string;
+    terbaru: SnapshotItem;
+    riwayat: SnapshotItem[];
+}
+
+export interface AngkaNasionalItem {
+    jenis: 'pelamar' | 'submit' | 'formasi' | 'lolos_administrasi';
+    nilai: number;
+    tanggal: string;
+    sumberNama: string;
+    sumberUrl: string | null;
+    keyakinan: 'resmi' | 'turunan';
+}
+
+export interface FilterPeluangItem {
+    cari: string;
+    tipe: string;
+    tingkat: string;
+    urut: string;
+}
+
+export interface RiwayatStatistikItem {
+    id: number;
+    status: 'berjalan' | 'sukses' | 'sebagian' | 'gagal' | 'dibatalkan';
+    mulaiAt: string;
+    selesaiAt: string | null;
+    berkas: string | null;
+    ringkasan: { total_baris?: number; baris_baru?: number; baris_duplikat?: number; baris_gagal?: number; baris_dihapus?: number; galat?: string };
+    bisaDibatalkan: boolean;
+}
+
+export interface PratinjauStatistikItem {
+    token: string | null;
+    namaBerkas: string;
+    totalBaris: number;
+    barisValid: number;
+    jumlahGalat: number;
+    galat: { baris: number; kolom: string | null; pesan: string; nilai: string | null }[];
+    ringkasanSumber: { sumber: string; tanggal: string; status: string; cakupan: string; jumlah: number }[];
+    galatBerkas: string | null;
+}

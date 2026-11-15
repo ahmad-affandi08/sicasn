@@ -19,7 +19,7 @@ it('mengarahkan tamu yang membuka halaman member ke halaman masuk', function ():
 it('memasukkan member ke halaman akun', function (): void {
     $member = UserModel::factory()->create();
 
-    $this->post('/masuk', ['email' => $member->email, 'password' => 'password'])->assertRedirect('/akun');
+    $this->post('/masuk', ['email' => $member->email, 'password' => 'password'])->assertRedirect('/peluang-instansi');
     $this->assertAuthenticatedAs($member);
 });
 
@@ -32,7 +32,7 @@ it('memasukkan admin ke dasbor admin', function (): void {
 it('tidak membedakan huruf besar dan kecil pada email', function (): void {
     $member = UserModel::factory()->create(['email' => 'budi@contoh.id']);
 
-    $this->post('/masuk', ['email' => 'BUDI@Contoh.ID', 'password' => 'password'])->assertRedirect('/akun');
+    $this->post('/masuk', ['email' => 'BUDI@Contoh.ID', 'password' => 'password'])->assertRedirect('/peluang-instansi');
 });
 
 it('menolak kata sandi salah tanpa membocorkan apakah email terdaftar', function (): void {

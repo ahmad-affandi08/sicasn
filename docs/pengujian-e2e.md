@@ -37,3 +37,22 @@ php artisan sicasn:buat-admin --nama="Admin Uji" --email="admin@uji.test" --pass
 php artisan serve --host=127.0.0.1 --port=8000 &
 node tests/e2e/fase2.cjs /tmp/tangkapan-layar
 ```
+
+## Fase 3 (statistik 2024 dan Peluang Instansi)
+
+Skrip `tests/e2e/fase3.cjs` tidak butuh internet. Ia memerlukan admin, seed statistik, dan satu member uji.
+
+```
+php artisan migrate:fresh --force
+php artisan sicasn:buat-admin --nama="Admin Uji" --email="admin@uji.test" --password="AdminUji12345"
+php artisan db:seed --class=StatistikPelamarSeeder --force
+php tests/e2e/buat_member.php
+npm run build
+php artisan serve --host=127.0.0.1 --port=8000 &
+node tests/e2e/fase3.cjs /tmp/tangkapan-layar
+```
+
+Yang diperiksa (41 pemeriksaan): redirect member setelah login, disclaimer dan tautan sumber resmi, angka nasional bersumber, peringkat tidak dimulai dari angka sementara, urut lewat kepala kolom, pencarian dan filter di URL yang bisa dimuat ulang, rincian riwayat snapshot, keadaan kosong, tampilan kartu/filter/navigasi bawah/target sentuh di HP, impor CSV dengan baris bermasalah (pratinjau, konfirmasi modal, dialog hasil, unduhan galat, total baris), rollback dengan konfirmasi berisiko, berkas ditolak, validasi dan penyimpanan ambang persaingan, member ditolak dari panel admin, tanpa scroll horizontal pada 5 halaman x 3 ukuran x 2 tema, tanpa galat konsol.
+
+Catatan: aturan satu sesi per akun membuat login member kedua mengeluarkan sesi pertama, jadi skrip memakai konteks browser baru untuk tiap pemeriksaan yang butuh member.
+

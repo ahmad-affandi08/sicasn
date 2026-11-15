@@ -1,6 +1,6 @@
 import { Link, router, usePage } from '@inertiajs/react';
 import { useState, type ReactNode } from 'react';
-import { LuChevronRight, LuExternalLink, LuLayoutDashboard, LuLogOut, LuMail, LuMenu, LuMessageCircle, LuRefreshCw, LuSettings, LuUsers, LuWallet } from 'react-icons/lu';
+import { LuChevronRight, LuExternalLink, LuLayoutDashboard, LuLogOut, LuMail, LuMenu, LuMessageCircle, LuChartColumn, LuRefreshCw, LuSettings, LuTarget, LuUsers, LuWallet } from 'react-icons/lu';
 import type { IconType } from 'react-icons';
 
 import { PenangkapFlash } from '@/components/dialog/PenangkapFlash';
@@ -24,12 +24,14 @@ const utama: ItemNav[] = [
     { href: rute.admin.dasbor, label: teksAdmin.nav.dasbor, ikon: LuLayoutDashboard, cocok: (url) => url === rute.admin.dasbor },
     { href: rute.admin.pengguna, label: teksAdmin.nav.pengguna, ikon: LuUsers, cocok: (url) => url.startsWith(rute.admin.pengguna) },
     { href: rute.admin.sinkron, label: teksAdmin.nav.sinkron, ikon: LuRefreshCw, cocok: (url) => url.startsWith(rute.admin.sinkron) },
+    { href: rute.admin.statistik, label: teksAdmin.nav.statistik, ikon: LuChartColumn, cocok: (url) => url.startsWith(rute.admin.statistik) },
 ];
 
 const pengaturan: ItemNav[] = [
     { href: rute.admin.email, label: teksAdmin.nav.email, ikon: LuMail, cocok: (url) => url.startsWith(rute.admin.email) },
     { href: rute.admin.whatsapp, label: teksAdmin.nav.whatsapp, ikon: LuMessageCircle, cocok: (url) => url.startsWith(rute.admin.whatsapp) },
     { href: rute.admin.pembayaran, label: teksAdmin.nav.pembayaran, ikon: LuWallet, cocok: (url) => url.startsWith(rute.admin.pembayaran) },
+    { href: rute.admin.persaingan, label: teksAdmin.nav.persaingan, ikon: LuTarget, cocok: (url) => url.startsWith(rute.admin.persaingan) },
     { href: rute.admin.situs, label: teksAdmin.nav.situs, ikon: LuSettings, cocok: (url) => url.startsWith(rute.admin.situs) },
 ];
 

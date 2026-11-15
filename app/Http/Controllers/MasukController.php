@@ -30,7 +30,7 @@ final class MasukController extends Controller
         if ($hasil === HasilLogin::Berhasil) {
             $request->bersihkanBatas();
 
-            return redirect()->intended($request->user()->peran === Peran::Admin ? '/admin' : '/akun');
+            return redirect()->intended($request->user()->peran === Peran::Admin ? '/admin' : '/peluang-instansi');
         }
 
         $request->catatGagal();

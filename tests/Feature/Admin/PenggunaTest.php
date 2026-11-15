@@ -85,7 +85,7 @@ it('mengirim email berisi kata sandi sementara yang benar-benar bisa dipakai mas
         ->and($html)->toContain('wa.me/6281234567890')
         ->and($html)->toContain('http://localhost/masuk');
 
-    $this->post('/masuk', ['email' => 'budi@contoh.id', 'password' => $password])->assertRedirect('/akun');
+    $this->post('/masuk', ['email' => 'budi@contoh.id', 'password' => $password])->assertRedirect('/peluang-instansi');
     $this->get('/akun')->assertRedirect('/ganti-password');
 });
 
@@ -167,7 +167,7 @@ it('menonaktifkan member dengan alasan lalu menolak login-nya, dan bisa diaktifk
     expect($member->aktif)->toBeTrue()->and($member->alasan_nonaktif)->toBeNull();
 
     auth()->logout();
-    $this->post('/masuk', ['email' => $member->email, 'password' => 'password'])->assertRedirect('/akun');
+    $this->post('/masuk', ['email' => $member->email, 'password' => 'password'])->assertRedirect('/peluang-instansi');
 });
 
 it('tidak mengizinkan menonaktifkan admin atau akun sendiri', function (): void {

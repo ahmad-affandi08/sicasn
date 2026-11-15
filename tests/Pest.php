@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Sleep;
 use Src\DataImport\Application\HasilSinkron;
+use Src\DataImport\Application\KonfirmasiImporStatistik;
+use Src\DataImport\Application\PratinjauImporStatistik;
 use Src\DataImport\Application\SyncFormasiFromBkn;
 use Src\Identity\Infrastructure\Persistence\UserModel;
 use Src\Pengaturan\Application\InputKonfigurasiSmtp;
@@ -110,4 +112,29 @@ function jumlah(string $tabel, ?array $where = null): int
 function berkasSementara(): int
 {
     return count(glob(sys_get_temp_dir().'/bkn-*') ?: []);
+}
+
+function csvStatistik(array $baris): string
+{
+    $kolom = ['tahun', 'jenis_pengadaan', 'cakupan', 'instansi', 'jumlah_formasi', 'jumlah_pelamar', 'jumlah_submit', 'jumlah_lolos_administrasi', 'tanggal_snapshot', 'status_angka', 'tingkat_data', 'keyakinan', 'sumber_nama', 'sumber_url', 'catatan'];
+    $dasar = array_fill_keys($kolom, '') + [];
+    $baku = ['tahun' => '2024', 'jenis_pengadaan' => 'cpns', 'cakupan' => 'instansi', 'tanggal_snapshot' => '2024-09-17', 'status_angka' => 'akhir', 'tingkat_data' => 'A', 'keyakinan' => 'turunan', 'sumber_nama' => 'Sumber Uji'];
+    $aliran = fopen('php://temp', 'r+');
+    fputcsv($aliran, $kolom, ',', '"', '');
+
+    foreach ($baris as $butir) {
+        $gabung = array_merge($dasar, $baku, $butir);
+        fputcsv($aliran, array_map(fn (string $k) => $gabung[$k], $kolom), ',', '"', '');
+    }
+
+    rewind($aliran);
+
+    return (string) stream_get_contents($aliran);
+}
+
+function muatStatistik(array $baris): int
+{
+    $pratinjau = app(PratinjauImporStatistik::class)->handle(csvStatistik($baris), 'uji.csv');
+
+    return app(KonfirmasiImporStatistik::class)->handle((string) $pratinjau->token, null)->batchId;
 }

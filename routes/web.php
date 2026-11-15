@@ -5,15 +5,18 @@ declare(strict_types=1);
 use App\Http\Controllers\Admin\DasborController;
 use App\Http\Controllers\Admin\Pengaturan\EmailController;
 use App\Http\Controllers\Admin\Pengaturan\PembayaranController;
+use App\Http\Controllers\Admin\Pengaturan\PersainganController;
 use App\Http\Controllers\Admin\Pengaturan\SitusController;
 use App\Http\Controllers\Admin\Pengaturan\WhatsappController;
 use App\Http\Controllers\Admin\PenggunaController;
 use App\Http\Controllers\Admin\SinkronController;
+use App\Http\Controllers\Admin\StatistikController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\GantiPasswordController;
 use App\Http\Controllers\KeluarController;
 use App\Http\Controllers\MasukController;
+use App\Http\Controllers\PeluangInstansiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', BerandaController::class)->name('beranda');
@@ -31,6 +34,7 @@ Route::middleware(['auth', 'akun.aktif'])->group(function (): void {
 
 Route::middleware(['auth', 'akun.aktif', 'password.sudah-diganti', 'satu.sesi'])->group(function (): void {
     Route::get('/akun', AkunController::class)->name('akun');
+    Route::get('/peluang-instansi', PeluangInstansiController::class)->name('peluang-instansi');
 
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function (): void {
         Route::get('/', DasborController::class)->name('dasbor');
@@ -48,6 +52,14 @@ Route::middleware(['auth', 'akun.aktif', 'password.sudah-diganti', 'satu.sesi'])
         Route::put('/sinkron/pengaturan', [SinkronController::class, 'simpan'])->name('sinkron.simpan');
         Route::post('/sinkron/event-diberitahukan', [SinkronController::class, 'eventDiberitahukan'])->name('sinkron.event-diberitahukan');
 
+        Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik.index');
+        Route::get('/statistik/template', [StatistikController::class, 'templateCsv'])->name('statistik.template');
+        Route::post('/statistik/pratinjau', [StatistikController::class, 'pratinjau'])->middleware('throttle:10,1')->name('statistik.pratinjau');
+        Route::get('/statistik/pratinjau/{token}', [StatistikController::class, 'tampilPratinjau'])->where('token', '[A-Za-z0-9]{20,64}')->name('statistik.pratinjau.tampil');
+        Route::post('/statistik/pratinjau/{token}/konfirmasi', [StatistikController::class, 'konfirmasi'])->where('token', '[A-Za-z0-9]{20,64}')->middleware('throttle:10,1')->name('statistik.konfirmasi');
+        Route::post('/statistik/{id}/rollback', [StatistikController::class, 'rollback'])->whereNumber('id')->name('statistik.rollback');
+        Route::get('/statistik/{id}/galat', [StatistikController::class, 'galat'])->whereNumber('id')->name('statistik.galat');
+
         Route::prefix('pengaturan')->name('pengaturan.')->group(function (): void {
             Route::get('/email', [EmailController::class, 'tampil'])->name('email');
             Route::put('/email', [EmailController::class, 'simpan'])->name('email.simpan');
@@ -56,6 +68,8 @@ Route::middleware(['auth', 'akun.aktif', 'password.sudah-diganti', 'satu.sesi'])
             Route::put('/whatsapp', [WhatsappController::class, 'simpan'])->name('whatsapp.simpan');
             Route::get('/pembayaran', [PembayaranController::class, 'tampil'])->name('pembayaran');
             Route::put('/pembayaran', [PembayaranController::class, 'simpan'])->name('pembayaran.simpan');
+            Route::get('/persaingan', [PersainganController::class, 'tampil'])->name('persaingan');
+            Route::put('/persaingan', [PersainganController::class, 'simpan'])->name('persaingan.simpan');
             Route::get('/situs', [SitusController::class, 'tampil'])->name('situs');
             Route::put('/situs', [SitusController::class, 'simpan'])->name('situs.simpan');
         });

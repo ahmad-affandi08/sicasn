@@ -180,7 +180,7 @@ async function masuk(page, email, password) {
   await mp.getByLabel('Kata sandi baru', { exact: true }).fill('KataSandiBaru2026');
   await mp.getByLabel('Ulangi kata sandi baru').fill('KataSandiBaru2026');
   await mp.getByRole('button', { name: 'Simpan kata sandi' }).click();
-  await mp.waitForURL('**/akun');
+  await mp.waitForURL('**/peluang-instansi');
   const gantiOk = await dialogTeks(mp);
   cek('Setelah ganti kata sandi member masuk ke akun dengan dialog sukses', /Kata sandi diperbarui/.test(gantiOk));
   await mp.screenshot({ path: `${OUT}/11-dialog-password-diganti-hp.png` });
@@ -220,12 +220,12 @@ async function masuk(page, email, password) {
   await dialogTeks(ap);
   await tutup(ap);
   await masuk(mp, 'siti@uji.test', 'KataSandiBaru2026');
-  await mp.waitForURL('**/akun');
-  cek('Setelah diaktifkan kembali member bisa masuk dengan kata sandi barunya', mp.url().endsWith('/akun'));
+  await mp.waitForURL('**/peluang-instansi');
+  cek('Setelah diaktifkan kembali member bisa masuk dengan kata sandi barunya', mp.url().endsWith('/peluang-instansi'));
 
   const perangkatLain = await baru(1024, 768);
   await masuk(perangkatLain.page, 'siti@uji.test', 'KataSandiBaru2026');
-  await perangkatLain.page.waitForURL('**/akun');
+  await perangkatLain.page.waitForURL('**/peluang-instansi');
   await mp.goto(BASE + '/akun');
   await mp.waitForURL('**/masuk');
   cek('Masuk di perangkat kedua mengeluarkan sesi di perangkat pertama', /Akun dipakai di perangkat lain/.test(await dialogTeks(mp)));

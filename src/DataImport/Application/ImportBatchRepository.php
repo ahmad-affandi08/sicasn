@@ -22,4 +22,8 @@ interface ImportBatchRepository
     public function terakhirBerhasil(string $tipe): ?RingkasBatch;
 
     public function terbaru(string $tipe, int $jumlah): array;
+
+    public function cari(int $id): ?RingkasBatch;
+
+    public function galat(int $id): array;
 }

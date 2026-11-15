@@ -1,0 +1,149 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Src\Formasi\Application;
+
+use Src\Formasi\Domain\Cakupan;
+use Src\Formasi\Domain\JenisPengadaan;
+use Src\Formasi\Domain\Keyakinan;
+use Src\Formasi\Domain\NilaiPersaingan;
+use Src\Formasi\Domain\StatusAngka;
+use Src\Formasi\Domain\TingkatPersaingan;
+
+final readonly class AmbilPeluangInstansi
+{
+    public const TAHUN_ACUAN = 2024;
+
+    public function __construct(
+        private StatistikRepository $statistik,
+        private PenyediaAmbangPersaingan $ambang,
+    ) {}
+
+    public function handle(FilterPeluang $filter): HasilPeluang
+    {
+        $ambang = $this->ambang->ambil();
+        $semua = $this->statistik->snapshot(self::TAHUN_ACUAN, JenisPengadaan::Cpns, Cakupan::Instansi);
+
+        $perInstansi = [];
+
+        foreach ($semua as $snapshot) {
+            $perInstansi[$snapshot->instansiId][] = $snapshot;
+        }
+
+        $daftar = [];
+
+        foreach ($perInstansi as $instansiId => $snapshots) {
+            usort($snapshots, fn (SnapshotStatistik $a, SnapshotStatistik $b) => [$b->tanggal, $b->statusAngka === StatusAngka::Akhir ? 1 : 0] <=> [$a->tanggal, $a->statusAngka === StatusAngka::Akhir ? 1 : 0]);
+
+            $terbaru = $snapshots[0];
+            [$formasi, $dipinjamDari] = $this->formasiEfektif($snapshots);
+            $penilaian = NilaiPersaingan::nilai($terbaru->pelamar, $terbaru->submit, $formasi, $terbaru->statusAngka, $ambang);
+
+            $daftar[] = new InstansiPeluang((int) $instansiId, (string) $terbaru->namaInstansi, $terbaru->tipeInstansi->value, $terbaru, $formasi, $dipinjamDari, $penilaian, $snapshots);
+        }
+
+        $disaring = array_values(array_filter($daftar, fn (InstansiPeluang $i) => $this->lolos($i, $filter)));
+        $urut = in_array($filter->urut, FilterPeluang::URUTAN, true) ? $filter->urut : 'rasio_terendah';
+        usort($disaring, fn (InstansiPeluang $a, InstansiPeluang $b) => $this->bandingkan($a, $b, $urut));
+
+        $total = count($disaring);
+        $perHalaman = max(1, $filter->perHalaman);
+        $terakhir = max(1, (int) ceil($total / $perHalaman));
+        $halaman = min(max(1, $filter->halaman), $terakhir);
+
+        return new HasilPeluang(
+            array_slice($disaring, ($halaman - 1) * $perHalaman, $perHalaman),
+            $total,
+            $halaman,
+            $perHalaman,
+            $terakhir,
+            $this->angkaNasional($this->statistik->snapshot(self::TAHUN_ACUAN, JenisPengadaan::Cpns, Cakupan::Nasional)),
+            $ambang,
+            count($daftar),
+        );
+    }
+
+    private function lolos(InstansiPeluang $instansi, FilterPeluang $filter): bool
+    {
+        if ($filter->cari !== null && $filter->cari !== '' && mb_stripos($instansi->nama, $filter->cari) === false) {
+            return false;
+        }
+
+        if ($filter->tipe !== null && $filter->tipe !== '' && $instansi->tipe !== $filter->tipe) {
+            return false;
+        }
+
+        if ($filter->tingkat !== null && $filter->tingkat !== '') {
+            $tingkat = TingkatPersaingan::tryFrom($filter->tingkat);
+
+            return $tingkat !== null && $instansi->penilaian->tingkat === $tingkat;
+        }
+
+        return true;
+    }
+
+    private function bandingkan(InstansiPeluang $a, InstansiPeluang $b, string $urut): int
+    {
+        $nama = strcasecmp($a->nama, $b->nama);
+
+        return match ($urut) {
+            'nama' => $nama,
+            'pelamar_tersedikit' => $this->golonganPelamar($a) <=> $this->golonganPelamar($b) ?: $this->nilaiNull($a->terbaru->pelamar ?? $a->terbaru->submit) <=> $this->nilaiNull($b->terbaru->pelamar ?? $b->terbaru->submit) ?: $nama,
+            'formasi_terbanyak' => ($b->formasi ?? -1) <=> ($a->formasi ?? -1) ?: $nama,
+            default => $this->golonganRasio($a) <=> $this->golonganRasio($b) ?: $this->nilaiNull($a->penilaian->rasio) <=> $this->nilaiNull($b->penilaian->rasio) ?: $nama,
+        };
+    }
+
+    private function golonganRasio(InstansiPeluang $instansi): int
+    {
+        return match (true) {
+            $instansi->penilaian->rasio === null => 2,
+            $instansi->penilaian->batasBawah => 1,
+            default => 0,
+        };
+    }
+
+    private function golonganPelamar(InstansiPeluang $instansi): int
+    {
+        return match (true) {
+            $instansi->terbaru->pelamar === null && $instansi->terbaru->submit === null => 2,
+            $instansi->terbaru->statusAngka === StatusAngka::Sementara || $instansi->terbaru->pelamar === null => 1,
+            default => 0,
+        };
+    }
+
+    private function formasiEfektif(array $snapshots): array
+    {
+        foreach ($snapshots as $indeks => $snapshot) {
+            if ($snapshot->formasi !== null) {
+                return [$snapshot->formasi, $indeks === 0 ? null : $snapshot->tanggal];
+            }
+        }
+
+        return [null, null];
+    }
+
+    private function angkaNasional(array $snapshots): array
+    {
+        $pilihan = [];
+        $bidang = ['pelamar' => 'pelamar', 'submit' => 'submit', 'formasi' => 'formasi', 'lolos_administrasi' => 'lolosAdministrasi'];
+
+        foreach ($bidang as $jenis => $properti) {
+            $kandidat = array_values(array_filter($snapshots, fn (SnapshotStatistik $s) => $s->{$properti} !== null));
+            usort($kandidat, fn (SnapshotStatistik $a, SnapshotStatistik $b) => [$b->tanggal, $b->keyakinan === Keyakinan::Resmi ? 1 : 0] <=> [$a->tanggal, $a->keyakinan === Keyakinan::Resmi ? 1 : 0]);
+
+            if ($kandidat !== []) {
+                $s = $kandidat[0];
+                $pilihan[] = new AngkaNasional($jenis, (int) $s->{$properti}, $s->tanggal, $s->sumberNama, $s->sumberUrl, $s->keyakinan);
+            }
+        }
+
+        return $pilihan;
+    }
+
+    private function nilaiNull(int|float|null $nilai): int|float
+    {
+        return $nilai ?? PHP_INT_MAX;
+    }
+}

@@ -13,7 +13,7 @@ it('mengganti kata sandi sementara dan membuka akses penuh', function (): void {
         'password_lama' => 'password',
         'password' => 'KataSandiBaru2026',
         'password_confirmation' => 'KataSandiBaru2026',
-    ])->assertRedirect('/akun')->assertSessionHas('dialog', fn (array $d) => $d['jenis'] === 'sukses');
+    ])->assertRedirect('/peluang-instansi')->assertSessionHas('dialog', fn (array $d) => $d['jenis'] === 'sukses');
 
     $member->refresh();
     auth()->forgetGuards();

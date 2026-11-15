@@ -89,6 +89,19 @@ final class EloquentImportBatchRepository implements ImportBatchRepository
         return DB::table('import_batches')->where('tipe', $tipe)->orderByDesc('id')->limit($jumlah)->get()->map(fn ($b) => $this->petakan($b))->all();
     }
 
+    public function cari(int $id): ?RingkasBatch
+    {
+        $baris = DB::table('import_batches')->where('id', $id)->first();
+
+        return $baris === null ? null : $this->petakan($baris);
+    }
+
+    public function galat(int $id): array
+    {
+        return DB::table('import_errors')->where('import_batch_id', $id)->orderBy('baris')->get()
+            ->map(fn ($g) => new GalatBaris((int) $g->baris, $g->kolom, $g->pesan, $g->nilai))->all();
+    }
+
     private function petakan(object $baris): RingkasBatch
     {
         return new RingkasBatch(

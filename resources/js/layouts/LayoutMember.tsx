@@ -8,6 +8,7 @@ import { TombolTema } from '@/components/TombolTema';
 import { Button } from '@/components/ui/button';
 import { teksAuth } from '@/lang/auth';
 import { rute } from '@/lib/rute';
+import { NavMember } from '@/layouts/NavMember';
 import type { PropsBersama } from '@/types';
 
 export function LayoutMember({ children }: { children: ReactNode }) {
@@ -18,6 +19,7 @@ export function LayoutMember({ children }: { children: ReactNode }) {
             <header className="sticky top-0 z-40 border-b border-garis bg-latar/90 backdrop-blur">
                 <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between gap-3 px-4 sm:px-6">
                     <Logo />
+                    <NavMember posisi="atas" />
                     <div className="flex items-center gap-1.5">
                         <span className="hidden max-w-48 truncate text-sm text-redup sm:block">{auth.pengguna?.nama}</span>
                         <TombolTema />
@@ -29,7 +31,8 @@ export function LayoutMember({ children }: { children: ReactNode }) {
                     </div>
                 </div>
             </header>
-            <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6 md:py-12">{children}</main>
+            <main className="mx-auto w-full max-w-5xl flex-1 px-4 pt-8 pb-24 sm:px-6 sm:pb-12 md:py-12">{children}</main>
+            <NavMember posisi="bawah" />
             <PenangkapFlash />
         </div>
     );

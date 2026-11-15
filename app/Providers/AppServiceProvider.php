@@ -11,6 +11,8 @@ use Src\DataImport\Application\ImportBatchRepository;
 use Src\DataImport\Application\KebijakanJenisPengadaan;
 use Src\DataImport\Application\PemicuSinkron;
 use Src\DataImport\Application\PengaturanSinkronStore;
+use Src\DataImport\Application\PenyimpananPratinjau;
+use Src\DataImport\Infrastructure\BerkasPenyimpananPratinjau;
 use Src\DataImport\Infrastructure\ConfigKebijakanJenisPengadaan;
 use Src\DataImport\Infrastructure\HttpBknFormasiSource;
 use Src\DataImport\Infrastructure\Persistence\EloquentEventTerdeteksiRepository;
@@ -18,7 +20,12 @@ use Src\DataImport\Infrastructure\Persistence\EloquentImportBatchRepository;
 use Src\DataImport\Infrastructure\Queue\AntreanPemicuSinkron;
 use Src\DataImport\Infrastructure\SettingsPengaturanSinkronStore;
 use Src\Formasi\Application\KatalogFormasi;
+use Src\Formasi\Application\PenyediaAmbangPersaingan;
+use Src\Formasi\Application\ReferensiInstansi;
+use Src\Formasi\Application\StatistikRepository;
 use Src\Formasi\Infrastructure\Persistence\EloquentKatalogFormasi;
+use Src\Formasi\Infrastructure\Persistence\EloquentReferensiInstansi;
+use Src\Formasi\Infrastructure\Persistence\EloquentStatistikRepository;
 use Src\Identity\Application\Authenticator;
 use Src\Identity\Application\PasswordGenerator;
 use Src\Identity\Application\PasswordHasher;
@@ -31,6 +38,7 @@ use Src\Identity\Infrastructure\SecurePasswordGenerator;
 use Src\Identity\Infrastructure\SessionAuthenticator;
 use Src\Pengaturan\Application\PengaturanEmailStore;
 use Src\Pengaturan\Application\PengaturanPembayaranStore;
+use Src\Pengaturan\Application\PengaturanPersainganStore;
 use Src\Pengaturan\Application\PengaturanSitusStore;
 use Src\Pengaturan\Application\PengaturanWhatsappStore;
 use Src\Pengaturan\Application\SettingsRepository;
@@ -41,6 +49,7 @@ use Src\Pengaturan\Infrastructure\Persistence\EloquentSettingsRepository;
 use Src\Pengaturan\Infrastructure\SettingsEmailTerkonfigurasi;
 use Src\Pengaturan\Infrastructure\SettingsPengaturanEmailStore;
 use Src\Pengaturan\Infrastructure\SettingsPengaturanPembayaranStore;
+use Src\Pengaturan\Infrastructure\SettingsPengaturanPersainganStore;
 use Src\Pengaturan\Infrastructure\SettingsPengaturanSitusStore;
 use Src\Pengaturan\Infrastructure\SettingsPengaturanWhatsappStore;
 use Src\Shared\Application\AuditLog;
@@ -73,6 +82,11 @@ final class AppServiceProvider extends ServiceProvider
         PengaturanSinkronStore::class => SettingsPengaturanSinkronStore::class,
         KebijakanJenisPengadaan::class => ConfigKebijakanJenisPengadaan::class,
         PemicuSinkron::class => AntreanPemicuSinkron::class,
+        StatistikRepository::class => EloquentStatistikRepository::class,
+        ReferensiInstansi::class => EloquentReferensiInstansi::class,
+        PenyimpananPratinjau::class => BerkasPenyimpananPratinjau::class,
+        PengaturanPersainganStore::class => SettingsPengaturanPersainganStore::class,
+        PenyediaAmbangPersaingan::class => SettingsPengaturanPersainganStore::class,
         SettingsRepository::class => EloquentSettingsRepository::class,
         PengaturanEmailStore::class => SettingsPengaturanEmailStore::class,
         PengaturanWhatsappStore::class => SettingsPengaturanWhatsappStore::class,

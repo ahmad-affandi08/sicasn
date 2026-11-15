@@ -10,6 +10,7 @@ enum StatusBatch: string
     case Sukses = 'sukses';
     case Sebagian = 'sebagian';
     case Gagal = 'gagal';
+    case Dibatalkan = 'dibatalkan';
 
     public function berhasil(): bool
     {
